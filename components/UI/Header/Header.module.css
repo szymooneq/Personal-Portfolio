@@ -1,0 +1,12 @@
+.title {
+  width: max-content;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.titleMain {
+  display: inline;
+  font-size: 2.5rem;
+  font-family: 'Architects Daughter', cursive;
+  color: var(--text-blue);
+}

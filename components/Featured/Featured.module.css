@@ -1,0 +1,172 @@
+.section {
+  margin-top: 6rem;
+  padding-bottom: 2rem;
+  background: rgb(46,46,51);
+  background: linear-gradient(180deg, rgba(46,46,51,1) 0%, rgba(29,29,32,1) 100%); 
+}
+
+.title {
+  width: max-content;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.titleMain {
+  display: inline;
+  font-size: 2.5rem;
+  font-family: 'Architects Daughter', cursive;
+  color: var(--text-blue);
+}
+
+.content {
+  color: var(--text-color);
+}
+
+.description {
+  margin: 1.5rem auto 4rem auto;
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.6rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 80vw;
+  height: 48vw;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 30px;
+  top: -30px;
+  z-index: 10;
+}
+
+.cardBehind {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 100%;
+  height: 100%;
+  background: var(--main);
+  -webkit-box-shadow: 12px 12px #1D1D20;
+  -moz-box-shadow: 12px 12px #1D1D20;
+  box-shadow: 6px 6px #1D1D20;
+}
+
+.projectName {
+  padding-top: 0.7rem;
+  align-self: flex-start;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.projectName p {
+  margin: 0 0 0.5rem 1rem;
+}
+
+.projectLinks {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin: 0.7rem 0.7rem 0 0;
+}
+
+.projectLinks img { 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button {
+  margin: 7rem auto 0 auto;
+  width: max-content;
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .cards {
+    gap: 7rem;
+  }
+  
+  .card {
+    width: 50vw;
+    height: 30vw;
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .card {
+    width: 20rem;
+    height: 12rem;
+  }
+
+  .cardImg {
+    right: 0.1px;
+    top: -0.1px;
+    transition: all .5s;
+  }
+  
+  .cardBehind {
+    top: 0.3rem;
+    left: 0.3rem;
+    transition: all .5s;
+  }
+
+  .card:hover .cardImg {
+    right: 30px;
+    top: -30px;
+  }
+
+  .card:hover .cardBehind {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .card:hover .cardImg {
+    cursor: pointer;
+  }
+
+  .card:hover .projectName {
+    cursor: pointer;
+  }
+
+  .card:hover .projectLinks img:hover {
+    scale: 1.2;
+    cursor: pointer;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .cards {
+    gap: 5rem;
+  }
+
+  .card {
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  
+}

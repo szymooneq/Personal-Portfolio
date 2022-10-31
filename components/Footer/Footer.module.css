@@ -1,0 +1,78 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  height: 17rem;
+  background: url('../../assets/footerShapes.png');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07rem;
+  color: var(--text-color);
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+} 
+
+.social a {
+  padding: 0.3rem 1rem;
+  font-weight: 600;
+  border: 1px solid var(--text-color);
+  transition: all .3s;
+}
+
+.social a:hover {
+  color: black;
+  background-color: var(--text-color);
+}
+
+.info {
+  color: var(--text-color);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .content {
+    font-size: 0.8rem;
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .content {
+    font-size: 0.9rem;
+  }
+
+  .info {
+    font-size: 0.8rem;
+  }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  
+}

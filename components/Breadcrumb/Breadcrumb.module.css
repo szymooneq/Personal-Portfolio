@@ -1,0 +1,25 @@
+.breadcrumb {
+  padding: 5.5rem 0 1.3rem 0;
+  font-size: 0.9rem;
+  background-color: var(--bg-secondary);
+}
+
+.link span {
+  color: rgb(93, 93, 255);
+  text-decoration: underline;
+}
+
+.link span:hover {
+  color: var(--text-color);
+}
+
+.active {
+  color: var(--text-color);
+}
+
+
+@media (min-width: 768px) {
+  .breadcrumb {
+    padding-top: 6rem;
+  }
+}

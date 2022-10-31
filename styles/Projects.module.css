@@ -1,0 +1,39 @@
+.projects {
+  margin-bottom: 5rem;
+}
+
+.projectsContent p {
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+/* MD */
+@media (min-width: 768px) {
+
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .projectsContent p {
+    font-size: 1rem;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  
+}

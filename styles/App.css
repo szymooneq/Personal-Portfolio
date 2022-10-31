@@ -1,0 +1,139 @@
+.app {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+.spinner {
+  top: 1.5rem !important;
+  right: 5.5rem !important;
+}
+
+.active {
+  color: black !important;
+  background-color: white !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reset {
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fe315c;
+  background: transparent;
+  border: 0.1rem solid #fe315c;
+  cursor: pointer;
+  transition: all .2s;
+} 
+
+.grid-cards {
+  display: grid;
+  grid-template: 1fr;
+  grid-gap: 6rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  position: relative;
+  top: -2px;
+  left: -2px;
+  width: max-content;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  -webkit-box-shadow: 7px 7px rgb(93, 93, 255);
+  -moz-box-shadow: 7px 7px rgb(93, 93, 255);
+  box-shadow: 7px 7px rgb(93, 93, 255);
+  background: transparent;
+  border: 0.1rem solid var(--text-color);
+  transition: all .2s;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+}
+
+.button img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .spinner {
+    top: 1.8rem !important;
+    right: 22rem !important;
+  }
+
+  .grid-cards {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+  }
+
+  .breadcrumb {
+    margin-top: 5rem;
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 990px;
+  }
+
+  .grid-cards {
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+  }
+
+  .button {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  .button:hover,
+  .button:focus {
+    top: -2px;
+    left: -2px;
+    -webkit-box-shadow: 7px 7px rgb(93, 93, 255);
+    -moz-box-shadow: 7px 7px rgb(93, 93, 255);
+    box-shadow: 7px 7px rgb(93, 93, 255);
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .grid-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+  }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+
+}

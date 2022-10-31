@@ -1,13 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { getAllProjects } from '../lib/projects'
-import styles from '../styles/Home.module.css'
+import About from '../components/About/About';
+import Featured from '../components/Featured/Featured';
+import Hero from '../components/Hero/Hero';
+import { getAllProjects } from '../lib/projects';
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({ allProjects }) {
   return (
-    <div className={styles.container}>
-      homepage
-    </div>
+    <>
+      <Hero />
+      {/* <div className={styles.container}> */}
+        <About projects={allProjects} />
+        <Featured projects={allProjects} />
+      {/* </div> */}
+    </>
   )
 }
 

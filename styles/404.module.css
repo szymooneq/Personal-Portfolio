@@ -1,0 +1,32 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 8rem;
+}
+
+.number {
+  font-size: 8rem;
+  font-weight: 900;
+  background: var(--main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.number::selection {
+  -webkit-text-fill-color: var(--text-color);
+}
+
+.header {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.description {
+  margin: 2rem 0;
+  color: var(--text-gray);
+  text-align: center;
+}
