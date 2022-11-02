@@ -3,7 +3,6 @@ import { rightArrow } from '../../assets/svgIconsPack'
 import { urlFor } from '../../sanity'
 import Card from '../Card/Card'
 import Header from '../UI/Header/Header'
-import Spinner from '../UI/Spinner/Spinner'
 import styles from './Featured.module.css'
 
 export default function Featured({ projects }) {

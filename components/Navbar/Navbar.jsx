@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -30,7 +31,6 @@ export default function Navbar() {
   }, [sticky])
   
   useEffect(() => {
-    setExpandNavbar(false)
     if(pathname === "/" ) {
       setSticky(true)
     } else {
@@ -50,7 +50,7 @@ export default function Navbar() {
         <ul className={styles.menuItems}>
           {menuItems.map(({title, path}) => (
             <li key={title} className={styles.menuItemsLink}>
-              <Link href={path}>{title}</Link>
+              <Link href={path} onClick={() => setExpandNavbar(false)}>{title}</Link>
             </li>
           ))}
         </ul>

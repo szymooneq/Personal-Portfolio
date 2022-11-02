@@ -8,10 +8,8 @@ export default function Home({ allProjects }) {
   return (
     <>
       <Hero />
-      {/* <div className={styles.container}> */}
-        <About projects={allProjects} />
-        <Featured projects={allProjects} />
-      {/* </div> */}
+      <About />
+      <Featured projects={allProjects} />
     </>
   )
 }

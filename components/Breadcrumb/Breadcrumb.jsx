@@ -1,21 +1,24 @@
 import Link from 'next/link';
-// import useBreadcrumbs from 'use-react-router-breadcrumbs';
+import { useRouter } from 'next/router';
 import styles from './Breadcrumb.module.css';
 
 export default function Breadcrumb() {
-  // const breadcrumbs = useBreadcrumbs();
+  const router = useRouter()
+  const breadcrumbs = router.asPath.replace(/\?.*/g,"$'").split('/')
 
   return (
     <nav className={styles.breadcrumb}>
       <div className="container">
-        {/* {breadcrumbs.map(({ match, breadcrumb }, id) => (
-          <span key={match.pathname}>
+        {breadcrumbs.map((fragment, id) => (
+          <span key={id}>
             {id !== breadcrumbs.length - 1
-              ? <><Link to={match.pathname} className={styles.link}>{breadcrumb}</Link><span className={styles.active}> / </span></>
-              : <span className={styles.active}>{breadcrumb}</span>}
+              ? <>
+                  <Link href={`/${fragment}`} className={styles.link}>{id === 0 ? "home" : fragment}</Link>
+                  <span className={styles.active}> / </span>
+                </>
+              : <span className={styles.active}>{fragment.replace(/-/g, " ")}</span>}
           </span>
-        ))} */}
-        <span className={styles.active}>Breadcrumb</span>
+        ))}
       </div>
     </nav>
   );

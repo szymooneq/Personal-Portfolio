@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+#nprogress {
+  position: relative;
+  z-index: 9999999;
+}
+
 .spinner {
   top: 1.5rem !important;
   right: 5.5rem !important;
@@ -56,7 +61,7 @@
   box-shadow: 7px 7px rgb(93, 93, 255);
   background: transparent;
   border: 0.1rem solid var(--text-color);
-  transition: all .2s;
+  transition: all .1s;
 }
 
 .button:hover,
