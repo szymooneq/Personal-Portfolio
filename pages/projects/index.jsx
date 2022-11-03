@@ -2,12 +2,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Card from '../../components/Card/Card'
-import Header from '../../components/UI/Header/Header'
+import Title from '../../components/UI/Title/Title'
 import { getAllProjects } from '../../lib/projects'
 import { urlFor } from '../../sanity'
 import styles from '../../styles/Projects.module.css'
 
-export default function Projects({ allProjects }) {
+export default function Projects({ allProjects, title }) {
   const { push, query } = useRouter()
   const [projects, setProjects] = useState(allProjects)
   
@@ -26,9 +26,9 @@ export default function Projects({ allProjects }) {
   }, [allProjects, query.category])
   
   return (
-    <article className={`container ${styles.projects}`}>
-      <Header title="Projects" />
-      <div className={styles.projectsContent}>
+    <article className={`container ${styles.section}`}>
+      <Title title="Projects" />
+      <div className={styles.content}>
         <p>Here you will find some of my projects that I have managed to create so far. I created each project myself, learning from various sources, such as documentation, YouTube videos, or paid courses, but I was primarily trying to understand the source code and work with it, not to copy ready-made materials from the Internet. You can easily filter projects by technology by clicking on the selected technology.</p>
 
         <div className={styles.categories}>

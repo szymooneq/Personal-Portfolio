@@ -12,10 +12,10 @@ export default function Layout({ children }) {
     <>
       <NextNProgress color="#5d5dff" height={3} />
       <Navbar />
-      {pathname !== "/" && <Breadcrumb />}
-        <motion.div key={route} initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} className='app'>
+      {pathname !== "/" && pathname !== "/404" && <Breadcrumb />}
+        <motion.main key={route} initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} className='app'>
           {children}
-        </motion.div>
+        </motion.main>
       <Footer />
     </>
   )

@@ -1,9 +1,41 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+:root {
+  --white: #fff;
+  --bg-dark: #1D1D20;
+  --bg-secondary: #2E2E33;
+  --main: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid);
+  --text-color: #f4f4f5;
+  --text-blue: rgb(93, 93, 255);
+  --text-gray: rgb(212, 212, 216);
+}
+
+::selection {
+  background-color: rgb(27, 17, 83);
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  position: relative;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  color: white;
+  background: var(--bg-dark);
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -11,16 +43,20 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: var(--bg-dark);
   }
-}
+} */

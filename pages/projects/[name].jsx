@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { leftArrow } from '../../assets/svgIconsPack'
 import Template from '../../components/Template/Template'
@@ -10,7 +9,7 @@ export default function ProjectPage({ projectData }) {
 
   return (
     <article className="container">
-      <header>
+      <header className={styles.header}>
         <h1 className={styles.title}>{projectData.title}</h1>
         <p className={styles.description}>{projectData.description}</p>
       </header>
@@ -87,5 +86,5 @@ export async function getStaticProps({ params }) {
     props: {
       projectData
     }
-  };
+  }
 }

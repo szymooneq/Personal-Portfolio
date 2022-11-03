@@ -29,14 +29,21 @@
 
 .card { 
   background: var(--bg-secondary);
+  border-radius: .5rem;
 }
 
 .cardDescription {
   padding: 1.3rem;
   font-size: 0.9rem;
+  font-weight: 500;
   text-align: justify;
   line-height: 1.6rem;
   color: var(--text-color);
+}
+
+.cardDescription b {
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 .cardQuote {
@@ -59,7 +66,7 @@
 .aboutImg {
   display: block;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
 }
 
 .graphics {
@@ -90,15 +97,6 @@
 
 /* MD */
 @media (min-width: 768px) {
-  .cardDescription {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-  }
-  
-  .cardQuote {
-    font-size: 1.2rem;
-  }
-
   .links {
     flex-direction: row;
   }
@@ -110,7 +108,7 @@
 
   .aboutImg {
     width: 70%;
-  }
+  } 
 }
 
 /* LG */
@@ -136,8 +134,17 @@
 
 /* XL */
 @media (min-width: 1280px) {
-  .aboutImg {
-    width: 60%;
+  .cardDescription {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+
+  .cardDescription b {
+    font-size: 1.5rem;
+  }
+  
+  .cardQuote {
+    font-size: 1.2rem;
   }
 }
 

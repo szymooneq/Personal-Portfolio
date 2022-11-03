@@ -6,7 +6,14 @@
 
 .titleMain {
   display: inline;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-family: 'Architects Daughter', cursive;
+  font-weight: 800;
   color: var(--text-blue);
+}
+
+@media (min-width: 768px) {
+  .titleMain {
+    font-size: 3rem;
+  }
 }

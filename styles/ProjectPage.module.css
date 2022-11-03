@@ -1,16 +1,20 @@
+.header {
+  margin: 2rem 0;
+}
+
 .title {
-  margin: 1rem 0;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   font-size: 2.5rem;
   color: var(--text-color);
-  -webkit-text-shadow: 7px 7px rgb(93, 93, 255);
-  -moz-text-shadow: 7px 7px rgb(93, 93, 255);
+  -webkit-text-shadow: 2px 2px rgb(93, 93, 255);
+  -moz-text-shadow: 2px 2px rgb(93, 93, 255);
   text-shadow: 2px 2px rgb(93, 93, 255);
 }
 
 .description {
   margin-bottom: 2rem;
   font-size: 1rem;
+  font-weight: 600;
   color: var(--text-color);
 }
 
@@ -29,12 +33,6 @@
 
 .technologies h2 {
   margin-bottom: 0.6rem;
-}
-
-.link {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: var(--text-color);
 }
 
 .category {
@@ -68,14 +66,7 @@
 .learning ul > li {
   margin: 0 0 0.4rem 1rem;
   font-size: 0.9rem;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  font-weight: 500;
 }
 
 .iframe {
@@ -111,7 +102,13 @@
 
 /* XL */
 @media (min-width: 1280px) {
+  .description {
+    font-size: 1.1rem;
+  }
 
+  .learning ul > li {
+    font-size: 1rem;
+  }
 }
 
 /* 2XL */

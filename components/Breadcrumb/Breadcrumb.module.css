@@ -1,7 +1,8 @@
 .breadcrumb {
-  padding: 5.5rem 0 1.3rem 0;
+  margin-top: 68.2px;
+  padding: 1.3rem 0;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   background-color: var(--bg-secondary);
 }
 
@@ -14,12 +15,13 @@
 }
 
 .active {
+  font-weight: 500;
   color: var(--text-color);
 }
 
 
 @media (min-width: 768px) {
   .breadcrumb {
-    padding-top: 6rem;
+    margin-top: 74.6px;
   }
 }

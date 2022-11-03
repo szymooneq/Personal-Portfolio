@@ -1,6 +1,6 @@
-import styles from './Header.module.css';
+import styles from './Title.module.css';
 
-export default function Header({ title }) {
+export default function Title({ title }) {
   return (
     <header className={styles.title}>
       <p className={styles.titleMain}>{title}</p>

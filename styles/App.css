@@ -74,6 +74,12 @@
   height: 1.25rem;
 }
 
+.tagcloud {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: darkorchid;
+}
+
 /* MD */
 @media (min-width: 768px) {
   .container {

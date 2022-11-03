@@ -8,8 +8,8 @@ export default function Home({ allProjects }) {
   return (
     <>
       <Hero />
-      <About />
-      <Featured projects={allProjects} />
+      <About title="About Me" />
+      <Featured title="Featured Projects" projects={allProjects} />
     </>
   )
 }

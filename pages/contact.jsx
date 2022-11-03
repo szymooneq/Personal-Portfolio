@@ -1,11 +1,12 @@
-import Header from '../components/UI/Header/Header'
+import Title from '../components/UI/Title/Title'
 import styles from '../styles/Contact.module.css'
 
 export default function Contact() {
   return (
     <article className="container">
-      <Header title="Contact" />
-      <div className={styles.content}>
+      <Title title="Contact" />
+      <section className={styles.content}>
+        
         <form className={styles.form} action="https://usebasin.com/f/d46c0979603a" method="post">
           <div className={`${styles.formField} ${styles.formGradient}`}>
             <label htmlFor="name">Name</label>
@@ -24,7 +25,7 @@ export default function Contact() {
           
           <button type="submit" className={styles.formSubmit}>Submit</button>
         </form>
-      </div>
+      </section>
     </article>
   )
 }
