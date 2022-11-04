@@ -2,9 +2,10 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  margin-bottom: 8rem;
 }
 
-.content {
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +14,7 @@
   height: inherit;
 }
 
-.contentMain {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,12 +40,12 @@
   color: var(--text-color);
 }
 
-.heroImg {
+.astronaut {
   max-width: 17rem;
   animation: astronaut 2s linear infinite alternate;
 }
 
-.heroImg img {
+.astronaut img {
   width: 100%;
   height: 100%;
 }
@@ -53,7 +54,7 @@
   100% { transform: translateY(2rem); }
 }
 
-.social {
+.links {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -63,28 +64,30 @@
   border-radius: 1rem;
 }
 
-.social a {
+.links a {
   display: flex;
   align-items: center;
 }
 
-.social svg {
+.links svg {
   width: 2rem;
   transition: scale .3s;
   color: white;
 }
 
-.social svg:hover {
+.links svg:hover {
   scale: 1.2;
 }
 
-.scrollDown {
+/* .scrollDown {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin: 4rem auto;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
   width: 1.5rem;
-  height: 5rem;
+  height: 4rem;
   background: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid) border-box;
   border-radius: 50em;
   border: 4px solid transparent;
@@ -106,17 +109,17 @@
   to {
     transform: translateY(-100%);
   }
-}
+} */
 
 /* MD */
 @media (min-width: 768px) {
-  .content {
+  .flex {
     flex-direction: row;
   }
 
-  .scrollDown {
+  /* .scrollDown {
     display: none;
-  }
+  } */
 }
 
 /* LG */
@@ -129,7 +132,7 @@
     font-size: 1.8rem;
   }
   
-  .heroImg {
+  .astronaut {
     max-width: 30rem;
   }
 }
@@ -144,7 +147,7 @@
     font-size: 2.5rem;
   }
   
-  .heroImg {
+  .astronaut {
     max-width: 40rem;
   }
 }

@@ -19,7 +19,6 @@
   color: var(--text-color);
 }
 
-
 @media (min-width: 768px) {
   .breadcrumb {
     margin-top: 74.6px;

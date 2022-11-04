@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.section {
+  margin: 2rem auto;
+}
+
 #nprogress {
   position: relative;
   z-index: 9999999;
@@ -75,7 +79,7 @@
 }
 
 .tagcloud {
-  font-size: 1.2rem;
+  font-size: .7rem;
   font-weight: 800;
   color: darkorchid;
 }
@@ -84,6 +88,10 @@
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+
+  .section {
+    margin-bottom: 8rem;
   }
 
   .spinner {
@@ -98,6 +106,10 @@
 
   .breadcrumb {
     margin-top: 5rem;
+  }
+
+  .tagcloud {
+    font-size: .8rem;
   }
 }
 
@@ -141,6 +153,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 3rem;
     grid-row-gap: 3rem;
+  }
+
+  .tagcloud {
+    font-size: .9rem;
+    font-weight: 800;
   }
 }
 

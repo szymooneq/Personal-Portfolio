@@ -1,31 +1,33 @@
-import Title from '../components/UI/Title/Title'
+import Image from 'next/image'
+import contactImg from '../assets/contact.svg'
+import Article from '../components/Layout/Article'
 import styles from '../styles/Contact.module.css'
 
 export default function Contact() {
   return (
-    <article className="container">
-      <Title title="Contact" />
-      <section className={styles.content}>
-        
-        <form className={styles.form} action="https://usebasin.com/f/d46c0979603a" method="post">
-          <div className={`${styles.formField} ${styles.formGradient}`}>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" required />
-          </div>
+    <Article header="Contact" style={styles.content}>
+      <div className={styles.image}>
+        <Image src={contactImg} alt="Contact Image" />
+      </div>
 
-          <div className={`${styles.formField} ${styles.formGradient}`}>
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" required />
-          </div>
-          
-          <div className={`${styles.formField} ${styles.formGradient}`}>
-            <label htmlFor="message">Message</label>
-            <textarea name="message" cols="30" rows="8" />
-          </div>
-          
-          <button type="submit" className={styles.formSubmit}>Submit</button>
-        </form>
-      </section>
-    </article>
+      <form className={styles.form} action="https://usebasin.com/f/d46c0979603a" method="post">
+        <div className={styles.field}>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" required />
+        </div>
+
+        <div className={styles.field}>
+          <label htmlFor="email">E-mail</label>
+          <input type="email" name="email" required />
+        </div>
+        
+        <div className={styles.field}>
+          <label htmlFor="message">Message</label>
+          <textarea name="message" rows="8" required />
+        </div>
+        
+        <button type="submit" className={styles.submit}>Submit</button>
+      </form>
+    </Article>
   )
 }

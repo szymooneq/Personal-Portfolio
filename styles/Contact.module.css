@@ -1,9 +1,15 @@
-.form {
-  margin: 3rem auto;
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.formField {
-  margin: 1rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .form label {
@@ -11,18 +17,18 @@
   width: max-content;
   font-size: 1rem;
   margin-bottom: 0.3rem;
-  color: var(--text-color);
 }
 
 .form input,
 .form textarea {
   padding: 0.5rem;
   width: 100%;
-  color: var(--text-color);
   font-size: 0.9rem;
+  color: var(--text-color);
   background: var(--bg-secondary);
   border: 1px solid #4f4f50;
   border-radius: 0.2rem;
+  resize: vertical;
 }
 
 .form input:focus,
@@ -32,7 +38,7 @@
   outline: none;
 }
 
-.formSubmit {
+.submit {
   display: block;
   margin: 0 auto;
   padding: 0.5rem;
@@ -47,6 +53,47 @@
   transition: filter .3s;
 }
 
-.formSubmit:hover {
+.image {
+  display: none;
+}
+
+.submit:hover {
   filter: brightness(120%);
+}
+
+/* MD */
+@media (min-width: 768px) {
+ 
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    gap: 10rem;
+  }
+
+  .form {
+    flex-grow: 1;
+  }
+
+  .image {
+    display: block;
+    flex-grow: 2;
+  }
+
+  .image img {
+    width: 100%;
+  }
+
+}
+
+/* XL */
+@media (min-width: 1280px) {
+
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+
 }

@@ -7,7 +7,7 @@ import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { pathname } = useRouter()
-  const [sticky, setSticky] = useState(true)
+  const [navbarTop, setNavbarTop] = useState(true)
   const [expandNavbar, setExpandNavbar] = useState(false)
   const menuItems = [{title: 'Home', path: '/'}, {title: 'Projects', path: '/projects'}, {title: 'Contact', path: '/contact'}]
 
@@ -19,27 +19,37 @@ export default function Navbar() {
     if (window.innerWidth > 768) setExpandNavbar(false)
   }
 
+  const handleScroll = () => {
+    if(window.scrollY < document.querySelector("#starfield")?.offsetHeight - 80) {
+      setNavbarTop(true)
+    } else {
+      setNavbarTop(false)
+    }
+  }
+
   useEffect(() => {
     window.addEventListener('resize', handleResize)
-    window.addEventListener('scroll', (e) => {
-      if(window.scrollY < document.querySelector("#starfield")?.offsetHeight - 80) {
-        setSticky(true)
-      } else {
-        setSticky(false)
-      }
-    })
-  }, [sticky])
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [navbarTop])
   
   useEffect(() => {
     if(pathname === "/" ) {
-      setSticky(true)
+      setNavbarTop(true)
+      window.addEventListener('scroll', handleScroll)
     } else {
-      setSticky(false)
+      setNavbarTop(false)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [pathname])
 
   return (
-    <nav className={`${styles.nav} ${sticky && styles.hero}`}>
+    <nav className={`${styles.nav} ${navbarTop && styles.hero}`}>
       <Link href="/">
         <Logo />
       </Link>

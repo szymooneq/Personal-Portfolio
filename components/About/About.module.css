@@ -1,52 +1,30 @@
-.title {
-  width: max-content;
-  margin: 0 auto;
-  padding-top: 1.5rem;
-}
-
-.titleMain {
-  display: inline;
-  font-size: 2.5rem;
-  font-family: 'Architects Daughter', cursive;
-  color: var(--text-blue);
-}
-
-.section {
-  margin-top: 5rem;
-}
-
 .content {
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
   gap: 3rem;
 }
 
-.description {
+.flex {
   display: flex;
   flex-direction: column;
 }
 
 .card { 
-  background: var(--bg-secondary);
-  border-radius: .5rem;
-}
-
-.cardDescription {
   padding: 1.3rem;
   font-size: 0.9rem;
   font-weight: 500;
   text-align: justify;
   line-height: 1.6rem;
-  color: var(--text-color);
+  background: var(--bg-secondary);
+  border-radius: .5rem;
 }
 
-.cardDescription b {
+.card b {
   font-size: 1rem;
   font-weight: 800;
 }
 
-.cardQuote {
+.quote {
   display: block;
   margin-top: 1.5rem;
   font-size: 1rem;
@@ -69,7 +47,7 @@
   width: 80%;
 }
 
-.graphics {
+.center {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,30 +98,29 @@
     gap: 2rem;
   }
 
-  .description {
+  .flex {
     display: flex;
     flex-direction: column;
-    margin: auto 0;
     max-width: 40%;
   }
 
-  .cardQuote {
+  .quote {
     margin-top: 1rem;
   }
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  .cardDescription {
+  .card {
     font-size: 1.1rem;
     line-height: 1.6rem;
   }
 
-  .cardDescription b {
+  .card b {
     font-size: 1.5rem;
   }
   
-  .cardQuote {
+  .quote {
     font-size: 1.2rem;
   }
 }

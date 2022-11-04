@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { urlFor } from '../../sanity'
 import styles from './Card.module.css'
 
-export default function Card({ title, slug, icon, links }) {
+export default function Card({ title, slug, image, links }) {
   return (
     <div className={styles.card}>
 
       <Link className={styles.cardFront} href={`/projects/${slug}`}>
-        <img className={styles.img} src={icon} alt={title} />
+        <img className={styles.img} src={urlFor(image).url()} alt={title} />
       </Link>
 
       <div className={styles.cardBehind}>
@@ -23,7 +23,6 @@ export default function Card({ title, slug, icon, links }) {
         <Link className={styles.name} href={`/projects/${slug}`}>
           <p>{title}</p>
         </Link>
-        
       </div>
     </div>
   )

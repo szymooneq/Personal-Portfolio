@@ -4,6 +4,7 @@ export default function Title({ title }) {
   return (
     <header className={styles.title}>
       <p className={styles.titleMain}>{title}</p>
+      {/* <hr /> */}
     </header>
   )
 }

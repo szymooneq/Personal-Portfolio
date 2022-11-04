@@ -1,11 +1,11 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import NextNProgress from 'nextjs-progressbar'
 import Breadcrumb from '../Breadcrumb/Breadcrumb'
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   const { pathname, route } = useRouter()
   
   return (
