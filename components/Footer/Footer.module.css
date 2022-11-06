@@ -25,24 +25,24 @@
   color: var(--text-color);
 }
 
-.social {
+.links {
   display: flex;
   gap: 1rem;
 } 
 
-.social a {
+.links a {
   padding: 0.3rem 1rem;
   font-weight: 600;
   border: 1px solid var(--text-color);
   transition: all .3s;
 }
 
-.social a:hover {
+.links a:hover {
   color: black;
   background-color: var(--text-color);
 }
 
-.info {
+.copyright {
   color: var(--text-color);
   font-size: 0.7rem;
   font-weight: 600;
@@ -67,7 +67,7 @@
     font-size: 0.9rem;
   }
 
-  .info {
+  .copyright {
     font-size: 0.8rem;
   }
 }

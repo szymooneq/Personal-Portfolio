@@ -4,7 +4,7 @@ import TechnologyList from '../../components/Card/TechnologyList'
 import Article from '../../components/Layout/Article'
 import Template from '../../components/Template/Template'
 import { getAllProjectsId, getProjectData } from '../../lib/projects'
-import { urlFor } from '../../sanity'
+import { urlFor } from '../../lib/sanityConfig'
 import styles from '../../styles/ProjectPage.module.css'
 
 export default function ProjectPage({ projectData }) {

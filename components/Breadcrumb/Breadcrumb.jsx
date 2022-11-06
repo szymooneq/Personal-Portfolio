@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from './Breadcrumb.module.css';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styles from './Breadcrumb.module.css'
 
 export default function Breadcrumb() {
   const { asPath } = useRouter()

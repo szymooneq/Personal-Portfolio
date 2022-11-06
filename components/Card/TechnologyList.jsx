@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { urlFor } from "../../sanity";
+import { urlFor } from "../../lib/sanityConfig";
 
 export default function TechnologyList({ technologies }) {
   const { query, push } = useRouter()
