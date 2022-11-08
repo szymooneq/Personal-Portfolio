@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { urlFor } from '../../lib/sanityConfig'
 import styles from './Card.module.css'
 
-export default function Card({ id, title, slug, image, links }) {
+export default function Card({ id, title, slug, thumbnail, links }) {
   return (
     <m.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { type: "spring", duration: 1, delay: id * 0.1} }} className={styles.card}>
       <Link className={styles.cardFront} href={`/projects/${slug}`}>
-        <img className={styles.img} src={urlFor(image).url()} alt={title} />
+        <img className={styles.img} src={urlFor(thumbnail).url()} alt={title} />
       </Link>
 
       <div className={styles.cardBehind}>

@@ -16,6 +16,8 @@ export default function Home({ allProjects }) {
 export async function getStaticProps() {
   const allProjects = await getAllProjects()
 
+  // console.log(allProjects)
+
   return {
     props: {
       allProjects

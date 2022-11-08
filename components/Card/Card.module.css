@@ -12,6 +12,8 @@
   top: 0;
   right: 0;
   max-width: 100%;
+  object-fit: cover;
+  object-position: center;
   cursor: pointer;
   transition: all .5s;
   z-index: 10;
@@ -27,9 +29,6 @@
   width: 90%;
   height: 100%;
   background: var(--main);
-  -webkit-box-shadow: 6px 6px #1D1D20;
-  -moz-box-shadow: 6px 6px #1D1D20;
-  box-shadow: 6px 6px #1D1D20;
   transition: all .5s;
 }
 

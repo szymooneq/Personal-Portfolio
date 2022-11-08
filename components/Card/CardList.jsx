@@ -5,7 +5,7 @@ export default function CardList({ projects }) {
   return (
     <div className="grid-cards">
       {projects.map((project, id) => (
-        <Card key={project.title} id={id} title={project.title} links={project.links} image={project.mainImage} slug={project.slug.current} />
+        <Card key={project.title} id={id} title={project.title} links={project.links} thumbnail={project.thumbnail} slug={project.slug.current} />
       ))}
     </div>
   )

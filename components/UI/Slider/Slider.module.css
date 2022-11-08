@@ -1,0 +1,50 @@
+.slider {
+  cursor: grab;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.inner {
+  display: flex;
+  gap: 2rem;
+}
+
+.image {
+  height: 10rem;
+  min-width: 17rem;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .image {
+    height: 12rem;
+    min-width: 20rem;
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .image {
+    height: 15rem;
+    min-width: 30rem;
+  }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  
+}
