@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import CardList from '../../components/Card/CardList'
-import Technologies from '../../components/Card/Technologies'
 import Article from '../../components/Layout/Article'
+import CardList from '../../components/UI/Card/CardList'
+import Technologies from '../../components/UI/Technologies/Technologies'
 import Text from '../../components/UI/Text/Text'
 import { getAllProjects } from '../../lib/projects'
 

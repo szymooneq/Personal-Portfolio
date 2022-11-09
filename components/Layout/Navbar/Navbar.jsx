@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import Logo from '../UI/Logo/Logo'
+import Logo from '../../UI/Logo/Logo'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {

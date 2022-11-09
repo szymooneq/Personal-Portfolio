@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import NextNProgress from 'nextjs-progressbar'
-import Breadcrumb from '../Breadcrumb/Breadcrumb'
-import Footer from '../Footer/Footer'
-import Navbar from '../Navbar/Navbar'
+import Breadcrumb from '../UI/Breadcrumb/Breadcrumb'
+import Footer from './Footer/Footer'
+import Navbar from './Navbar/Navbar'
 
 export default function RootLayout({ children }) {
   const { pathname, route } = useRouter()

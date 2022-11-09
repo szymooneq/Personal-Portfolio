@@ -10,9 +10,9 @@ export default function About() {
     <Article header="About Me" style={styles.content}>
       <m.div initial={{ x: -300, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { type: "spring", duration: 1, delay: .3} }} className={styles.flex}>
         <div className={styles.card}>
-          <p><b>Hello! I am Szymon 👋</b><br /><br />Some time ago I graduated and became a computer science engineer and started developing my programming and web development skills. I am an ambitious person open to new challenges. I am passionate about programming and I associate my future with it, so I would like to develop further in this direction, learning new things and solutions and gaining new experiences. I believe that there are no things that I could not cope with, because the Internet is a treasury of knowledge and everything can be found in it, so I am able to deal with the problems I encounter by choosing the optimal solution for my goals.</p>
+          <p><b>Hello! I am Szymon 👋</b><br /><br />I am pleased to welcome you on my personal portfolio website. My name is Szymon Dudka and I am a Front-end developer. Programming is my passion. I would like to become a Full-stack developer in the future. I am an ambitious, persistent person, I like new challenges and I pursue my goals. By searching the Internet, watching YouTube videos or reading technological documentation, I constantly develop my skills and gain new experience. <br /><br />You can find the result of my work on the projects page. I tried to make every project with attention to detail and describe it properly. If you like them, you can contact with me via the form available on the website. Also you can check my profile on LinkedIn or GitHub. <br /><br />Thank you! 😊</p>
           <span className={styles.quote}>
-            Hard work beats talent when talent doesnt work hard -Tim Notke
+            &ldquo;If you get up in the morning and think the future is going to be better, it is a bright day. Otherwise, it&apos;s not.&ldquo; -Elon Musk
           </span>
         </div>
         

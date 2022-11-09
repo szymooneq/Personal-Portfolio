@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { urlFor } from "../../lib/sanityConfig"
+import { urlFor } from "../../../lib/sanityConfig"
 import styles from './Technologies.module.css'
 
 export default function Technologies({ technologies }) {

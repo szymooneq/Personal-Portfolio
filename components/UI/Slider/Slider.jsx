@@ -1,15 +1,7 @@
 import { motion as m } from 'framer-motion'
-import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { urlFor } from '../../../lib/sanityConfig'
 import styles from './Slider.module.css'
-
-/* import image1 from '../../../assets/slider/1.jpg'
-import image2 from '../../../assets/slider/2.jpg'
-import image3 from '../../../assets/slider/3.jpg'
-import image4 from '../../../assets/slider/4.jpg'
-
-const images = [ image1, image2, image3, image4 ] */
 
 export default function Slider({ images }) {
   const [width, setWidth] = useState(0)

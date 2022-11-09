@@ -1,4 +1,4 @@
-import styles from '../../Navbar/Navbar.module.css'
+import styles from '../../Layout/Navbar/Navbar.module.css'
 
 export default function Logo() {
   return (

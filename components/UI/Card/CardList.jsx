@@ -1,5 +1,4 @@
 import Card from "./Card"
-import styles from "./Card.module.css"
 
 export default function CardList({ projects }) {
   return (

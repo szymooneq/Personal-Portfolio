@@ -1,7 +1,7 @@
 import { motion as m } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { urlFor } from '../../lib/sanityConfig'
+import { urlFor } from '../../../lib/sanityConfig'
 import styles from './Card.module.css'
 
 export default function Card({ id, title, slug, thumbnail, links }) {

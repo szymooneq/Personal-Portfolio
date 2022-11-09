@@ -5,7 +5,7 @@
   position: relative;
   bottom: 0;
   height: 17rem;
-  background: url('../../assets/footerShapes.png');
+  background: url('../../../assets/footerShapes.png');
   background-size: cover;
   background-position: bottom;
 }

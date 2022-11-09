@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { leftArrow } from '../../assets/svgIconsPack'
-import Technologies from '../../components/Card/Technologies'
-import Group from '../../components/Group/Group'
 import Article from '../../components/Layout/Article'
+import Group from '../../components/UI/Group/Group'
 import Slider from '../../components/UI/Slider/Slider'
+import Technologies from '../../components/UI/Technologies/Technologies'
 import { getAllProjectsId, getProjectData } from '../../lib/projects'
 import { urlFor } from '../../lib/sanityConfig'
 import styles from '../../styles/ProjectPage.module.css'
@@ -64,7 +64,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const projectData = await getProjectData(params.name)
-  // console.log(projectData)
 
   return {
     props: {
