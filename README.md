@@ -5,7 +5,7 @@ My own portfolio page. Responsive website without the use of any CSS framework.
 
 https://szymondudka.xyz/
 
-https://personal-portfolio-sd.vercel.app/
+https://personal-portfolio-szymooneq.vercel.app/
 
 ## Main technologies
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
