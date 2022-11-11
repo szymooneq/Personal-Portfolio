@@ -5,7 +5,7 @@ export default function Group({ type, title, children }) {
   switch (type) {
     case 'list' :
       return (
-        <m.div initial={{ y: 200, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { type: "spring", duration: .5, delay: .1} }} viewport={{ once: true }} className={styles.list}>
+        <m.div initial={{ y: 200, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 1, delay: .1} }} viewport={{ once: true }} className={styles.list}>
           <h2>{title}</h2>
           <ul>
             {children}
@@ -20,7 +20,7 @@ export default function Group({ type, title, children }) {
       )
     default:
       return (
-        <m.div initial={{ y: 200, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { type: "spring", duration: .5, delay: .1} }} viewport={{ once: true }} className={styles.group}>
+        <m.div initial={{ y: 200, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 1, delay: .1} }} viewport={{ once: true }} className={styles.group}>
           <h2>{title}</h2>
           {children}
         </m.div>

@@ -54,7 +54,7 @@ export default function ProjectPage({ projectData }) {
           ))}
         </Group>
 
-        <Link href="/projects" className="button">
+        <Link href="/projects" scroll={false} className="button">
           {leftArrow}Back to projects
         </Link>
       </Article>
