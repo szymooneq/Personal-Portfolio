@@ -8,7 +8,7 @@ import styles from './About.module.css'
 export default function About() {
   return (
     <Article header="About Me" style={styles.content}>
-      <m.div initial={{ x: -300, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 1, delay: .3} }} viewport={{ once: true }} className={styles.flex}>
+      <m.div initial={{ x: -300, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }} viewport={{ once: true }} className={styles.flex}>
         <div className={styles.card}>
           <p><b>Hello! I am Szymon 👋</b><br /><br />I am pleased to welcome you on my personal portfolio website. My name is Szymon Dudka and I am a Front-end developer. Programming is my passion. I would like to become a Full-stack developer in the future. I am an ambitious, persistent person, I like new challenges and I pursue my goals. By searching the Internet, watching YouTube videos or reading technological documentation, I constantly develop my skills and gain new experience. <br /><br />You can find the result of my work on the projects page. I tried to make every project with attention to detail and describe it properly. If you like them, you can contact with me via the form available on the website. Also you can check my profile on LinkedIn or GitHub. <br /><br />Thank you! 😊</p>
           <span className={styles.quote}>
@@ -26,7 +26,7 @@ export default function About() {
         </div>
       </m.div>
 
-      <m.div initial={{ x: 300, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 1, delay: .3} }} viewport={{ once: true }} className={styles.center}>
+      <m.div initial={{ x: 300, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }} viewport={{ once: true }} className={styles.center}>
         <Tagcloud />
       </m.div>
     </Article>

@@ -1,8 +1,10 @@
 import { AnimatePresence, motion as m } from "framer-motion";
 import { useRouter } from "next/router";
+import { usePageTransitionFix } from "../../lib/use-page-transition-fix";
 import Breadcrumb from "../UI/Breadcrumb/Breadcrumb";
 
 export default function Main({ children }) {
+  usePageTransitionFix()
   const { pathname } = useRouter();
 
   return pathname !== "/" ? (
