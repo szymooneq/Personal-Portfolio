@@ -1,24 +1,18 @@
-import { AnimatePresence, motion as m } from "framer-motion";
-import { useRouter } from "next/router";
-import { usePageTransitionFix } from "../../lib/use-page-transition-fix";
-import Breadcrumb from "../UI/Breadcrumb/Breadcrumb";
+import { useRouter } from "next/router"
+import { usePageTransitionFix } from "../../lib/usePageTransitionFix"
+import SideLayout from "./SideLayout"
 
 export default function Main({ children }) {
   usePageTransitionFix()
-  const { pathname } = useRouter();
+  const { pathname, asPath } = useRouter()
 
-  return pathname !== "/" ? (
-    <>
-    {pathname !== "/404" && <Breadcrumb />}
-      <AnimatePresence mode="wait">
-        <m.main key={pathname} initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 200, opacity: 0 }} transition={{ duration: .75 }} className="app">
-          {children}
-        </m.main>
-      </AnimatePresence>
-    </>
-  ) : (
+  return pathname === "/" ? (
     <main className="app">
       {children}
     </main>
+  ) : (
+    <SideLayout pathname={pathname} asPath={asPath}>
+      {children}
+    </SideLayout>
   )
 }

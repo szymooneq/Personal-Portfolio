@@ -1,17 +1,20 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import styles from './Breadcrumb.module.css'
 
-export default function Breadcrumb() {
-  const { asPath } = useRouter()
-  const breadcrumbs = asPath.replace(/\?.*/g,"$'").split('/')
+export default function Breadcrumb({ asPath }) {
+  const [breadcrumb, setBreadcrumb] = useState('')
 
-  return (
+  useEffect(() => {
+    setBreadcrumb(asPath.replace(/\?.*/g,"$'").split('/'))
+  }, [asPath])
+
+  return breadcrumb && (
     <nav className={styles.breadcrumb}>
       <div className="container">
-        {breadcrumbs.map((path, id) => (
+        {breadcrumb.map((path, id) => (
           <span key={id}>
-            {id !== breadcrumbs.length - 1
+            {id !== breadcrumb.length - 1
               ? <>
                   <Link href={`/${path}`} className={styles.link}>{id === 0 ? "home" : path}</Link>
                   <span className={styles.active}> / </span>

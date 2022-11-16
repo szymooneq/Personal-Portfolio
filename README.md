@@ -3,9 +3,9 @@
 
 My own portfolio page. Responsive website without the use of any CSS framework.
 
-https://szymondudka.xyz/
+https://szymondudka.xyz
 
-https://personal-portfolio-szymooneq.vercel.app/
+https://personal-portfolio-sd.vercel.app
 
 ## Main technologies
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -23,10 +23,10 @@ https://personal-portfolio-szymooneq.vercel.app/
 - [TagCloud](https://github.com/cong-min/TagCloud) - 3D TagCloud that rolling with the mouse
 
 ## Details
-- server-side rendering and better SEO
 - created with the React and Next.js framework
+- server-side rendering and better SEO
+- CMS with Sanity.io
 - animations created with Framer Motion
-- custom layouts
 - HTML semantic tags
 - responsive website design without using any CSS framework
 - using CSS modules
@@ -40,10 +40,10 @@ Inside of project, you'll see the following folders and files:
 PROJECT_ROOT
 ├── public              # static assets
 ├── styles              # global and page styles
-├── sanity              # backend content
+├── sanity              # Sanity studio
 ├── assets              # images and files
 ├── components          # React components
-├── lib                 # Sanity client config files
+├── lib                 # config files
 └── pages               # page files
 ```
 Download the repository to your local machine and run to download all missing dependencies:
