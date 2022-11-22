@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import TagCloud from "TagCloud"
 
-const technologies = ['HTML5', 'CSS3', 'JavaScript', 'React', 'Redux', 'React Router', 'React Query', 'REST API', 'Next.js', 'SASS', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Firebase', 'Sanity', 'Git', 'GitHub', 'Vercel', 'npm', 'Framer Motion', 'Formik', 'Yup', 'VSCode', 'Figma', 'Adobe Photoshop']
+const technologies = ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Redux', 'React Router', 'React Query', 'REST API', 'Next.js', 'SASS', 'Tailwind CSS', 'Bootstrap', 'styled-components', 'RWD', 'MySQL', 'Firebase', 'Sanity', 'Git', 'GitHub', 'Vercel', 'npm', 'Framer Motion', 'Formik', 'Yup', 'VSCode', 'Figma', 'Adobe Photoshop']
 
 export default function Tagcloud() {
   const [radius, setRadius] = useState(200)
