@@ -23,23 +23,28 @@
 }
 
 .active {
-  color: black !important;
-  background-color: white !important;
+  background: var(--main) !important;
   pointer-events: none;
-  z-index: 1;
+  opacity: 1 !important;
 }
 
 .reset {
-  padding: 0.4rem;
-  font-size: 1rem;
+  padding: .6rem 1.2rem;
+  font-size: .9rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #fe315c;
   background: transparent;
   border: 0.1rem solid #fe315c;
+  border-radius: 1.5rem;
   cursor: pointer;
-  transition: all .2s;
-} 
+  opacity: .5;
+  transition: opacity .3s;
+}
+
+.reset:hover {
+  opacity: 1;
+}
 
 .grid-cards {
   display: grid;
@@ -47,35 +52,51 @@
   grid-gap: 6rem;
 }
 
+button.button {
+  color: white;
+  border: none;
+}
+
 .button {
+  padding: .6rem 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.4rem;
   position: relative;
-  top: -2px;
-  left: -2px;
-  width: max-content;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: bold;
-  color: white;
-  -webkit-box-shadow: 7px 7px rgb(93, 93, 255);
-  -moz-box-shadow: 7px 7px rgb(93, 93, 255);
-  box-shadow: 7px 7px rgb(93, 93, 255);
-  background: transparent;
-  border: 0.1rem solid var(--text-color);
-  transition: all .1s;
-}
-
-.button:hover,
-.button:focus {
-  cursor: pointer;
+  background: var(--bg-secondary);
+  border-radius: 1.5rem;
+  opacity: .6;
+  transition: opacity .3s;
 }
 
 .button img {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+/* .button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: rgb(93, 93, 255);
+  transform: translateX(.5rem) translateY(.5rem);
+  z-index: -1;
+  transition: transform .3s ease-in-out;
+} */
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
 }
 
 .tagcloud {
@@ -124,7 +145,23 @@
     grid-row-gap: 4rem;
   }
 
-  .button {
+ /*  .button {
+    transform: translateX(0) translateY(0);
+  }
+
+  .button::after {
+    transform: translateX(0) translateY(0);
+  }
+
+  .button:hover {
+    transform: translateX(-.5rem) translateY(-.5rem)
+  }
+
+  .button:hover::after {
+    transform: translateX(.5rem) translateY(.5rem)
+  } */
+
+  /* .button {
     position: relative;
     top: 0;
     left: 0;
@@ -140,7 +177,7 @@
     -webkit-box-shadow: 7px 7px rgb(93, 93, 255);
     -moz-box-shadow: 7px 7px rgb(93, 93, 255);
     box-shadow: 7px 7px rgb(93, 93, 255);
-  }
+  } */
 }
 
 /* XL */

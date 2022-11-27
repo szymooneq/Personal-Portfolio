@@ -50,7 +50,8 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: filter .3s;
+  opacity: .8;
+  transition: opacity .3s;
 }
 
 .image {
@@ -58,7 +59,7 @@
 }
 
 .submit:hover {
-  filter: brightness(120%);
+  opacity: 1;
 }
 
 /* MD */

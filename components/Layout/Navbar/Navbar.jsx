@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { throttle } from '../../../lib/helpers/throttle'
 import Logo from '../../UI/Logo/Logo'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { pathname } = useRouter()
-  const [navbarTop, setNavbarTop] = useState(true)
+  const [navbarOnTop, setNavbarOnTop] = useState(true)
   const [expandNavbar, setExpandNavbar] = useState(false)
   const menuItems = [{title: 'Home', path: '/'}, {title: 'Projects', path: '/projects'}, {title: 'Contact', path: '/contact'}]
 
@@ -14,17 +15,17 @@ export default function Navbar() {
     setExpandNavbar(prev => !prev)
   }
 
-  const handleResize = () => {
+  const handleResize = throttle(() => {
     if (window.innerWidth > 768) setExpandNavbar(false)
-  }
+  }, 300)
 
-  const handleScroll = () => {
-    if(window.scrollY < document.querySelector("#starfield")?.offsetHeight - 80) {
-      setNavbarTop(true)
+  const handleScroll = throttle(() => {
+    if(window.scrollY < document.querySelector("#starfield")?.offsetHeight - 70) {
+      setNavbarOnTop(true)
     } else {
-      setNavbarTop(false)
+      setNavbarOnTop(false)
     }
-  }
+  }, 300)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -32,14 +33,14 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [navbarTop])
+  }, [navbarOnTop])
   
   useEffect(() => {
     if(pathname === "/" ) {
-      setNavbarTop(true)
+      setNavbarOnTop(true)
       window.addEventListener('scroll', handleScroll)
     } else {
-      setNavbarTop(false)
+      setNavbarOnTop(false)
     }
 
     return () => {
@@ -48,7 +49,7 @@ export default function Navbar() {
   }, [pathname])
 
   return (
-    <nav className={`${styles.nav} ${navbarTop && styles.hero}`}>
+    <nav className={`${styles.nav} ${navbarOnTop && styles.hero}`}>
       <Link href="/">
         <Logo />
       </Link>
