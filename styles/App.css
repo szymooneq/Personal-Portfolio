@@ -1,5 +1,6 @@
 .app {
   flex: 1;
+  position: relative;
 }
 
 .container {
@@ -46,12 +47,6 @@
   opacity: 1;
 }
 
-.grid-cards {
-  display: grid;
-  grid-template: 1fr;
-  grid-gap: 6rem;
-}
-
 button.button {
   color: white;
   border: none;
@@ -68,8 +63,8 @@ button.button {
   font-weight: bold;
   background: var(--bg-secondary);
   border-radius: 1.5rem;
-  opacity: .6;
-  transition: opacity .3s;
+  filter: brightness(90%);
+  transition: filter .3s;
 }
 
 .button img {
@@ -78,7 +73,7 @@ button.button {
 }
 
 .button:hover {
-  opacity: 1;
+  filter: brightness(120%);
 }
 
 /* .button::after {
@@ -120,11 +115,6 @@ button.button {
     right: 22rem !important;
   }
 
-  .grid-cards {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5rem;
-  }
-
   .breadcrumb {
     margin-top: 5rem;
   }
@@ -138,11 +128,6 @@ button.button {
 @media (min-width: 1024px) {
   .container {
     max-width: 990px;
-  }
-
-  .grid-cards {
-    grid-column-gap: 4rem;
-    grid-row-gap: 4rem;
   }
 
  /*  .button {
@@ -184,12 +169,6 @@ button.button {
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
-  }
-
-  .grid-cards {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
   }
 
   .tagcloud {

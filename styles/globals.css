@@ -9,6 +9,8 @@
   --text-color: #f4f4f5;
   --text-blue: rgb(93, 93, 255);
   --text-gray: rgb(212, 212, 216);
+  --theme-primary: #fff;
+  --theme-secondary: #000;
 }
 
 ::selection {

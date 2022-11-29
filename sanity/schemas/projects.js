@@ -17,6 +17,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Theme',
+      name: 'theme',
+      type: 'array',
+      of: [{type: 'string'}]
+    },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',

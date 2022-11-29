@@ -20,7 +20,7 @@ export default function ProjectPage({ projectData }) {
       
       <Article>
         <header className={styles.header}>
-          <h1 className={styles.title}>{projectData.title}</h1>
+          <h1 className={styles.title} style={{ "--theme-primary": projectData.theme[0], "--theme-secondary": projectData.theme[1] }}>{projectData.title}</h1>
           <p className={styles.description}>{projectData.description}</p>
         </header>
 

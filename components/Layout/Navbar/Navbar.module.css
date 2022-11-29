@@ -1,42 +1,48 @@
 .nav {
   display: flex;
-  align-items: center;
-  padding: 0.6rem 1.5rem;
-  position: fixed;
   width: 100%;
   top: 0;
+  border-bottom: 1px solid #333;
+}
+
+.fixed {
+  padding: 0.6rem 1.5rem;
+  align-items: center;
+  position: fixed;
   background-color: #1d1d2080;
   backdrop-filter: saturate(180%) blur(5px);
-  border-bottom: 1px solid #333;
   z-index: 100;
 }
 
-.nav.hero {
-  align-items: flex-end;
+.absolute {
   padding: 1.5rem;
+  align-items: flex-end;
   position: absolute;
-  height: 100vh;
-  width: 100%;
   background-color: transparent;
   backdrop-filter: none;
   z-index: auto;
+  height: 100vh;
 }
 
 .blackBackground {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0;
   z-index: 1;
+  transition: opacity .5s;
+  pointer-events: none;
+}
+
+.blackBackground.active {
+  opacity: .6;
+  pointer-events: all;
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
   padding: 0.5rem 2rem;
   position: fixed;
   left: 0;
@@ -56,19 +62,19 @@
 }
 
 .menuItems {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  color: var(--text-color);
   list-style-type: none;
 }
 
 .logo {
-  display: block;
   position: relative;
   width: 3rem;
   height: 3rem;
   background: var(--main);
+  border-radius: .5rem;
   cursor: pointer;
   z-index: 10;
   transition: transform .4s;
@@ -136,16 +142,11 @@
     padding: 0.8rem 2rem;
   }
 
-  .nav.hero {
-    justify-content: space-between;
-    padding: 0.8rem 2rem;
-  }
-
   .menu {
-    align-items: center;
-    flex-direction: row;
-    position: unset;
     padding: 0;
+    flex-direction: row;
+    align-items: center;
+    position: unset;
     width: auto;
     height: auto;
     font-size: 1.2rem;
@@ -159,6 +160,7 @@
   }
 
   .menuItems {
+    margin-top: 0;
     flex-direction: row;
     gap: 3rem;
   }

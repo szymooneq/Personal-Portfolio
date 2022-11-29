@@ -20,41 +20,45 @@ export default function Navbar() {
   }, 300)
 
   const handleScroll = throttle(() => {
-    if(window.scrollY < document.querySelector("#starfield")?.offsetHeight - 70) {
-      setNavbarOnTop(true)
-    } else {
+    if(window.scrollY < document.querySelector("#starfield").clientHeight + 30) {
       setNavbarOnTop(false)
+    } else {
+      setNavbarOnTop(true)
     }
   }, 300)
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize, { passive: true })
 
     return () => {
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('resize', handleResize, { passive: true })
     }
-  }, [navbarOnTop])
+  }, [])
   
   useEffect(() => {
-    if(pathname === "/" ) {
-      setNavbarOnTop(true)
-      window.addEventListener('scroll', handleScroll)
+    if (pathname === '/') {
+      const heroHeight = document.querySelector("#starfield").clientHeight
+      if(window.scrollY < heroHeight) setNavbarOnTop(false)
+      window.addEventListener('scroll', handleScroll, { passive: true })
     } else {
-      setNavbarOnTop(false)
+      setNavbarOnTop(true)
     }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      if (pathname === '/') {
+        window.removeEventListener('scroll', handleScroll, { passive: true })
+      }
     }
+    
   }, [pathname])
 
   return (
-    <nav className={`${styles.nav} ${navbarOnTop && styles.hero}`}>
+    <nav className={`${styles.nav} ${navbarOnTop ? styles.fixed : styles.absolute}`}>
       <Link href="/">
         <Logo />
       </Link>
       
-      <div style={expandNavbar ? {display: "block"} : {display: "none"}} className={styles.blackBackground} onClick={handleToggle}></div>
+      <div className={`${styles.blackBackground} ${expandNavbar && styles.active}`} onClick={handleToggle}></div>
       <div className={`${styles.menu} ${expandNavbar && styles.active}`}>
         <Logo />
         <ul className={styles.menuItems}>
@@ -71,6 +75,7 @@ export default function Navbar() {
         <span />
         <span />
       </button>
+      
     </nav>
   )
 }

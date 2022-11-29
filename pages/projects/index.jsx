@@ -10,7 +10,7 @@ import { getAllProjects } from '../../lib/projects'
 export default function Projects({ projectList }) {
   const { query } = useRouter()
   const [projects, setProjects] = useState(projectList)
-  
+
   const technologies = [...new Set(projectList.map((x) => x.technologies).flat().map((el) => JSON.stringify(el)))].map((el) => JSON.parse(el))
 
   useEffect(() => {
