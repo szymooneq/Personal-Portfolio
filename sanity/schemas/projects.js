@@ -17,6 +17,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Type',
+      name: 'type',
+      type: 'reference',
+      to: [{type: 'types'}]
+    },
+    {
       title: 'Theme',
       name: 'theme',
       type: 'array',

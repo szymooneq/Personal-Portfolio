@@ -1,18 +1,21 @@
 .gridCards {
   display: grid;
   grid-template: 1fr;
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
 }
 
 .card svg {
-  width: 2rem;
-  height: 2rem;
-  color: rgb(107, 107, 107);
-  transition: 1s;
+  width: 40px;
+  height: 40px;
+  color: gray;
 }
 
 .card:hover svg {
-  color: white;
+  color: var(--text-blue);
 }
 
 .card::before,
@@ -32,7 +35,7 @@
 }
 
 .card::after {
-  filter: blur(20px);
+  filter: blur(10px);
 }
 
 .card:hover .content img,
@@ -48,7 +51,6 @@
 }
 
 .content {
-  position: relative;
   background-color: var(--bg-secondary);
   border-radius: 1rem;
 }
@@ -63,22 +65,33 @@
   transition: 1s;
 }
 
-.cardDescription {
-  padding: 1.5rem 1rem;
+.type {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: gray;
+}
+
+.desc {
+  padding: 1.5rem;
+}
+
+.name {
+  margin-top: .5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.title {
-  font-size: 1.5rem;
+.name h1 {
+  font-size: 28px;
   font-weight: 700;
+  letter-spacing: -1px;
 }
 
 @media (min-width: 768px) {
   .gridCards {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
   }
 }
 

@@ -10,6 +10,7 @@ import links from './links'
 import projects from './projects'
 import stacks from './stacks'
 import technologies from './technologies'
+import types from './types'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +25,7 @@ export default createSchema({
     technologies,
     stacks,
     links,
+    types,
     blockContent,
   ]),
 })

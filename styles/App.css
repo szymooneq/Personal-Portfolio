@@ -39,12 +39,12 @@
   border: 0.1rem solid #fe315c;
   border-radius: 1.5rem;
   cursor: pointer;
-  opacity: .5;
+  opacity: 1;
   transition: opacity .3s;
 }
 
 .reset:hover {
-  opacity: 1;
+  opacity: .8;
 }
 
 button.button {
@@ -63,8 +63,8 @@ button.button {
   font-weight: bold;
   background: var(--bg-secondary);
   border-radius: 1.5rem;
-  filter: brightness(90%);
-  transition: filter .3s;
+  opacity: .8;
+  transition: opacity .3s;
 }
 
 .button img {
@@ -73,7 +73,7 @@ button.button {
 }
 
 .button:hover {
-  filter: brightness(120%);
+  opacity: 1;
 }
 
 /* .button::after {
@@ -100,10 +100,16 @@ button.button {
   color: darkorchid;
 }
 
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
 /* MD */
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 768px;
   }
 
   .section {
@@ -127,7 +133,7 @@ button.button {
 /* LG */
 @media (min-width: 1024px) {
   .container {
-    max-width: 990px;
+    max-width: 1024px;
   }
 
  /*  .button {
@@ -168,7 +174,7 @@ button.button {
 /* XL */
 @media (min-width: 1280px) {
   .container {
-    max-width: 1200px;
+    max-width: 1280px;
   }
 
   .tagcloud {
@@ -179,5 +185,7 @@ button.button {
 
 /* 2XL */
 @media (min-width: 1536px) {
-
+  /* .container {
+    max-width: 1536px;
+  } */
 }

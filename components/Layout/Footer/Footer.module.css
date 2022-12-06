@@ -5,6 +5,7 @@
   background: var(--main);
   height: 18rem;
   overflow: hidden;
+  position: relative;
 }
 
 .waves {

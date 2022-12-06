@@ -1,13 +1,6 @@
-.description {
+.text {
   margin-bottom: 2rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.6rem;
-}
-
-@media (min-width: 1280px) {
-  .description {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
+  color: grey;
 }

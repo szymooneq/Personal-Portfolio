@@ -10,25 +10,30 @@
 }
 
 .card { 
-  padding: 1.3rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: justify;
-  line-height: 1.6rem;
+  padding: 2rem;
+  color: #FFFFFF;
   background: var(--bg-secondary);
-  border-radius: .5rem;
+  border-radius: 1rem;
 }
 
-.card b {
-  font-size: 1rem;
-  font-weight: 800;
+.card h1 {
+  font-weight: 700;
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
+}
+
+.card p {
+  margin-top: 1rem;
+  font-size: var(--contact-info);
+  color: gray;
+  letter-spacing: -0.8px;
 }
 
 .quote {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 1rem;
+  margin-top: 2rem;
   font-family: 'Architects Daughter', cursive;
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
   color: var(--text-blue);
 }
 
@@ -38,13 +43,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
-  gap: 1.5rem;
-}
-
-.aboutImg {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
+  gap: 2rem;
 }
 
 .center {
@@ -54,39 +53,11 @@
   align-items: center;
 }
 
-.technologies {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.technologies img {
-  width: 1.7rem;
-  height: 1.7rem;
-  transition: transform .2s;
-}
-
-.technologies img:hover {
-  transform: scale(1.2);
-}
-
 /* MD */
 @media (min-width: 768px) {
   .links {
     flex-direction: row;
   }
-
-  .technologies svg {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .aboutImg {
-    width: 70%;
-  } 
 }
 
 /* LG */
@@ -94,8 +65,7 @@
   .content {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 2rem;
+    justify-content: space-between;
   }
 
   .flex {
@@ -103,26 +73,12 @@
     flex-direction: column;
     max-width: 40%;
   }
-
-  .quote {
-    margin-top: 1rem;
-  }
+ 
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  .card {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-  }
 
-  .card b {
-    font-size: 1.5rem;
-  }
-  
-  .quote {
-    font-size: 1.2rem;
-  }
 }
 
 /* 2XL */
