@@ -1,7 +1,10 @@
 .slider {
-  cursor: grab;
-  overflow: hidden;
   margin-bottom: 2rem;
+  overflow: hidden;
+  cursor: grab;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
 }
 
 .inner {
@@ -10,8 +13,9 @@
 }
 
 .image {
-  height: 10rem;
-  min-width: 17rem;
+  /* height: 10rem; */
+  min-width: calc(100vw - 10px);
+  height: calc(56.25vw - 10px);
 }
 
 .image img {
@@ -19,29 +23,33 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   pointer-events: none;
 }
 
 /* MD */
 @media (min-width: 768px) {
-  .image {
+  /* .image {
     height: 12rem;
     min-width: 20rem;
-  }
+  } */
 }
 
 /* LG */
 @media (min-width: 1024px) {
-  
+  .image {
+    /* height: 10rem; */
+    min-width: calc(80vw - 10px);
+    height: calc(36.25vw - 10px);
+  }
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  .image {
+  /* .image {
     height: 15rem;
     min-width: 30rem;
-  }
+  } */
 }
 
 /* 2XL */

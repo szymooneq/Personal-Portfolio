@@ -15,6 +15,8 @@
   --contact-title: 32px;
   --contact-subText: 22px;
   --contact-info: 20px;
+
+  --project-desc: 40px;
 }
 
 ::selection {
@@ -22,15 +24,12 @@
   background-color: #FFFFFF;
 }
 
-/* TODO: remove position relative */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* position: relative; */
 }
 
 html,
@@ -70,6 +69,8 @@ img {
     --contact-title: 34px;
     --contact-subText: 24px;
     --contact-info: 22px;
+
+    --project-desc: 64px;
   }
 }
 
@@ -82,9 +83,14 @@ img {
   :root {
     --contact-title: 40px;
     --contact-subText: 26px;
+
+    --project-desc: 80px;
   }
 }
 
 /* 2XL */
 @media (min-width: 1536px) {
+  :root {
+    --project-desc: 88px;
+  }
 }

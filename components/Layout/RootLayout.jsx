@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#1d1d20" />
       </Head>
       
-      <NextNProgress color="#5d5dff" height={3} />
+      <NextNProgress color="#5d5dff" height={2} options={{ showSpinner: false }} />
       <Navbar />
         <Main>
           { children }

@@ -1,31 +1,19 @@
-.group h2 {
-  margin-bottom: 0.6rem;
-}
-
-.list {
-  margin-bottom: 2rem;
-}
-
+.group h2,
 .list h2 {
-  margin-bottom: 0.6rem;
-}
-
-.list ul {
-  list-style-type: square;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: var(--contact-title);
 }
 
 .list ul > li {
-  margin: 0 0 0.4rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.list ul > li:last-child {
-  margin-bottom: 0;
+  margin: 0 0 0.4rem 3rem;
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
+  color: gray;
 }
 
 .links {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -33,5 +21,6 @@
 }
 
 .links img {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(161deg) brightness(104%) contrast(102%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(161deg)
+    brightness(104%) contrast(102%);
 }

@@ -14,7 +14,7 @@ export default function Technologies({ technologies }) {
           {el.title.toUpperCase()}
         </button>
       ))}
-      {query.category && <button type="button" onClick={() => push('/projects')} className="reset">x reset filter</button>}
+      {query.category && <button type="button" onClick={() => push('/projects')} className="button reset">x reset filter</button>}
     </div>
   )
 }

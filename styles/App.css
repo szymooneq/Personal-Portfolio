@@ -1,70 +1,39 @@
-.app {
-  flex: 1;
-  position: relative;
+#nprogress {
+  z-index: 999;
 }
 
 .container {
+  margin: 0 auto;
   width: 100%;
   max-width: calc(100% - 40px);
-  margin: 0 auto;
 }
 
 .section {
   margin: 2rem auto;
 }
 
-#nprogress {
-  position: relative;
-  z-index: 9999999;
-}
 
-.spinner {
-  top: 1.5rem !important;
-  right: 5.5rem !important;
-}
-
-.active {
-  background: var(--main) !important;
-  pointer-events: none;
-  opacity: 1 !important;
-}
-
-.reset {
-  padding: .6rem 1.2rem;
-  font-size: .9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fe315c;
-  background: transparent;
-  border: 0.1rem solid #fe315c;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity .3s;
-}
-
-.reset:hover {
-  opacity: .8;
-}
-
-button.button {
-  color: white;
-  border: none;
-}
 
 .button {
-  padding: .6rem 1.2rem;
+  padding: .5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   position: relative;
-  font-size: .9rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
   background: var(--bg-secondary);
-  border-radius: 1.5rem;
-  opacity: .8;
+  border: none;
+  opacity: 1;
   transition: opacity .3s;
+  cursor: pointer;
+}
+
+.button.reset {
+  text-transform: uppercase;
+  color: #fe315c;
 }
 
 .button img {
@@ -73,31 +42,18 @@ button.button {
 }
 
 .button:hover {
-  opacity: 1;
+  opacity: .7;
 }
 
-/* .button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background: rgb(93, 93, 255);
-  transform: translateX(.5rem) translateY(.5rem);
-  z-index: -1;
-  transition: transform .3s ease-in-out;
-} */
-
-.button:hover,
-.button:focus {
-  cursor: pointer;
+.button.active {
+  background: var(--main) !important;
+  pointer-events: none;
 }
 
 .tagcloud {
-  font-size: .7rem;
-  font-weight: 800;
-  color: darkorchid;
+  font-size: 1rem;
+  letter-spacing: -1px;
+  color: #FFFFFF;
 }
 
 @media (min-width: 640px) {
@@ -116,18 +72,13 @@ button.button {
     margin-bottom: 8rem;
   }
 
-  .spinner {
-    top: 1.8rem !important;
-    right: 22rem !important;
-  }
-
   .breadcrumb {
     margin-top: 5rem;
   }
 
-  .tagcloud {
-    font-size: .8rem;
-  }
+  /* .tagcloud {
+    font-size: 1rem;
+  } */
 }
 
 /* LG */
@@ -135,40 +86,6 @@ button.button {
   .container {
     max-width: 1024px;
   }
-
- /*  .button {
-    transform: translateX(0) translateY(0);
-  }
-
-  .button::after {
-    transform: translateX(0) translateY(0);
-  }
-
-  .button:hover {
-    transform: translateX(-.5rem) translateY(-.5rem)
-  }
-
-  .button:hover::after {
-    transform: translateX(.5rem) translateY(.5rem)
-  } */
-
-  /* .button {
-    position: relative;
-    top: 0;
-    left: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-  
-  .button:hover,
-  .button:focus {
-    top: -2px;
-    left: -2px;
-    -webkit-box-shadow: 7px 7px rgb(93, 93, 255);
-    -moz-box-shadow: 7px 7px rgb(93, 93, 255);
-    box-shadow: 7px 7px rgb(93, 93, 255);
-  } */
 }
 
 /* XL */
@@ -176,16 +93,9 @@ button.button {
   .container {
     max-width: 1280px;
   }
-
-  .tagcloud {
-    font-size: .9rem;
-    font-weight: 800;
-  }
 }
 
 /* 2XL */
 @media (min-width: 1536px) {
-  /* .container {
-    max-width: 1536px;
-  } */
+
 }
