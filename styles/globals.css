@@ -17,6 +17,8 @@
   --contact-info: 20px;
 
   --project-desc: 40px;
+
+  --container-width: 100%;
 }
 
 ::selection {
@@ -32,14 +34,15 @@
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-html,
+/* html,
 body {
   overflow-x: hidden;
-}
+} */
 
 body {
   color: white;
   background: var(--bg-dark);
+  overflow-x: hidden;
 }
 
 #__next {
@@ -61,6 +64,9 @@ img {
 
 /* SM */
 @media (min-width: 640px) {
+  :root {
+    --container-width: 640px;
+  }
 }
 
 /* MD */
@@ -71,11 +77,16 @@ img {
     --contact-info: 22px;
 
     --project-desc: 64px;
+
+    --container-width: 768px;
   }
 }
 
 /* LG */
 @media (min-width: 1024px) {
+  :root {
+    --container-width: 1024px;
+  }
 }
 
 /* XL */
@@ -85,6 +96,8 @@ img {
     --contact-subText: 26px;
 
     --project-desc: 80px;
+
+    --container-width: 1280px;
   }
 }
 
@@ -92,5 +105,6 @@ img {
 @media (min-width: 1536px) {
   :root {
     --project-desc: 88px;
+    --container-width: 1350px;
   }
 }

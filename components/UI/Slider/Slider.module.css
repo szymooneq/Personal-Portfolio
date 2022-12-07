@@ -1,10 +1,10 @@
 .slider {
   margin-bottom: 2rem;
-  overflow: hidden;
-  cursor: grab;
   width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
+  cursor: grab;
+  overflow: hidden;
 }
 
 .inner {

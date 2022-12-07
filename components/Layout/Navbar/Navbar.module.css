@@ -10,7 +10,7 @@
   align-items: center;
   position: fixed;
   background-color: #1d1d2080;
-  backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
   z-index: 100;
 }
 
@@ -67,6 +67,10 @@
   flex-direction: column;
   gap: 2rem;
   list-style-type: none;
+}
+
+.menuItemsLink:last-child {
+  color: var(--text-blue);
 }
 
 .logo {
@@ -167,24 +171,23 @@
 
   .menuItemsLink {
     position: relative;
-    opacity: 1;
-    cursor: pointer;
   }
 
   .menuItemsLink::after {
     content: '';
-    width: 0%;
-    height: 0.2rem;
-    background: var(--main);
     position: absolute;
-    bottom: -0.2rem;
     left: 0;
+    bottom: -.2rem;
+    height: 0.2rem;
+    width: 100%;
+    background: var(--main);
     border-radius: 2rem;
-    transition: width 0.3s ease-in-out;
+    transform: scaleX(0);
+    transition: transform .3s;
   }
 
   .menuItemsLink:hover::after {
-    width: 100%;
+    transform: scaleX(100%);
   }
 
   .burger {

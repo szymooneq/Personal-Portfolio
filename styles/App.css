@@ -3,16 +3,15 @@
 }
 
 .container {
+  padding: 0 1.5rem;
   margin: 0 auto;
   width: 100%;
-  max-width: calc(100% - 40px);
+  max-width: var(--container-width);
 }
 
 .section {
   margin: 2rem auto;
 }
-
-
 
 .button {
   padding: .5rem 1rem;
@@ -57,17 +56,11 @@
 }
 
 @media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+  
 }
 
 /* MD */
 @media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-
   .section {
     margin-bottom: 8rem;
   }
@@ -83,16 +76,12 @@
 
 /* LG */
 @media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+ 
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
+  
 }
 
 /* 2XL */

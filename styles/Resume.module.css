@@ -1,0 +1,189 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 20;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--text-blue);
+  border-radius: 50%;
+  filter: blur(5px);
+  transition: opacity 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.image:hover::after {
+  opacity: 1;
+}
+
+.whatsUp {
+  opacity: 0;
+  visibility: hidden;
+  padding: 0.4rem 0.8rem;
+  font-size: 13px;
+  background-color: var(--text-blue);
+  border-radius: 1rem;
+  transition: opacity 0.5s;
+}
+
+.image:hover ~ .whatsUp {
+  opacity: 1;
+  visibility: visible;
+}
+
+.name {
+  margin-top: 1rem;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.work {
+  margin-top: 1rem;
+  font-size: var(--contact-subText);
+  color: var(--text-blue);
+  letter-spacing: -1px;
+}
+
+.contacts {
+  margin-top: 1rem;
+  font-size: var(--contact-info);
+  letter-spacing: -0.8px;
+  color: gray;
+}
+
+.contactMe {
+  margin-top: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  display: block;
+  width: max-content;
+  font-size: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+.contactMe:hover {
+  color: var(--text-blue);
+  border-color: var(--text-blue);
+}
+
+.link {
+  padding: 1rem 0;
+  font-size: var(--contact-info);
+  font-weight: 700;
+  color: gray;
+}
+
+.linkDesc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkDesc:hover {
+  color: var(--text-blue);
+}
+
+.linkDesc svg {
+  width: 40px;
+  height: 40px;
+}
+
+.sectionItem h2 {
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
+  color: var(--text-blue);
+}
+
+.sectionDescription {
+  font-size: var(--contact-subText);
+  letter-spacing: -1px;
+  color: grey;
+}
+
+.sectionItemTimeline {
+  font-size: 1rem;
+  letter-spacing: -.8px;
+  color: rgb(190, 190, 190);
+}
+
+.skillsItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+}
+
+@media (min-width: 1280px) {
+  .cards {
+    top: 100px;
+    left: 0;
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    height: max-content;
+  }
+
+  .main {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .card {
+    min-width: 400px;
+  }
+}

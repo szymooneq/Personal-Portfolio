@@ -49,9 +49,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Tagcloud />
-      </div>
+      <Tagcloud />
     </Article>
   );
 }

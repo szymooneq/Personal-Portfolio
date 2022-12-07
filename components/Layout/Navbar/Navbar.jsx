@@ -12,6 +12,7 @@ export default function Navbar() {
   const menuItems = [
     { title: "Home", path: "/" },
     { title: "Projects", path: "/projects" },
+    { title: "Resume", path: "/resume" },
     { title: "Get in touch", path: "/contact" }
   ];
 

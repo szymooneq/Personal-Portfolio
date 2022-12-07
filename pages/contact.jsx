@@ -1,7 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import contactImg from "../assets/contact.svg";
-import { cubeIcon, githubIcon, layoutIcon, linkedinIcon, penIcon } from "../assets/svgIconsPack";
+import {
+  cubeIcon,
+  discordIcon,
+  githubIcon,
+  layoutIcon,
+  linkedinIcon,
+  penIcon
+} from "../assets/svgIconsPack";
 import Article from "../components/Layout/Article";
 import Text from "../components/UI/Text/Text";
 import styles from "../styles/Contact.module.css";
@@ -40,6 +46,7 @@ export default function Contact() {
             <div className={styles.icons}>
               <a>{linkedinIcon}</a>
               <a>{githubIcon}</a>
+              <a>{discordIcon}</a>
             </div>
           </div>
 
@@ -72,18 +79,27 @@ export default function Contact() {
         <div className={styles.cards}>
           <div className={styles.card}>
             <div className={styles.cardIcon}>{layoutIcon}</div>
-            <div className={styles.cardTitle}>Website design  & development</div>
-            <div className={styles.cardDesc}>Experienced designer & visual developer. I love using tools like Figma and Framer.</div>
+            <div className={styles.cardTitle}>Website design & development</div>
+            <div className={styles.cardDesc}>
+              Experienced designer & visual developer. I love using tools like
+              Figma and Framer.
+            </div>
           </div>
           <div className={styles.card}>
             <div className={styles.cardIcon}>{penIcon}</div>
             <div className={styles.cardTitle}>Visual & graphic design</div>
-            <div className={styles.cardDesc}>Eye for the visual side of things. I enjoy crafting beautiful illustrations and animations!</div>
+            <div className={styles.cardDesc}>
+              Eye for the visual side of things. I enjoy crafting beautiful
+              illustrations and animations!
+            </div>
           </div>
           <div className={styles.card}>
             <div className={styles.cardIcon}>{cubeIcon}</div>
             <div className={styles.cardTitle}>Branding</div>
-            <div className={styles.cardDesc}>Combining both my visual and analytical side, I love creating brands that not only look great, but sell as well.</div>
+            <div className={styles.cardDesc}>
+              Combining both my visual and analytical side, I love creating
+              brands that not only look great, but sell as well.
+            </div>
           </div>
         </div>
       </Article>
