@@ -5,9 +5,11 @@
   --white: #fff;
   --bg-dark: #1d1d20;
   --bg-secondary: #2e2e33;
-  --main: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid);
+  /* --main: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid); */
+  --main: linear-gradient(to bottom right, #4B26CB, #EC857E);
   --text-color: #f4f4f5;
   --text-blue: rgb(93, 93, 255);
+  /* --text-blue: #EC857E; */
   --text-gray: rgb(212, 212, 216);
   --theme-primary: #fff;
   --theme-secondary: #000;
@@ -16,9 +18,15 @@
   --contact-subText: 22px;
   --contact-info: 20px;
 
+  --about-getTouch: 40px;
+
   --project-desc: 40px;
 
   --container-width: 100%;
+
+  --card-padding: 2rem;
+  --card-border-radius: 1rem;
+
 }
 
 ::selection {
@@ -76,6 +84,8 @@ img {
     --contact-subText: 24px;
     --contact-info: 22px;
 
+    --about-getTouch: 48px;
+
     --project-desc: 64px;
 
     --container-width: 768px;
@@ -94,6 +104,8 @@ img {
   :root {
     --contact-title: 40px;
     --contact-subText: 26px;
+
+    --about-getTouch: 56px;
 
     --project-desc: 80px;
 

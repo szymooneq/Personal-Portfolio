@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
   position: relative;
 }
 
@@ -12,13 +12,14 @@
 }
 
 .card {
-  padding: 2rem;
+  padding: var(--card-padding);
   background-color: var(--bg-secondary);
-  border-radius: 1rem;
+  border-radius: var(--card-border-radius);
   width: 100%;
 }
 
 .avatar {
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -60,12 +61,12 @@
 }
 
 .whatsUp {
-  opacity: 0;
-  visibility: hidden;
   padding: 0.4rem 0.8rem;
   font-size: 13px;
   background-color: var(--text-blue);
   border-radius: 1rem;
+  visibility: hidden;
+  opacity: 0;
   transition: opacity 0.5s;
 }
 
@@ -75,14 +76,13 @@
 }
 
 .name {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.8px;
 }
 
 .work {
-  margin-top: 1rem;
   font-size: var(--contact-subText);
   color: var(--text-blue);
   letter-spacing: -1px;
@@ -133,21 +133,31 @@
   height: 40px;
 }
 
+.contentItem {
+  margin-bottom: 3rem;
+}
+
+.sectionItem {
+  margin-bottom: 3rem;
+}
+
 .sectionItem h2 {
+  margin-bottom: 0.5rem;
   font-size: var(--contact-subText);
   letter-spacing: -1px;
   color: var(--text-blue);
 }
 
 .sectionDescription {
+  margin-top: 1rem;
   font-size: var(--contact-subText);
   letter-spacing: -1px;
   color: grey;
 }
 
-.sectionItemTimeline {
+.sectionTimeline {
   font-size: 1rem;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
   color: rgb(190, 190, 190);
 }
 
@@ -163,10 +173,13 @@
 }
 
 @media (min-width: 1024px) {
-  
 }
 
 @media (min-width: 1280px) {
+  .main {
+    flex-direction: row;
+  }
+
   .cards {
     top: 100px;
     left: 0;
@@ -174,11 +187,6 @@
     position: -webkit-sticky;
     position: sticky;
     height: max-content;
-  }
-
-  .main {
-    flex-direction: row;
-    gap: 5rem;
   }
 }
 

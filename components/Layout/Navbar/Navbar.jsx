@@ -11,6 +11,7 @@ export default function Navbar() {
   const [expandNavbar, setExpandNavbar] = useState(false);
   const menuItems = [
     { title: "Home", path: "/" },
+    { title: "About", path: "/about" },
     { title: "Projects", path: "/projects" },
     { title: "Resume", path: "/resume" },
     { title: "Get in touch", path: "/contact" }
@@ -75,7 +76,13 @@ export default function Navbar() {
         <Logo />
         <ul className={styles.menuItems}>
           {menuItems.map(({ title, path }) => (
-            <li key={title} className={styles.menuItemsLink}>
+            <li
+              key={title}
+              className={
+                pathname == path
+                  ? `${styles.active} ${styles.menuItemsLink}`
+                  : `${styles.menuItemsLink}`
+              }>
               <Link href={path} onClick={() => setExpandNavbar(false)}>
                 {title}
               </Link>

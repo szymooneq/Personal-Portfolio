@@ -10,7 +10,26 @@ import {
 } from "../assets/svgIconsPack";
 import Article from "../components/Layout/Article";
 import Text from "../components/UI/Text/Text";
+import { contactLinks } from "../lib/helpers/contactLinks";
 import styles from "../styles/Contact.module.css";
+
+const cardAds = [
+  {
+    title: "Website design & development",
+    desc: "Experienced designer & visual developer. I love using tools like Figma and Framer.",
+    icon: layoutIcon
+  },
+  {
+    title: "Visual & graphic design",
+    desc: "Eye for the visual side of things. I enjoy crafting beautiful illustrations and animations!",
+    icon: penIcon
+  },
+  {
+    title: "Branding",
+    desc: "Combining both my visual and analytical side, I love creating brands that not only look great, but sell as well.",
+    icon: cubeIcon
+  }
+];
 
 export default function Contact() {
   return (
@@ -19,7 +38,8 @@ export default function Contact() {
         <title>Contact | Szymon Dudka</title>
         <meta
           name="description"
-          content="You can send me a direct message, also you can check my GitHub or LinkedIn profiles."
+          content="I’m always open to collaborate on a project or hear about an
+          opportunity!"
         />
       </Head>
 
@@ -44,9 +64,15 @@ export default function Contact() {
               </div>
             </div>
             <div className={styles.icons}>
-              <a>{linkedinIcon}</a>
-              <a>{githubIcon}</a>
-              <a>{discordIcon}</a>
+              {contactLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer">
+                  {link.icon}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -77,30 +103,13 @@ export default function Contact() {
           </form>
         </div>
         <div className={styles.cards}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>{layoutIcon}</div>
-            <div className={styles.cardTitle}>Website design & development</div>
-            <div className={styles.cardDesc}>
-              Experienced designer & visual developer. I love using tools like
-              Figma and Framer.
+          {cardAds.map((item) => (
+            <div key={item.title} className={styles.card}>
+              <div className={styles.cardIcon}>{item.icon}</div>
+              <div className={styles.cardTitle}>{item.title}</div>
+              <div className={styles.cardDesc}>{item.desc}</div>
             </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>{penIcon}</div>
-            <div className={styles.cardTitle}>Visual & graphic design</div>
-            <div className={styles.cardDesc}>
-              Eye for the visual side of things. I enjoy crafting beautiful
-              illustrations and animations!
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>{cubeIcon}</div>
-            <div className={styles.cardTitle}>Branding</div>
-            <div className={styles.cardDesc}>
-              Combining both my visual and analytical side, I love creating
-              brands that not only look great, but sell as well.
-            </div>
-          </div>
+          ))}
         </div>
       </Article>
     </>

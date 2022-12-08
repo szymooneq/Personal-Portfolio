@@ -11,11 +11,10 @@
   flex-direction: column;
 }
 
-.card { 
-  padding: 2rem;
-  color: #FFFFFF;
+.card {
+  padding: var(--card-padding);
   background: var(--bg-secondary);
-  border-radius: 1rem;
+  border-radius: var(--card-border-radius);
 }
 
 .card h1 {
@@ -33,14 +32,14 @@
 
 .quote {
   margin-top: 2rem;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
   font-size: var(--contact-subText);
   letter-spacing: -1px;
   color: var(--text-blue);
 }
 
 .links {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -68,15 +67,12 @@
     flex-direction: column;
     max-width: 40%;
   }
- 
 }
 
 /* XL */
 @media (min-width: 1280px) {
-
 }
 
 /* 2XL */
 @media (min-width: 1536px) {
-
 }

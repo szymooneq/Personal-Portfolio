@@ -18,7 +18,6 @@
   color: var(--text-blue);
 }
 
-.card::before,
 .card::after {
   content: '';
   position: absolute;
@@ -31,23 +30,21 @@
   filter: blur(5px);
   opacity: 0;
   z-index: -1;
-  transition: 1s;
+  transition: .5s;
 }
 
 .card::after {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 .card:hover .content img,
 .card:focus .content img {
-  filter: grayscale(0) brightness(100%);  
+  filter: brightness(100%);  
 }
 
-.card:hover::before,
 .card:hover::after,
-.card:focus::before,
 .card:focus::after {
-  opacity: 1;
+  opacity: .6;
 }
 
 .content {
@@ -61,8 +58,8 @@
   height: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  filter: grayscale(100%) brightness(60%);
-  transition: 1s;
+  filter: brightness(60%);
+  transition: .5s;
 }
 
 .type {

@@ -4,65 +4,66 @@
   margin-bottom: 8rem;
 }
 
-.flex {
+.main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: inherit;
   height: inherit;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .primary {
-  font-size: 2.8rem;
-  font-weight: 700;
-  background: var(--main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.primary::selection {
-  -webkit-text-fill-color: var(--text-color);
+  font-size: var(--project-desc);
+  color: var(--text-blue);
 }
 
 .secondary {
   font-family: "Architects Daughter", cursive;
-  font-size: 1.5rem;
+  font-size: var(--contact-title);
   font-weight: 700;
-  color: var(--text-color);
 }
 
 .astronaut {
-  max-width: 17rem;
-  animation: astronaut 2s linear infinite alternate;
+  max-width: 250px;
+  animation: astronaut 15s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+  /* transform: translate(70%, -70%); */
 }
 
 .astronaut img {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 @keyframes astronaut {
+  0% {
+    transform: translate(0, 20%) scale(1.5);
+  }
+
+  33% {
+    transform: translate(-50%, -30%) scale(0.5);
+  }
+
+  66% {
+    transform: translate(10%, -150%) scale(1);
+  }
+
   100% {
-    transform: translateY(2rem);
+    transform: translate(0, 20%) scale(1.5);
   }
 }
 
 .links {
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1rem auto;
-  padding: 0.5rem 1rem;
-  background: var(--main);
-  border-radius: 1rem;
+  width: max-content;
+  background: var(--bg-dark);
+  border-radius: 2rem;
 }
 
 .links a {
@@ -71,86 +72,29 @@
 }
 
 .links svg {
-  width: 2rem;
-  transition: scale 0.3s;
-  color: white;
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  transition: 0.3s;
 }
 
 .links svg:hover {
+  color: var(--text-blue);
   scale: 1.2;
 }
 
-/* .scrollDown {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  width: 1.5rem;
-  height: 4rem;
-  background: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid) border-box;
-  border-radius: 50em;
-  border: 4px solid transparent;
-}
-
-.scrollDownCircle {
-  height: 1rem;
-  width: 1rem;
-  background: var(--text-gray);
-  border-radius: 50%;
-  animation: circleJump 1s infinite alternate-reverse;
-}
-
-@keyframes circleJump {
-  from {
-    transform: translateY(0%);
-  }
-
-  to {
-    transform: translateY(-100%);
-  }
-} */
-
-/* MD */
 @media (min-width: 768px) {
-  .flex {
+  .main {
     flex-direction: row;
   }
-
-  /* .scrollDown {
-    display: none;
-  } */
 }
 
 /* LG */
 @media (min-width: 1024px) {
-  .primary {
-    font-size: 3.7rem;
-  }
-
-  .secondary {
-    font-size: 1.8rem;
-  }
-
-  .astronaut {
-    max-width: 30rem;
-  }
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  .primary {
-    font-size: 5rem;
-  }
-
-  .secondary {
-    font-size: 2.5rem;
-  }
-
-  .astronaut {
-    max-width: 40rem;
-  }
 }
 
 /* 2XL */

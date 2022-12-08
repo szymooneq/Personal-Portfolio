@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   top: 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--bg-secondary);
 }
 
 .fixed {
@@ -18,10 +18,10 @@
   padding: 1.5rem;
   align-items: flex-end;
   position: absolute;
+  height: 100vh;
   background-color: transparent;
   backdrop-filter: none;
   z-index: auto;
-  height: 100vh;
 }
 
 .blackBackground {
@@ -33,12 +33,12 @@
   background-color: black;
   opacity: 0;
   z-index: 1;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   pointer-events: none;
 }
 
 .blackBackground.active {
-  opacity: .6;
+  opacity: 0.6;
   pointer-events: all;
 }
 
@@ -48,12 +48,10 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 16rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  background: var(--bg-secondary);
+  width: calc(100vw - 30%);
+  background: var(--bg-dark);
   transform: translateX(-100%);
-  transition: transform .3s;
+  transition: transform 0.3s;
   z-index: 20;
 }
 
@@ -65,12 +63,45 @@
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  font-size: 20px;
+  font-weight: 600;
   list-style-type: none;
 }
 
+.menuItemsLink {
+  opacity: 0.6;
+}
+
+.menuItemsLink:hover {
+  opacity: 1;
+}
+
 .menuItemsLink:last-child {
+  opacity: 1;
+}
+
+.menuItemsLink.active  {
   color: var(--text-blue);
+  opacity: 1;
+}
+
+.menuItemsLink:last-child a {
+  padding: 0.5rem 1rem;
+  display: block;
+  width: max-content;
+  font-size: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 2rem;
+}
+
+.menuItemsLink:last-child:hover a {
+  background: var(--main);
+}
+
+.menuItemsLink:last-child.active {
+  color: #FFFFFF;
 }
 
 .logo {
@@ -78,14 +109,13 @@
   width: 3rem;
   height: 3rem;
   background: var(--main);
-  border-radius: .5rem;
   cursor: pointer;
   z-index: 10;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .logo:hover {
-  transform: rotate(10deg) scale(1.1);
+  transform: rotate(20deg) scale(1.1);
 }
 
 .logoName {
@@ -94,16 +124,17 @@
   right: 4px;
   font-size: 1.4rem;
   font-weight: 700;
+  letter-spacing: -1px;
   color: var(--bg-dark);
 }
 
 .burger {
+  margin-left: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
   position: relative;
-  margin-left: auto;
   height: 2.5rem;
   width: 2.5rem;
   background: transparent;
@@ -112,54 +143,48 @@
   z-index: 10;
 }
 
-.burger.active {
-  z-index: 10;
-}
-
 .burger span {
   width: 100%;
-  height: 0.35rem;
+  height: 0.2rem;
+  border-radius: 1rem;
   background: var(--main);
-  transition: all .4s;
+  transition: 0.5s;
 }
 
 .burger.active span {
   background: var(--text-color);
 }
 
-.burger.active > span:nth-child(1) {
+.burger.active span:nth-child(1) {
   transform: rotate(-45deg) translateY(0.5rem) translateX(-0.5rem);
 }
 
-.burger.active > span:nth-child(2) {
-  background: transparent;
+.burger.active span:nth-child(2) {
+  transform: scaleX(0);
 }
 
-.burger.active > span:nth-child(3) {
+.burger.active span:nth-child(3) {
   transform: rotate(45deg) translateY(-0.6rem) translateX(-0.6rem);
 }
 
 /* MEDIUM */
 @media (min-width: 768px) {
   .nav {
-    justify-content: space-between;
     padding: 0.8rem 2rem;
+    justify-content: space-between;
   }
 
   .menu {
     padding: 0;
-    flex-direction: row;
-    align-items: center;
     position: unset;
     width: auto;
     height: auto;
-    font-size: 1.2rem;
     background: transparent;
     transform: none;
     transition: none;
   }
 
-  .menu .logo {
+  .menu > .logo {
     display: none;
   }
 
@@ -167,27 +192,11 @@
     margin-top: 0;
     flex-direction: row;
     gap: 3rem;
+    /* font-size: 1rem; */
   }
 
   .menuItemsLink {
     position: relative;
-  }
-
-  .menuItemsLink::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -.2rem;
-    height: 0.2rem;
-    width: 100%;
-    background: var(--main);
-    border-radius: 2rem;
-    transform: scaleX(0);
-    transition: transform .3s;
-  }
-
-  .menuItemsLink:hover::after {
-    transform: scaleX(100%);
   }
 
   .burger {
@@ -197,20 +206,16 @@
 
 /* MD */
 @media (min-width: 768px) {
-
 }
 
 /* LG */
 @media (min-width: 1024px) {
-  
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  
 }
 
 /* 2XL */
 @media (min-width: 1536px) {
-  
 }
