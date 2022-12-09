@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <Hero />
-      <Article style={styles.content}>
+      <Article className={styles.content}>
         <div>
           <div className={styles.card}>
             <h1>Hello! I am Szymon 👋</h1>

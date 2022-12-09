@@ -15,7 +15,7 @@ export default function Resume() {
         <meta name="description" content="" />
       </Head>
 
-      <Article header="Resume" style={styles.main}>
+      <Article header="Resume" className={styles.main}>
         <div className={styles.cards}>
           <div className={styles.card}>
             <div className={styles.avatar}>

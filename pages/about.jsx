@@ -18,7 +18,7 @@ export default function About() {
         <title>About me | Szymon Dudka</title>
         <meta name="description" content="" />
       </Head>
-      <Article header="About" style={styles.main}>
+      <Article header="About" className={styles.main}>
         <div className={styles.card}></div>
         <div className={styles.card}>
           <h1 className={styles.title}>Hey, I&apos;m Szymon 👋</h1>

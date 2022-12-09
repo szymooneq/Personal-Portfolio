@@ -1,11 +1,11 @@
 import { motion as m } from "framer-motion";
-import styles from "./Title.module.css";
+import styles from "./Header.module.css";
 
-export default function Title({ title }) {
+export default function Header({ title }) {
   return (
     <m.header
       initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+      whileInView={{ y: 0, opacity: 0.5, transition: { duration: 1 } }}
       viewport={{ once: true }}
       className={styles.title}>
       <h1>{title}</h1>

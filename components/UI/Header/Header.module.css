@@ -4,6 +4,5 @@
   font-weight: 700;
   white-space: nowrap;
   color: var(--bg-secondary);
-  opacity: 0.5;
   pointer-events: none;
 }

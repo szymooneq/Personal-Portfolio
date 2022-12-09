@@ -15,7 +15,7 @@ export default function NotFound() {
         />
       </Head>
 
-      <Article style={styles.content}>
+      <Article className={styles.content}>
         <h1 className={styles.number}>404</h1>
         <p className={styles.description}>
           The page you are looking for might have been removed had its name
