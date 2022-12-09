@@ -6,7 +6,7 @@ import Article from "../../components/Layout/Article";
 import Group from "../../components/UI/Group/Group";
 import Slider from "../../components/UI/Slider/Slider";
 import Technologies from "../../components/UI/Technologies/Technologies";
-import { getAllProjectsId, getProjectData } from "../../lib/projects";
+import { getAllProjectsId, getProjectData } from "../../lib/api/projects";
 import { urlFor } from "../../lib/sanityConfig";
 import styles from "../../styles/ProjectPage.module.css";
 
@@ -82,7 +82,10 @@ export default function ProjectPage({ projectData }) {
           </Group>
         )}
 
-        <Link href="/projects" scroll={false} className={`${styles.backButton} button`}>
+        <Link
+          href="/projects"
+          scroll={false}
+          className={`${styles.backButton} button`}>
           {leftArrow}Back to projects
         </Link>
       </Article>

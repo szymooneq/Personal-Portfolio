@@ -1,18 +1,14 @@
-import { useRouter } from "next/router"
-import { usePageTransitionFix } from "../../lib/usePageTransitionFix"
-import SideLayout from "./SideLayout"
+import { useRouter } from "next/router";
+import SideLayout from "./SideLayout";
 
 export default function Main({ children }) {
-  usePageTransitionFix()
-  const { pathname, asPath } = useRouter()
+  const { pathname, asPath } = useRouter();
 
   return pathname === "/" ? (
-    <main className="app">
-      {children}
-    </main>
+    <main className="app">{children}</main>
   ) : (
     <SideLayout pathname={pathname} asPath={asPath}>
       {children}
     </SideLayout>
-  )
+  );
 }

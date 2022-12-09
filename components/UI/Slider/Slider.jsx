@@ -1,4 +1,5 @@
 import { motion as m } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { urlFor } from "../../../lib/sanityConfig";
 import styles from "./Slider.module.css";
@@ -27,7 +28,12 @@ export default function Slider({ images }) {
         className={styles.inner}>
         {images.map((image, id) => (
           <div key={id} className={styles.image}>
-            <img src={urlFor(image).url()} alt={image.alt} />
+            <Image
+              src={urlFor(image).url()}
+              alt={image.alt}
+              width={1793}
+              height={913}
+            />
           </div>
         ))}
       </m.div>

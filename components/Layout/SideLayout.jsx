@@ -1,5 +1,5 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { usePageTransitionFix } from "../../lib/usePageTransitionFix";
+import { usePageTransitionFix } from "../../lib/helpers/usePageTransitionFix";
 import Breadcrumb from "../UI/Breadcrumb/Breadcrumb";
 
 export default function SideLayout({ pathname, asPath, children }) {

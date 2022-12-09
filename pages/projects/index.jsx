@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Article from "../../components/Layout/Article";
 import CardList from "../../components/UI/Card/CardList";
 import Technologies from "../../components/UI/Technologies/Technologies";
-import { getAllProjects } from "../../lib/projects";
+import { getAllProjects } from "../../lib/api/projects";
 import styles from "../../styles/Projects.module.css";
 
 export default function Projects({ projectList, technologies }) {

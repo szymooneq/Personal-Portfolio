@@ -1,4 +1,3 @@
-import { motion as m } from "framer-motion";
 import Image from "next/image";
 import astronaut from "../../assets/astronaut.png";
 import { contactLinks } from "../../lib/helpers/contactLinks";
@@ -17,7 +16,11 @@ export default function Hero() {
 
           <div className={styles.links}>
             {contactLinks.map((link) => (
-              <a key={link.name} href={link.url} target="_blank" rel="noreferrer">
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer">
                 {link.icon}
               </a>
             ))}
@@ -25,7 +28,7 @@ export default function Hero() {
         </div>
 
         <div className={styles.astronaut}>
-          <Image src={astronaut} alt="Astronaut" />
+          <Image src={astronaut} alt="Astronaut" width={250} height={250} />
         </div>
       </div>
     </header>

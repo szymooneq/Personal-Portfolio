@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { rightCircleArrow } from "../../../assets/svgIconsPack";
 import { urlFor } from "../../../lib/sanityConfig";
@@ -10,10 +11,12 @@ export default function Card({ title, theme, thumbnail, type, slug }) {
       style={{ "--theme-primary": theme[0], "--theme-secondary": theme[1] }}>
       <Link href={`/projects/${slug}`}>
         <div className={styles.content}>
-          <img
+          <Image
             className={styles.img}
             src={urlFor(thumbnail).url()}
             alt={title}
+            width={500}
+            height={500}
           />
           <div className={styles.desc}>
             <div className={styles.type}>{type}</div>
