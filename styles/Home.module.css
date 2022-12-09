@@ -2,13 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 5rem;
   overflow: hidden;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
 }
 
 .card {
@@ -32,9 +27,8 @@
 
 .quote {
   margin-top: 2rem;
-  font-family: "Architects Daughter", cursive;
-  font-size: var(--contact-subText);
-  letter-spacing: -1px;
+  text-align: center;
+  font-size: var(--contact-info);
   color: var(--text-blue);
 }
 
@@ -60,12 +54,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .flex {
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
   }
 }
 

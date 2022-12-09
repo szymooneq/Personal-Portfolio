@@ -1,15 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-import {
-  cubeIcon,
-  discordIcon,
-  githubIcon,
-  layoutIcon,
-  linkedinIcon,
-  penIcon
-} from "../assets/svgIconsPack";
+import { cubeIcon, layoutIcon, penIcon } from "../assets/svgIconsPack";
 import Article from "../components/Layout/Article";
-import Text from "../components/UI/Text/Text";
 import { contactLinks } from "../lib/helpers/contactLinks";
 import styles from "../styles/Contact.module.css";
 
@@ -56,11 +47,19 @@ export default function Contact() {
             <div className={styles.contactTypes}>
               <div>
                 <p className={styles.smallTitle}>want to call me?</p>
-                <a className={styles.info}>Schedule a call with me</a>
+                <a
+                  href="https://discord.com/users/554988199529676800"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.info}>
+                  Schedule a call with me
+                </a>
               </div>
               <div>
                 <p className={styles.smallTitle}>Just want to email me?</p>
-                <a className={styles.info}>szymooneq@zohomail.eu</a>
+                <a href="mailto:szymooneq@zohomail.eu" className={styles.info}>
+                  szymooneq@zohomail.eu
+                </a>
               </div>
             </div>
             <div className={styles.icons}>

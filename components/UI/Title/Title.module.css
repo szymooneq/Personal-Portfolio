@@ -1,18 +1,9 @@
-.title {
-  width: max-content;
-  margin: 0 auto 2rem auto;
-}
-
-.titleMain {
-  display: inline;
-  font-size: 2.2rem;
-  font-family: 'Architects Daughter', cursive;
-  font-weight: 800;
-  color: var(--text-blue);
-}
-
-@media (min-width: 768px) {
-  .titleMain {
-    font-size: 3rem;
-  }
+.title h1 {
+  text-align: center;
+  font-size: clamp(0px, 22vw, 320px);
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--bg-secondary);
+  opacity: 0.5;
+  pointer-events: none;
 }

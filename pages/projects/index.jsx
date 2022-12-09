@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Article from "../../components/Layout/Article";
 import CardList from "../../components/UI/Card/CardList";
 import Technologies from "../../components/UI/Technologies/Technologies";
-import Text from "../../components/UI/Text/Text";
 import { getAllProjects } from "../../lib/projects";
+import styles from "../../styles/Projects.module.css";
 
 export default function Projects({ projectList, technologies }) {
   const { query } = useRouter();
@@ -34,14 +34,14 @@ export default function Projects({ projectList, technologies }) {
       </Head>
 
       <Article header="Projects">
-        <Text align="justify">
+        <p className={styles.desc}>
           Here you will find some of my projects that I have managed to create
           so far. I created each project myself, learning from various sources,
           such as documentation, YouTube videos, or paid courses, but I was
           primarily trying to understand the source code and work with it, not
           to copy ready-made materials from the Internet. You can easily filter
           projects by technology by clicking on the selected technology.
-        </Text>
+        </p>
 
         <Technologies technologies={technologies} />
 

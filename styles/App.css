@@ -14,7 +14,7 @@
 }
 
 .button {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
   background: var(--bg-secondary);
   border: none;
   opacity: 1;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   cursor: pointer;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .button:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .button.active {
@@ -52,11 +52,10 @@
 .tagcloud {
   font-size: 1rem;
   letter-spacing: -1px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @media (min-width: 640px) {
-  
 }
 
 /* MD */
@@ -76,15 +75,12 @@
 
 /* LG */
 @media (min-width: 1024px) {
- 
 }
 
 /* XL */
 @media (min-width: 1280px) {
-  
 }
 
 /* 2XL */
 @media (min-width: 1536px) {
-
 }
