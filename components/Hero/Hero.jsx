@@ -20,7 +20,8 @@ export default function Hero() {
                 key={link.name}
                 href={link.url}
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+                aria-label={link.ariaLabel}>
                 {link.icon}
               </a>
             ))}

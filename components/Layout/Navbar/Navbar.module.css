@@ -9,8 +9,8 @@
   padding: 0.6rem 1.5rem;
   align-items: center;
   position: fixed;
-  background-color: #1d1d2080;
-  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(29, 29, 32, 0.8);
+  backdrop-filter: saturate(180%) blur(5px);
   z-index: 100;
 }
 
@@ -82,7 +82,7 @@
   opacity: 1;
 }
 
-.menuItemsLink.active  {
+.menuItemsLink.active {
   color: var(--text-blue);
   opacity: 1;
 }
@@ -101,7 +101,7 @@
 }
 
 .menuItemsLink:last-child.active {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .logo {
@@ -192,7 +192,6 @@
     margin-top: 0;
     flex-direction: row;
     gap: 3rem;
-    /* font-size: 1rem; */
   }
 
   .menuItemsLink {

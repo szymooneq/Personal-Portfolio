@@ -6,10 +6,9 @@
   --bg-dark: #1d1d20;
   --bg-secondary: #2e2e33;
   /* --main: linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid); */
-  --main: linear-gradient(to bottom right, #4B26CB, #EC857E);
+  --main: linear-gradient(to bottom right, #4b26cb, #ec857e);
   --text-color: #f4f4f5;
   --text-blue: rgb(93, 93, 255);
-  /* --text-blue: #EC857E; */
   --text-gray: rgb(212, 212, 216);
   --theme-primary: #fff;
   --theme-secondary: #000;
@@ -26,12 +25,11 @@
 
   --card-padding: 2rem;
   --card-border-radius: 1rem;
-
 }
 
 ::selection {
   color: #000000;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 * {
@@ -41,11 +39,6 @@
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-/* html,
-body {
-  overflow-x: hidden;
-} */
 
 body {
   color: white;
@@ -63,11 +56,11 @@ a {
 }
 
 img {
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  user-select: none;
 }
 
 /* SM */

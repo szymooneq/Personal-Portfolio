@@ -39,10 +39,11 @@ export default function About() {
           <p>Circle UX Designer 2015 - 2019</p> */}
         </div>
         <a
+          className={styles.card}
           href="https://www.linkedin.com/in/szymon-dudka"
           target="_blank"
           rel="noreferrer"
-          className={styles.card}>
+          aria-label="Check my profile on LinkedIn">
           <div className={styles.icon}>{linkedinIcon}</div>
           {/* <div className={styles.arrow}>{leftUpArrow}</div> */}
           {/* <div className={styles.cardFlex}>{leftUpArrow}</div> */}

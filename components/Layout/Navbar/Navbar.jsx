@@ -92,6 +92,8 @@ export default function Navbar() {
       </div>
 
       <button
+        id="burger"
+        aria-label="Burger"
         className={`${styles.burger} ${expandNavbar && styles.active}`}
         onClick={handleToggle}>
         <span />

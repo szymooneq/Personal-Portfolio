@@ -1,6 +1,6 @@
 {
     "name": "Personal Portfolio",
-    "short_name": "Personal Portfolio",
+    "short_name": "portfolio",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

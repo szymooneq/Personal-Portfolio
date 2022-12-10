@@ -12,7 +12,12 @@ export default function Footer() {
         </p>
         <div className={styles.icons}>
           {contactLinks.map((link) => (
-            <a key={link.name} href={link.url} target="_blank" rel="noreferrer">
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={link.ariaLabel}>
               {link.icon}
             </a>
           ))}

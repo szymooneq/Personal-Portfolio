@@ -26,7 +26,6 @@
 }
 
 .astronaut {
-  max-width: 250px;
   animation: astronaut 20s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
   z-index: -1;
 }
@@ -84,7 +83,7 @@
 
 .links svg:hover {
   color: var(--text-blue);
-  scale: 1.2;
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
