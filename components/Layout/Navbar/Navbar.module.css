@@ -12,6 +12,7 @@
   background-color: rgba(29, 29, 32, 0.8);
   backdrop-filter: saturate(180%) blur(5px);
   z-index: 100;
+  transform: translateY(0%);
 }
 
 .absolute {
@@ -22,6 +23,20 @@
   background-color: transparent;
   backdrop-filter: none;
   z-index: auto;
+}
+
+.fixed.slideDown {
+  animation: slideDown 0.4s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .blackBackground {

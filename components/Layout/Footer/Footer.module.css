@@ -3,9 +3,9 @@
   align-items: flex-end;
   justify-content: center;
   background: var(--main);
+  position: relative;
   height: 18rem;
   overflow: hidden;
-  position: relative;
 }
 
 .waves {
@@ -64,7 +64,7 @@
 
 .content p:last-child {
   margin-top: 1.5rem;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
   font-size: 0.9rem;
 }
 
@@ -84,7 +84,6 @@
   transform: scale(1.2);
 }
 
-/* MD */
 @media (min-width: 768px) {
   .waves {
     height: 11rem;
@@ -97,7 +96,6 @@
   }
 }
 
-/* LG */
 @media (min-width: 1024px) {
   .content p:first-child {
     margin-bottom: 2rem;
@@ -110,7 +108,6 @@
   }
 }
 
-/* XL */
 @media (min-width: 1280px) {
   .footer {
     height: 24rem;
@@ -125,8 +122,4 @@
     width: 400vw;
     height: 400vw;
   }
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
 }

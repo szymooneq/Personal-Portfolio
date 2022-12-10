@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { contactIcon, downloadIcon } from "../assets/svgIconsPack";
 import Hero from "../components/Hero/Hero";
-import Article from "../components/Layout/Article";
+import ContentLayout from "../components/Layout/ContentLayout";
 import Tagcloud from "../components/UI/Tagcloud/Tagcloud";
 import styles from "../styles/Home.module.css";
 
@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <Hero />
-      <Article className={styles.content}>
+      <ContentLayout className={styles.content}>
         <div>
           <div className={styles.card}>
             <h1>Hello! I am Szymon 👋</h1>
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
 
         <Tagcloud />
-      </Article>
+      </ContentLayout>
     </>
   );
 }

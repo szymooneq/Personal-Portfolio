@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { rightCircleArrow } from "../../../assets/svgIconsPack";
 import { urlFor } from "../../../lib/sanityConfig";
-import styles from "./Card.module.css";
+import styles from "./ProjectCard.module.css";
 
-export default function Card({ title, theme, thumbnail, type, slug }) {
+export default function ProjectCard({ title, theme, thumbnail, type, slug }) {
   return (
     <div
       className={styles.card}
@@ -17,7 +17,7 @@ export default function Card({ title, theme, thumbnail, type, slug }) {
           />
           <div className={styles.desc}>
             <div className={styles.type}>{type}</div>
-            <div className={styles.name}>
+            <div className={styles.title}>
               <h1>{title}</h1>
               {rightCircleArrow}
             </div>

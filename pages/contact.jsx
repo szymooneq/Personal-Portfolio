@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { cubeIcon, layoutIcon, penIcon } from "../assets/svgIconsPack";
-import Article from "../components/Layout/Article";
+import ContentLayout from "../components/Layout/ContentLayout";
 import { contactLinks } from "../lib/helpers/contactLinks";
 import styles from "../styles/Contact.module.css";
 
@@ -34,7 +34,7 @@ export default function Contact() {
         />
       </Head>
 
-      <Article header="Contact">
+      <ContentLayout header="Contact">
         <div className={styles.content}>
           <div className={styles.description}>
             <div>
@@ -111,7 +111,7 @@ export default function Contact() {
             </div>
           ))}
         </div>
-      </Article>
+      </ContentLayout>
     </>
   );
 }

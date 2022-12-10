@@ -17,7 +17,7 @@
 
 .active {
   font-weight: 400;
-  color: var(--text-color);
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {

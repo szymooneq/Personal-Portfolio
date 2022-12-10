@@ -1,4 +1,5 @@
 .title h1 {
+  margin: 2rem 0;
   text-align: center;
   font-size: clamp(0px, 22vw, 320px);
   font-weight: 700;

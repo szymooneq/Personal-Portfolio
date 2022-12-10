@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { leftUpArrow } from "../assets/svgIconsPack";
-import Article from "../components/Layout/Article";
+import ContentLayout from "../components/Layout/ContentLayout";
 import { contactLinks } from "../lib/helpers/contactLinks";
 import styles from "../styles/Resume.module.css";
 
@@ -15,7 +15,7 @@ export default function Resume() {
         <meta name="description" content="" />
       </Head>
 
-      <Article header="Resume" className={styles.main}>
+      <ContentLayout header="Resume" className={styles.main}>
         <div className={styles.cards}>
           <div className={styles.card}>
             <div className={styles.avatar}>
@@ -188,7 +188,7 @@ export default function Resume() {
             </section>
           </div>
         </div>
-      </Article>
+      </ContentLayout>
     </>
   );
 }

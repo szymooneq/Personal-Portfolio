@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import SideLayout from "./SideLayout";
 
-export default function Main({ children }) {
+export default function HomeLayout({ children }) {
   const { pathname, asPath } = useRouter();
 
   return pathname === "/" ? (

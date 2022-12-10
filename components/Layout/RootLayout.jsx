@@ -1,7 +1,7 @@
 import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
 import Footer from "./Footer/Footer";
-import Main from "./Main";
+import HomeLayout from "./HomeLayout";
 import Navbar from "./Navbar/Navbar";
 
 export default function RootLayout({ children }) {
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         options={{ showSpinner: false }}
       />
       <Navbar />
-      <Main>{children}</Main>
+      <HomeLayout>{children}</HomeLayout>
       <Footer />
     </>
   );

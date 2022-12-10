@@ -8,7 +8,7 @@ import {
   rightCircleArrow,
   userFaceID
 } from "../assets/svgIconsPack";
-import Article from "../components/Layout/Article";
+import ContentLayout from "../components/Layout/ContentLayout";
 import styles from "../styles/About.module.css";
 
 export default function About() {
@@ -18,7 +18,7 @@ export default function About() {
         <title>About me | Szymon Dudka</title>
         <meta name="description" content="" />
       </Head>
-      <Article header="About" className={styles.main}>
+      <ContentLayout header="About" className={styles.main}>
         <div className={styles.card}></div>
         <div className={styles.card}>
           <h1 className={styles.title}>Hey, I&apos;m Szymon 👋</h1>
@@ -63,7 +63,7 @@ export default function About() {
             {rightCircleArrow}
           </div>
         </Link>
-      </Article>
+      </ContentLayout>
     </>
   );
 }

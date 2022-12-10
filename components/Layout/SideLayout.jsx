@@ -14,7 +14,7 @@ export default function SideLayout({ pathname, asPath, children }) {
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 200, opacity: 0 }}
-          transition={{ duration: 0.75 }}
+          transition={{ duration: 0.7 }}
           className="app">
           {children}
         </m.main>

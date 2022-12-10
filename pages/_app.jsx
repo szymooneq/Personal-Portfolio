@@ -1,12 +1,13 @@
-import RootLayout from '../components/Layout/RootLayout'
-import '../styles/App.css'
-import '../styles/globals.css'
+import RootLayout from "../components/Layout/RootLayout";
+import "../styles/App.css";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <RootLayout>
       <Component {...pageProps} />
-    </RootLayout>)
+    </RootLayout>
+  );
 }
 
-export default MyApp
+export default MyApp;

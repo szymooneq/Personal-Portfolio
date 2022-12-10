@@ -1,8 +1,8 @@
 import Header from "../UI/Header/Header";
 
-export default function Article({ children, header, className }) {
+export default function ContentLayout({ children, header, className }) {
   return (
-    <article className="container section">
+    <article className="container">
       {header && <Header title={header} />}
       <section className={className}>{children}</section>
     </article>

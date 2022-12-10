@@ -1,11 +1,11 @@
-import Card from "./Card";
-import styles from "./Card.module.css";
+import ProjectCard from "./ProjectCard";
+import styles from "./ProjectCard.module.css";
 
 export default function CardList({ projects }) {
   return (
     <div className={styles.gridCards}>
       {projects.map((project) => (
-        <Card
+        <ProjectCard
           key={project.title}
           title={project.title}
           theme={project.theme}

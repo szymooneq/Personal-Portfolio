@@ -9,9 +9,9 @@
   max-width: var(--container-width);
 }
 
-.section {
+/* .section {
   margin: 2rem auto;
-}
+} */
 
 .button {
   padding: 0.5rem 1rem;

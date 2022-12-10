@@ -22,7 +22,6 @@
 .secondary {
   font-family: "Architects Daughter", cursive;
   font-size: var(--contact-title);
-  font-weight: 700;
 }
 
 .astronaut {
@@ -63,6 +62,7 @@
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   width: max-content;
   background: var(--bg-dark);
@@ -90,16 +90,4 @@
   .main {
     flex-direction: row;
   }
-}
-
-/* LG */
-@media (min-width: 1024px) {
-}
-
-/* XL */
-@media (min-width: 1280px) {
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
 }

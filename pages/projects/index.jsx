@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Article from "../../components/Layout/Article";
-import CardList from "../../components/UI/Card/CardList";
+import ContentLayout from "../../components/Layout/ContentLayout";
+import CardList from "../../components/UI/ProjectCard/CardList";
 import Technologies from "../../components/UI/Technologies/Technologies";
 import { getAllProjects } from "../../lib/api/projects";
 import styles from "../../styles/Projects.module.css";
@@ -33,7 +33,7 @@ export default function Projects({ projectList, technologies }) {
         />
       </Head>
 
-      <Article header="Projects">
+      <ContentLayout header="Projects">
         <p className={styles.desc}>
           Here you will find some of my projects that I have managed to create
           so far. I created each project myself, learning from various sources,
@@ -46,7 +46,7 @@ export default function Projects({ projectList, technologies }) {
         <Technologies technologies={technologies} />
 
         <CardList projects={filteredProjects} />
-      </Article>
+      </ContentLayout>
     </>
   );
 }

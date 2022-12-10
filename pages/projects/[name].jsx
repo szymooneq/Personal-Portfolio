@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { leftArrow } from "../../assets/svgIconsPack";
-import Article from "../../components/Layout/Article";
+import ContentLayout from "../../components/Layout/ContentLayout";
 import Group from "../../components/UI/Group/Group";
 import Slider from "../../components/UI/Slider/Slider";
 import Technologies from "../../components/UI/Technologies/Technologies";
@@ -18,12 +18,12 @@ export default function ProjectPage({ projectData }) {
         <meta name="description" content={projectData.description} />
       </Head>
 
-      <Article>
-        <header className={styles.header}>
+      <ContentLayout>
+        <header>
           <h1 className={styles.title}>
             {projectData.title} - {projectData.type.title}
           </h1>
-          <p className={styles.description}>{projectData.description}</p>
+          <p className={styles.desc}>{projectData.description}</p>
         </header>
 
         <Group type="links">
@@ -33,7 +33,8 @@ export default function ProjectPage({ projectData }) {
               href={url}
               className="button"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+              aria-label={`${link.alt} of project`}>
               {link.alt}
               <Image
                 src={urlFor(link.icon).url()}
@@ -59,7 +60,8 @@ export default function ProjectPage({ projectData }) {
                   href={el.url}
                   className={styles.stackUrl}
                   target="_blank"
-                  rel="noreferrer">
+                  rel="noreferrer"
+                  aria-label={`Link to ${el.title} page`}>
                   {el.title}
                 </a>{" "}
                 - {el.description}
@@ -88,7 +90,7 @@ export default function ProjectPage({ projectData }) {
           className={`${styles.backButton} button`}>
           {leftArrow}Back to projects
         </Link>
-      </Article>
+      </ContentLayout>
     </>
   );
 }

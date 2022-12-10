@@ -14,7 +14,8 @@ export default function Technologies({ technologies }) {
           href={`/projects?category=${el.title}`}
           key={el.title}
           scroll={false}
-          className={`button ${query.category === el.title ? "active" : ""}`}>
+          className={`button ${query.category === el.title ? "active" : ""}`}
+          aria-label={`Check my ${el.title} projects`}>
           <Image
             src={urlFor(el.icon).url()}
             alt={el.title}

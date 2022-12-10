@@ -5,17 +5,19 @@ import { throttle } from "../../../lib/helpers/throttle";
 import Logo from "../../UI/Logo/Logo";
 import styles from "./Navbar.module.css";
 
+const menuItems = [
+  { title: "Home", path: "/" },
+  { title: "About", path: "/about" },
+  { title: "Projects", path: "/projects" },
+  { title: "Resume", path: "/resume" },
+  { title: "Get in touch", path: "/contact" }
+];
+
 export default function Navbar() {
   const { pathname } = useRouter();
   const [navbarOnTop, setNavbarOnTop] = useState(true);
+  const [animation, setAnimation] = useState(false);
   const [expandNavbar, setExpandNavbar] = useState(false);
-  const menuItems = [
-    { title: "Home", path: "/" },
-    { title: "About", path: "/about" },
-    { title: "Projects", path: "/projects" },
-    { title: "Resume", path: "/resume" },
-    { title: "Get in touch", path: "/contact" }
-  ];
 
   const handleToggle = () => {
     setExpandNavbar((prev) => !prev);
@@ -28,29 +30,32 @@ export default function Navbar() {
   const handleScroll = throttle(() => {
     const starfieldHeight = document.querySelector("#starfield").clientHeight;
 
-    if (window.scrollY < starfieldHeight + 30) {
+    if (window.scrollY < starfieldHeight) {
       setNavbarOnTop(false);
     } else {
+      if (!expandNavbar) setAnimation(true);
+      if (navbarOnTop && expandNavbar) setAnimation(false);
       setNavbarOnTop(true);
     }
   }, 300);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize, { passive: true });
+      window.removeEventListener("resize", handleResize);
     };
   }, [handleResize]);
 
   useEffect(() => {
     if (pathname === "/") {
-      window.addEventListener("scroll", handleScroll);
-
       const starfieldHeight = document.querySelector("#starfield").clientHeight;
       if (window.scrollY < starfieldHeight) setNavbarOnTop(false);
+
+      window.addEventListener("scroll", handleScroll);
     } else {
       setNavbarOnTop(true);
+      setAnimation(true);
     }
 
     return () => {
@@ -63,7 +68,11 @@ export default function Navbar() {
   return (
     <nav
       className={`${styles.nav} ${
-        navbarOnTop ? styles.fixed : styles.absolute
+        navbarOnTop
+          ? `${
+              animation ? `${styles.fixed} ${styles.slideDown}` : styles.fixed
+            }`
+          : styles.absolute
       }`}>
       <Link href="/">
         <Logo />

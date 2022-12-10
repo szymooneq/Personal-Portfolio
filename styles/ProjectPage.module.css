@@ -1,10 +1,11 @@
 .title {
+  margin-top: 2rem;
   font-size: var(--contact-info);
   font-weight: 400;
   color: gray;
 }
 
-.description {
+.desc {
   margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: var(--project-desc);
@@ -23,24 +24,4 @@
 
 .backButton {
   margin-top: 3rem;
-}
-
-/* MD */
-@media (min-width: 768px) {
-  
-}
-
-/* LG */
-@media (min-width: 1024px) {
- 
-}
-
-/* XL */
-@media (min-width: 1280px) {
-  
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
-
 }
