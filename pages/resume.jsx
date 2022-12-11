@@ -60,9 +60,15 @@ export default function Resume() {
             <h1 className={styles.name}>About me</h1>
             <section>
               <p className={styles.sectionDescription}>
-                I&apos;m a Frontend Developer. I create websites / web
+                {/* I&apos;m a Frontend Developer. I create websites / web
                 applications and I constantly develop my development skills. My
-                goal is to become a Fullstack JS Developer.
+                goal is to become a Fullstack JS Developer. */}
+                I love creating websites / web applications. I am ambitious and
+                persistent in what I do, I like challenges. I am learning every
+                day to deepen my knowledge, acquire new experiences, discover
+                new solutions and being better and better in this field. I am
+                self-taught, I quickly adapt to new technologies, I pay
+                attention to the smallest details.
               </p>
             </section>
           </div>
@@ -70,21 +76,35 @@ export default function Resume() {
             <h1 className={styles.name}>Education & Courses</h1>
             <section>
               <div className={styles.sectionItem}>
-                <h2>PWSZ Nowy Sącz</h2>
-                <p className={styles.sectionTimeline}>Sep 2019 - Jun 2022</p>
+                <h2>PWSZ (now Academy of Applied Sciences) in Nowy Sącz</h2>
+                <p className={styles.sectionTimeline}>Sep 2018 - Jun 2022</p>
                 <p className={styles.sectionDescription}>
-                  Here is where you can mention what you studied and brief
-                  details on what you learnt. You can also mention any
-                  extra-curricular activities you did relating to your degree.
+                  I graduated from applied computer science. I learned the
+                  basics of programming, got to know algorithms and data
+                  structures, databases. I also learned web fundamentas and
+                  created my first projects as part of the classes.
+                </p>
+              </div>
+              <div className={styles.sectionItem}>
+                <h2>HTML, CSS and JavaScript</h2>
+                <p className={styles.sectionTimeline}>Jul 2022</p>
+                <p className={styles.sectionDescription}>
+                  I deepened my knowledge of the basics of websites. I learned
+                  semantic HTML, positioning elements on the page, units,
+                  styling and animations in CSS. I got to know JavaScript
+                  syntax, DOM manipulation and Fetch API.
                 </p>
               </div>
               <div className={styles.sectionItem}>
                 <h2>React Course</h2>
                 <p className={styles.sectionTimeline}>Sep 2022</p>
                 <p className={styles.sectionDescription}>
-                  {/* Here is where you can mention what you studied and brief
-                  details on what you learnt. You can also mention any
-                  extra-curricular activities you did relating to your degree. */}
+                  I completed a React course, got to know components, webpack,
+                  JSX and popular hooks offered by the framework, e.g. useState,
+                  useEffect, Context, Reducer. In addition, I worked with
+                  popular libraries such as React Router or React Query, Redux,
+                  Formik and yup. I also learned about server-side rendering
+                  using the Next.js framework.
                 </p>
               </div>
               <div className={styles.sectionItem}>
@@ -98,15 +118,6 @@ export default function Resume() {
               </div>
               <div className={styles.sectionItem}>
                 <h2>Freelancer Course</h2>
-                <p className={styles.sectionTimeline}>Sep 2022</p>
-                <p className={styles.sectionDescription}>
-                  {/* Here is where you can mention what you studied and brief
-                  details on what you learnt. You can also mention any
-                  extra-curricular activities you did relating to your degree. */}
-                </p>
-              </div>
-              <div className={styles.sectionItem}>
-                <h2>Node.js Course</h2>
                 <p className={styles.sectionTimeline}>Sep 2022</p>
                 <p className={styles.sectionDescription}>
                   {/* Here is where you can mention what you studied and brief
