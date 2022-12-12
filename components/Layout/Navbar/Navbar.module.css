@@ -98,7 +98,7 @@
 }
 
 .menuItemsLink.active {
-  color: var(--text-blue);
+  color: var(--blue-color);
   opacity: 1;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .burger.active span {
-  background: var(--text-color);
+  background: #ffffff;
 }
 
 .burger.active span:nth-child(1) {

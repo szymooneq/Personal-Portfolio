@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-import { leftUpArrow } from "../assets/svgIconsPack";
+import { rightUpCircleArrow } from "../assets/svgIconsPack";
 import ContentLayout from "../components/Layout/ContentLayout";
 import { contactLinks } from "../lib/helpers/contactLinks";
 import styles from "../styles/Resume.module.css";
@@ -29,13 +29,13 @@ export default function Resume() {
               </div>
               <div className={styles.whatsUp}>What&apos;s up!</div>
             </div>
-            <h1 className={styles.name}>Szymon Dudka</h1>
+            <h2 className={styles.name}>Szymon Dudka</h2>
             <h2 className={styles.work}>Frontend Developer</h2>
             <div className={styles.contacts}>
               <p>szymooneq@zohomail.eu</p>
               <p>www.szymondudka.xyz</p>
             </div>
-            <Link className={styles.contactMe} href={"contact"}>
+            <Link className={styles.contactMe} href="contact">
               Contact Me
             </Link>
           </div>
@@ -46,37 +46,34 @@ export default function Resume() {
                   <a href={link.url} target="_blank" rel="noreferrer">
                     <div className={styles.linkDesc}>
                       <p>{link.name}</p>
-                      {leftUpArrow}
+                      {rightUpCircleArrow}
                     </div>
                   </a>
                 </div>
-                {id !== contactLinks.length - 1 && <hr />}
+                {id < contactLinks.length - 1 && <hr />}
               </Fragment>
             ))}
           </div>
         </div>
         <div className={styles.content}>
           <div className={styles.contentItem}>
-            <h1 className={styles.name}>About me</h1>
+            <h2 className={styles.name}>About me</h2>
             <section>
               <p className={styles.sectionDescription}>
-                {/* I&apos;m a Frontend Developer. I create websites / web
-                applications and I constantly develop my development skills. My
-                goal is to become a Fullstack JS Developer. */}
                 I love creating websites / web applications. I am ambitious and
-                persistent in what I do, I like challenges. I am learning every
-                day to deepen my knowledge, acquire new experiences, discover
-                new solutions and being better and better in this field. I am
+                persistent in what I do, I like challenges. I learn every day to
+                deep my knowledge, acquire new experiences, discover new
+                solutions and be better and better in this field. I am
                 self-taught, I quickly adapt to new technologies, I pay
                 attention to the smallest details.
               </p>
             </section>
           </div>
           <div className={styles.contentItem}>
-            <h1 className={styles.name}>Education & Courses</h1>
+            <h2 className={styles.name}>Education & Courses</h2>
             <section>
               <div className={styles.sectionItem}>
-                <h2>PWSZ (now Academy of Applied Sciences) in Nowy Sącz</h2>
+                <h3>PWSZ (Akademia Nauk Stosowanych), Nowy Sącz</h3>
                 <p className={styles.sectionTimeline}>Sep 2018 - Jun 2022</p>
                 <p className={styles.sectionDescription}>
                   I graduated from applied computer science. I learned the
@@ -86,117 +83,87 @@ export default function Resume() {
                 </p>
               </div>
               <div className={styles.sectionItem}>
-                <h2>HTML, CSS and JavaScript</h2>
-                <p className={styles.sectionTimeline}>Jul 2022</p>
+                <h3>HTML, CSS and JavaScript Courses</h3>
+                <p className={styles.sectionTimeline}>Jul 2022 - Sep 2022</p>
                 <p className={styles.sectionDescription}>
                   I deepened my knowledge of the basics of websites. I learned
-                  semantic HTML, positioning elements on the page, units,
-                  styling and animations in CSS. I got to know JavaScript
-                  syntax, DOM manipulation and Fetch API.
+                  semantic HTML, positioning elements on the page, styling
+                  units, animations and responsive web design. I spent a lot of
+                  time learning JavaScript. I got to know syntax, DOM
+                  manipulation, fetch API and I still learning new things while
+                  practise every day.
                 </p>
               </div>
               <div className={styles.sectionItem}>
-                <h2>React Course</h2>
+                <h3>Advanced CSS</h3>
+                <p className={styles.sectionTimeline}>Aug 2022</p>
+                <p className={styles.sectionDescription}>
+                  I have completed the Bootstrap course. I have learned and
+                  worked with such frameworks as Tailwind or styled-components
+                  and the SASS preprocessor.
+                </p>
+              </div>
+              <div className={styles.sectionItem}>
+                <h3>React Course (with Next.js)</h3>
                 <p className={styles.sectionTimeline}>Sep 2022</p>
                 <p className={styles.sectionDescription}>
                   I completed a React course, got to know components, webpack,
-                  JSX and popular hooks offered by the framework, e.g. useState,
-                  useEffect, Context, Reducer. In addition, I worked with
-                  popular libraries such as React Router or React Query, Redux,
-                  Formik and yup. I also learned about server-side rendering
-                  using the Next.js framework.
+                  JSX and hooks offered by the framework. I worked with popular
+                  libraries such as Redux, React Router, React Query or Formik.
+                  I also learned about server-side rendering using the Next.js
+                  framework.
                 </p>
               </div>
               <div className={styles.sectionItem}>
-                <h2>Bootstrap Course</h2>
-                <p className={styles.sectionTimeline}>Sep 2022</p>
+                <h3>TypeScript Course</h3>
+                <p className={styles.sectionTimeline}>Nov 2022</p>
                 <p className={styles.sectionDescription}>
-                  {/* Here is where you can mention what you studied and brief
-                  details on what you learnt. You can also mention any
-                  extra-curricular activities you did relating to your degree. */}
+                  I have completed one of the free TypeScript courses available
+                  on YouTube.
                 </p>
               </div>
               <div className={styles.sectionItem}>
-                <h2>Freelancer Course</h2>
-                <p className={styles.sectionTimeline}>Sep 2022</p>
-                <p className={styles.sectionDescription}>
-                  {/* Here is where you can mention what you studied and brief
-                  details on what you learnt. You can also mention any
-                  extra-curricular activities you did relating to your degree. */}
-                </p>
+                <h3>Freelancer Course</h3>
+                <p className={styles.sectionTimeline}>Dec 2022</p>
+                <p className={styles.sectionDescription}></p>
               </div>
             </section>
           </div>
           <div className={styles.contentItem}>
-            <h1 className={styles.name}>Skills</h1>
-            <section>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Basics</p>
-                <div>
-                  <p className={styles.sectionDescription}>HTML</p>
-                  <p className={styles.sectionDescription}>CSS</p>
-                  <p className={styles.sectionDescription}>JavaScript</p>
-                  <p className={styles.sectionDescription}>TypeScript</p>
-                </div>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Stack</p>
-                <div>
-                  <p className={styles.sectionDescription}>React</p>
-                  <p className={styles.sectionDescription}>Next.js</p>
-                  <p className={styles.sectionDescription}>React Router</p>
-                  <p className={styles.sectionDescription}>React Query</p>
-                  <p className={styles.sectionDescription}>REST API</p>
-                </div>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Styling</p>
-                <div>
-                  <p className={styles.sectionDescription}>Tailwind</p>
-                  <p className={styles.sectionDescription}>Bootstrap</p>
-                  <p className={styles.sectionDescription}>SASS</p>
-                  <p className={styles.sectionDescription}>styled-components</p>
-                  <p className={styles.sectionDescription}>RWD</p>
-                </div>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Database</p>
-                <div>
-                  <p className={styles.sectionDescription}>MySQL</p>
-                  <p className={styles.sectionDescription}>Firebase</p>
-                </div>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Tools</p>
-                <div>
-                  <p className={styles.sectionDescription}>Git</p>
-                  <p className={styles.sectionDescription}>Figma</p>
-                  <p className={styles.sectionDescription}>Photoshop</p>
-                  <p className={styles.sectionDescription}>VSCode</p>
-                </div>
-              </div>
-            </section>
+            <h2 className={styles.name}>Projects</h2>
+            <p className={styles.sectionDescription}>
+              All my projects with details available on projects page.
+            </p>
+            <Link className={styles.contactMe} href="projects">
+              Go to projects
+            </Link>
           </div>
           <div className={styles.contentItem}>
-            <h1 className={styles.name}>Interests</h1>
-            <section>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Travel</p>
-                <p className={styles.sectionDescription}>Gaming</p>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Web Design</p>
-                <p className={styles.sectionDescription}>UX Design</p>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Technology</p>
-                <p className={styles.sectionDescription}>Astronomy</p>
-              </div>
-              <div className={styles.skillsItem}>
-                <p className={styles.sectionDescription}>Photography</p>
-                <p className={styles.sectionDescription}>Football</p>
-              </div>
-            </section>
+            <h2 className={styles.name}>Stack</h2>
+            <p className={styles.sectionDescription}>
+              JavaScript / TypeScript / React.js / Next.js / npm
+            </p>
+            <p className={styles.sectionDescription}>
+              Redux / React Router / React Query / Formik / REST API
+            </p>
+            <p className={styles.sectionDescription}>HTML / CSS / RWD / SASS</p>
+            <p className={styles.sectionDescription}>
+              Tailwind / Bootstrap / styled-components
+            </p>
+            <p className={styles.sectionDescription}>
+              MySQL / Firebase / Sanity
+            </p>
+            <p className={styles.sectionDescription}>Git / GitHub</p>
+            <p className={styles.sectionDescription}>
+              VSCode / Figma / Adobe Photoshop
+            </p>
+          </div>
+          <div className={styles.contentItem}>
+            <h2 className={styles.name}>Interests</h2>
+            <p className={styles.sectionDescription}>
+              Travel / Gaming / Web Design / Technology / Astronomy /
+              Photography / Football
+            </p>
           </div>
         </div>
       </ContentLayout>

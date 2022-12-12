@@ -7,7 +7,7 @@
 
 .list ul > li {
   margin: 0 0 0.4rem 3rem;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   letter-spacing: -1px;
   color: gray;
 }

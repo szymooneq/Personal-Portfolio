@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { leftArrow } from "../../assets/svgIconsPack";
 import ContentLayout from "../../components/Layout/ContentLayout";
 import Group from "../../components/UI/Group/Group";
 import Slider from "../../components/UI/Slider/Slider";
@@ -76,19 +75,16 @@ export default function ProjectPage({ projectData }) {
           ))}
         </Group>
 
-        {projectData.todo && (
+        {/* {projectData.todo && (
           <Group type="list" title="To do">
             {projectData.todo.map((el) => (
               <li key={el}>{el}</li>
             ))}
           </Group>
-        )}
+        )} */}
 
-        <Link
-          href="/projects"
-          scroll={false}
-          className={`${styles.backButton} button`}>
-          {leftArrow}Back to projects
+        <Link href="/projects" scroll={false} className={styles.backButton}>
+          Go back
         </Link>
       </ContentLayout>
     </>

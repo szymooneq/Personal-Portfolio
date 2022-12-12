@@ -1,6 +1,6 @@
 .desc {
   margin-bottom: 2rem;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   letter-spacing: -1px;
   color: grey;
 }

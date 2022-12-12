@@ -22,14 +22,14 @@
 .secondary {
   margin-top: 1rem;
   margin-bottom: 0;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   font-weight: 400 !important;
   letter-spacing: -1px;
   color: grey;
 }
 
 .card:nth-child(1) {
-  background: url("../assets/photo.jpg");
+  background: url("../assets/aboutImage.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -45,7 +45,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--text-blue);
+  background-color: var(--blue-color);
   border-radius: var(--card-border-radius);
   filter: blur(10px);
   opacity: 0;
@@ -65,20 +65,45 @@
 }
 
 .cardDesc {
-  font-size: var(--contact-info);
+  font-size: var(--card-desc-font-size);
   color: gray;
   letter-spacing: -0.8px;
 }
 
+.card:nth-child(4) img {
+  margin-top: -2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  pointer-events: none;
+}
+
+.card:nth-child(4) p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: grey;
+}
+
 .card:nth-child(5) {
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card:nth-child(5) .icon {
+  margin-bottom: 0.5rem;
+  align-self: center;
+  justify-self: center;
 }
 
 .card:nth-child(5) .icon svg {
   width: 125px;
   height: auto;
-  color: var(--text-blue);
+  color: var(--blue-color);
 }
 
 .card:nth-child(5) .arrow svg {
@@ -87,21 +112,26 @@
   color: gray;
 }
 
+.card:nth-child(5):hover .arrow svg {
+  color: var(--blue-color);
+}
+
 .card:nth-child(6) .getTouch {
   font-size: var(--about-getTouch);
-  color: var(--text-blue);
+  color: var(--blue-color);
   font-weight: 700;
   letter-spacing: -4px;
 }
 
 .card:nth-child(7) svg {
-  width: 54px;
-  height: 54px;
-  color: var(--text-blue);
+  width: 70px;
+  height: 70px;
+  color: var(--blue-color);
 }
 
 .card:nth-child(7) p {
-  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -125,7 +155,7 @@
 }
 
 .card:hover .cardFlex svg {
-  color: var(--text-blue) !important;
+  color: var(--blue-color) !important;
 }
 
 @media (min-width: 768px) {

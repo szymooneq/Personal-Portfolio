@@ -1,7 +1,3 @@
-#nprogress {
-  z-index: 999;
-}
-
 .container {
   padding: 0 1.5rem;
   margin: 0 auto;
@@ -9,30 +5,27 @@
   max-width: var(--container-width);
 }
 
-/* .section {
-  margin: 2rem auto;
-} */
+#nprogress {
+  z-index: 999;
+}
+
+.tagcloud {
+  font-size: 1rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
 
 .button {
   padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
   gap: 0.4rem;
-  position: relative;
   font-size: 1rem;
   font-weight: 600;
-  color: white;
   background: var(--bg-secondary);
   border: none;
   opacity: 1;
   transition: opacity 0.3s;
   cursor: pointer;
-}
-
-.button.reset {
-  text-transform: uppercase;
-  color: #fe315c;
 }
 
 .button img {
@@ -44,43 +37,12 @@
   opacity: 0.7;
 }
 
+.button.reset {
+  text-transform: uppercase;
+  color: #fe315c;
+}
+
 .button.active {
   background: var(--main) !important;
   pointer-events: none;
-}
-
-.tagcloud {
-  font-size: 1rem;
-  letter-spacing: -1px;
-  color: #ffffff;
-}
-
-@media (min-width: 640px) {
-}
-
-/* MD */
-@media (min-width: 768px) {
-  .section {
-    margin-bottom: 8rem;
-  }
-
-  .breadcrumb {
-    margin-top: 5rem;
-  }
-
-  /* .tagcloud {
-    font-size: 1rem;
-  } */
-}
-
-/* LG */
-@media (min-width: 1024px) {
-}
-
-/* XL */
-@media (min-width: 1280px) {
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
 }

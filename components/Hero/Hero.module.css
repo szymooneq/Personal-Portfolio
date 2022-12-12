@@ -16,7 +16,7 @@
 
 .primary {
   font-size: var(--project-desc);
-  color: var(--text-blue);
+  color: var(--blue-color);
 }
 
 .secondary {
@@ -82,7 +82,7 @@
 }
 
 .links svg:hover {
-  color: var(--text-blue);
+  color: var(--blue-color);
   transform: scale(1.2);
 }
 

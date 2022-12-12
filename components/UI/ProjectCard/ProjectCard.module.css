@@ -15,7 +15,7 @@
 }
 
 .card:hover svg {
-  color: var(--text-blue);
+  color: var(--blue-color);
 }
 
 .card::after {

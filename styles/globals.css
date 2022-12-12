@@ -2,28 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
 :root {
-  --white: #fff;
+  --container-width: 100%;
   --bg-dark: #1d1d20;
   --bg-secondary: #2e2e33;
+  --blue-color: #5d5dff;
   --main: linear-gradient(to bottom right, #4b26cb, #ec857e);
-  --text-color: #f4f4f5;
-  --text-blue: rgb(93, 93, 255);
-  --text-gray: rgb(212, 212, 216);
-  --theme-primary: #fff;
-  --theme-secondary: #000;
-
-  --contact-title: 32px;
-  --contact-subText: 22px;
-  --contact-info: 20px;
-
-  --about-getTouch: 40px;
-
-  --project-desc: 40px;
-
-  --container-width: 100%;
 
   --card-padding: 2rem;
   --card-border-radius: 1rem;
+  --card-title-font-size: 22px;
+  --card-desc-font-size: 20px;
+
+  --contact-title: 32px;
+  --about-getTouch: 40px;
+  --project-desc: 40px;
 }
 
 ::selection {
@@ -40,13 +32,9 @@
 }
 
 body {
-  color: white;
+  color: #ffffff;
   background: var(--bg-dark);
   overflow-x: hidden;
-}
-
-#__next {
-  min-height: 100vh;
 }
 
 a {
@@ -55,11 +43,7 @@ a {
 }
 
 img {
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  pointer-events: none;
 }
 
 /* SM */
@@ -73,8 +57,8 @@ img {
 @media (min-width: 768px) {
   :root {
     --contact-title: 34px;
-    --contact-subText: 24px;
-    --contact-info: 22px;
+    --card-title-font-size: 24px;
+    --card-desc-font-size: 22px;
 
     --about-getTouch: 48px;
 
@@ -95,7 +79,7 @@ img {
 @media (min-width: 1280px) {
   :root {
     --contact-title: 40px;
-    --contact-subText: 26px;
+    --card-title-font-size: 26px;
 
     --about-getTouch: 56px;
 

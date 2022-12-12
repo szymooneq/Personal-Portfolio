@@ -1,11 +1,11 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
+import aboutProjects from "../assets/aboutProjects.png";
 import {
-  leftArrow,
-  leftUpArrow,
   linkedinIcon,
-  rightArrow,
   rightCircleArrow,
+  rightUpCircleArrow,
   userFaceID
 } from "../assets/svgIconsPack";
 import ContentLayout from "../components/Layout/ContentLayout";
@@ -16,7 +16,10 @@ export default function About() {
     <>
       <Head>
         <title>About me | Szymon Dudka</title>
-        <meta name="description" content="" />
+        <meta
+          name="description"
+          content="I'm a Frontend Developer. I create websites / web applications and I constantly develop my development skills. My goal is to become a Fullstack JS Developer."
+        />
       </Head>
       <ContentLayout header="About" className={styles.main}>
         <div className={styles.card}></div>
@@ -32,12 +35,19 @@ export default function About() {
             a Fullstack JS Developer.
           </p>
         </div>
-        <div className={styles.card}>
-          <h2>Skills</h2>
-          {/* <p>Revolution Design Lead 2019 -</p>
-          <p>Circle UX Designer 2015 - 2019</p>
-          <p>Circle UX Designer 2015 - 2019</p> */}
-        </div>
+        <Link href="projects" className={styles.card}>
+          <Image
+            src={aboutProjects}
+            width={590}
+            height={190}
+            alt="Projects card background"
+          />
+          <p>Check my projects</p>
+          <div className={styles.cardFlex}>
+            <h2>See my work</h2>
+            {rightCircleArrow}
+          </div>
+        </Link>
         <a
           className={styles.card}
           href="https://www.linkedin.com/in/szymon-dudka"
@@ -45,8 +55,7 @@ export default function About() {
           rel="noreferrer"
           aria-label="Check my profile on LinkedIn">
           <div className={styles.icon}>{linkedinIcon}</div>
-          {/* <div className={styles.arrow}>{leftUpArrow}</div> */}
-          {/* <div className={styles.cardFlex}>{leftUpArrow}</div> */}
+          <div className={styles.arrow}>{rightUpCircleArrow}</div>
         </a>
         <Link href="contact" className={styles.card}>
           <h2>Let&apos;s work together ✨</h2>
@@ -56,7 +65,7 @@ export default function About() {
           </div>
         </Link>
         <Link href="resume" className={styles.card}>
-          {userFaceID}
+          <div className={styles.userFaceID}>{userFaceID}</div>
           <p>Learn more about me</p>
           <div className={styles.cardFlex}>
             <h2>See my resume</h2>

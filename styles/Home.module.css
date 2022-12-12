@@ -14,13 +14,13 @@
 
 .card h1 {
   font-weight: 700;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   letter-spacing: -1px;
 }
 
 .card p {
   margin-top: 1rem;
-  font-size: var(--contact-info);
+  font-size: var(--card-desc-font-size);
   color: gray;
   letter-spacing: -0.8px;
 }
@@ -28,8 +28,8 @@
 .quote {
   margin-top: 2rem;
   text-align: center;
-  font-size: var(--contact-info);
-  color: var(--text-blue);
+  font-size: var(--card-desc-font-size);
+  color: var(--blue-color);
 }
 
 .links {

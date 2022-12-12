@@ -1,32 +1,41 @@
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 8rem;
+  margin-top: 6rem;
+  text-align: center;
 }
 
-.number {
-  font-size: 8rem;
+.content h1 {
+  font-size: 150px;
   font-weight: 900;
   background: var(--main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.number::selection {
-  -webkit-text-fill-color: var(--text-color);
+.content h1::selection {
+  -webkit-text-fill-color: #000000;
 }
 
-.header {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-color);
+.content p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: var(--card-title-font-size);
+  letter-spacing: -1px;
+  color: grey;
 }
 
-.description {
-  margin: 2rem 0;
-  color: var(--text-gray);
-  text-align: center;
+.backButton {
+  margin: 1.5rem auto;
+  padding: 0.4rem 0.8rem;
+  display: block;
+  width: max-content;
+  font-size: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+.backButton:hover {
+  color: var(--blue-color);
+  border-color: var(--blue-color);
 }

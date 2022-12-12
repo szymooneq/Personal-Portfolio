@@ -48,7 +48,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--text-blue);
+  background-color: var(--blue-color);
   border-radius: 50%;
   filter: blur(5px);
   transition: opacity 0.5s;
@@ -63,7 +63,7 @@
 .whatsUp {
   padding: 0.4rem 0.8rem;
   font-size: 13px;
-  background-color: var(--text-blue);
+  background-color: var(--blue-color);
   border-radius: 1rem;
   visibility: hidden;
   opacity: 0;
@@ -83,14 +83,14 @@
 }
 
 .work {
-  font-size: var(--contact-subText);
-  color: var(--text-blue);
+  font-size: var(--card-title-font-size);
+  color: var(--blue-color);
   letter-spacing: -1px;
 }
 
 .contacts {
   margin-top: 1rem;
-  font-size: var(--contact-info);
+  font-size: var(--card-desc-font-size);
   letter-spacing: -0.8px;
   color: gray;
 }
@@ -107,13 +107,13 @@
 }
 
 .contactMe:hover {
-  color: var(--text-blue);
-  border-color: var(--text-blue);
+  color: var(--blue-color);
+  border-color: var(--blue-color);
 }
 
 .link {
   padding: 1rem 0;
-  font-size: var(--contact-info);
+  font-size: var(--card-desc-font-size);
   font-weight: 700;
   color: gray;
 }
@@ -125,7 +125,7 @@
 }
 
 .linkDesc:hover {
-  color: var(--text-blue);
+  color: var(--blue-color);
 }
 
 .linkDesc svg {
@@ -141,16 +141,16 @@
   margin-bottom: 3rem;
 }
 
-.sectionItem h2 {
+.sectionItem h3 {
   margin-bottom: 0.5rem;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   letter-spacing: -1px;
-  color: var(--text-blue);
+  color: var(--blue-color);
 }
 
 .sectionDescription {
   margin-top: 1rem;
-  font-size: var(--contact-subText);
+  font-size: var(--card-title-font-size);
   letter-spacing: -1px;
   color: grey;
 }
@@ -159,11 +159,6 @@
   font-size: 1rem;
   letter-spacing: -0.8px;
   color: rgb(190, 190, 190);
-}
-
-.skillsItem {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
 }
 
 @media (min-width: 768px) {
