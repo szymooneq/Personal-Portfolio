@@ -2,10 +2,8 @@
 
 # dependencies
 node_modules
-dist
 /.pnp
 .pnp.js
-*.psd
 
 # testing
 /coverage
@@ -32,9 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# sanity
-sanity.json
 
 # typescript
 *.tsbuildinfo
