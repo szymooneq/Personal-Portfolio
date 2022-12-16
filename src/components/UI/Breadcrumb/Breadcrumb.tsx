@@ -6,7 +6,7 @@ type Breadcrumb = {
 	asPath: string;
 };
 
-export default function Breadcrumb({ asPath }: Breadcrumb) {
+export default function Breadcrumb({ asPath }: Breadcrumb): JSX.Element {
 	const [breadcrumb, setBreadcrumb] = useState<string[]>([]);
 
 	useEffect(() => {

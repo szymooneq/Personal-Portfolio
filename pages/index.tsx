@@ -2,14 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Hero from '../src/components/Hero/Hero';
 import ContentLayout from '../src/components/Layout/ContentLayout';
-import {
-	contactIcon,
-	downloadIcon
-} from '../src/components/UI/SvgIcons/svgIconsPack';
+import { contactIcon, downloadIcon } from '../src/components/UI/Svg/SvgIcons';
 import Tagcloud from '../src/components/UI/Tagcloud/Tagcloud';
 import styles from '../src/styles/Home.module.css';
 
-export default function Home() {
+export default function Home(): JSX.Element {
 	return (
 		<>
 			<Head>

@@ -6,7 +6,7 @@ type Group = {
 	title?: string;
 } & ChildrenType;
 
-export default function Group({ type, title, children }: Group) {
+export default function Group({ type, title, children }: Group): JSX.Element {
 	switch (type) {
 		case 'list':
 			return (

@@ -2,9 +2,16 @@ import {
 	discordIcon,
 	githubIcon,
 	linkedinIcon
-} from '../../components/UI/SvgIcons/svgIconsPack';
+} from '../../components/UI/Svg/SvgIcons';
 
-export const contactLinks = [
+type ContactLinks = {
+	name: string;
+	url: string;
+	icon: JSX.Element;
+	ariaLabel: string;
+};
+
+export const contactLinks: ContactLinks[] = [
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/szymon-dudka',

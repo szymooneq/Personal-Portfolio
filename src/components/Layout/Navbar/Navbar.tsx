@@ -5,7 +5,7 @@ import { throttle } from '../../../lib/helpers/throttle';
 import Logo from '../../UI/Logo/Logo';
 import styles from './Navbar.module.css';
 
-const menuItems = [
+const menuItems: { title: string; path: string }[] = [
 	{ title: 'Home', path: '/' },
 	{ title: 'About', path: '/about' },
 	{ title: 'Projects', path: '/projects' },
@@ -13,11 +13,11 @@ const menuItems = [
 	{ title: 'Get in touch', path: '/contact' }
 ];
 
-export default function Navbar() {
+export default function Navbar(): JSX.Element {
 	const { pathname } = useRouter();
-	const [navbarOnTop, setNavbarOnTop] = useState(true);
-	const [animation, setAnimation] = useState(false);
-	const [expandNavbar, setExpandNavbar] = useState(false);
+	const [navbarOnTop, setNavbarOnTop] = useState<boolean>(true);
+	const [animation, setAnimation] = useState<boolean>(false);
+	const [expandNavbar, setExpandNavbar] = useState<boolean>(false);
 
 	const handleToggle = () => {
 		setExpandNavbar((prev) => !prev);
@@ -28,7 +28,6 @@ export default function Navbar() {
 	}, 300);
 
 	const handleScroll = throttle(() => {
-		console.log(window.scrollY);
 		const starfield: HTMLElement | null = document.querySelector('#starfield');
 
 		if (starfield && window.scrollY < starfield.clientHeight) {

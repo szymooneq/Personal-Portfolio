@@ -10,7 +10,7 @@ export default function ContentLayout({
 	children,
 	header,
 	className
-}: ContentLayout) {
+}: ContentLayout): JSX.Element {
 	return (
 		<article className="container">
 			{header && <Header title={header} />}

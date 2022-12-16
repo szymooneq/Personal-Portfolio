@@ -1,9 +1,9 @@
-import styles from "../../Layout/Navbar/Navbar.module.css";
+import styles from '../../Layout/Navbar/Navbar.module.css';
 
-export default function Logo() {
-  return (
-    <div className={styles.logo}>
-      <p className={styles.logoName}>SD</p>
-    </div>
-  );
+export default function Logo(): JSX.Element {
+	return (
+		<div className={styles.logo}>
+			<p>SD</p>
+		</div>
+	);
 }

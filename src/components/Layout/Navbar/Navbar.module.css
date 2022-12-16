@@ -133,7 +133,7 @@
 	transform: rotate(20deg) scale(1.1);
 }
 
-.logoName {
+.logo p {
 	position: absolute;
 	bottom: 0;
 	right: 4px;

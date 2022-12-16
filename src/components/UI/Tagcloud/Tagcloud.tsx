@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import TagCloud from 'TagCloud';
+const TagCloud = require('TagCloud');
 
-const technologies = [
+const technologies: string[] = [
 	'HTML5',
 	'CSS3',
 	'JavaScript',
@@ -32,8 +32,8 @@ const technologies = [
 	'Adobe Photoshop'
 ];
 
-export default function Tagcloud() {
-	const [radius, setRadius] = useState(230);
+export default function Tagcloud(): JSX.Element {
+	const [radius, setRadius] = useState<number>(230);
 
 	const handleResize = () => {
 		if (window.innerWidth > 768) {
@@ -48,11 +48,13 @@ export default function Tagcloud() {
 			setRadius(300);
 		}
 
-		const tagcloud = TagCloud('.tagcloud', technologies, { radius: radius });
+		const instance = new TagCloud('.tagcloud', technologies, {
+			radius: radius
+		});
 		window.addEventListener('resize', handleResize);
 
 		return () => {
-			tagcloud.destroy();
+			instance.destroy();
 			window.removeEventListener('resize', handleResize);
 		};
 	}, [radius]);

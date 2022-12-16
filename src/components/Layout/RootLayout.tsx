@@ -5,7 +5,7 @@ import Footer from './Footer/Footer';
 import HomeLayout from './HomeLayout';
 import Navbar from './Navbar/Navbar';
 
-export default function RootLayout({ children }: ChildrenType) {
+export default function RootLayout({ children }: ChildrenType): JSX.Element {
 	return (
 		<>
 			<Head>

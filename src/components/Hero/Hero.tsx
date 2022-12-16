@@ -4,15 +4,15 @@ import { contactLinks } from '../../lib/helpers/contactLinks';
 import styles from './Hero.module.css';
 import Starfield from './Starfield/Starfield';
 
-export default function Hero() {
+export default function Hero(): JSX.Element {
 	return (
 		<header className={styles.hero}>
 			<Starfield />
 
 			<div className={styles.main}>
 				<div className={styles.content}>
-					<h1 className={styles.primary}>Szymon Dudka</h1>
-					<h2 className={styles.secondary}>Frontend Developer</h2>
+					<h1>Szymon Dudka</h1>
+					<h2>Frontend Developer</h2>
 
 					<div className={styles.links}>
 						{contactLinks.map((link) => (

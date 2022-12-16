@@ -4,29 +4,35 @@ import {
 	cubeIcon,
 	layoutIcon,
 	penIcon
-} from '../src/components/UI/SvgIcons/svgIconsPack';
+} from '../src/components/UI/Svg/SvgIcons';
 import { contactLinks } from '../src/lib/helpers/contactLinks';
 import styles from '../src/styles/Contact.module.css';
 
-const cardAds = [
+type cardAdType = {
+	title: string;
+	desc: string;
+	icon: JSX.Element;
+};
+
+const cardAds: cardAdType[] = [
 	{
 		title: 'Website design & development',
-		desc: 'Experienced designer & visual developer. I love using tools like Figma and Framer.',
+		desc: 'Experienced designer & visual developer. I love creating websites / web applications.',
 		icon: layoutIcon
 	},
 	{
 		title: 'Visual & graphic design',
-		desc: 'Eye for the visual side of things. I enjoy crafting beautiful illustrations and animations!',
+		desc: 'Eye for the visual side of things. I enjoy crafting with attention to the details!',
 		icon: penIcon
 	},
 	{
 		title: 'Branding',
-		desc: 'Combining both my visual and analytical side, I love creating brands that not only look great, but sell as well.',
+		desc: 'Combining both my visual and analytical side, I love creating brands.',
 		icon: cubeIcon
 	}
 ];
 
-export default function Contact() {
+export default function Contact(): JSX.Element {
 	return (
 		<>
 			<Head>

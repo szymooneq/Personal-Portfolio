@@ -12,11 +12,13 @@ import { urlFor } from '../../src/lib/sanityConfig';
 import styles from '../../src/styles/ProjectPage.module.css';
 import { ProjectDetails, ProjectLink } from '../../src/types/types';
 
+type ProjectPageType = {
+	projectData: ProjectDetails;
+};
+
 export default function ProjectPage({
 	projectData
-}: {
-	projectData: ProjectDetails;
-}) {
+}: ProjectPageType): JSX.Element {
 	return (
 		<>
 			<Head>

@@ -1,4 +1,4 @@
-export const linkedinIcon = (
+const linkedinIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="34.68"
@@ -13,7 +13,7 @@ export const linkedinIcon = (
 	</svg>
 );
 
-export const githubIcon = (
+const githubIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="37.747"
@@ -29,7 +29,7 @@ export const githubIcon = (
 	</svg>
 );
 
-export const discordIcon = (
+const discordIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -43,7 +43,7 @@ export const discordIcon = (
 	</svg>
 );
 
-export const downloadIcon = (
+const downloadIcon: JSX.Element = (
 	<svg
 		width="20"
 		height="20"
@@ -73,7 +73,7 @@ export const downloadIcon = (
 	</svg>
 );
 
-export const contactIcon = (
+const contactIcon: JSX.Element = (
 	<svg
 		width="20"
 		height="20"
@@ -95,7 +95,7 @@ export const contactIcon = (
 	</svg>
 );
 
-export const rightCircleArrow = (
+const rightCircleArrow: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -114,7 +114,7 @@ export const rightCircleArrow = (
 	</svg>
 );
 
-export const rightUpCircleArrow = (
+const rightUpCircleArrow: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -133,7 +133,7 @@ export const rightUpCircleArrow = (
 	</svg>
 );
 
-export const layoutIcon = (
+const layoutIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -152,7 +152,7 @@ export const layoutIcon = (
 	</svg>
 );
 
-export const penIcon = (
+const penIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -171,7 +171,7 @@ export const penIcon = (
 	</svg>
 );
 
-export const cubeIcon = (
+const cubeIcon: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -190,7 +190,7 @@ export const cubeIcon = (
 	</svg>
 );
 
-export const userFaceID = (
+const userFaceID: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -203,3 +203,17 @@ export const userFaceID = (
 		/>
 	</svg>
 );
+
+export {
+	linkedinIcon,
+	githubIcon,
+	discordIcon,
+	downloadIcon,
+	contactIcon,
+	rightCircleArrow,
+	rightUpCircleArrow,
+	layoutIcon,
+	penIcon,
+	cubeIcon,
+	userFaceID
+};

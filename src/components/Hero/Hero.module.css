@@ -14,12 +14,12 @@
 	text-align: center;
 }
 
-.primary {
+.content h1 {
 	font-size: var(--project-desc);
 	color: var(--blue-color);
 }
 
-.secondary {
+.content h2 {
 	font-family: 'Architects Daughter', cursive;
 	font-size: var(--contact-title);
 }

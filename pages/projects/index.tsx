@@ -3,13 +3,20 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ContentLayout from '../../src/components/Layout/ContentLayout';
 import CardList from '../../src/components/UI/ProjectCard/CardList';
-import ProjectCard from '../../src/components/UI/ProjectCard/ProjectCard';
 import Technologies from '../../src/components/UI/Technologies/Technologies';
 import { getAllProjects } from '../../src/lib/api/projects';
 import styles from '../../src/styles/Projects.module.css';
 import { Project, ProjectTechnology } from '../../src/types/types';
 
-export default function Projects({ projectsList, technologiesList }: any) {
+type ProjectsType = {
+	projectsList: Project[];
+	technologiesList: ProjectTechnology[];
+};
+
+export default function Projects({
+	projectsList,
+	technologiesList
+}: ProjectsType): JSX.Element {
 	const { query } = useRouter();
 	const [filteredProjects, setFilteredProjects] =
 		useState<Project[]>(projectsList);
@@ -17,8 +24,8 @@ export default function Projects({ projectsList, technologiesList }: any) {
 	useEffect(() => {
 		if (query.category) {
 			setFilteredProjects(
-				projectsList.filter((project: Project) =>
-					project.technologies.find((technology: ProjectTechnology) =>
+				projectsList.filter((project) =>
+					project.technologies.find((technology) =>
 						technology.title.includes(query.category as string)
 					)
 				)

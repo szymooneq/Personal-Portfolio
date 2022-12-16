@@ -7,6 +7,7 @@ export type ProjectIconReference = {
 		_ref: string;
 		_type: string;
 	};
+	alt?: string;
 };
 
 export type ProjectLink = {
@@ -48,9 +49,7 @@ type ProjectStack = {
 export type ProjectDetails = {
 	description: string;
 	details: string[];
-	images: {
-		alt: string;
-	} & ProjectIconReference;
+	images: ProjectIconReference[];
 	links: ProjectLink[];
 	stack: ProjectStack[];
 	technologies: ProjectTechnology[];

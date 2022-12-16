@@ -8,10 +8,10 @@ import {
 	rightCircleArrow,
 	rightUpCircleArrow,
 	userFaceID
-} from '../src/components/UI/SvgIcons/svgIconsPack';
+} from '../src/components/UI/Svg/SvgIcons';
 import styles from '../src/styles/About.module.css';
 
-export default function About() {
+export default function About(): JSX.Element {
 	return (
 		<>
 			<Head>

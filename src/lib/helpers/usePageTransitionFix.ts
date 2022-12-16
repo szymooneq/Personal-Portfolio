@@ -1,16 +1,19 @@
 import Router from 'next/router';
 import { useEffect } from 'react';
 
-export const OPACITY_EXIT_DURATION: number = 1;
+export const OPACITY_EXIT_DURATION: number = 2;
 
 const routeChange = () => {
 	const tempFix = () => {
-		const elements = document.querySelectorAll('style[media="x"]');
+		const elements: NodeListOf<Element> =
+			document.querySelectorAll('style[media="x"]');
+
 		elements.forEach((elem) => elem.removeAttribute('media'));
 		setTimeout(() => {
 			elements.forEach((elem) => elem.remove());
 		}, OPACITY_EXIT_DURATION * 1000);
 	};
+
 	tempFix();
 };
 

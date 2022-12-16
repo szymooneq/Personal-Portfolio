@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import ContentLayout from '../src/components/Layout/ContentLayout';
-import { rightUpCircleArrow } from '../src/components/UI/SvgIcons/svgIconsPack';
+import { rightUpCircleArrow } from '../src/components/UI/Svg/SvgIcons';
 import { contactLinks } from '../src/lib/helpers/contactLinks';
 import styles from '../src/styles/Resume.module.css';
 
-export default function Resume() {
+export default function Resume(): JSX.Element {
 	return (
 		<>
 			<Head>

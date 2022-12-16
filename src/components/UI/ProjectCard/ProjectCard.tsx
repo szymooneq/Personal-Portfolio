@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { urlFor } from '../../../lib/sanityConfig';
 import { Project } from '../../../types/types';
-import { rightCircleArrow } from '../SvgIcons/svgIconsPack';
+import { rightCircleArrow } from '../Svg/SvgIcons';
 import styles from './ProjectCard.module.css';
 
 type ProjectCard = {
 	project: Project;
 };
 
-export default function ProjectCard({ project }: ProjectCard) {
+export default function ProjectCard({ project }: ProjectCard): JSX.Element {
 	return (
 		<div
 			className={styles.card}
@@ -26,9 +26,9 @@ export default function ProjectCard({ project }: ProjectCard) {
 						alt={project.title}
 					/>
 					<div className={styles.desc}>
-						<div className={styles.type}>{project.type.title}</div>
+						<p>{project.type.title}</p>
 						<div className={styles.title}>
-							<h1>{project.title}</h1>
+							<h2>{project.title}</h2>
 							{rightCircleArrow}
 						</div>
 					</div>

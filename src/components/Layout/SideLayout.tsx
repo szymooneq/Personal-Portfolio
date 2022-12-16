@@ -8,7 +8,11 @@ type SideLayout = {
 	asPath: string;
 } & ChildrenType;
 
-export default function SideLayout({ pathname, asPath, children }: SideLayout) {
+export default function SideLayout({
+	pathname,
+	asPath,
+	children
+}: SideLayout): JSX.Element {
 	usePageTransitionFix();
 
 	return (

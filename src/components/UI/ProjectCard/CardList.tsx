@@ -6,7 +6,7 @@ type CardList = {
 	projectsList: Project[];
 };
 
-export default function CardList({ projectsList }: CardList) {
+export default function CardList({ projectsList }: CardList): JSX.Element {
 	return (
 		<div className={styles.gridCards}>
 			{projectsList.map((project) => (
