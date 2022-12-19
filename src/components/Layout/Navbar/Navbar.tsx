@@ -20,7 +20,7 @@ export default function Navbar(): JSX.Element {
 	const [expandNavbar, setExpandNavbar] = useState<boolean>(false);
 
 	const handleToggle = () => {
-		setExpandNavbar((prev) => !prev);
+		if (window.innerWidth < 768) setExpandNavbar((prev) => !prev);
 	};
 
 	const handleResize = throttle(() => {
@@ -94,7 +94,7 @@ export default function Navbar(): JSX.Element {
 									? `${styles.active} ${styles.menuItemsLink}`
 									: `${styles.menuItemsLink}`
 							}>
-							<Link href={path} onClick={() => setExpandNavbar(false)}>
+							<Link href={path} onClick={handleToggle}>
 								{title}
 							</Link>
 						</li>
