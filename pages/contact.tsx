@@ -8,13 +8,7 @@ import {
 import { contactLinks } from '../src/lib/helpers/contactLinks';
 import styles from '../src/styles/Contact.module.css';
 
-type cardAdType = {
-	title: string;
-	desc: string;
-	icon: JSX.Element;
-};
-
-const cardAds: cardAdType[] = [
+const cardAds = [
 	{
 		title: 'Website design & development',
 		desc: 'Experienced designer & visual developer. I love creating websites / web applications.',
@@ -32,7 +26,7 @@ const cardAds: cardAdType[] = [
 	}
 ];
 
-export default function Contact(): JSX.Element {
+function Contact(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -125,3 +119,5 @@ export default function Contact(): JSX.Element {
 		</>
 	);
 }
+
+export default Contact;

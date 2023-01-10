@@ -11,7 +11,7 @@ import {
 } from '../src/components/UI/Svg/SvgIcons';
 import styles from '../src/styles/About.module.css';
 
-export default function About(): JSX.Element {
+function About(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -76,3 +76,5 @@ export default function About(): JSX.Element {
 		</>
 	);
 }
+
+export default About;

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ContentLayout from '../src/components/Layout/ContentLayout';
 import styles from '../src/styles/404.module.css';
 
-export default function NotFound(): JSX.Element {
+function NotFound(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -28,3 +28,5 @@ export default function NotFound(): JSX.Element {
 		</>
 	);
 }
+
+export default NotFound;

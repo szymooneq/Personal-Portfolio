@@ -4,22 +4,22 @@ import { useEffect, useState } from 'react';
 import ContentLayout from '../../src/components/Layout/ContentLayout';
 import CardList from '../../src/components/UI/ProjectCard/CardList';
 import Technologies from '../../src/components/UI/Technologies/Technologies';
+import {
+	ProjectDetails,
+	ProjectTechnology
+} from '../../src/interfaces/project';
 import { getAllProjects } from '../../src/lib/api/projects';
 import styles from '../../src/styles/Projects.module.css';
-import { Project, ProjectTechnology } from '../../src/types/types';
 
-type ProjectsType = {
-	projectsList: Project[];
+interface props {
+	projectsList: ProjectDetails[];
 	technologiesList: ProjectTechnology[];
-};
+}
 
-export default function Projects({
-	projectsList,
-	technologiesList
-}: ProjectsType): JSX.Element {
+function Projects({ projectsList, technologiesList }: props): JSX.Element {
 	const { query } = useRouter();
 	const [filteredProjects, setFilteredProjects] =
-		useState<Project[]>(projectsList);
+		useState<ProjectDetails[]>(projectsList);
 
 	useEffect(() => {
 		if (query.category) {
@@ -62,6 +62,8 @@ export default function Projects({
 		</>
 	);
 }
+
+export default Projects;
 
 export async function getStaticProps() {
 	const { projectsList, technologiesList } = await getAllProjects();

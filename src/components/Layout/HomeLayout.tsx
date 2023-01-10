@@ -1,8 +1,11 @@
 import { useRouter } from 'next/router';
-import { ChildrenType } from '../../types/types';
 import SideLayout from './SideLayout';
 
-export default function HomeLayout({ children }: ChildrenType): JSX.Element {
+interface props {
+	children: React.ReactNode;
+}
+
+function HomeLayout({ children }: props): JSX.Element {
 	const { pathname, asPath } = useRouter();
 
 	return pathname === '/' ? (
@@ -13,3 +16,5 @@ export default function HomeLayout({ children }: ChildrenType): JSX.Element {
 		</SideLayout>
 	);
 }
+
+export default HomeLayout;

@@ -45,7 +45,7 @@ class Star {
 	}
 }
 
-export default function Starfield(): JSX.Element {
+function Starfield(): JSX.Element {
 	let requestRef: number;
 	const SPEED = 0.1;
 	const COUNT = 600;
@@ -112,3 +112,5 @@ export default function Starfield(): JSX.Element {
 		</div>
 	);
 }
+
+export default Starfield;

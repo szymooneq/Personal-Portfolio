@@ -1,12 +1,12 @@
-import { ChildrenType } from '../../../types/types';
 import styles from './Group.module.css';
 
-type Group = {
+interface props {
+	children: React.ReactNode;
 	type?: string;
 	title?: string;
-} & ChildrenType;
+}
 
-export default function Group({ type, title, children }: Group): JSX.Element {
+function Group({ type, title, children }: props): JSX.Element {
 	switch (type) {
 		case 'list':
 			return (
@@ -26,3 +26,5 @@ export default function Group({ type, title, children }: Group): JSX.Element {
 			);
 	}
 }
+
+export default Group;

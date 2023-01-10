@@ -1,11 +1,11 @@
 import { motion as m } from 'framer-motion';
 import styles from './Header.module.css';
 
-type HeaderType = {
+interface props {
 	title: string;
-};
+}
 
-export default function Header({ title }: HeaderType): JSX.Element {
+function Header({ title }: props): JSX.Element {
 	return (
 		<m.header
 			className={styles.title}
@@ -16,3 +16,5 @@ export default function Header({ title }: HeaderType): JSX.Element {
 		</m.header>
 	);
 }
+
+export default Header;

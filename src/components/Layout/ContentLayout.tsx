@@ -1,16 +1,12 @@
-import { ChildrenType } from '../../types/types';
 import Header from '../UI/Header/Header';
 
-type ContentLayout = {
+interface props {
+	children: React.ReactNode;
 	className?: string;
 	header?: string;
-} & ChildrenType;
+}
 
-export default function ContentLayout({
-	children,
-	header,
-	className
-}: ContentLayout): JSX.Element {
+function ContentLayout({ children, header, className }: props): JSX.Element {
 	return (
 		<article className="container">
 			{header && <Header title={header} />}
@@ -18,3 +14,5 @@ export default function ContentLayout({
 		</article>
 	);
 }
+
+export default ContentLayout;

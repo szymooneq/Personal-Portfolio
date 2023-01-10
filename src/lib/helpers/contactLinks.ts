@@ -4,14 +4,7 @@ import {
 	linkedinIcon
 } from '../../components/UI/Svg/SvgIcons';
 
-type ContactLinks = {
-	name: string;
-	url: string;
-	icon: JSX.Element;
-	ariaLabel: string;
-};
-
-export const contactLinks: ContactLinks[] = [
+export const contactLinks = [
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/szymon-dudka',

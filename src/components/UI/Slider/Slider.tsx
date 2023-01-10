@@ -1,14 +1,14 @@
 import { motion as m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { ProjectIconReference } from '../../../interfaces/project';
 import { urlFor } from '../../../lib/sanityConfig';
-import { ProjectIconReference } from '../../../types/types';
 import styles from './Slider.module.css';
 
-type SliderType = {
+interface props {
 	images: ProjectIconReference[];
-};
+}
 
-export default function Slider({ images }: SliderType): JSX.Element {
+function Slider({ images }: props): JSX.Element {
 	const [width, setWidth] = useState<number>(0);
 	const slider = useRef() as React.MutableRefObject<HTMLDivElement>;
 
@@ -39,3 +39,5 @@ export default function Slider({ images }: SliderType): JSX.Element {
 		</div>
 	);
 }
+
+export default Slider;

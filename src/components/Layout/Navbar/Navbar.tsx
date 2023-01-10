@@ -5,7 +5,7 @@ import { throttle } from '../../../lib/helpers/throttle';
 import Logo from '../../UI/Logo/Logo';
 import styles from './Navbar.module.css';
 
-const menuItems: { title: string; path: string }[] = [
+const menuItems = [
 	{ title: 'Home', path: '/' },
 	{ title: 'About', path: '/about' },
 	{ title: 'Projects', path: '/projects' },
@@ -13,7 +13,7 @@ const menuItems: { title: string; path: string }[] = [
 	{ title: 'Get in touch', path: '/contact' }
 ];
 
-export default function Navbar(): JSX.Element {
+function Navbar(): JSX.Element {
 	const { pathname } = useRouter();
 	const [navbarOnTop, setNavbarOnTop] = useState<boolean>(true);
 	const [animation, setAnimation] = useState<boolean>(false);
@@ -114,3 +114,5 @@ export default function Navbar(): JSX.Element {
 		</nav>
 	);
 }
+
+export default Navbar;

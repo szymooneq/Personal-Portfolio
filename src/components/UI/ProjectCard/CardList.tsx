@@ -1,12 +1,12 @@
-import { Project } from '../../../types/types';
+import { ProjectDetails } from '../../../interfaces/project';
 import ProjectCard from './ProjectCard';
 import styles from './ProjectCard.module.css';
 
-type CardList = {
-	projectsList: Project[];
-};
+interface props {
+	projectsList: ProjectDetails[];
+}
 
-export default function CardList({ projectsList }: CardList): JSX.Element {
+function CardList({ projectsList }: props): JSX.Element {
 	return (
 		<div className={styles.gridCards}>
 			{projectsList.map((project) => (
@@ -15,3 +15,5 @@ export default function CardList({ projectsList }: CardList): JSX.Element {
 		</div>
 	);
 }
+
+export default CardList;

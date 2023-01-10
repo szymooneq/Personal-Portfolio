@@ -1,18 +1,14 @@
 import { AnimatePresence, motion as m } from 'framer-motion';
 import { usePageTransitionFix } from '../../lib/helpers/usePageTransitionFix';
-import { ChildrenType } from '../../types/types';
 import Breadcrumb from '../UI/Breadcrumb/Breadcrumb';
 
-type SideLayout = {
+interface props {
+	children: React.ReactNode;
 	pathname: string;
 	asPath: string;
-} & ChildrenType;
+}
 
-export default function SideLayout({
-	pathname,
-	asPath,
-	children
-}: SideLayout): JSX.Element {
+function SideLayout({ pathname, asPath, children }: props): JSX.Element {
 	usePageTransitionFix();
 
 	return (
@@ -32,3 +28,5 @@ export default function SideLayout({
 		</>
 	);
 }
+
+export default SideLayout;

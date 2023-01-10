@@ -1,11 +1,11 @@
 import Link from 'next/link';
+import { ProjectDetails } from '../../../interfaces/project';
 import { urlFor } from '../../../lib/sanityConfig';
-import { Project } from '../../../types/types';
 import { rightCircleArrow } from '../Svg/SvgIcons';
 import styles from './ProjectCard.module.css';
 
 type ProjectCard = {
-	project: Project;
+	project: ProjectDetails;
 };
 
 export default function ProjectCard({ project }: ProjectCard): JSX.Element {

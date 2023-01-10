@@ -4,7 +4,7 @@ import { contactLinks } from '../../lib/helpers/contactLinks';
 import styles from './Hero.module.css';
 import Starfield from './Starfield/Starfield';
 
-export default function Hero(): JSX.Element {
+function Hero(): JSX.Element {
 	return (
 		<header className={styles.hero}>
 			<Starfield />
@@ -35,3 +35,5 @@ export default function Hero(): JSX.Element {
 		</header>
 	);
 }
+
+export default Hero;

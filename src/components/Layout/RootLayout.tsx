@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import NextNProgress from 'nextjs-progressbar';
-import { ChildrenType } from '../../types/types';
 import Footer from './Footer/Footer';
 import HomeLayout from './HomeLayout';
 import Navbar from './Navbar/Navbar';
 
-export default function RootLayout({ children }: ChildrenType): JSX.Element {
+interface props {
+	children: React.ReactNode;
+}
+
+function RootLayout({ children }: props): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -45,3 +48,5 @@ export default function RootLayout({ children }: ChildrenType): JSX.Element {
 		</>
 	);
 }
+
+export default RootLayout;

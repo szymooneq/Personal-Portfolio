@@ -6,7 +6,7 @@ import { contactIcon, downloadIcon } from '../src/components/UI/Svg/SvgIcons';
 import Tagcloud from '../src/components/UI/Tagcloud/Tagcloud';
 import styles from '../src/styles/Home.module.css';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -65,3 +65,5 @@ export default function Home(): JSX.Element {
 		</>
 	);
 }
+
+export default Home;

@@ -1,4 +1,8 @@
-import { Project, ProjectSlug, ProjectTechnology } from '../../types/types';
+import {
+	ProjectDetails,
+	ProjectSlug,
+	ProjectTechnology
+} from '../../interfaces/project';
 import { client } from '../sanityConfig';
 
 export async function getAllProjects() {
@@ -36,10 +40,10 @@ export async function getAllProjects() {
     }
   }`;
 
-	const projectsList = await client.fetch(projectsDataQuery);
+	const projectsList = await client.fetch<ProjectDetails[]>(projectsDataQuery);
 	let technologiesList: ProjectTechnology[] = [];
 
-	projectsList.map((project: Project) => {
+	projectsList.map((project) => {
 		project.technologies.map((technology) => {
 			const isFound: boolean = technologiesList.some((element) => {
 				if (element.title === technology.title) {
@@ -64,9 +68,9 @@ export async function getAllProjectsId() {
     }
   }`;
 
-	const projectsWithId = await client.fetch(projectsSlugQuery);
+	const projectsWithId = await client.fetch<ProjectSlug[]>(projectsSlugQuery);
 
-	return projectsWithId.map((project: ProjectSlug) => {
+	return projectsWithId.map((project) => {
 		return {
 			params: {
 				name: project.slug.current
@@ -121,7 +125,7 @@ export async function getProjectData(name: string) {
     }
   }`;
 
-	const project = await client.fetch(projectDataQuery);
+	const project = await client.fetch<ProjectDetails>(projectDataQuery);
 
 	return {
 		name,

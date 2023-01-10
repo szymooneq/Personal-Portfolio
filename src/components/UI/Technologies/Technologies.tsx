@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ProjectTechnology } from '../../../interfaces/project';
 import { urlFor } from '../../../lib/sanityConfig';
-import { ProjectTechnology } from '../../../types/types';
 import styles from './Technologies.module.css';
 
-type TechnologiesType = {
+interface props {
 	technologies: ProjectTechnology[];
-};
+}
 
-export default function Technologies({
-	technologies
-}: TechnologiesType): JSX.Element {
+function Technologies({ technologies }: props): JSX.Element {
 	const { query } = useRouter();
 
 	return (
@@ -40,3 +38,5 @@ export default function Technologies({
 		</div>
 	);
 }
+
+export default Technologies;

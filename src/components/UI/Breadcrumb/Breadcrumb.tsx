@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Breadcrumb.module.css';
 
-type Breadcrumb = {
+interface props {
 	asPath: string;
-};
+}
 
-export default function Breadcrumb({ asPath }: Breadcrumb): JSX.Element {
+function Breadcrumb({ asPath }: props): JSX.Element {
 	const [breadcrumb, setBreadcrumb] = useState<string[]>([]);
 
 	useEffect(() => {
@@ -34,3 +34,5 @@ export default function Breadcrumb({ asPath }: Breadcrumb): JSX.Element {
 		</nav>
 	);
 }
+
+export default Breadcrumb;

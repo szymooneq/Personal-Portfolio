@@ -7,18 +7,16 @@ import ContentLayout from '../../src/components/Layout/ContentLayout';
 import Group from '../../src/components/UI/Group/Group';
 import Slider from '../../src/components/UI/Slider/Slider';
 import Technologies from '../../src/components/UI/Technologies/Technologies';
+import { ProjectDetails } from '../../src/interfaces/project';
 import { getAllProjectsId, getProjectData } from '../../src/lib/api/projects';
 import { urlFor } from '../../src/lib/sanityConfig';
 import styles from '../../src/styles/ProjectPage.module.css';
-import { ProjectDetails, ProjectLink } from '../../src/types/types';
 
-type ProjectPageType = {
+interface props {
 	projectData: ProjectDetails;
-};
+}
 
-export default function ProjectPage({
-	projectData
-}: ProjectPageType): JSX.Element {
+function ProjectPage({ projectData }: props): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -35,7 +33,7 @@ export default function ProjectPage({
 				</header>
 
 				<Group type="links">
-					{projectData.links.map(({ link, url }: ProjectLink) => (
+					{projectData.links.map(({ link, url }) => (
 						<a
 							key={url}
 							href={url}
@@ -100,6 +98,8 @@ export default function ProjectPage({
 	);
 }
 
+export default ProjectPage;
+
 interface IParams extends ParsedUrlQuery {
 	name: string;
 }
@@ -115,7 +115,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const { name } = params as IParams;
 	const projectData = await getProjectData(name);
-	console.log(projectData);
+	// console.log(projectData);
 
 	return {
 		props: {

@@ -1,6 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
-import { ProjectIconReference } from '../types/types';
+import { ProjectIconReference } from '../interfaces/project';
 
 export const client = createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
