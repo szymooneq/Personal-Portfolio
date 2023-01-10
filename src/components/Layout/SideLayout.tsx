@@ -1,5 +1,5 @@
 import { AnimatePresence, motion as m } from 'framer-motion';
-import { usePageTransitionFix } from '../../lib/helpers/usePageTransitionFix';
+import useFoucFix from '../../lib/helpers/useFoucFix';
 import Breadcrumb from '../UI/Breadcrumb/Breadcrumb';
 
 interface props {
@@ -9,7 +9,7 @@ interface props {
 }
 
 function SideLayout({ pathname, asPath, children }: props): JSX.Element {
-	usePageTransitionFix();
+	useFoucFix();
 
 	return (
 		<>
