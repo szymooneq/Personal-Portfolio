@@ -1,17 +1,17 @@
 import { AnimatePresence, motion as m } from 'framer-motion';
-import useFoucFix from '../../lib/helpers/useFoucFix';
+import { useRouter } from 'next/router';
 import Breadcrumb from '../UI/Breadcrumb/Breadcrumb';
 
 interface props {
 	children: React.ReactNode;
-	pathname: string;
-	asPath: string;
 }
 
-function SideLayout({ pathname, asPath, children }: props): JSX.Element {
-	useFoucFix();
+function Main({ children }: props): JSX.Element {
+	const { pathname, asPath } = useRouter();
 
-	return (
+	return pathname === '/' ? (
+		<main className="app">{children}</main>
+	) : (
 		<>
 			<Breadcrumb asPath={asPath} />
 			<AnimatePresence mode="wait">
@@ -29,4 +29,4 @@ function SideLayout({ pathname, asPath, children }: props): JSX.Element {
 	);
 }
 
-export default SideLayout;
+export default Main;

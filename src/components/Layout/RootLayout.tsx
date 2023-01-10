@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import NextNProgress from 'nextjs-progressbar';
 import Footer from './Footer/Footer';
-import HomeLayout from './HomeLayout';
+import Main from './Main';
 import Navbar from './Navbar/Navbar';
 
 interface props {
@@ -43,7 +43,7 @@ function RootLayout({ children }: props): JSX.Element {
 				options={{ showSpinner: false }}
 			/>
 			<Navbar />
-			<HomeLayout>{children}</HomeLayout>
+			<Main>{children}</Main>
 			<Footer />
 		</>
 	);
