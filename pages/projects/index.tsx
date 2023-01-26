@@ -47,7 +47,7 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 
 			<ContentLayout header="Projects">
 				<p className={styles.desc}>
-					Here you will find some of my projects that I have managed to create
+					Here you will find some of the projects that I have managed to create
 					so far. I created each project myself, learning from various sources,
 					such as documentation, YouTube videos, or paid courses, but I was
 					primarily trying to understand the source code and work with it, not

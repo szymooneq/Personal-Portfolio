@@ -28,7 +28,7 @@ https://personal-portfolio-sd.vercel.app
 
 ## Details
 
-- created with the React (Next.js) and TypeScript
+- created with React (Next.js) and TypeScript
 - server-side rendering and better SEO
 - CMS with Sanity.io
 - animations created with Framer Motion
@@ -36,7 +36,7 @@ https://personal-portfolio-sd.vercel.app
 - responsive website design without using any CSS framework
 - using CSS modules
 - design created with Figma Software
-- hero section inspired by one of Astro landing page template
+- inspired by the Gridfolio Framer template and one of Astro's landing page example
 
 ## Tutorial and project structure
 
@@ -61,7 +61,7 @@ Download the repository to your local machine and run to download all missing de
 npm install
 ```
 
-After that you can run this project using:
+After that, you can run this project using.
 
 ```
 npm run dev
@@ -75,9 +75,9 @@ npm run build
 
 <!-- **If you want to deploy your application, you have to move `.htaccess` file to your build folder because this project provides only client-side routing.** -->
 
-**To manage the content on the website you need to create a new sanity project. Use schemas from `sanity/schemas` folder. Check the official documentation: https://www.sanity.io/docs/getting-started**
+**To manage the content on the website you need to create a new sanity project. Use schemas from the `sanity/schemas` folder. Check the official documentation: https://www.sanity.io/docs/getting-started**
 
-After creating your own sanity project, create the `.env.local` file in the main folder and enter the following data:
+After creating your sanity project, create the `.env.local` file in the main folder and enter the following data:
 
 ```
 NEXT_PUBLIC_SANITY_PROJECT_ID = YOUR_SANITY_PROJECT_ID

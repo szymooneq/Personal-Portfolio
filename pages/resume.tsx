@@ -60,12 +60,12 @@ function Resume(): JSX.Element {
 						<h2 className={styles.name}>About me</h2>
 						<section>
 							<p className={styles.sectionDescription}>
-								I love creating websites / web applications. I am ambitious and
-								persistent in what I do, I like challenges. I learn every day to
-								deep my knowledge, acquire new experiences, discover new
-								solutions and be better and better in this field. I am
-								self-taught, I quickly adapt to new technologies, I pay
-								attention to the smallest details.
+								I am a front-end developer with almost one year of
+								non-commercial experience. I love creating websites/web
+								applications. I am ambitious, persistent, and self-taught. I
+								like challenges, I quickly adapt to new technologies and I pay
+								attention to the small details. I learn every day to deepen my
+								knowledge.
 							</p>
 						</section>
 					</div>
@@ -76,9 +76,9 @@ function Resume(): JSX.Element {
 								<h3>PWSZ (Akademia Nauk Stosowanych), Nowy Sącz</h3>
 								<p className={styles.sectionTimeline}>Sep 2018 - Jun 2022</p>
 								<p className={styles.sectionDescription}>
-									I graduated from applied computer science. I learned the
-									basics of programming, got to know algorithms and data
-									structures, databases. I also learned web fundamentas and
+									I graduated with applied computer science. I learned the
+									basics of programming and got to know algorithms and data
+									structures, databases. I also learned web fundamentals and
 									created my first projects as part of the classes.
 								</p>
 							</div>
@@ -88,10 +88,10 @@ function Resume(): JSX.Element {
 								<p className={styles.sectionDescription}>
 									I deepened my knowledge of the basics of websites. I learned
 									semantic HTML, positioning elements on the page, styling
-									units, animations and responsive web design. I spent a lot of
-									time learning JavaScript. I got to know syntax, DOM
-									manipulation, fetch API and I still learning new things while
-									practise every day.
+									units, animations, and responsive web design. I spent a lot of
+									time learning JavaScript. I got to know the syntax, DOM
+									manipulation, and fetch API and I still learning new things
+									while practising every day.
 								</p>
 							</div>
 							<div className={styles.sectionItem}>
@@ -107,11 +107,11 @@ function Resume(): JSX.Element {
 								<h3>React Course (with Next.js)</h3>
 								<p className={styles.sectionTimeline}>Sep 2022</p>
 								<p className={styles.sectionDescription}>
-									I completed a React course, got to know components, webpack,
-									JSX and hooks offered by the framework. I worked with popular
-									libraries such as Redux, React Router, React Query or Formik.
-									I also learned about server-side rendering using the Next.js
-									framework.
+									I completed a React course and got to know the components,
+									webpack, JSX, and hooks offered by the framework. I worked
+									with popular libraries such as Redux, React Router, React
+									Query and Formik. I also learned about server-side rendering
+									using the Next.js framework.
 								</p>
 							</div>
 							<div className={styles.sectionItem}>
@@ -132,30 +132,35 @@ function Resume(): JSX.Element {
 					<div className={styles.contentItem}>
 						<h2 className={styles.name}>Projects</h2>
 						<p className={styles.sectionDescription}>
-							All my projects with details available on projects page.
+							All my projects with details available on the projects page.
 						</p>
 						<Link className={styles.contactMe} href="projects">
-							Go to projects
+							Go to projects page
 						</Link>
 					</div>
 					<div className={styles.contentItem}>
 						<h2 className={styles.name}>Stack</h2>
 						<p className={styles.sectionDescription}>
-							JavaScript / TypeScript / React.js / Next.js / npm
+							JavaScript | TypeScript | React.js | Next.js | npm
 						</p>
 						<p className={styles.sectionDescription}>
-							Redux / React Router / React Query / Formik / REST API
-						</p>
-						<p className={styles.sectionDescription}>HTML / CSS / RWD / SASS</p>
-						<p className={styles.sectionDescription}>
-							Tailwind / Bootstrap / styled-components
+							Redux | Jest | Reducer | Context | Hooks | yarn
 						</p>
 						<p className={styles.sectionDescription}>
-							MySQL / Firebase / Sanity
+							Vite | React Router | React Query | Formik
 						</p>
-						<p className={styles.sectionDescription}>Git / GitHub</p>
 						<p className={styles.sectionDescription}>
-							VSCode / Figma / Adobe Photoshop
+							HTML | CSS | RWD | REST API
+						</p>
+						<p className={styles.sectionDescription}>
+							SASS | Tailwind | Bootstrap | styled-components
+						</p>
+						<p className={styles.sectionDescription}>
+							MySQL | Firebase | Sanity CMS | Strapi CMS
+						</p>
+						<p className={styles.sectionDescription}>Git | GitHub</p>
+						<p className={styles.sectionDescription}>
+							VSCode | Figma | Adobe Photoshop
 						</p>
 					</div>
 					<div className={styles.contentItem}>

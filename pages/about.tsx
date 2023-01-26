@@ -30,7 +30,7 @@ function About(): JSX.Element {
 				<div className={styles.card}>
 					<h2>About me</h2>
 					<p className={styles.cardDesc}>
-						I&apos;m a Frontend Developer. I create websites / web applications
+						I&apos;m a Frontend Developer. I create websites/web applications
 						and I constantly develop my development skills. My goal is to become
 						a Fullstack JS Developer.
 					</p>

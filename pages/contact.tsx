@@ -11,17 +11,17 @@ import styles from '../src/styles/Contact.module.css';
 const cardAds = [
 	{
 		title: 'Website design & development',
-		desc: 'Experienced designer & visual developer. I love creating websites / web applications.',
+		desc: 'Experienced designer & visual developer. I love creating websites/web applications.',
 		icon: layoutIcon
 	},
 	{
 		title: 'Visual & graphic design',
-		desc: 'Eye for the visual side of things. I enjoy crafting with attention to the details!',
+		desc: 'Eye for the visual side of things. I enjoy crafting with attention to detail!',
 		icon: penIcon
 	},
 	{
 		title: 'Branding',
-		desc: 'Combining both my visual and analytical side, I love creating brands.',
+		desc: 'Combining both my visual and analytical sides, I love creating brands.',
 		icon: cubeIcon
 	}
 ];
@@ -44,8 +44,8 @@ function Contact(): JSX.Element {
 						<div>
 							<h1 className={styles.title}>Get in Touch ✨</h1>
 							<p className={styles.subText}>
-								I’m always open to collaborate on a project or hear about an
-								opportunity!
+								I’m always open to collaborating on a project or hearing about
+								an opportunity!
 							</p>
 						</div>
 						<div className={styles.contactTypes}>
