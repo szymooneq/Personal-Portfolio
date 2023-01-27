@@ -20,13 +20,13 @@ export default {
       title: 'Type',
       name: 'type',
       type: 'reference',
-      to: [{type: 'types'}]
+      to: [{type: 'types'}],
     },
     {
       title: 'Theme',
       name: 'theme',
       type: 'array',
-      of: [{type: 'string'}]
+      of: [{type: 'string'}],
     },
     {
       title: 'Slug',
@@ -38,76 +38,80 @@ export default {
       },
     },
     {
-      title:'Description',
-      name:'description',
-      type:'text'
+      title: 'Description',
+      name: 'description',
+      type: 'text',
     },
     {
       title: 'Images',
       name: 'images',
       type: 'array',
-      of: [{
-        title: 'Image',
-        name: 'image',
-        type: 'image',
-        fields: [
-          {
-            title: 'Alt',
-            name: 'alt',
-            type: 'string',
-            options: {
+      of: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image',
+          fields: [
+            {
+              title: 'Alt',
+              name: 'alt',
+              type: 'string',
+              /* options: {
               isHighlighted: true // <-- make this field easily accessible
-            }
-          }
-        ]
-      }]
+            } */
+            },
+          ],
+        },
+      ],
     },
     {
       title: 'Technologies',
       name: 'technologies',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'technologies'}}]
+      of: [{type: 'reference', to: {type: 'technologies'}}],
     },
     {
       title: 'Stack',
       name: 'stack',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'stacks'}}]
+      of: [{type: 'reference', to: {type: 'stacks'}}],
     },
     {
       title: 'Details',
       name: 'details',
       type: 'array',
-      of: [{type: 'string'}]
+      of: [{type: 'string'}],
     },
     {
       title: 'To-Do',
       name: 'todo',
       type: 'array',
-      of: [{type: 'string'}]
+      of: [{type: 'string'}],
     },
     {
       title: 'Links',
       name: 'links',
       type: 'array',
-      of: [{
-        title: 'Link',
-        name: 'link',
-        type: 'document',
-        fields: [
-          {
-            title: 'Link',
-            name: 'link',
-            type: 'reference',
-            to: [{type: 'links'}]
-          },
-          {
-            title: 'URL',
-            name: 'url',
-            type: 'url',
-          }
-        ]
-      }]
-    }
-  ]
+      of: [
+        {
+          title: 'Link',
+          name: 'link',
+          type: 'document',
+          fields: [
+            {
+              title: 'Link',
+              name: 'link',
+              type: 'reference',
+              to: [{type: 'links'}],
+            },
+            {
+              title: 'URL',
+              name: 'url',
+              type: 'url',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }

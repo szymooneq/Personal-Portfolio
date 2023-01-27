@@ -164,10 +164,12 @@ function Resume(): JSX.Element {
 						</p>
 					</div>
 					<div className={styles.contentItem}>
-						<h2 className={styles.name}>Interests</h2>
+						<h2 className={styles.name}>Hobby / Interest</h2>
 						<p className={styles.sectionDescription}>
-							Travel / Gaming / Web Design / Technology / Astronomy /
-							Photography / Football
+							Travel | Gaming | Web Design | Technology
+						</p>
+						<p className={styles.sectionDescription}>
+							Astronomy | Photography | Football
 						</p>
 					</div>
 				</div>

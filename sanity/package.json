@@ -2,30 +2,36 @@
   "name": "personal-portfolio-sd",
   "private": true,
   "version": "1.0.0",
-  "description": "",
   "main": "package.json",
-  "author": "Szymon Dudka <szymooneq@zohomail.eu>",
   "license": "UNLICENSED",
   "scripts": {
+    "dev": "sanity dev",
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.35.2",
-    "@sanity/core": "^2.35.0",
-    "@sanity/default-layout": "^2.35.2",
-    "@sanity/default-login": "^2.35.2",
-    "@sanity/desk-tool": "^2.35.2",
-    "@sanity/eslint-config-studio": "^2.0.1",
-    "@sanity/vision": "^2.35.2",
-    "eslint": "^8.6.0",
-    "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "styled-components": "^5.2.0"
+    "@sanity/vision": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "sanity": "^3.2.5",
+    "styled-components": "^5.3.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^2.0.1",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  }
 }
