@@ -183,7 +183,7 @@
 }
 
 .logoContent {
-	color: var(--bg-secondary);
+	color: #ffffff;
 	font-size: 1.6rem;
 	font-weight: 700;
 	/* filter: drop-shadow(0 0 0.3rem #ffffff70); */

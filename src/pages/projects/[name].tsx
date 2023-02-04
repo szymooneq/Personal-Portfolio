@@ -1,5 +1,5 @@
-import ContentLayout from '@/components/Layout/ContentLayout';
-import Group from '@/components/UI/Group/Group';
+import Article from '@/components/Layout/Article';
+import Group from '@/components/UI/List/List';
 import Slider from '@/components/UI/Slider/Slider';
 import Technologies from '@/components/UI/Technologies/Technologies';
 import { ProjectDetails } from '@/interfaces/project';
@@ -24,7 +24,7 @@ function ProjectPage({ projectData }: props): JSX.Element {
 				<meta name="description" content={projectData.description} />
 			</Head>
 
-			<ContentLayout>
+			<Article>
 				<header>
 					<h1 className={styles.title}>
 						{projectData.title} - {projectData.type.title}
@@ -82,18 +82,10 @@ function ProjectPage({ projectData }: props): JSX.Element {
 					))}
 				</Group>
 
-				{/* {projectData.todo && (
-          <Group type="list" title="To do">
-            {projectData.todo.map((el) => (
-              <li key={el}>{el}</li>
-            ))}
-          </Group>
-        )} */}
-
 				<Link href="/projects" scroll={false} className={styles.backButton}>
 					Go back
 				</Link>
-			</ContentLayout>
+			</Article>
 		</>
 	);
 }

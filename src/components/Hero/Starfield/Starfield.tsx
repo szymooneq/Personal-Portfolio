@@ -57,7 +57,7 @@ function Starfield(): JSX.Element {
 		const ctx = starfieldCanvas.current.getContext('2d');
 
 		function frame() {
-			const { clientWidth: width, clientHeight: height } = container.current;
+			const { clientWidth: width, clientHeight: height } = container.current!;
 
 			if (ctx) {
 				for (const star of stars) {

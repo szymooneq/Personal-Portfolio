@@ -1,4 +1,4 @@
-import ContentLayout from '@/components/Layout/ContentLayout';
+import Article from '@/components/Layout/Article';
 import CardList from '@/components/UI/ProjectCard/CardList';
 import Technologies from '@/components/UI/Technologies/Technologies';
 import { ProjectDetails, ProjectTechnology } from '@/interfaces/project';
@@ -42,7 +42,7 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 				/>
 			</Head>
 
-			<ContentLayout header="Projects">
+			<Article header="Projects">
 				<p className={styles.desc}>
 					Here you will find some of the projects that I have managed to create
 					so far. I created each project myself, learning from various sources,
@@ -55,7 +55,7 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 				<Technologies technologies={technologiesList} />
 
 				<CardList projectsList={filteredProjects} />
-			</ContentLayout>
+			</Article>
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import ContentLayout from '@/components/Layout/ContentLayout';
+import Article from '@/components/Layout/Article';
 import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
 import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from '@/styles/Contact.module.css';
@@ -34,7 +34,7 @@ function Contact(): JSX.Element {
 				/>
 			</Head>
 
-			<ContentLayout header="Contact">
+			<Article header="Contact">
 				<div className={styles.content}>
 					<div className={styles.description}>
 						<div>
@@ -81,15 +81,37 @@ function Contact(): JSX.Element {
 						action="https://usebasin.com/f/d46c0979603a"
 						method="post">
 						<div className={styles.field}>
-							<input type="text" name="name" placeholder="Name" required />
+							<label htmlFor="name" hidden>
+								Enter your name
+							</label>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								placeholder="Name"
+								required
+							/>
 						</div>
 
 						<div className={styles.field}>
-							<input type="email" name="email" placeholder="E-mail" required />
+							<label htmlFor="email" hidden>
+								Enter your e-mail
+							</label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder="E-mail"
+								required
+							/>
 						</div>
 
 						<div className={styles.field}>
+							<label htmlFor="message" hidden>
+								Enter your message
+							</label>
 							<textarea
+								id="message"
 								name="message"
 								rows={8}
 								placeholder="Type your message"
@@ -111,7 +133,7 @@ function Contact(): JSX.Element {
 						</div>
 					))}
 				</div>
-			</ContentLayout>
+			</Article>
 		</>
 	);
 }

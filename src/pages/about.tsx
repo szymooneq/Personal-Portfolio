@@ -1,5 +1,5 @@
 import aboutProjects from '@/assets/aboutProjects.png';
-import ContentLayout from '@/components/Layout/ContentLayout';
+import Article from '@/components/Layout/Article';
 import {
 	linkedinIcon,
 	rightCircleArrow,
@@ -21,14 +21,14 @@ function About(): JSX.Element {
 					content="I'm a Frontend Developer. I create websites / web applications and I constantly develop my development skills. My goal is to become a Fullstack JS Developer."
 				/>
 			</Head>
-			<ContentLayout header="About" className={styles.main}>
+			<Article header="About" className={styles.main}>
 				<div className={styles.card}></div>
 				<div className={styles.card}>
-					<h1 className={styles.title}>Hey, I&apos;m Szymon 👋</h1>
+					<h2 className={styles.bigTitle}>Hey, I&apos;m Szymon 👋</h2>
 					<p className={styles.secondary}>Frontend Developer</p>
 				</div>
 				<div className={styles.card}>
-					<h2>About me</h2>
+					<h3 className={styles.title}>About me</h3>
 					<p className={styles.cardDesc}>
 						I&apos;m a Frontend Developer. I create websites/web applications
 						and I constantly develop my development skills. My goal is to become
@@ -44,7 +44,7 @@ function About(): JSX.Element {
 					/>
 					<p>Check my projects</p>
 					<div className={styles.cardFlex}>
-						<h2>See my work</h2>
+						<h3 className={styles.title}>See my work</h3>
 						{rightCircleArrow}
 					</div>
 				</Link>
@@ -58,9 +58,9 @@ function About(): JSX.Element {
 					<div className={styles.arrow}>{rightUpCircleArrow}</div>
 				</a>
 				<Link href="contact" className={styles.card}>
-					<h2>Let&apos;s work together ✨</h2>
+					<h3 className={styles.title}>Let&apos;s work together ✨</h3>
 					<div className={styles.cardFlex}>
-						<p className={styles.getTouch}>Get in touch now</p>
+						<h2 className={styles.getTouch}>Get in touch now</h2>
 						{rightCircleArrow}
 					</div>
 				</Link>
@@ -68,11 +68,11 @@ function About(): JSX.Element {
 					<div className={styles.userFaceID}>{userFaceID}</div>
 					<p>Learn more about me</p>
 					<div className={styles.cardFlex}>
-						<h2>See my resume</h2>
+						<h3 className={styles.title}>See my resume</h3>
 						{rightCircleArrow}
 					</div>
 				</Link>
-			</ContentLayout>
+			</Article>
 		</>
 	);
 }

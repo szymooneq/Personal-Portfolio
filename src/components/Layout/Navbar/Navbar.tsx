@@ -49,10 +49,10 @@ function Navbar(): JSX.Element {
 
 	useEffect(() => {
 		if (pathname === '/') {
-			const starfield: HTMLElement | null =
-				document.querySelector('#starfield');
-			if (starfield && window.scrollY < starfield.clientHeight)
-				setNavbarOnTop(false);
+			const starfield = document.querySelector('#starfield');
+			setNavbarOnTop(
+				starfield && window.scrollY < starfield.clientHeight ? false : true
+			);
 
 			window.addEventListener('scroll', handleScroll);
 		} else {

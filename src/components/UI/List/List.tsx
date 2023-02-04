@@ -1,4 +1,4 @@
-import styles from './Group.module.css';
+import styles from './List.module.css';
 
 interface props {
 	children: React.ReactNode;
@@ -6,7 +6,7 @@ interface props {
 	title?: string;
 }
 
-function Group({ type, title, children }: props): JSX.Element {
+function List({ type, title, children }: props): JSX.Element {
 	switch (type) {
 		case 'list':
 			return (
@@ -27,4 +27,4 @@ function Group({ type, title, children }: props): JSX.Element {
 	}
 }
 
-export default Group;
+export default List;

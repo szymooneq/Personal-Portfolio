@@ -1,25 +1,22 @@
-export function throttle(cb: (...args: any) => void, delay = 1000) {
-	let shouldWait = false;
-	let waitingArgs: any;
-
-	const timeoutFunc = () => {
-		if (waitingArgs == null) {
-			shouldWait = false;
+export const throttle = (fn: Function, wait: number = 300) => {
+	let inThrottle: boolean,
+		lastFn: ReturnType<typeof setTimeout>,
+		lastTime: number;
+	return function (this: any) {
+		const context = this,
+			args = arguments;
+		if (!inThrottle) {
+			fn.apply(context, args);
+			lastTime = Date.now();
+			inThrottle = true;
 		} else {
-			cb(...waitingArgs);
-			waitingArgs = null;
-			setTimeout(timeoutFunc, delay);
+			clearTimeout(lastFn);
+			lastFn = setTimeout(() => {
+				if (Date.now() - lastTime >= wait) {
+					fn.apply(context, args);
+					lastTime = Date.now();
+				}
+			}, Math.max(wait - (Date.now() - lastTime), 0));
 		}
 	};
-
-	return (...args: any) => {
-		if (shouldWait) {
-			waitingArgs = args;
-			return;
-		}
-
-		cb(...args);
-		shouldWait = true;
-		setTimeout(timeoutFunc, delay);
-	};
-}
+};

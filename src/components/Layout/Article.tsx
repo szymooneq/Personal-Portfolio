@@ -6,7 +6,7 @@ interface props {
 	header?: string;
 }
 
-function ContentLayout({ children, header, className }: props): JSX.Element {
+function Article({ children, header, className }: props): JSX.Element {
 	return (
 		<article className="container">
 			{header && <Header title={header} />}
@@ -15,4 +15,4 @@ function ContentLayout({ children, header, className }: props): JSX.Element {
 	);
 }
 
-export default ContentLayout;
+export default Article;

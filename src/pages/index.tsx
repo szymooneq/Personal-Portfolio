@@ -1,5 +1,5 @@
 import Hero from '@/components/Hero/Hero';
-import ContentLayout from '@/components/Layout/ContentLayout';
+import Article from '@/components/Layout/Article';
 import { contactIcon, downloadIcon } from '@/components/UI/Svg/SvgIcons';
 import Tagcloud from '@/components/UI/Tagcloud/Tagcloud';
 import styles from '@/styles/Home.module.css';
@@ -18,10 +18,10 @@ function Home(): JSX.Element {
 			</Head>
 
 			<Hero />
-			<ContentLayout className={styles.content}>
+			<Article className={styles.content}>
 				<div>
 					<div className={styles.card}>
-						<h1>Hello! I am Szymon 👋</h1>
+						<h3>Hello! I am Szymon 👋</h3>
 						<p>
 							I am pleased to welcome you to my portfolio website. My name is
 							Szymon Dudka and I am a Front-end developer. Programming is my
@@ -57,7 +57,7 @@ function Home(): JSX.Element {
 				</div>
 
 				<Tagcloud />
-			</ContentLayout>
+			</Article>
 		</>
 	);
 }

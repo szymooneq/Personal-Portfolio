@@ -2,37 +2,25 @@ import { useEffect, useState } from 'react';
 const TagCloud = require('TagCloud');
 
 const technologies = [
-	'HTML5',
-	'CSS3',
+	'HTML',
+	'CSS',
 	'JavaScript',
 	'TypeScript',
-	'React',
-	'Redux',
-	'React Router',
-	'React Query',
-	'REST API',
+	'React.js',
 	'Next.js',
-	'SASS'
-	/* 'styled-components',
+	'REST API',
+	'Redux',
+	'SASS',
+	'styled-components',
 	'Tailwind CSS',
 	'Bootstrap',
-	'Jest',
-	'Node.js',
-	'Sanity',
-	'Strapi',
-	'Firebase',
-	'MySQL',
 	'Git',
-	'GitHub',
-	'Vite',
-	'Vercel',
-	'Netlify',
 	'npm',
 	'yarn',
 	'Figma',
 	'Adobe Photoshop',
 	'VSCode',
-	'Prettier' */
+	'Prettier'
 ];
 
 function Tagcloud(): JSX.Element {

@@ -9,7 +9,7 @@ interface props {
 }
 
 function Main({ children }: props): JSX.Element {
-	const { asPath } = useRouter();
+	const { asPath, pathname } = useRouter();
 
 	return (
 		<>
@@ -21,7 +21,7 @@ function Main({ children }: props): JSX.Element {
 					<Breadcrumb asPath={asPath} />
 					<AnimatePresence mode="wait">
 						<m.main
-							key={asPath}
+							key={pathname}
 							initial={{ y: 200, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							exit={{ y: 200, opacity: 0 }}

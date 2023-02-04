@@ -23,7 +23,7 @@ function Technologies({ technologies }: props): JSX.Element {
 					aria-label={`Check my ${el.title} projects`}>
 					<Image
 						src={urlFor(el.icon).url()}
-						alt={el.title}
+						alt={`${el.title} icon`}
 						width={20}
 						height={20}
 					/>

@@ -90,9 +90,13 @@
 
 .contacts {
 	margin-top: 1rem;
+	color: gray;
+}
+
+.contacts h3 {
 	font-size: var(--card-desc-font-size);
 	letter-spacing: -0.8px;
-	color: gray;
+	font-weight: 400;
 }
 
 .contactMe {
@@ -131,6 +135,10 @@
 .linkDesc svg {
 	width: 40px;
 	height: 40px;
+}
+
+.linkDesc h2 {
+	font-size: var(--card-desc-font-size);
 }
 
 .contentItem {

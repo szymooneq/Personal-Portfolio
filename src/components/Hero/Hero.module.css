@@ -4,7 +4,7 @@
 	margin-bottom: 8rem;
 }
 
-.main {
+.content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -14,21 +14,21 @@
 	text-align: center;
 }
 
-.content h1 {
+.heading > h1 {
 	font-size: var(--project-desc);
-	/* color: var(--blue-color); */
 	color: white;
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-.content h2 {
-	font-family: 'Architects Daughter', cursive;
+.heading > h2 {
 	font-size: var(--contact-title);
+	color: #4b26cb;
 	letter-spacing: -0.1rem;
+	filter: drop-shadow(0 0 0.3rem #4b26cb70);
 }
 
 .astronaut {
-	animation: astronaut 20s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+	animation: flying_astronaut 20s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 	z-index: -1;
 }
 
@@ -38,7 +38,7 @@
 	pointer-events: none;
 }
 
-@keyframes astronaut {
+@keyframes flying_astronaut {
 	0% {
 		transform: translate(0, 20%) scale(1.3) rotate(0);
 	}
@@ -85,12 +85,13 @@
 }
 
 .links svg:hover {
-	color: var(--blue-color);
+	color: #ec857e;
 	transform: scale(1.2);
+	filter: drop-shadow(0 0 0.3rem #ec857e70);
 }
 
 @media (min-width: 768px) {
-	.main {
+	.content {
 		flex-direction: row;
 	}
 }
