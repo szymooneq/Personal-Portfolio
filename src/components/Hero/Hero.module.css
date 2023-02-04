@@ -16,12 +16,15 @@
 
 .content h1 {
 	font-size: var(--project-desc);
-	color: var(--blue-color);
+	/* color: var(--blue-color); */
+	color: white;
+	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
 .content h2 {
 	font-family: 'Architects Daughter', cursive;
 	font-size: var(--contact-title);
+	letter-spacing: -0.1rem;
 }
 
 .astronaut {

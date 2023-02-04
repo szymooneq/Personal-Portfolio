@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import NextNProgress from 'nextjs-progressbar';
-import Footer from './Footer/Footer';
 import Main from './Main';
-import Navbar from './Navbar/Navbar';
 
 interface props {
 	children: React.ReactNode;
@@ -42,9 +40,7 @@ function RootLayout({ children }: props): JSX.Element {
 				height={2}
 				options={{ showSpinner: false }}
 			/>
-			<Navbar />
 			<Main>{children}</Main>
-			<Footer />
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import { ProjectDetails } from '../../../interfaces/project';
+import { ProjectDetails } from '@/interfaces/project';
 import ProjectCard from './ProjectCard';
 import styles from './ProjectCard.module.css';
 

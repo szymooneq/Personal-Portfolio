@@ -1,6 +1,6 @@
+import { ProjectDetails } from '@/interfaces/project';
+import urlFor from '@/lib/sanity/client/urlFor';
 import Link from 'next/link';
-import { ProjectDetails } from '../../../interfaces/project';
-import { urlFor } from '../../../lib/sanityConfig';
 import { rightCircleArrow } from '../Svg/SvgIcons';
 import styles from './ProjectCard.module.css';
 

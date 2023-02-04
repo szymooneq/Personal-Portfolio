@@ -7,6 +7,11 @@
 	--bg-secondary: #2e2e33;
 	--blue-color: #5d5dff;
 	--main: linear-gradient(to bottom right, #4b26cb, #ec857e);
+	/* --main: linear-gradient(
+		to bottom right,
+		rgba(2, 13, 46, 1),
+		rgba(2, 5, 19, 1)
+	); */
 
 	--card-padding: 2rem;
 	--card-border-radius: 1rem;

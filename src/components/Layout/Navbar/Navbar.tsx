@@ -1,7 +1,7 @@
+import { throttle } from '@/lib/helpers/throttle';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { throttle } from '../../../lib/helpers/throttle';
 import Logo from '../../UI/Logo/Logo';
 import styles from './Navbar.module.css';
 

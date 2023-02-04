@@ -1,6 +1,6 @@
+import astronaut from '@/assets/astronaut.png';
+import { contactLinks } from '@/lib/helpers/contactLinks';
 import Image from 'next/image';
-import astronaut from '../../assets/astronaut.png';
-import { contactLinks } from '../../lib/helpers/contactLinks';
 import styles from './Hero.module.css';
 import Starfield from './Starfield/Starfield';
 

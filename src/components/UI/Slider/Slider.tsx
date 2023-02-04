@@ -1,7 +1,7 @@
+import { ProjectIconReference } from '@/interfaces/project';
+import urlFor from '@/lib/sanity/client/urlFor';
 import { motion as m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { ProjectIconReference } from '../../../interfaces/project';
-import { urlFor } from '../../../lib/sanityConfig';
 import styles from './Slider.module.css';
 
 interface props {

@@ -29,9 +29,10 @@
 }
 
 .card:nth-child(1) {
-	background: url('../assets/aboutImage.jpg');
+	background: url('../assets/aboutImage.png');
 	background-size: cover;
-	background-position: center;
+	background-position: top;
+	background-color: var(--bg-secondary);
 }
 
 .card ~ a {

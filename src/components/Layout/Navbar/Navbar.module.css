@@ -121,19 +121,99 @@
 
 .logo {
 	position: relative;
+	/* margin-left: 16px; */
+	/* padding: 25px 10px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.5rem;
+	height: 3.5rem;
+	transform: translateZ(0);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0px 2px 8px -1px #0000001a;
+	transition: filter 0.3s;
+}
+
+.logo:hover {
+	filter: drop-shadow(0 0 0.3rem #ffffff70);
+}
+
+.logo::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	animation: 6s page_rotate linear infinite;
+	width: 200%;
+	height: 200%;
+	/* background: conic-gradient(
+		#ffffff80,
+		#ffffff40,
+		#ffffff30,
+		#ffffff20,
+		#ffffff10,
+		#ffffff10,
+		#ffffff80
+	); */
+	background: conic-gradient(
+		#ffffff80,
+		#ffffff40,
+		#ffffff30,
+		#ffffff20,
+		#ffffff10,
+		#ffffff10,
+		#ffffff80
+	);
+}
+
+.logo::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	padding: 1px;
+	border-radius: 12px;
+	/* background: linear-gradient(
+		to bottom right,
+		rgba(2, 13, 46, 1),
+		rgba(2, 5, 19, 1)
+	); */
+	background: var(--main);
+	background-clip: content-box;
+}
+
+.logoContent {
+	color: var(--bg-secondary);
+	font-size: 1.6rem;
+	font-weight: 700;
+	/* filter: drop-shadow(0 0 0.3rem #ffffff70); */
+	/* color: transparent; */
+}
+
+@keyframes page_rotate {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+/* .logo {
+	position: relative;
 	width: 3rem;
 	height: 3rem;
 	background: var(--main);
 	cursor: pointer;
 	z-index: 10;
 	transition: transform 0.4s;
-}
+} */
 
-.logo:hover {
+/* .logo:hover {
 	transform: rotate(20deg) scale(1.1);
-}
+} */
 
-.logo p {
+/* .logo p {
 	position: absolute;
 	bottom: 0;
 	right: 4px;
@@ -141,7 +221,7 @@
 	font-weight: 700;
 	letter-spacing: -1px;
 	color: var(--bg-dark);
-}
+} */
 
 .burger {
 	margin-left: auto;

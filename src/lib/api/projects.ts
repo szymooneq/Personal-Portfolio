@@ -3,7 +3,7 @@ import {
 	ProjectSlug,
 	ProjectTechnology
 } from '../../interfaces/project';
-import { client } from '../sanityConfig';
+import { client } from '../sanity/client/sanity.client';
 
 export async function getAllProjects() {
 	const projectsDataQuery = `*[_type == "projects"]{

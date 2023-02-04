@@ -12,8 +12,8 @@ const technologies = [
 	'React Query',
 	'REST API',
 	'Next.js',
-	'SASS',
-	'styled-components',
+	'SASS'
+	/* 'styled-components',
 	'Tailwind CSS',
 	'Bootstrap',
 	'Jest',
@@ -32,7 +32,7 @@ const technologies = [
 	'Figma',
 	'Adobe Photoshop',
 	'VSCode',
-	'Prettier'
+	'Prettier' */
 ];
 
 function Tagcloud(): JSX.Element {
