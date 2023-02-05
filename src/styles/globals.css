@@ -4,7 +4,8 @@
 	--container-width: 100%;
 	--bg-dark: #1d1d20;
 	--bg-secondary: #2e2e33;
-	--blue-color: #5d5dff;
+	--primary-color: #5d5dff;
+	--secondary-color: #ec857e;
 	--main: linear-gradient(to bottom right, #4b26cb, #ec857e);
 	/* --main: linear-gradient(
 		to bottom right,

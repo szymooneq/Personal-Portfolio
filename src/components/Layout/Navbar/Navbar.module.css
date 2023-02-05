@@ -59,6 +59,9 @@
 
 .menu {
 	padding: 0.5rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -68,6 +71,10 @@
 	transform: translateX(-100%);
 	transition: transform 0.3s;
 	z-index: 20;
+}
+
+.menu > .logo {
+	align-self: flex-start;
 }
 
 .menu.active {
@@ -86,43 +93,64 @@
 }
 
 .menuItemsLink {
-	opacity: 0.6;
+	opacity: 0.7;
+	transition: 0.1s;
+}
+
+.menuItemsLink.active:hover {
+	filter: none;
 }
 
 .menuItemsLink:hover {
 	opacity: 1;
+	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-.menuItemsLink:last-child {
+.menuItemsLink:active {
+	opacity: 0.5;
+}
+
+.contactLink {
+	font-size: 20px;
+	font-weight: 600;
 	opacity: 1;
 }
 
 .menuItemsLink.active {
-	color: var(--blue-color);
+	color: var(--primary-color);
 	opacity: 1;
 }
 
-.menuItemsLink:last-child a {
+.contactLink {
+	/* margin-top: 2rem; */
 	padding: 0.5rem 1rem;
 	display: block;
 	width: max-content;
 	font-size: 1rem;
 	background-color: var(--bg-secondary);
 	border-radius: 2rem;
+	z-index: 20;
 }
 
-.menuItemsLink:last-child:hover a {
+.nav > .contactLink {
+	display: none;
+}
+
+.contactLink:hover {
 	background: var(--main);
+	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-.menuItemsLink:last-child.active {
+.contactLink.active {
 	color: #ffffff;
+}
+
+.contactLink:last-child {
+	margin-top: 2rem;
 }
 
 .logo {
 	position: relative;
-	/* margin-left: 16px; */
-	/* padding: 25px 10px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -133,6 +161,7 @@
 	overflow: hidden;
 	box-shadow: 0px 2px 8px -1px #0000001a;
 	transition: filter 0.3s;
+	z-index: 20;
 }
 
 .logo:hover {
@@ -146,15 +175,6 @@
 	animation: 6s page_rotate linear infinite;
 	width: 200%;
 	height: 200%;
-	/* background: conic-gradient(
-		#ffffff80,
-		#ffffff40,
-		#ffffff30,
-		#ffffff20,
-		#ffffff10,
-		#ffffff10,
-		#ffffff80
-	); */
 	background: conic-gradient(
 		#ffffff80,
 		#ffffff40,
@@ -281,6 +301,14 @@
 
 	.menu > .logo {
 		display: none;
+	}
+
+	.menu > .contactLink {
+		display: none;
+	}
+
+	.nav > .contactLink {
+		display: block;
 	}
 
 	.menuItems {

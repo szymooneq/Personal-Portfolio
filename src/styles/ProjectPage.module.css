@@ -15,7 +15,7 @@
 
 .stackUrl {
 	font-weight: 700;
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .stackUrl:hover {
@@ -35,7 +35,7 @@
 }
 
 .backButton:hover {
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .backButton::after {
@@ -45,7 +45,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: var(--blue-color);
+	background-color: var(--primary-color);
 	border-radius: var(--card-border-radius);
 	filter: blur(10px);
 	opacity: 0;

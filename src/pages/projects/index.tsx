@@ -45,11 +45,8 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 			<Article header="Projects">
 				<p className={styles.desc}>
 					Here you will find some of the projects that I have managed to create
-					so far. I created each project myself, learning from various sources,
-					such as documentation, YouTube videos, or paid courses, but I was
-					primarily trying to understand the source code and work with it, not
-					to copy ready-made materials from the Internet. You can easily filter
-					projects by technology by clicking on the selected technology.
+					so far. You can easily filter projects by technology by clicking on
+					the selected technology.
 				</p>
 
 				<Technologies technologies={technologiesList} />

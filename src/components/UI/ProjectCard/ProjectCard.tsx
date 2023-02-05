@@ -10,7 +10,8 @@ type ProjectCard = {
 
 export default function ProjectCard({ project }: ProjectCard): JSX.Element {
 	return (
-		<div
+		<Link
+			href={`/projects/${project.slug.current}`}
 			className={styles.card}
 			style={
 				{
@@ -18,22 +19,21 @@ export default function ProjectCard({ project }: ProjectCard): JSX.Element {
 					'--theme-secondary': project.theme[1]
 				} as React.CSSProperties
 			}>
-			<Link href={`/projects/${project.slug.current}`}>
-				<div className={styles.content}>
-					<img
-						className={styles.img}
-						src={urlFor(project.thumbnail).url()}
-						alt={`Preview image of "${project.title}" project`}
-					/>
-					<div className={styles.desc}>
-						<p>{project.type.title}</p>
-						<div className={styles.title}>
-							<h2>{project.title}</h2>
-							{rightCircleArrow}
-						</div>
+			<div className={styles.content}>
+				<img
+					className={styles.img}
+					src={urlFor(project.thumbnail).url()}
+					alt={`Preview image of "${project.title}" project`}
+				/>
+				<div className={styles.info}>
+					<p className={styles.type}>{project.type.title}</p>
+					<div className={styles.title}>
+						<h2>{project.title}</h2>
+						{rightCircleArrow}
 					</div>
+					<p className={styles.decription}>{project.description}</p>
 				</div>
-			</Link>
-		</div>
+			</div>
+		</Link>
 	);
 }

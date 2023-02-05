@@ -29,7 +29,7 @@
 	margin-top: 2rem;
 	text-align: center;
 	font-size: var(--card-desc-font-size);
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .links {

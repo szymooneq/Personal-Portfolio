@@ -36,6 +36,6 @@
 }
 
 .backButton:hover {
-	color: var(--blue-color);
-	border-color: var(--blue-color);
+	color: var(--primary-color);
+	border-color: var(--primary-color);
 }

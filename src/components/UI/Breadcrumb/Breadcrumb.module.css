@@ -8,11 +8,15 @@
 }
 
 .link {
-	color: rgb(93, 93, 255);
+	color: var(--secondary-color);
 }
 
 .link:hover {
 	text-decoration: underline;
+}
+
+.link:active {
+	opacity: 0.7;
 }
 
 .active {

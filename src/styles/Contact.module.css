@@ -35,7 +35,7 @@
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: -1px;
-	color: grey;
+	color: #bdbdbd;
 }
 
 .info {
@@ -43,7 +43,7 @@
 }
 
 .info:hover {
-	color: var(--blue-color);
+	color: var(--primary-color);
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -60,7 +60,7 @@
 }
 
 .icons svg:hover {
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .form {
@@ -127,7 +127,7 @@
 	margin: 0.5rem;
 	width: 5rem;
 	height: 5rem;
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .cardTitle {
@@ -139,7 +139,7 @@
 
 .cardDesc {
 	font-size: var(--card-desc-font-size);
-	color: gray;
+	color: #bdbdbd;
 	letter-spacing: -0.8px;
 }
 

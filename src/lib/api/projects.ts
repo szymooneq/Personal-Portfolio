@@ -12,6 +12,7 @@ export async function getAllProjects() {
     },
     theme,
     title,
+    description,
     type {
       _type == 'reference' => @-> {
       title

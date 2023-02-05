@@ -9,8 +9,8 @@ const menuItems = [
 	{ title: 'Home', path: '/' },
 	{ title: 'About', path: '/about' },
 	{ title: 'Projects', path: '/projects' },
-	{ title: 'Resume', path: '/resume' },
-	{ title: 'Get in touch', path: '/contact' }
+	{ title: 'Resume', path: '/resume' }
+	// { title: 'Get in touch', path: '/contact' }
 ];
 
 function Navbar(): JSX.Element {
@@ -100,7 +100,17 @@ function Navbar(): JSX.Element {
 						</li>
 					))}
 				</ul>
+				<Link
+					href="/contact"
+					className={styles.contactLink}
+					onClick={handleToggle}>
+					Get in touch
+				</Link>
 			</div>
+
+			<Link href="/contact" className={styles.contactLink}>
+				Get in touch
+			</Link>
 
 			<button
 				id="burger"

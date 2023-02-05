@@ -1,11 +1,14 @@
 .gridCards {
 	display: grid;
 	grid-template: 1fr;
+	grid-auto-rows: 1fr;
 	gap: 1.5rem;
 }
 
 .card {
 	position: relative;
+	background-color: var(--bg-secondary);
+	border-radius: 1rem;
 }
 
 .card svg {
@@ -15,7 +18,7 @@
 }
 
 .card:hover svg {
-	color: var(--blue-color);
+	color: var(--primary-color);
 }
 
 .card::after {
@@ -43,8 +46,7 @@
 }
 
 .content {
-	background-color: var(--bg-secondary);
-	border-radius: 1rem;
+	border-radius: inherit;
 }
 
 .content img {
@@ -61,19 +63,23 @@
 	filter: brightness(100%);
 }
 
-.desc {
+.info {
 	padding: 1.5rem;
 }
 
-.desc p {
+.info p {
+	color: #bdbdbd;
+	letter-spacing: -0.3px;
+}
+
+.type {
 	font-size: 14px;
+	font-weight: 600;
 	text-transform: uppercase;
-	letter-spacing: -1px;
-	color: gray;
 }
 
 .title {
-	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
