@@ -102,13 +102,19 @@ function Navbar(): JSX.Element {
 				</ul>
 				<Link
 					href="/contact"
-					className={styles.contactLink}
+					className={`${styles.contactLink} ${
+						pathname === '/contact' ? styles.active : ''
+					}`}
 					onClick={handleToggle}>
 					Get in touch
 				</Link>
 			</div>
 
-			<Link href="/contact" className={styles.contactLink}>
+			<Link
+				href="/contact"
+				className={`${styles.contactLink} ${
+					pathname === '/contact' ? styles.active : ''
+				}`}>
 				Get in touch
 			</Link>
 

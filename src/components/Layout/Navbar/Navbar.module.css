@@ -106,9 +106,9 @@
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-.menuItemsLink:active {
+/* .menuItemsLink:active {
 	opacity: 0.5;
-}
+} */
 
 .contactLink {
 	font-size: 20px;
@@ -119,10 +119,10 @@
 .menuItemsLink.active {
 	color: var(--primary-color);
 	opacity: 1;
+	pointer-events: none;
 }
 
 .contactLink {
-	/* margin-top: 2rem; */
 	padding: 0.5rem 1rem;
 	display: block;
 	width: max-content;
@@ -130,6 +130,7 @@
 	background-color: var(--bg-secondary);
 	border-radius: 2rem;
 	z-index: 20;
+	transition: filter 0.3s;
 }
 
 .nav > .contactLink {
@@ -137,12 +138,16 @@
 }
 
 .contactLink:hover {
-	background: var(--main);
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
+/* .contactLink:active {
+	opacity: 0.7;
+} */
+
 .contactLink.active {
-	color: #ffffff;
+	background: var(--main);
+	pointer-events: none;
 }
 
 .contactLink:last-child {

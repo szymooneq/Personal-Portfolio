@@ -127,7 +127,7 @@ function Resume(): JSX.Element {
 						<h2 className={styles.name}>Education & Courses</h2>
 						<section>
 							{educationList.map((item) => (
-								<div className={styles.sectionItem}>
+								<div key={item.title} className={styles.sectionItem}>
 									<h3>{item.title}</h3>
 									<p className={styles.sectionTimeline}>{item.timeline}</p>
 									<p className={styles.sectionDescription}>
@@ -149,13 +149,17 @@ function Resume(): JSX.Element {
 					<div className={styles.contentItem}>
 						<h2 className={styles.name}>Stack</h2>
 						{stackList.map((item) => (
-							<p className={styles.sectionDescription}>{item}</p>
+							<p key={item} className={styles.sectionDescription}>
+								{item}
+							</p>
 						))}
 					</div>
 					<div className={styles.contentItem}>
 						<h2 className={styles.name}>Hobby / Interest</h2>
 						{hobbyList.map((item) => (
-							<p className={styles.sectionDescription}>{item}</p>
+							<p key={item} className={styles.sectionDescription}>
+								{item}
+							</p>
 						))}
 					</div>
 				</div>

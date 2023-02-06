@@ -2,11 +2,9 @@
 
 ![tutorial thumbnail](./src/assets/_thumbnail.jpg)
 
-My own portfolio page. Responsive website without the use of any CSS framework.
+My portfolio website. A responsive website built with Next.js and the Sanity v3 CMS embedded Studio.
 
 https://szymondudka.xyz
-
-https://personal-portfolio-sd.vercel.app
 
 ## Main technologies
 
@@ -28,31 +26,30 @@ https://personal-portfolio-sd.vercel.app
 
 ## Details
 
-- created with React (Next.js) and TypeScript
+- created with the React.js and Next.js frameworks using TypeScript
 - server-side rendering and better SEO
-- CMS with Sanity.io
+- CMS with Sanity v3 CMS embedded Studio
 - animations created with Framer Motion
-- HTML semantic tags
-- responsive website design without using any CSS framework
-- using CSS modules
-- design created with Figma Software
-- inspired by the Gridfolio Framer template and one of Astro's landing page example
+- Semantic HTML tags
+- responsive website design without using a CSS framework
+- styling with CSS modules
+- design created with Figma software
 
 ## Tutorial and project structure
 
-Inside of project, you'll see the following folders and files:
+Inside the project you'll see the following folders and files:
 
 ```
 PROJECT_ROOT
-├── pages               # page files
 ├── public              # static assets
 ├── sanity              # Sanity studio
 └── src
     ├── assets          # images and files
     ├── components      # React components
-    ├── lib             # config files
-    ├── styles          # global and page styles
-    └── types           # TypeScript types
+    ├── interfaces      # TypeScript interfaces
+    ├── lib             # Sanity Studio files
+    ├── pages           # page files
+    └── styles          # global and page styles
 ```
 
 Download the repository to your local machine and run to download all missing dependencies:
@@ -73,13 +70,12 @@ To build your application use:
 npm run build
 ```
 
-<!-- **If you want to deploy your application, you have to move `.htaccess` file to your build folder because this project provides only client-side routing.** -->
+**To manage the content of the site, you need to create a new sanity project. See the official documentation: https://www.sanity.io/docs/getting-started**
 
-**To manage the content on the website you need to create a new sanity project. Use schemas from the `sanity/schemas` folder. Check the official documentation: https://www.sanity.io/docs/getting-started**
-
-After creating your sanity project, create the `.env.local` file in the main folder and enter the following data:
+After you have created your Sanity project, create the `.env.local` file in the main folder and enter the following data:
 
 ```
 NEXT_PUBLIC_SANITY_PROJECT_ID = YOUR_SANITY_PROJECT_ID
-NEXT_PUBLIC_SANITY_PROJECT_DATASET = YOUR_SANITY_PROJECT_DATASET
+NEXT_PUBLIC_SANITY_DATASET = YOUR_SANITY_DATASET
+NEXT_PUBLIC_SANITY_API_VERSION = YOUR_SANITY_API_VERSION
 ```
