@@ -27,7 +27,7 @@ function Navbar(): JSX.Element {
 		if (window.innerWidth > 768) setExpandNavbar(false);
 	}, 300);
 
-	const handleScroll = throttle(() => {
+	/* const handleScroll = throttle(() => {
 		const starfield: HTMLElement | null = document.querySelector('#starfield');
 
 		if (starfield && window.scrollY < starfield.clientHeight) {
@@ -37,7 +37,7 @@ function Navbar(): JSX.Element {
 			if (navbarOnTop && expandNavbar) setAnimation(false);
 			setNavbarOnTop(true);
 		}
-	}, 300);
+	}, 300); */
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
@@ -49,23 +49,26 @@ function Navbar(): JSX.Element {
 
 	useEffect(() => {
 		if (pathname === '/') {
-			const starfield = document.querySelector('#starfield');
+			/* const starfield = document.querySelector('#starfield');
 			setNavbarOnTop(
 				starfield && window.scrollY < starfield.clientHeight ? false : true
-			);
+			); */
 
-			window.addEventListener('scroll', handleScroll);
+			setNavbarOnTop(false);
+			setAnimation(false);
+
+			// window.addEventListener('scroll', handleScroll);
 		} else {
 			setNavbarOnTop(true);
 			setAnimation(true);
 		}
 
-		return () => {
+		/* return () => {
 			if (pathname === '/') {
 				window.removeEventListener('scroll', handleScroll);
 			}
-		};
-	}, [pathname, handleScroll]);
+		}; */
+	}, [pathname]);
 
 	return (
 		<nav

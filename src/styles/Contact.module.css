@@ -34,7 +34,8 @@
 	margin-bottom: 0.2rem;
 	font-size: 14px;
 	text-transform: uppercase;
-	letter-spacing: -1px;
+	letter-spacing: -0.3px;
+	font-weight: 600;
 	color: #bdbdbd;
 }
 

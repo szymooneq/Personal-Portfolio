@@ -67,7 +67,7 @@
 
 .cardDesc {
 	font-size: var(--card-desc-font-size);
-	color: gray;
+	color: #bdbdbd;
 	letter-spacing: -0.8px;
 }
 
@@ -85,8 +85,9 @@
 	margin-bottom: 0.5rem;
 	font-size: 14px;
 	text-transform: uppercase;
-	letter-spacing: -1px;
-	color: grey;
+	letter-spacing: -0.3px;
+	font-weight: 600;
+	color: #bdbdbd;
 }
 
 .card:nth-child(5) {
@@ -135,8 +136,9 @@
 	margin-bottom: 0.5rem;
 	font-size: 14px;
 	text-transform: uppercase;
-	letter-spacing: -1px;
-	color: grey;
+	letter-spacing: -0.3px;
+	font-weight: 600;
+	color: #bdbdbd;
 }
 
 .card:nth-child(7) .title {

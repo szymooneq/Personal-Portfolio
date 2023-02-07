@@ -18,27 +18,23 @@ function Home(): JSX.Element {
 			</Head>
 
 			<Hero />
-			<Article className={styles.content}>
+			{/* <Article className={styles.content}>
 				<div>
 					<div className={styles.card}>
-						<h3>Hello! I am Szymon 👋</h3>
+						<h3>Hello! I am Simon 👋</h3>
 						<p>
-							I am pleased to welcome you to my portfolio website. My name is
-							Szymon Dudka and I am a Front-end developer. Programming is my
-							passion. I would like to become a Full-stack developer in the
-							future. I am an ambitious, persistent person, I like new
-							challenges and I pursue my goals. By searching the Internet,
-							watching YouTube videos, or reading technological documentation, I
-							constantly develop my skills and gain new experiences.
+							I implement responsive and user-friendly interfaces and API-based
+							applications. I&apos;m constantly gaining new knowledge by
+							creating and improving projects which help me practice my skills.
+							My goal is work in a team that specializes in commercial projects.
+							This would give me a chance to further improve my skills and gain
+							valuable experience.
 						</p>
 						<p>
-							You can find the result of my work on the projects page. I tried
-							to make every project with attention to detail and describe it
-							properly. If you like them, you can contact me via the form
-							available on the website. Also, you can check my profile on
-							LinkedIn or GitHub.
+							You can find the result of my work on the Projects page. Also, you
+							can check my profile on LinkedIn or GitHub.
 						</p>
-						<p>Thank you! 😊</p>
+						<p>Thank you!</p>
 					</div>
 					<div className={styles.quote}>
 						&ldquo;If you get up in the morning and think the future is going to
@@ -57,7 +53,7 @@ function Home(): JSX.Element {
 				</div>
 
 				<Tagcloud />
-			</Article>
+			</Article> */}
 		</>
 	);
 }

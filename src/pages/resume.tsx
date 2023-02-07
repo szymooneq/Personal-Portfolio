@@ -12,31 +12,31 @@ const educationList = [
 		title: 'PWSZ (Akademia Nauk Stosowanych), Nowy Sącz',
 		timeline: 'Sep 2018 - Jun 2022',
 		description:
-			'I graduated with applied computer science. I learned the basics of programming and got to know algorithms and data structures, databases. I also learned web fundamentals and created my first projects as part of the classes.'
+			'I am an IT engineer, I have a degree in applied computer science. I have learned the basics of programming and object-oriented programming. I learned algorithms, data structures, and statistics. I learned about operating systems, I worked on Linux Fedora. I created the first web applications. I learned how to create and manage group projects in short meetings (sprints). I learned about relational databases and the MySQL database. I learned about computer networks, computer graphics, and the basics of cryptography.'
 	},
 	{
-		title: 'HTML, CSS and JavaScript Courses',
-		timeline: 'Jul 2022 - Sep 2022',
+		title: 'HTML, CSS and JavaScript',
+		timeline: 'Jul 2022 - Present',
 		description:
-			'I deepened my knowledge of the basics of websites. I learned semantic HTML, positioning elements on the page, styling units, animations, and responsive web design. I spent a lot of time learning JavaScript. I got to know the syntax, DOM manipulation, and fetch API and I still learning new things while practising every day.'
+			'I deepened my knowledge of website basics. I learned semantic HTML, positioning elements on the page, styling units, animations, and responsive web design. I spent a lot of time learning JavaScript. I learned syntax, manipulating DOM, and the Fetch API, and I am still learning new things as I practice every day.'
 	},
 	{
 		title: 'Advanced CSS',
-		timeline: 'Aug 2022',
+		timeline: 'Aug 2022 - Present',
 		description:
-			'I have completed the Bootstrap course. I have learned and worked with such frameworks as Tailwind or styled-components and the SASS preprocessor.'
+			'I have completed the Bootstrap course. I learned about and worked with frameworks like Tailwind or styled-components and the SASS preprocessor.'
 	},
 	{
-		title: 'React Course (with Next.js)',
-		timeline: 'Sep 2022',
+		title: 'React (with Next.js)',
+		timeline: 'Sep 2022 - Present',
 		description:
-			'I completed a React course and got to know the components, webpack, JSX, and hooks offered by the framework. I worked with popular libraries such as Redux, React Router, React Query and Formik. I also learned about server-side rendering using the Next.js framework.'
+			'I took a React course and learned about the components, Webpack, JSX, and hooks that the framework offers. I worked with popular libraries like Redux, React Router, React Query, and Formik. I also learned about server-side rendering using the Next.js framework.'
 	},
 	{
-		title: 'TypeScript Course',
-		timeline: 'Nov 2022',
+		title: 'TypeScript',
+		timeline: 'Nov 2022 - Present',
 		description:
-			'I have completed one of the free TypeScript courses available on YouTube.'
+			'I completed one of the free TypeScript courses available on YouTube.'
 	},
 	{
 		title: 'Freelancer Course',
@@ -46,10 +46,11 @@ const educationList = [
 ];
 
 const stackList = [
-	'JavaScript | TypeScript | React.js | Next.js | npm',
-	'Redux | Jest | Reducer | Context | Hooks | yarn',
-	'Vite | React Router | React Query | Formik',
-	'HTML | CSS | RWD | REST API',
+	'JavaScript | TypeScript | React.js | Next.js | Vite',
+	'Redux | Reducer | Context | Hooks | npm | yarn',
+	'React Router | React Query | Pixel Perfect',
+	'Formik | React Hook Form | yup | zod',
+	'HTML (semantic) | CSS | RWD | BEM | REST API',
 	'SASS | Tailwind | Bootstrap | styled-components',
 	'MySQL | Firebase | Sanity CMS | Strapi CMS',
 	'Git | GitHub',
@@ -58,7 +59,7 @@ const stackList = [
 
 const hobbyList = [
 	'Travel | Gaming | Web Design | Technology',
-	'Astronomy | Photography | Football'
+	'Aircraft | Astronomy | Football'
 ];
 
 function Resume(): JSX.Element {
@@ -114,12 +115,12 @@ function Resume(): JSX.Element {
 						<h2 className={styles.name}>About me</h2>
 						<section>
 							<p className={styles.sectionDescription}>
-								I am a front-end developer with almost one year of
-								non-commercial experience. I love creating websites/web
-								applications. I am ambitious, persistent, and self-taught. I
-								like challenges, I quickly adapt to new technologies and I pay
-								attention to the small details. I learn every day to deepen my
-								knowledge.
+								I implement responsive and user-friendly interfaces and
+								API-based applications. I&apos;m constantly gaining new
+								knowledge by creating and improving projects which help me
+								practice my skills. My goal is work in a team that specializes
+								in commercial projects. This would give me a chance to further
+								improve my skills and gain valuable experience.
 							</p>
 						</section>
 					</div>
@@ -140,10 +141,10 @@ function Resume(): JSX.Element {
 					<div className={styles.contentItem}>
 						<h2 className={styles.name}>Projects</h2>
 						<p className={styles.sectionDescription}>
-							All my projects with details available on the projects page.
+							All my projects with details can be found on the Projects page.
 						</p>
 						<Link className={styles.contactMe} href="projects">
-							Go to projects page
+							Go to Projects
 						</Link>
 					</div>
 					<div className={styles.contentItem}>

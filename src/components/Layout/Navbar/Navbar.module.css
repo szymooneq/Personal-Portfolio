@@ -2,7 +2,6 @@
 	display: flex;
 	width: 100%;
 	top: 0;
-	border-bottom: 1px solid var(--bg-secondary);
 }
 
 .fixed {
@@ -13,6 +12,7 @@
 	backdrop-filter: saturate(180%) blur(5px);
 	z-index: 100;
 	transform: translateY(0%);
+	border-bottom: 1px solid var(--bg-secondary);
 }
 
 .absolute {
@@ -88,7 +88,7 @@
 	align-items: center;
 	gap: 2rem;
 	font-size: 20px;
-	font-weight: 600;
+	font-weight: 700;
 	list-style-type: none;
 }
 
@@ -295,7 +295,6 @@
 	}
 
 	.menu {
-		padding: 0;
 		position: unset;
 		width: auto;
 		height: auto;
@@ -314,6 +313,7 @@
 
 	.nav > .contactLink {
 		display: block;
+		margin-bottom: 0.5rem;
 	}
 
 	.menuItems {

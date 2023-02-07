@@ -24,15 +24,15 @@ function About(): JSX.Element {
 			<Article header="About" className={styles.main}>
 				<div className={styles.card}></div>
 				<div className={styles.card}>
-					<h2 className={styles.bigTitle}>Hey, I&apos;m Szymon 👋</h2>
-					<p className={styles.secondary}>Frontend Developer</p>
+					<h2 className={styles.bigTitle}>Hey, I&apos;m Simon 👋</h2>
+					{/* <p className={styles.secondary}>Frontend Developer</p> */}
 				</div>
 				<div className={styles.card}>
 					<h3 className={styles.title}>About me</h3>
 					<p className={styles.cardDesc}>
-						I&apos;m a Frontend Developer. I create websites/web applications
-						and I constantly develop my development skills. My goal is to become
-						a Fullstack JS Developer.
+						I implement responsive and user-friendly interfaces and API-based
+						applications. I&apos;m constantly gaining new knowledge by creating
+						and improving projects which help me practice my skills. experience.
 					</p>
 				</div>
 				<Link href="projects" className={styles.card}>

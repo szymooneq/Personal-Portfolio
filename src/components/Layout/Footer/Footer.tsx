@@ -7,8 +7,8 @@ function Footer(): JSX.Element {
 			<div className={styles.waves}></div>
 			<div className={styles.content}>
 				<p>
-					Feel free to get in touch and stay connected with me via these
-					different channels.
+					Feel free to contact me and stay in touch with me through these
+					various channels.
 				</p>
 				<div className={styles.icons}>
 					{contactLinks.map((link) => (

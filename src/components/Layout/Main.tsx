@@ -32,7 +32,7 @@ function Main({ children }: props): JSX.Element {
 					</AnimatePresence>
 				</>
 			)}
-			{!asPath.includes('studio') && <Footer />}
+			{asPath !== '/' && !asPath.includes('studio') && <Footer />}
 		</>
 	);
 }
