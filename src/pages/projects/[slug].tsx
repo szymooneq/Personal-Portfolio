@@ -29,15 +29,15 @@ function ProjectPage({ projectData }: props): JSX.Element {
 					<h1 className={styles.title}>
 						{projectData.title} - {projectData.type.title}
 					</h1>
-					<p className={styles.desc}>{projectData.description}</p>
+					<p className={styles.description}>{projectData.description}</p>
 				</header>
 
 				<Group type="links">
 					{projectData.links.map(({ link, url }) => (
-						<a
+						<Link
 							key={url}
 							href={url}
-							className="button"
+							className={styles.link}
 							target="_blank"
 							rel="noreferrer"
 							aria-label={`${link.alt} of project`}>
@@ -48,7 +48,7 @@ function ProjectPage({ projectData }: props): JSX.Element {
 								width={20}
 								height={20}
 							/>
-						</a>
+						</Link>
 					))}
 				</Group>
 
@@ -62,14 +62,14 @@ function ProjectPage({ projectData }: props): JSX.Element {
 					<Group type="list" title="Stack">
 						{projectData.stack.map((el) => (
 							<li key={el.title}>
-								<a
+								<Link
 									href={el.url}
 									className={styles.stackUrl}
 									target="_blank"
 									rel="noreferrer"
 									aria-label={`Link to ${el.title} page`}>
 									{el.title}
-								</a>{' '}
+								</Link>{' '}
 								- {el.description}
 							</li>
 						))}
@@ -93,7 +93,7 @@ function ProjectPage({ projectData }: props): JSX.Element {
 export default ProjectPage;
 
 interface IParams extends ParsedUrlQuery {
-	name: string;
+	slug: string;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -105,9 +105,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const { name } = params as IParams;
-	const projectData = await getProjectData(name);
-	// console.log(projectData);
+	const { slug } = params as IParams;
+	const projectData = await getProjectData(slug);
 
 	return {
 		props: {

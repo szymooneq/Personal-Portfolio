@@ -2,15 +2,37 @@
 	margin-top: 2rem;
 	font-size: var(--card-desc-font-size);
 	font-weight: 400;
-	color: gray;
+	color: #bdbdbd;
 }
 
-.desc {
+.description {
 	margin-top: 1rem;
 	margin-bottom: 2rem;
 	font-size: var(--project-desc);
 	color: white;
 	letter-spacing: -3px;
+}
+
+.link {
+	padding: 0.5rem 1rem;
+	display: inline-flex;
+	gap: 0.4rem;
+	font-size: 1rem;
+	font-weight: 600;
+	background: var(--bg-secondary);
+	border: none;
+	opacity: 1;
+	transition: opacity 0.3s;
+	cursor: pointer;
+}
+
+.link img {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.link:hover {
+	opacity: 0.7;
 }
 
 .stackUrl {

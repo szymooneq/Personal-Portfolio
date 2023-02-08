@@ -17,8 +17,8 @@ function NotFound(): JSX.Element {
 			<Article className={styles.content}>
 				<h1>404</h1>
 				<p>
-					The page you are looking for might have been removed had its name
-					changed or is temporarily unavaible.
+					The page you are looking for may have been removed, its name changed,
+					or it may be temporarily inaccessible.
 				</p>
 
 				<Link href="/" className={styles.backButton}>

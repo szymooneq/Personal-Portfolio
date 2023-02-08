@@ -22,7 +22,6 @@ https://szymondudka.xyz
 - [Framer Motion](https://www.framer.com/motion) - production-ready motion library for React
 - [Figma](https://www.figma.com) - a collaborative web application for interface design
 - [Next.js Progressbar (NProgress)](https://github.com/apal21/nextjs-progressbar) - a simple Next.js progressbar component using NProgress
-- [TagCloud](https://github.com/cong-min/TagCloud) - 3D TagCloud that rolling with the mouse
 
 ## Details
 

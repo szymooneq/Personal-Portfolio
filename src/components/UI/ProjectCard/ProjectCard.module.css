@@ -1,4 +1,4 @@
-.gridCards {
+.grid {
 	display: grid;
 	grid-template: 1fr;
 	grid-auto-rows: 1fr;
@@ -92,13 +92,13 @@
 }
 
 @media (min-width: 768px) {
-	.gridCards {
+	.grid {
 		grid-template-columns: 1fr 1fr;
 	}
 }
 
 @media (min-width: 1280px) {
-	.gridCards {
+	.grid {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }

@@ -18,18 +18,18 @@ function About(): JSX.Element {
 				<title>About me | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="I'm a Frontend Developer. I create websites / web applications and I constantly develop my development skills. My goal is to become a Fullstack JS Developer."
+					content="I implement responsive and user-friendly interfaces and API-based
+					applications."
 				/>
 			</Head>
-			<Article header="About" className={styles.main}>
-				<div className={styles.card}></div>
+			<Article header="About" className={styles.about}>
+				<div className={styles.card} />
 				<div className={styles.card}>
 					<h2 className={styles.bigTitle}>Hey, I&apos;m Simon 👋</h2>
-					{/* <p className={styles.secondary}>Frontend Developer</p> */}
 				</div>
 				<div className={styles.card}>
 					<h3 className={styles.title}>About me</h3>
-					<p className={styles.cardDesc}>
+					<p className={styles.description}>
 						I implement responsive and user-friendly interfaces and API-based
 						applications. I&apos;m constantly gaining new knowledge by creating
 						and improving projects which help me practice my skills. experience.
@@ -40,34 +40,34 @@ function About(): JSX.Element {
 						src={aboutProjects}
 						width={590}
 						height={190}
-						alt="Projects card background"
+						alt="Background with project thumbnails"
 					/>
 					<p>Check my projects</p>
-					<div className={styles.cardFlex}>
+					<div className={styles.flex}>
 						<h3 className={styles.title}>See my work</h3>
 						{rightCircleArrow}
 					</div>
 				</Link>
-				<a
+				<Link
 					className={styles.card}
 					href="https://www.linkedin.com/in/szymon-dudka"
 					target="_blank"
 					rel="noreferrer"
 					aria-label="Check my profile on LinkedIn">
-					<div className={styles.icon}>{linkedinIcon}</div>
-					<div className={styles.arrow}>{rightUpCircleArrow}</div>
-				</a>
+					<div className={styles.linkedIn}>{linkedinIcon}</div>
+					{rightUpCircleArrow}
+				</Link>
 				<Link href="contact" className={styles.card}>
 					<h3 className={styles.title}>Let&apos;s work together ✨</h3>
-					<div className={styles.cardFlex}>
+					<div className={styles.flex}>
 						<h2 className={styles.getTouch}>Get in touch now</h2>
 						{rightCircleArrow}
 					</div>
 				</Link>
 				<Link href="resume" className={styles.card}>
-					<div className={styles.userFaceID}>{userFaceID}</div>
+					{userFaceID}
 					<p>Learn more about me</p>
-					<div className={styles.cardFlex}>
+					<div className={styles.flex}>
 						<h3 className={styles.title}>See my resume</h3>
 						{rightCircleArrow}
 					</div>

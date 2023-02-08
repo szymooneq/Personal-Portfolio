@@ -16,10 +16,11 @@ function Technologies({ technologies }: props): JSX.Element {
 		<div className={styles.technologies}>
 			{technologies.map((el) => (
 				<Link
-					href={`/projects?category=${el.title}`}
 					key={el.title}
+					href={`/projects?category=${el.title}`}
 					scroll={false}
-					className={`button ${query.category === el.title ? 'active' : ''}`}
+					className={styles.button}
+					data-active={query.category === el.title}
 					aria-label={`Check my ${el.title} projects`}>
 					<Image
 						src={urlFor(el.icon).url()}
@@ -30,11 +31,13 @@ function Technologies({ technologies }: props): JSX.Element {
 					{el.title}
 				</Link>
 			))}
-			{query.category && (
-				<Link href="/projects" scroll={false} className="button reset">
-					x reset filter
-				</Link>
-			)}
+			<Link
+				href="/projects"
+				scroll={false}
+				className={styles.button}
+				data-visible={query.category ? true : false}>
+				x reset filter
+			</Link>
 		</div>
 	);
 }

@@ -74,7 +74,7 @@ export async function getAllProjectsId() {
 	return projectsWithId.map((project) => {
 		return {
 			params: {
-				name: project.slug.current
+				slug: project.slug.current
 			}
 		};
 	});

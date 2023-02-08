@@ -3,8 +3,9 @@ import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
 import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from '@/styles/Contact.module.css';
 import Head from 'next/head';
+import Link from 'next/link';
 
-const cardAds = [
+const cards = [
 	{
 		title: 'Website design & development',
 		desc: 'Experienced designer & visual developer. I create websites/web applications.',
@@ -19,6 +20,19 @@ const cardAds = [
 		title: 'Branding',
 		desc: 'I combine my visual and analytical side and love creating brands.',
 		icon: cubeIcon
+	}
+];
+
+const contactTypes = [
+	{
+		smallTitle: 'want to call me?',
+		linkHref: 'https://discord.com/users/554988199529676800',
+		linkDesc: 'Schedule a call with me'
+	},
+	{
+		smallTitle: 'just want to email me?',
+		linkHref: 'mailto:szymooneq@zohomail.eu',
+		linkDesc: 'szymooneq@zohomail.eu'
 	}
 ];
 
@@ -38,40 +52,36 @@ function Contact(): JSX.Element {
 				<div className={styles.content}>
 					<div className={styles.description}>
 						<div>
-							<h1 className={styles.title}>Get in Touch ✨</h1>
+							<h2 className={styles.title}>Get in Touch ✨</h2>
 							<p className={styles.subText}>
 								I'm always ready to collaborate on a project or hear about an
 								opportunity!
 							</p>
 						</div>
-						<div className={styles.contactTypes}>
-							<div>
-								<p className={styles.smallTitle}>want to call me?</p>
-								<a
-									href="https://discord.com/users/554988199529676800"
-									target="_blank"
-									rel="noreferrer"
-									className={styles.info}>
-									Schedule a call with me
-								</a>
-							</div>
-							<div>
-								<p className={styles.smallTitle}>Just want to email me?</p>
-								<a href="mailto:szymooneq@zohomail.eu" className={styles.info}>
-									szymooneq@zohomail.eu
-								</a>
-							</div>
+						<div className={styles.types}>
+							{contactTypes.map((link) => (
+								<div key={link.smallTitle}>
+									<p className={styles.smallTitle}>{link.smallTitle}</p>
+									<Link
+										href={link.linkHref}
+										target="_blank"
+										rel="noreferrer"
+										className={styles.link}>
+										{link.linkDesc}
+									</Link>
+								</div>
+							))}
 						</div>
 						<div className={styles.icons}>
 							{contactLinks.map((link) => (
-								<a
+								<Link
 									key={link.name}
 									href={link.url}
 									target="_blank"
 									rel="noreferrer"
 									aria-label={link.ariaLabel}>
 									{link.icon}
-								</a>
+								</Link>
 							))}
 						</div>
 					</div>
@@ -124,12 +134,13 @@ function Contact(): JSX.Element {
 						</button>
 					</form>
 				</div>
+
 				<div className={styles.cards}>
-					{cardAds.map((item) => (
+					{cards.map((item) => (
 						<div key={item.title} className={styles.card}>
-							<div className={styles.cardIcon}>{item.icon}</div>
-							<div className={styles.cardTitle}>{item.title}</div>
-							<div className={styles.cardDesc}>{item.desc}</div>
+							{item.icon}
+							<h3 className={styles.cardTitle}>{item.title}</h3>
+							<p className={styles.cardDesc}>{item.desc}</p>
 						</div>
 					))}
 				</div>

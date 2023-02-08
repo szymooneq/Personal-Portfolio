@@ -24,7 +24,7 @@
 	color: grey;
 }
 
-.contactTypes {
+.types {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -39,11 +39,11 @@
 	color: #bdbdbd;
 }
 
-.info {
+.link {
 	font-size: var(--card-desc-font-size);
 }
 
-.info:hover {
+.link:hover {
 	color: var(--primary-color);
 	text-decoration: underline;
 	cursor: pointer;
@@ -124,7 +124,7 @@
 	border-radius: var(--card-border-radius);
 }
 
-.cardIcon svg {
+.card svg {
 	margin: 0.5rem;
 	width: 5rem;
 	height: 5rem;
@@ -142,10 +142,6 @@
 	font-size: var(--card-desc-font-size);
 	color: #bdbdbd;
 	letter-spacing: -0.8px;
-}
-
-/* MD */
-@media (min-width: 768px) {
 }
 
 /* LG */
@@ -176,8 +172,4 @@
 	.card:nth-child(3) {
 		grid-column: auto;
 	}
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
 }

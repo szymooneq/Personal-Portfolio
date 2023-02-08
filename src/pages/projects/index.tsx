@@ -43,7 +43,7 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 			</Head>
 
 			<Article header="Projects">
-				<p className={styles.desc}>
+				<p className={styles.description}>
 					Here are some of the projects I have been able to realize so far. You
 					can easily filter the projects by technology by clicking on the
 					selected technology.

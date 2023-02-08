@@ -1,4 +1,5 @@
 import { contactLinks } from '@/lib/helpers/contactLinks';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 function Footer(): JSX.Element {
@@ -12,14 +13,14 @@ function Footer(): JSX.Element {
 				</p>
 				<div className={styles.icons}>
 					{contactLinks.map((link) => (
-						<a
+						<Link
 							key={link.name}
 							href={link.url}
 							target="_blank"
 							rel="noreferrer"
 							aria-label={link.ariaLabel}>
 							{link.icon}
-						</a>
+						</Link>
 					))}
 				</div>
 				<p>&copy; | 2023 Szymon Dudka</p>

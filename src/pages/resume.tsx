@@ -12,35 +12,53 @@ const educationList = [
 		title: 'PWSZ (Akademia Nauk Stosowanych), Nowy Sącz',
 		timeline: 'Sep 2018 - Jun 2022',
 		description:
-			'I am an IT engineer, I have a degree in applied computer science. I have learned the basics of programming and object-oriented programming. I learned algorithms, data structures, and statistics. I learned about operating systems, I worked on Linux Fedora. I created the first web applications. I learned how to create and manage group projects in short meetings (sprints). I learned about relational databases and the MySQL database. I learned about computer networks, computer graphics, and the basics of cryptography.'
+			'I learned the basics of programming and object-oriented programming. I learned algorithms, data structures, and statistics. I learned about operating systems, I worked with Linux Fedora. I created the first web applications. I created group projects in short meetings (sprints). I learned about relational databases and created projects based on MySQL. I learned about computer networks, computer graphics, and the basics of cryptography.'
 	},
 	{
-		title: 'HTML, CSS and JavaScript',
+		title: 'HTML',
 		timeline: 'Jul 2022 - Present',
 		description:
-			'I deepened my knowledge of website basics. I learned semantic HTML, positioning elements on the page, styling units, animations, and responsive web design. I spent a lot of time learning JavaScript. I learned syntax, manipulating DOM, and the Fetch API, and I am still learning new things as I practice every day.'
+			'I have deepened my knowledge of HTML. I know semantic HTML. I am learning web accessibility. I use the WAVE plugin.'
 	},
 	{
-		title: 'Advanced CSS',
-		timeline: 'Aug 2022 - Present',
+		title: 'CSS',
+		timeline: 'Jul 2022 - Present',
 		description:
-			'I have completed the Bootstrap course. I learned about and worked with frameworks like Tailwind or styled-components and the SASS preprocessor.'
+			'I have deepened my knowledge of CSS. I know units, I can create variables, position elements, create layouts, and animations, and I know typography. I know RWD, BEM namespaces, and different ways of styling. I use popular utility-first frameworks like Bootstrap and Tailwind. I use the SASS preprocessor. I know libraries with prebuilt components like styled-components, MUI, or Ant Design, and compile CSS with JS using PostCSS.'
 	},
 	{
-		title: 'React (with Next.js)',
+		title: 'JavaScript',
+		timeline: 'Jul 2022 - Present',
+		description:
+			'I am learning Javascript all the time. I know the types and scopes of variables, hoisting, data types, and data structures. I know loops and conditionals, exception handling, operators, function types, and contexts they create. I also know the function and object paradigm. I know asynchronous Javascript, event loop, REST API, and HTTP protocol. I can manipulate the DOM. I know common array operations.'
+	},
+	{
+		title: 'React.js',
 		timeline: 'Sep 2022 - Present',
 		description:
-			'I took a React course and learned about the components, Webpack, JSX, and hooks that the framework offers. I worked with popular libraries like Redux, React Router, React Query, and Formik. I also learned about server-side rendering using the Next.js framework.'
+			'I have taken a React course, I know components, Webpack, Vite, JSX, and popular hooks (useState, useEffect, useContext, useReducer, useRef). I can pass values via props, I know HOC, portals, suspense, lazy loading, and error boundaries components.'
+	},
+	{
+		title: 'Next.js',
+		timeline: 'Nov 2022 - Present',
+		description:
+			'I can create statically generated and server-side generated pages. I know the tools that the framework offers and I also know Next.js v13 in beta (app instead of pages).'
 	},
 	{
 		title: 'TypeScript',
 		timeline: 'Nov 2022 - Present',
 		description:
-			'I completed one of the free TypeScript courses available on YouTube.'
+			'I use TypeScript in every project, I know how to type data (types, interfaces, enums) and use Intellisense to detect errors and search the web for answers.'
+	},
+	{
+		title: 'Optimization',
+		timeline: 'Dec 2022 - Present',
+		description:
+			'I can use development tools to investigate optimization. I use Google PageSpeed and Lighthouse for identifying performance and SEO. I compress images using Photoshop. I use throttling and debouncing functions. I know the best practices for optimizing animations.'
 	},
 	{
 		title: 'Freelancer Course',
-		timeline: 'Dec 2022',
+		timeline: 'Jan 2023',
 		description: ''
 	}
 ];

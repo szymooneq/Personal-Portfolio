@@ -10,13 +10,10 @@ const menuItems = [
 	{ title: 'About', path: '/about' },
 	{ title: 'Projects', path: '/projects' },
 	{ title: 'Resume', path: '/resume' }
-	// { title: 'Get in touch', path: '/contact' }
 ];
 
 function Navbar(): JSX.Element {
 	const { pathname } = useRouter();
-	const [navbarOnTop, setNavbarOnTop] = useState<boolean>(true);
-	const [animation, setAnimation] = useState<boolean>(false);
 	const [expandNavbar, setExpandNavbar] = useState<boolean>(false);
 
 	const handleToggle = () => {
@@ -27,18 +24,6 @@ function Navbar(): JSX.Element {
 		if (window.innerWidth > 768) setExpandNavbar(false);
 	}, 300);
 
-	/* const handleScroll = throttle(() => {
-		const starfield: HTMLElement | null = document.querySelector('#starfield');
-
-		if (starfield && window.scrollY < starfield.clientHeight) {
-			setNavbarOnTop(false);
-		} else {
-			if (!expandNavbar) setAnimation(true);
-			if (navbarOnTop && expandNavbar) setAnimation(false);
-			setNavbarOnTop(true);
-		}
-	}, 300); */
-
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
 
@@ -47,84 +32,59 @@ function Navbar(): JSX.Element {
 		};
 	}, [handleResize]);
 
-	useEffect(() => {
-		if (pathname === '/') {
-			/* const starfield = document.querySelector('#starfield');
-			setNavbarOnTop(
-				starfield && window.scrollY < starfield.clientHeight ? false : true
-			); */
-
-			setNavbarOnTop(false);
-			setAnimation(false);
-
-			// window.addEventListener('scroll', handleScroll);
-		} else {
-			setNavbarOnTop(true);
-			setAnimation(true);
-		}
-
-		/* return () => {
-			if (pathname === '/') {
-				window.removeEventListener('scroll', handleScroll);
-			}
-		}; */
-	}, [pathname]);
-
 	return (
 		<nav
-			className={`${styles.nav} ${
-				navbarOnTop
-					? `${
-							animation ? `${styles.fixed} ${styles.slideDown}` : styles.fixed
-					  }`
-					: styles.absolute
+			className={`${styles.navbar} ${
+				pathname === '/' ? styles.absolute : styles.fixed
 			}`}>
 			<Link href="/">
 				<Logo />
 			</Link>
 
 			<div
-				className={`${styles.blackBackground} ${expandNavbar && styles.active}`}
-				onClick={handleToggle}></div>
-			<div className={`${styles.menu} ${expandNavbar && styles.active}`}>
+				className={styles.blackLayer}
+				onClick={handleToggle}
+				data-open={expandNavbar}></div>
+			<div className={styles.menu} data-open={expandNavbar}>
 				<Logo />
-				<ul className={styles.menuItems}>
-					{menuItems.map(({ title, path }) => (
+				<ul className={styles.menuItemsList}>
+					{menuItems.map((item) => (
 						<li
-							key={title}
-							className={
-								pathname == path
-									? `${styles.active} ${styles.menuItemsLink}`
-									: `${styles.menuItemsLink}`
-							}>
-							<Link href={path} onClick={handleToggle}>
-								{title}
+							key={item.title}
+							className={styles.menuItem}
+							data-active={pathname === item.path}>
+							<Link
+								href={item.path}
+								onClick={handleToggle}
+								aria-current={pathname === item.path ? 'page' : 'false'}>
+								{item.title}
 							</Link>
 						</li>
 					))}
 				</ul>
 				<Link
 					href="/contact"
-					className={`${styles.contactLink} ${
-						pathname === '/contact' ? styles.active : ''
-					}`}
-					onClick={handleToggle}>
+					className={styles.contactLink}
+					onClick={handleToggle}
+					data-active={pathname === '/contact'}
+					aria-current={pathname === '/contact' ? 'page' : 'false'}>
 					Get in touch
 				</Link>
 			</div>
 
 			<Link
 				href="/contact"
-				className={`${styles.contactLink} ${
-					pathname === '/contact' ? styles.active : ''
-				}`}>
+				className={styles.contactLink}
+				data-active={pathname === '/contact'}
+				aria-current={pathname === '/contact' ? 'page' : 'false'}>
 				Get in touch
 			</Link>
 
 			<button
 				id="burger"
 				aria-label="Burger"
-				className={`${styles.burger} ${expandNavbar && styles.active}`}
+				className={styles.burger}
+				data-open={expandNavbar}
 				onClick={handleToggle}>
 				<span />
 				<span />

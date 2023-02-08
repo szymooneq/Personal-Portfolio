@@ -1,4 +1,4 @@
-.nav {
+.navbar {
 	display: flex;
 	width: 100%;
 	top: 0;
@@ -13,6 +13,7 @@
 	z-index: 100;
 	transform: translateY(0%);
 	border-bottom: 1px solid var(--bg-secondary);
+	animation: slideDown 0.4s ease-in-out forwards;
 }
 
 .absolute {
@@ -25,10 +26,6 @@
 	z-index: auto;
 }
 
-.fixed.slideDown {
-	animation: slideDown 0.4s ease-in-out forwards;
-}
-
 @keyframes slideDown {
 	0% {
 		transform: translateY(-100%);
@@ -39,7 +36,7 @@
 	}
 }
 
-.blackBackground {
+.blackLayer {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -50,11 +47,13 @@
 	z-index: 1;
 	transition: opacity 0.5s;
 	pointer-events: none;
+	visibility: hidden;
 }
 
-.blackBackground.active {
+.blackLayer[data-open='true'] {
 	opacity: 0.6;
 	pointer-events: all;
+	visibility: visible;
 }
 
 .menu {
@@ -77,11 +76,11 @@
 	align-self: flex-start;
 }
 
-.menu.active {
+.menu[data-open='true'] {
 	transform: translateX(0);
 }
 
-.menuItems {
+.menuItemsList {
 	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -92,34 +91,24 @@
 	list-style-type: none;
 }
 
-.menuItemsLink {
+.menuItem {
 	opacity: 0.7;
 	transition: 0.1s;
 }
 
-.menuItemsLink.active:hover {
-	filter: none;
-}
-
-.menuItemsLink:hover {
-	opacity: 1;
-	filter: drop-shadow(0 0 0.3rem #ffffff70);
-}
-
-/* .menuItemsLink:active {
-	opacity: 0.5;
-} */
-
-.contactLink {
-	font-size: 20px;
-	font-weight: 600;
-	opacity: 1;
-}
-
-.menuItemsLink.active {
+.menuItem[data-active='true'] {
 	color: var(--primary-color);
 	opacity: 1;
 	pointer-events: none;
+}
+
+.menuItem[data-active='true']:hover {
+	filter: none;
+}
+
+.menuItem:hover {
+	opacity: 1;
+	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
 .contactLink {
@@ -127,31 +116,28 @@
 	display: block;
 	width: max-content;
 	font-size: 1rem;
+	font-weight: 600;
 	background-color: var(--bg-secondary);
 	border-radius: 2rem;
 	z-index: 20;
 	transition: filter 0.3s;
 }
 
-.nav > .contactLink {
-	display: none;
+.contactLink[data-active='true'] {
+	background: var(--main);
+	pointer-events: none;
 }
 
 .contactLink:hover {
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-/* .contactLink:active {
-	opacity: 0.7;
-} */
-
-.contactLink.active {
-	background: var(--main);
-	pointer-events: none;
-}
-
 .contactLink:last-child {
 	margin-top: 2rem;
+}
+
+.navbar > .contactLink {
+	display: none;
 }
 
 .logo {
@@ -198,11 +184,6 @@
 	inset: 0;
 	padding: 1px;
 	border-radius: 12px;
-	/* background: linear-gradient(
-		to bottom right,
-		rgba(2, 13, 46, 1),
-		rgba(2, 5, 19, 1)
-	); */
 	background: var(--main);
 	background-clip: content-box;
 }
@@ -211,8 +192,7 @@
 	color: #ffffff;
 	font-size: 1.6rem;
 	font-weight: 700;
-	/* filter: drop-shadow(0 0 0.3rem #ffffff70); */
-	/* color: transparent; */
+	filter: drop-shadow(0 0 0.3rem #00000070);
 }
 
 @keyframes page_rotate {
@@ -223,30 +203,6 @@
 		transform: rotate(0deg);
 	}
 }
-
-/* .logo {
-	position: relative;
-	width: 3rem;
-	height: 3rem;
-	background: var(--main);
-	cursor: pointer;
-	z-index: 10;
-	transition: transform 0.4s;
-} */
-
-/* .logo:hover {
-	transform: rotate(20deg) scale(1.1);
-} */
-
-/* .logo p {
-	position: absolute;
-	bottom: 0;
-	right: 4px;
-	font-size: 1.4rem;
-	font-weight: 700;
-	letter-spacing: -1px;
-	color: var(--bg-dark);
-} */
 
 .burger {
 	margin-left: auto;
@@ -271,25 +227,25 @@
 	transition: 0.5s;
 }
 
-.burger.active span {
+.burger[data-open='true'] span {
 	background: #ffffff;
 }
 
-.burger.active span:nth-child(1) {
+.burger[data-open='true'] span:nth-child(1) {
 	transform: rotate(-45deg) translateY(0.5rem) translateX(-0.5rem);
 }
 
-.burger.active span:nth-child(2) {
+.burger[data-open='true'] span:nth-child(2) {
 	transform: scaleX(0);
 }
 
-.burger.active span:nth-child(3) {
+.burger[data-open='true'] span:nth-child(3) {
 	transform: rotate(45deg) translateY(-0.6rem) translateX(-0.6rem);
 }
 
 /* MEDIUM */
 @media (min-width: 768px) {
-	.nav {
+	.navbar {
 		padding: 0.8rem 2rem;
 		justify-content: space-between;
 	}
@@ -311,38 +267,22 @@
 		display: none;
 	}
 
-	.nav > .contactLink {
+	.navbar > .contactLink {
 		display: block;
 		margin-bottom: 0.5rem;
 	}
 
-	.menuItems {
+	.menuItemsList {
 		margin-top: 0;
 		flex-direction: row;
 		gap: 3rem;
 	}
 
-	.menuItemsLink {
+	.menuItem {
 		position: relative;
 	}
 
 	.burger {
 		display: none;
 	}
-}
-
-/* MD */
-@media (min-width: 768px) {
-}
-
-/* LG */
-@media (min-width: 1024px) {
-}
-
-/* XL */
-@media (min-width: 1280px) {
-}
-
-/* 2XL */
-@media (min-width: 1536px) {
 }

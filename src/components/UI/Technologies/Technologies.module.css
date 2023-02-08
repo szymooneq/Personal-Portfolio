@@ -5,3 +5,40 @@
 	gap: 1rem;
 	text-transform: uppercase;
 }
+
+.button {
+	padding: 0.5rem 1rem;
+	display: inline-flex;
+	gap: 0.4rem;
+	font-size: 1rem;
+	font-weight: 600;
+	background: var(--bg-secondary);
+	border: none;
+	opacity: 1;
+	transition: opacity 0.3s;
+	cursor: pointer;
+}
+
+.button img {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.button[data-active='true'] {
+	background: var(--main) !important;
+	pointer-events: none;
+}
+
+.button:hover {
+	opacity: 0.7;
+}
+
+.button[data-visible='true'] {
+	text-transform: uppercase;
+	color: #fe315c;
+	visibility: visible;
+}
+
+.button[data-visible='false'] {
+	visibility: hidden;
+}

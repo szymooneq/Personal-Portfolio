@@ -1,4 +1,4 @@
-.main {
+.about {
 	display: grid;
 	gap: 1.5rem;
 }
@@ -17,15 +17,6 @@
 .bigTitle {
 	font-size: var(--contact-title);
 	margin-bottom: 1rem;
-}
-
-.secondary {
-	margin-top: 1rem;
-	margin-bottom: 0;
-	font-size: var(--card-title-font-size);
-	font-weight: 400 !important;
-	letter-spacing: -1px;
-	color: grey;
 }
 
 .card:nth-child(1) {
@@ -65,7 +56,7 @@
 	letter-spacing: -0.8px;
 }
 
-.cardDesc {
+.description {
 	font-size: var(--card-desc-font-size);
 	color: #bdbdbd;
 	letter-spacing: -0.8px;
@@ -96,25 +87,25 @@
 	position: relative;
 }
 
-.card:nth-child(5) .icon {
+.card:nth-child(5) .linkedIn {
 	margin-bottom: 0.5rem;
 	align-self: center;
 	justify-self: center;
 }
 
-.card:nth-child(5) .icon svg {
+.card:nth-child(5) .linkedIn svg {
 	width: 125px;
 	height: auto;
 	color: var(--primary-color);
 }
 
-.card:nth-child(5) .arrow svg {
+.card:nth-child(5) svg {
 	width: 40px;
 	height: 40px;
 	color: gray;
 }
 
-.card:nth-child(5):hover .arrow svg {
+.card:nth-child(5):hover svg {
 	color: var(--primary-color);
 }
 
@@ -145,28 +136,28 @@
 	margin-bottom: 0;
 }
 
-.cardFlex {
+.flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 }
 
-.cardFlex h2 {
+.flex h2 {
 	margin-bottom: 0;
 }
 
-.cardFlex svg {
+.flex svg {
 	width: 40px !important;
 	height: 40px !important;
 	color: gray !important;
 }
 
-.card:hover .cardFlex svg {
+.card:hover .flex svg {
 	color: var(--primary-color) !important;
 }
 
 @media (min-width: 768px) {
-	.main {
+	.about {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
@@ -191,7 +182,7 @@
 }
 
 @media (min-width: 1280px) {
-	.main {
+	.about {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 

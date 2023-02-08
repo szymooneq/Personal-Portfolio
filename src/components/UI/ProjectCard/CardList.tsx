@@ -8,7 +8,7 @@ interface props {
 
 function CardList({ projectsList }: props): JSX.Element {
 	return (
-		<div className={styles.gridCards}>
+		<div className={styles.grid}>
 			{projectsList.map((project) => (
 				<ProjectCard key={project.title} project={project} />
 			))}
