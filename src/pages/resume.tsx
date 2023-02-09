@@ -65,11 +65,11 @@ const educationList = [
 
 const stackList = [
 	'JavaScript | TypeScript | React.js | Next.js | Vite',
-	'Redux | Reducer | Context | Hooks | npm | yarn',
+	'Redux | Reducer | Context | Hooks | NPM | Yarn',
 	'React Router | React Query | Pixel Perfect',
-	'Formik | React Hook Form | yup | zod',
+	'Formik | Yup | Zod',
 	'HTML (semantic) | CSS | RWD | BEM | REST API',
-	'SASS | Tailwind | Bootstrap | styled-components',
+	'SASS | Tailwind | Bootstrap | Styled-Components',
 	'MySQL | Firebase | Sanity CMS | Strapi CMS',
 	'Git | GitHub',
 	'VSCode | Figma | Adobe Photoshop'
@@ -77,7 +77,7 @@ const stackList = [
 
 const hobbyList = [
 	'Travel | Gaming | Web Design | Technology',
-	'Aircraft | Astronomy | Football'
+	'Aircraft | Photography | Football'
 ];
 
 function Resume(): JSX.Element {
@@ -113,7 +113,7 @@ function Resume(): JSX.Element {
 						</Link>
 					</div>
 					<div className={styles.card}>
-						{contactLinks.map((link, id) => (
+						{contactLinks.map((link) => (
 							<Fragment key={link.name}>
 								<div className={styles.link}>
 									<Link href={link.url} target="_blank" rel="noreferrer">
@@ -123,9 +123,17 @@ function Resume(): JSX.Element {
 										</div>
 									</Link>
 								</div>
-								{id < contactLinks.length - 1 && <hr />}
+								<hr />
 							</Fragment>
 						))}
+						<div className={styles.link}>
+							<Link href="CV_Szymon_Dudka.pdf" target="_blank" rel="noreferrer">
+								<div className={styles.linkDesc}>
+									<h2>CV</h2>
+									{rightUpCircleArrow}
+								</div>
+							</Link>
+						</div>
 					</div>
 				</div>
 				<div className={styles.content}>

@@ -1,4 +1,5 @@
 import { ProjectDetails } from '@/interfaces/project';
+import { AnimatePresence, motion as m } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import styles from './ProjectCard.module.css';
 
@@ -8,11 +9,13 @@ interface props {
 
 function CardList({ projectsList }: props): JSX.Element {
 	return (
-		<div className={styles.grid}>
-			{projectsList.map((project) => (
-				<ProjectCard key={project.title} project={project} />
-			))}
-		</div>
+		<m.div layout className={styles.grid}>
+			<AnimatePresence>
+				{projectsList.map((project) => (
+					<ProjectCard key={project.title} project={project} />
+				))}
+			</AnimatePresence>
+		</m.div>
 	);
 }
 

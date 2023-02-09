@@ -28,7 +28,7 @@ function Technologies({ technologies }: props): JSX.Element {
 						width={20}
 						height={20}
 					/>
-					{el.title}
+					<p>{el.title}</p>
 				</Link>
 			))}
 			<Link
