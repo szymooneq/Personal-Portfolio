@@ -25,7 +25,7 @@ function Main({ children }: props): JSX.Element {
 							initial={{ y: 200, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							exit={{ y: 200, opacity: 0 }}
-							transition={{ duration: 0.7 }}
+							transition={{ duration: 1 }}
 							className="app">
 							{children}
 						</m.main>
