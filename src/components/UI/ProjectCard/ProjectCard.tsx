@@ -16,15 +16,14 @@ export default function ProjectCard({ project }: ProjectCard): JSX.Element {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 			className={styles.card}
+			style={
+				{
+					'--theme-primary': project.theme[0],
+					'--theme-secondary': project.theme[1]
+				} as React.CSSProperties
+			}
 			layout>
-			<Link
-				href={`/projects/${project.slug.current}`}
-				style={
-					{
-						'--theme-primary': project.theme[0],
-						'--theme-secondary': project.theme[1]
-					} as React.CSSProperties
-				}>
+			<Link href={`/projects/${project.slug.current}`}>
 				<div className={styles.content}>
 					<img
 						className={styles.img}
