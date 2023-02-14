@@ -46,69 +46,70 @@ class Star {
 }
 
 function Starfield(): JSX.Element {
-	let requestRef: number;
+	let requestRef = 0;
 	const SPEED = 0.1;
-	const COUNT = 600;
+	const COUNT = 500;
 	const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0));
 	const starfieldCanvas = useRef() as React.MutableRefObject<HTMLCanvasElement>;
 	const container = useRef() as React.MutableRefObject<HTMLDivElement>;
 
 	useEffect(() => {
-		const ctx = starfieldCanvas.current.getContext('2d');
+		const ctx = starfieldCanvas.current.getContext('2d')!;
 
 		function frame() {
-			const { clientWidth: width, clientHeight: height } = container.current!;
+			if (container.current) {
+				const { clientWidth: width, clientHeight: height } = container.current;
 
-			if (ctx) {
 				for (const star of stars) {
 					star.update(width, height, SPEED);
 					star.draw(ctx);
 				}
 
 				ctx.fillRect(-width / 2, -height / 2, width, height);
+				requestRef = requestAnimationFrame(frame);
 			}
-			requestRef = requestAnimationFrame(frame);
 		}
 
 		function setup() {
 			if (requestRef > 0) {
 				cancelAnimationFrame(requestRef);
 			}
-			const { clientWidth: width, clientHeight: height } = container.current;
 
-			const dpr = window.devicePixelRatio || 1;
-			starfieldCanvas.current.width = width * dpr;
-			starfieldCanvas.current.height = height * dpr;
-			starfieldCanvas.current.style.width = `${width}px`;
-			starfieldCanvas.current.style.height = `${height}px`;
+			if (container.current) {
+				const { clientWidth: width, clientHeight: height } = container.current;
 
-			for (const star of stars) {
-				star.x = Math.random() * width - width / 2;
-				star.y = Math.random() * height - height / 2;
-				star.z = 0;
-			}
+				const dpr = window.devicePixelRatio || 1;
+				starfieldCanvas.current.width = width * dpr;
+				starfieldCanvas.current.height = height * dpr;
+				starfieldCanvas.current.style.width = `${width}px`;
+				starfieldCanvas.current.style.height = `${height}px`;
 
-			if (ctx) {
+				for (const star of stars) {
+					star.x = Math.random() * width - width / 2;
+					star.y = Math.random() * height - height / 2;
+					star.z = 0;
+				}
 				ctx.scale(dpr, dpr);
 				ctx.translate(width / 2, height / 2);
 				ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
 				ctx.strokeStyle = 'white';
+
+				requestRef = requestAnimationFrame(frame);
 			}
-			requestRef = requestAnimationFrame(frame);
 		}
 
 		const resizeObserver = new ResizeObserver(setup);
 		resizeObserver.observe(container.current);
 
 		return () => {
-			cancelAnimationFrame(requestRef);
 			resizeObserver.disconnect();
+			cancelAnimationFrame(requestRef);
 		};
-	}, [stars]);
+	}, []);
 
 	return (
 		<div ref={container} className={styles.background}>
-			<canvas ref={starfieldCanvas} id="starfield" />
+			<canvas ref={starfieldCanvas} />
 		</div>
 	);
 }

@@ -18,18 +18,22 @@ function Projects({ projectsList, technologiesList }: props): JSX.Element {
 	const [filteredProjects, setFilteredProjects] =
 		useState<ProjectDetails[]>(projectsList);
 
-	useEffect(() => {
+	const filterProjects = () => {
 		if (query.category) {
-			setFilteredProjects(
+			return setFilteredProjects(
 				projectsList.filter((project) =>
 					project.technologies.find((technology) =>
 						technology.title.includes(query.category as string)
 					)
 				)
 			);
-		} else {
-			setFilteredProjects(projectsList);
 		}
+
+		setFilteredProjects(projectsList);
+	};
+
+	useEffect(() => {
+		filterProjects();
 	}, [projectsList, query.category]);
 
 	return (
