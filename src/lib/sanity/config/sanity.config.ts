@@ -6,8 +6,8 @@ import { deskTool } from 'sanity/desk';
 import Navbar from '@/components/Layout/Navbar/Navbar';
 import SanityLogo from '@/components/UI/Logo/SanityLogo';
 import { schemaTypes } from '../schemas';
+import { defaultDocumentNode } from './defaultDocumentNode';
 import { myTheme } from './sanityTheme';
-import { getDefaultDocumentNodeResolver } from './structure';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -20,7 +20,7 @@ export default defineConfig({
 	dataset,
 	plugins: [
 		deskTool({
-			defaultDocumentNode: getDefaultDocumentNodeResolver
+			defaultDocumentNode: defaultDocumentNode
 		}),
 		visionTool()
 	],

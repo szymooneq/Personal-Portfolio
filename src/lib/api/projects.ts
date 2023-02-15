@@ -1,3 +1,4 @@
+import { groq } from 'next-sanity';
 import {
 	ProjectDetails,
 	ProjectSlug,
@@ -6,42 +7,17 @@ import {
 import { client } from '../sanity/client/sanity.client';
 
 export async function getAllProjects() {
-	const projectsDataQuery = `*[_type == "projects"]{
-    slug {
-      current
-    },
+	const query = groq`*[_type == "projects"]{
+    slug,
     theme,
+    thumbnail,
     title,
     description,
-    type {
-      _type == 'reference' => @-> {
-      title
-      }
-    },
-    technologies[] {
-      _type == 'reference' => @-> {
-        title,
-        icon {
-          asset
-        }
-      }
-    },
-    thumbnail {
-      asset
-    },
-    links[] {
-      url,
-      link -> {
-        title,
-        alt,
-        icon {
-          asset
-        }
-      }
-    }
+    type->,
+    technologies[]->,
   }`;
 
-	const projectsList = await client.fetch<ProjectDetails[]>(projectsDataQuery);
+	const projectsList = await client.fetch<ProjectDetails[]>(query);
 	let technologiesList: ProjectTechnology[] = [];
 
 	projectsList.map((project) => {
@@ -62,74 +38,30 @@ export async function getAllProjects() {
 	};
 }
 
-export async function getAllProjectsId() {
-	const projectsSlugQuery = `*[_type == "projects"]{
-    slug {
-      current
-    }
-  }`;
+export async function getProjectsPaths() {
+	const query = groq`*[_type == "projects" && defined(slug.current)][]{
+      "params": { "slug": slug.current }
+    }`;
 
-	const projectsWithId = await client.fetch<ProjectSlug[]>(projectsSlugQuery);
-
-	return projectsWithId.map((project) => {
-		return {
-			params: {
-				slug: project.slug.current
-			}
-		};
-	});
+	return await client.fetch(query);
 }
 
-export async function getProjectData(name: string) {
-	const projectDataQuery = `*[_type == "projects" && slug.current == "${name}"][0]{
-    slug {
-      current
-    },
-    theme,
+export async function getProjectData(queryParams: { slug: string | string[] }) {
+	const query = groq`*[_type == "projects" && slug.current == $slug][0]{
     title,
-    type {
-      _type == 'reference' => @-> {
-      title
-      }
-    },
+    type->,
     description,
-    technologies[] {
-      _type == 'reference' => @-> {
-        title,
-        icon {
-          asset
-        }
-      }
-    },
-    stack[] {
-      _type == 'reference' => @-> {
-        title,
-        description,
-        url
-      }
-    },
-    details,
-    todo,
-    images[] {
-      asset,
-      alt
-    },
     links[] {
-      url,
-      link -> {
-        title,
-        alt,
-        icon {
-          asset
-        }
-      }
-    }
+      _key,
+        _type,
+        link->,
+        url
+    },
+    images[],
+    technologies[]->,
+    stack[]->,
+    details
   }`;
 
-	const project = await client.fetch<ProjectDetails>(projectDataQuery);
-
-	return {
-		name,
-		...project
-	};
+	return await client.fetch<ProjectDetails>(query, queryParams);
 }
