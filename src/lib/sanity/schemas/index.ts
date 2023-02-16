@@ -1,5 +1,6 @@
 import blockContent from './blockContent';
 import links from './links';
+import post from './post';
 import projects from './projects';
 import stacks from './stacks';
 import technologies from './technologies';
@@ -11,5 +12,6 @@ export const schemaTypes = [
 	types,
 	links,
 	stacks,
-	blockContent
+	blockContent,
+	post
 ];

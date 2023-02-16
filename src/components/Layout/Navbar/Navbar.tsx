@@ -9,7 +9,8 @@ const menuItems = [
 	{ title: 'Home', path: '/' },
 	{ title: 'About', path: '/about' },
 	{ title: 'Projects', path: '/projects' },
-	{ title: 'Resume', path: '/resume' }
+	{ title: 'Resume', path: '/resume' },
+	{ title: '(Blog in progress)', path: '/blog' }
 ];
 
 function Navbar(): JSX.Element {
