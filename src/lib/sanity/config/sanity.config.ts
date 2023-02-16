@@ -1,10 +1,7 @@
+import SanityLogo from '@/components/UI/Logo/SanityLogo';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
-// import StudioLogo from './components/StudioLogo';
-// import StudioNavbar from './components/StudioNavbar';
-import Navbar from '@/components/Layout/Navbar/Navbar';
-import SanityLogo from '@/components/UI/Logo/SanityLogo';
 import { schemaTypes } from '../schemas';
 import { defaultDocumentNode } from './defaultDocumentNode';
 import { myTheme } from './sanityTheme';
@@ -30,7 +27,6 @@ export default defineConfig({
 	studio: {
 		components: {
 			logo: SanityLogo
-			// navbar: Navbar
 		}
 	},
 	theme: myTheme

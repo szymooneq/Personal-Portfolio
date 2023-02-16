@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await getProjectsPaths();
 	return {
 		paths,
-		fallback: true
+		fallback: false
 	};
 };
 

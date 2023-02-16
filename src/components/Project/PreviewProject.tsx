@@ -22,8 +22,7 @@ const query = groq`*[_type == "projects" && slug.current == $slug][0]{
   details
 }`;
 
-const token =
-	'skzpQFP11nFr6PAXYshIA5nDHarGC7V7Kko0clLWYVirL2sbPgYIdw9bWISIQWkrxHKtN9kZP6FlFWruofd3oWZPl8B4JPgkMLiBW19DBqMLqT5PWSwu05ELPn1zgYknNQBoWVTsHQcUPAssj2GRlFgx9MsbqGtkLciyNRNvweQO5FQzpIhd';
+const token = process.env.NEXT_PUBLIC_SANITY_TOKEN!;
 
 function ProjectPreview({ queryParams }: props): JSX.Element {
 	const previewData = usePreview(token, query, queryParams);

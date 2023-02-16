@@ -1,8 +1,6 @@
 import Iframe from 'sanity-plugin-iframe-pane';
 import { DefaultDocumentNodeResolver } from 'sanity/desk';
 
-// TODO: add link to deploy
-
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
 	S,
 	{ schemaType }
@@ -14,10 +12,10 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
 				S.view
 					.component(Iframe)
 					.options({
-						url: (doc) =>
+						url: (doc: any) =>
 							doc?.slug?.current
-								? `http://localhost:3000/api/preview?slug=/projects/${doc.slug.current}`
-								: `http://localhost:3000/api/preview`
+								? `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/preview?slug=/projects/${doc.slug.current}`
+								: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/preview`
 					})
 					.title('Preview')
 			]);
