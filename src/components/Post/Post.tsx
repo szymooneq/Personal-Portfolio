@@ -31,10 +31,10 @@ function Post({ postData }: props): JSX.Element {
 			</Head>
 
 			<Article>
-				<h1 className={styles.description}>{postData.title}</h1>
-				<p className={styles.description}>{postData.description}</p>
-				<p>Created: {formatDate(postData.publishedAt)}</p>
-				<p>Edited: {formatDate(postData.editedAt)}</p>
+				<h1 className={styles.title}>{postData.title}</h1>
+				{/* <p className={styles.date}>{postData.description}</p> */}
+				<p className={styles.date}>{formatDate(postData.publishedAt)}</p>
+				{/* <p>Edited: {formatDate(postData.editedAt)}</p> */}
 
 				<Image
 					className={styles.image}

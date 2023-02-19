@@ -1,3 +1,17 @@
+.title {
+	margin-top: 1rem;
+	/* margin-bottom: 1rem; */
+	font-size: var(--project-desc);
+	color: white;
+	letter-spacing: -3px;
+}
+
+.date {
+	font-size: var(--card-desc-font-size);
+	font-weight: 400;
+	color: #bdbdbd;
+}
+
 .image {
 	object-fit: contain;
 	width: 100% !important;
