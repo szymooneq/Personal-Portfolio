@@ -1,8 +1,8 @@
 import urlFor from '@/lib/sanity/client/urlFor';
+import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import PortableText from 'react-portable-text';
 import Article from '../Layout/Article';
 import Technologies from '../UI/Technologies/Technologies';
 import styles from './Post.module.css';
@@ -30,11 +30,16 @@ function Post({ postData }: props): JSX.Element {
 				<meta name="description" content={postData.description} />
 			</Head>
 
-			<Article>
-				<h1 className={styles.title}>{postData.title}</h1>
-				{/* <p className={styles.date}>{postData.description}</p> */}
-				<p className={styles.date}>{formatDate(postData.publishedAt)}</p>
-				{/* <p>Edited: {formatDate(postData.editedAt)}</p> */}
+			<article className={styles.article}>
+				{/* <Technologies technologies={postData.technologies} /> */}
+
+				<header className={styles.header}>
+					<p className={styles.technologies}>
+						{postData.technologies[0].title}
+					</p>
+					<h1 className={styles.title}>{postData.title}</h1>
+					<p className={styles.date}>{formatDate(postData.publishedAt)}</p>
+				</header>
 
 				<Image
 					className={styles.image}
@@ -42,17 +47,16 @@ function Post({ postData }: props): JSX.Element {
 					alt={postData.title}
 					fill
 				/>
-				<Technologies technologies={postData.technologies} />
-				<PortableText
-					projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-					dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-					content={postData.body}
-					serializers={RichTextComponents}
-				/>
+				{/* <div className={styles.technologies}>
+					{postData.technologies[0].title}
+				</div> */}
+				<p className={styles.date}>{postData.description}</p>
+
+				<PortableText value={postData.body} components={RichTextComponents} />
 				<Link href="/blog" scroll={false} className={styles.backButton}>
 					Go back
 				</Link>
-			</Article>
+			</article>
 		</>
 	);
 }

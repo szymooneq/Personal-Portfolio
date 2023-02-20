@@ -204,6 +204,32 @@ const userFaceID: JSX.Element = (
 	</svg>
 );
 
+const copyIcon: JSX.Element = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="256"
+		height="256"
+		viewBox="0 0 256 256">
+		<path
+			fill="currentColor"
+			d="M224 40v144a8 8 0 0 1-16 0V48H72a8 8 0 0 1 0-16h144a8 8 0 0 1 8 8Zm-32 32v144a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8Zm-16 8H48v128h128Z"
+		/>
+	</svg>
+);
+
+const clipboardIcon: JSX.Element = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="256"
+		height="256"
+		viewBox="0 0 256 256">
+		<path
+			fill="currentColor"
+			d="M168 152a8 8 0 0 1-8 8H96a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-8-40H96a8 8 0 0 0 0 16h64a8 8 0 0 0 0-16Zm56-64v168a16 16 0 0 1-16 16H56a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h36.3a47.8 47.8 0 0 1 71.4 0H200a16 16 0 0 1 16 16ZM96 64h64a32 32 0 0 0-64 0Zm104-16h-26.8a47.2 47.2 0 0 1 2.8 16v8a8 8 0 0 1-8 8H88a8 8 0 0 1-8-8v-8a47.2 47.2 0 0 1 2.8-16H56v168h144Z"
+		/>
+	</svg>
+);
+
 export {
 	linkedinIcon,
 	githubIcon,
@@ -215,5 +241,7 @@ export {
 	layoutIcon,
 	penIcon,
 	cubeIcon,
-	userFaceID
+	userFaceID,
+	copyIcon,
+	clipboardIcon
 };

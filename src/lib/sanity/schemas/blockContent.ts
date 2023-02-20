@@ -15,7 +15,18 @@ export default defineType({
 	name: 'blockContent',
 	type: 'array',
 	of: [
-		defineArrayMember({
+		{
+			type: 'block'
+		},
+		{
+			type: 'image',
+			options: { hotspot: true }
+		},
+		{
+			type: 'code'
+		}
+
+		/* defineArrayMember({
 			title: 'Block',
 			type: 'block',
 			// Styles let you set what your user can mark up blocks with. These
@@ -58,13 +69,12 @@ export default defineType({
 					}
 				]
 			}
-		}),
-		// You can add additional types here. Note that you can't use
+		}) */ // You can add additional types here. Note that you can't use
 		// primitive types such as 'string' and 'number' in the same array
 		// as a block type.
-		defineArrayMember({
+		/* defineArrayMember({
 			type: 'image',
 			options: { hotspot: true }
-		})
+		}) */
 	]
 });

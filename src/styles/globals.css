@@ -21,6 +21,8 @@
 	--contact-title: 32px;
 	--about-getTouch: 40px;
 	--project-desc: 40px;
+
+	--blog-title: 36px;
 }
 
 ::selection {
@@ -81,6 +83,8 @@ img {
 		--project-desc: 64px;
 
 		--container-width: 768px;
+
+		--blog-title: 60px;
 	}
 }
 
