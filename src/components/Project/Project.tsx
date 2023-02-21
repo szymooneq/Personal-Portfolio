@@ -1,16 +1,16 @@
-import { ProjectDetails } from '@/interfaces/project';
+import { IProjectDetails } from '@/lib/interfaces/project';
 import urlFor from '@/lib/sanity/client/urlFor';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Article from '../Layout/Article';
+import Article from '../Layout/Article/Article';
 import List from '../UI/List/List';
 import Slider from '../UI/Slider/Slider';
 import Technologies from '../UI/Technologies/Technologies';
 import styles from './Project.module.css';
 
 interface props {
-	projectData: ProjectDetails;
+	projectData: IProjectDetails;
 }
 
 function Project({ projectData }: props): JSX.Element {

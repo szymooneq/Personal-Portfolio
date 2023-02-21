@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article';
+import Article from '@/components/Layout/Article/Article';
 import styles from '@/styles/404.module.css';
 import Head from 'next/head';
 import Link from 'next/link';

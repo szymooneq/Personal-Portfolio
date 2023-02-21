@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article';
+import Article from '@/components/Layout/Article/Article';
 import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
 import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from '@/styles/Contact.module.css';

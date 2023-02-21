@@ -1,6 +1,6 @@
 import Project from '@/components/Project/Project';
-import { ProjectDetails } from '@/interfaces/project';
 import { getProjectData, getProjectsPaths } from '@/lib/api/projects';
+import { ProjectDetails } from '@/lib/interfaces/project';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PreviewSuspense } from 'next-sanity/preview';
 import { lazy } from 'react';

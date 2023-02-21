@@ -1,17 +1,14 @@
+import { IPostDetails } from '@/lib/interfaces/post';
 import urlFor from '@/lib/sanity/client/urlFor';
 import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Article from '../Layout/Article';
-import Technologies from '../UI/Technologies/Technologies';
 import styles from './Post.module.css';
 import { RichTextComponents } from './RichTextComponents';
 
-// TODO: add interface
-
 interface props {
-	postData: any;
+	postData: IPostDetails;
 }
 
 const formatDate = (date: Date) => {
@@ -31,8 +28,6 @@ function Post({ postData }: props): JSX.Element {
 			</Head>
 
 			<article className={styles.article}>
-				{/* <Technologies technologies={postData.technologies} /> */}
-
 				<header className={styles.header}>
 					<p className={styles.technologies}>
 						{postData.technologies[0].title}
@@ -47,9 +42,7 @@ function Post({ postData }: props): JSX.Element {
 					alt={postData.title}
 					fill
 				/>
-				{/* <div className={styles.technologies}>
-					{postData.technologies[0].title}
-				</div> */}
+
 				<p className={styles.date}>{postData.description}</p>
 
 				<PortableText value={postData.body} components={RichTextComponents} />

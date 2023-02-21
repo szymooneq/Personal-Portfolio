@@ -1,20 +1,18 @@
-import Article from '@/components/Layout/Article';
+import Article from '@/components/Layout/Article/Article';
 import PostCards from '@/components/UI/PostCard/PostCards';
-import CardList from '@/components/UI/ProjectCard/CardList';
-import { ProjectDetails, ProjectTechnology } from '@/interfaces/project';
 import { getPostList } from '@/lib/api/getPost';
+import { IPostCard } from '@/lib/interfaces/post';
 import styles from '@/styles/Projects.module.css';
 import Head from 'next/head';
 
-// TODO: post interface
-
 interface props {
-	postList: ProjectDetails[];
+	postList: IPostCard[];
 }
 
 // TODO: check all page descriptions and update
 
 function Blog({ postList }: props): JSX.Element {
+	console.log(postList);
 	return (
 		<>
 			<Head>

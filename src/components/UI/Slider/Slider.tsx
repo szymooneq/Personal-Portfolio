@@ -1,11 +1,11 @@
-import { ProjectIconReference } from '@/interfaces/project';
+import { IImage } from '@/lib/interfaces/global';
 import urlFor from '@/lib/sanity/client/urlFor';
 import { motion as m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Slider.module.css';
 
 interface props {
-	images: ProjectIconReference[];
+	images: IImage[];
 }
 
 function Slider({ images }: props): JSX.Element {

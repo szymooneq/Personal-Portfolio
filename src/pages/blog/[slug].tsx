@@ -1,6 +1,6 @@
 import Post from '@/components/Post/Post';
-import { ProjectDetails } from '@/interfaces/project';
 import { getPostData, getPostPaths } from '@/lib/api/getPost';
+import { IPostDetails } from '@/lib/interfaces/post';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PreviewSuspense } from 'next-sanity/preview';
 import { lazy } from 'react';
@@ -10,7 +10,7 @@ const ProjectPreview = lazy(
 
 interface props {
 	preview: boolean;
-	postData: ProjectDetails;
+	postData: IPostDetails;
 	queryParams: {};
 }
 
@@ -27,8 +27,6 @@ export default function Page({
 		<Post postData={postData} />
 	);
 }
-
-// TODO: add and check all interfaces for post
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await getPostPaths();

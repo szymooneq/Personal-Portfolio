@@ -1,5 +1,5 @@
 import aboutProjects from '@/assets/aboutProjects.png';
-import Article from '@/components/Layout/Article';
+import Article from '@/components/Layout/Article/Article';
 import {
 	linkedinIcon,
 	rightCircleArrow,

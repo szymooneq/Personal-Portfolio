@@ -1,15 +1,15 @@
-import { ProjectDetails } from '@/interfaces/project';
+import { IProjectCard } from '@/lib/interfaces/project';
 import urlFor from '@/lib/sanity/client/urlFor';
 import { motion as m } from 'framer-motion';
 import Link from 'next/link';
 import { rightCircleArrow } from '../Svg/SvgIcons';
 import styles from './ProjectCard.module.css';
 
-type ProjectCard = {
-	project: ProjectDetails;
-};
+interface props {
+	project: IProjectCard;
+}
 
-export default function ProjectCard({ project }: ProjectCard): JSX.Element {
+export default function ProjectCard({ project }: props): JSX.Element {
 	return (
 		<m.div
 			initial={{ opacity: 0 }}

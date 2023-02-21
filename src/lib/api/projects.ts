@@ -1,8 +1,12 @@
 import { groq } from 'next-sanity';
-import { ProjectDetails, ProjectTechnology } from '../../interfaces/project';
+import {
+	IProjectCard,
+	IProjectDetails,
+	ITechnology
+} from '../interfaces/project';
 import { client } from '../sanity/client/sanity.client';
 
-export async function getAllProjects() {
+export async function getProjectCards() {
 	const query = groq`*[_type == "projects"]{
     slug,
     theme,
@@ -13,24 +17,24 @@ export async function getAllProjects() {
     technologies[]->,
   }`;
 
-	const projectsList = await client.fetch<ProjectDetails[]>(query);
-	let technologiesList: ProjectTechnology[] = [];
+	const projectList = await client.fetch<IProjectCard[]>(query);
+	let technologyList: ITechnology[] = [];
 
-	projectsList.map((project) => {
+	projectList.map((project) => {
 		project.technologies.map((technology) => {
-			const isFound: boolean = technologiesList.some((element) => {
+			const isFound: boolean = technologyList.some((element) => {
 				if (element.title === technology.title) {
 					return true;
 				}
 				return false;
 			});
-			if (!isFound) technologiesList.push(technology);
+			if (!isFound) technologyList.push(technology);
 		});
 	});
 
 	return {
-		projectsList,
-		technologiesList
+		projectList,
+		technologyList
 	};
 }
 
@@ -39,7 +43,7 @@ export async function getProjectsPaths() {
       "params": { "slug": slug.current }
     }`;
 
-	return await client.fetch(query);
+	return await client.fetch<string[]>(query);
 }
 
 export async function getProjectData(queryParams: { slug: string | string[] }) {
@@ -59,5 +63,5 @@ export async function getProjectData(queryParams: { slug: string | string[] }) {
     details
   }`;
 
-	return await client.fetch<ProjectDetails>(query, queryParams);
+	return await client.fetch<IProjectDetails>(query, queryParams);
 }

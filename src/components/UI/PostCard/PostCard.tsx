@@ -1,11 +1,14 @@
+import { IPostCard } from '@/lib/interfaces/post';
 import urlFor from '@/lib/sanity/client/urlFor';
 import Link from 'next/link';
 import { rightCircleArrow } from '../Svg/SvgIcons';
 import styles from './ProjectCard.module.css';
 
-// TODO: post interface
+interface props {
+	post: IPostCard;
+}
 
-export default function PostCard({ post }: any): JSX.Element {
+function PostCard({ post }: props): JSX.Element {
 	return (
 		<div className={styles.card}>
 			<Link href={`/blog/${post.slug.current}`}>
@@ -28,3 +31,5 @@ export default function PostCard({ post }: any): JSX.Element {
 		</div>
 	);
 }
+
+export default PostCard;

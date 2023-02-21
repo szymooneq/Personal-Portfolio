@@ -1,4 +1,4 @@
-import { ProjectTechnology } from '@/interfaces/project';
+import { ITechnology } from '@/lib/interfaces/global';
 import urlFor from '@/lib/sanity/client/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import styles from './Technologies.module.css';
 
 interface props {
-	technologies: ProjectTechnology[];
+	technologies: ITechnology[];
 }
 
 function Technologies({ technologies }: props): JSX.Element {
