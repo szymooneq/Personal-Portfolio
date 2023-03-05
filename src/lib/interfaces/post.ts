@@ -26,11 +26,11 @@ interface IPostBase {
 	technologies: ITechnology[];
 }
 
-interface IPostCard extends IPostBase {
+export interface IPostCard extends IPostBase {
 	slug: ISlug;
 }
 
-interface IPostDetails extends IPostBase {
+export interface IPostDetails extends IPostBase {
 	publishedAt: Date;
 	editedAt: Date;
 	body: BlockContent[];
