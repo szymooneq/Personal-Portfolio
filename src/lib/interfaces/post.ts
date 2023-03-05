@@ -1,4 +1,4 @@
-import { IImage, ISlug } from './global';
+import { IImage, ISlug, ITechnology } from './global';
 
 interface BlockContent {
 	_key: string;

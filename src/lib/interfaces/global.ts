@@ -18,7 +18,7 @@ export interface IImage {
 	asset: Reference;
 }
 
-interface ISlug {
+export interface ISlug {
 	type: 'slug';
 	current: string;
 }
