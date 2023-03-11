@@ -108,9 +108,18 @@ function Resume(): JSX.Element {
 							<h3>szymooneq@zohomail.eu</h3>
 							<h3>www.szymondudka.xyz</h3>
 						</div>
-						<Link className={styles.contactMe} href="contact">
-							Contact Me
-						</Link>
+						<div className={styles.myDetails}>
+							<Link className={styles.contactMe} href="contact">
+								Contact Me
+							</Link>
+							<Link
+								className={styles.contactMe}
+								href="CV_Szymon_Dudka.pdf"
+								target="_blank"
+								rel="noreferrer">
+								Get my CV
+							</Link>
+						</div>
 					</div>
 					<div className={styles.card}>
 						{contactLinks.map((link) => (
@@ -123,17 +132,9 @@ function Resume(): JSX.Element {
 										</div>
 									</Link>
 								</div>
-								<hr />
+								{!link.name.includes('Discord') && <hr />}
 							</Fragment>
 						))}
-						<div className={styles.link}>
-							<Link href="CV_Szymon_Dudka.pdf" target="_blank" rel="noreferrer">
-								<div className={styles.linkDesc}>
-									<h2>CV</h2>
-									{rightUpCircleArrow}
-								</div>
-							</Link>
-						</div>
 					</div>
 				</div>
 				<div className={styles.content}>

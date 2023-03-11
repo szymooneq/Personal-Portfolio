@@ -99,8 +99,14 @@
 	font-weight: 400;
 }
 
-.contactMe {
+.myDetails {
 	margin-top: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.contactMe {
 	padding: 0.4rem 0.8rem;
 	display: block;
 	width: max-content;

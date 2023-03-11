@@ -12,7 +12,6 @@ interface props {
 // TODO: check all page descriptions and update
 
 function Blog({ postList }: props): JSX.Element {
-	console.log(postList);
 	return (
 		<>
 			<Head>

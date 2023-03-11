@@ -14,20 +14,14 @@
 }
 
 .technologies {
-	/* padding: 0.5rem 1rem; */
 	width: max-content;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
-	/* border-radius: 2rem; */
 	color: var(--primary-color);
-	/* color: #ffffff; */
-	/* background-color: var(--primary-color); */
 }
 
 .title {
-	/* margin-top: 1rem; */
-	/* margin-bottom: 1rem; */
 	margin: 1rem 0;
 	font-size: var(--blog-title);
 	color: white;

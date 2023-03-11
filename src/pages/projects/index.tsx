@@ -16,7 +16,6 @@ interface props {
 
 function Projects({ projectList, technologyList }: props): JSX.Element {
 	const { query } = useRouter();
-
 	const [filteredProjects, setFilteredProjects] = useState(projectList);
 
 	const filterProjects = () => {

@@ -1,6 +1,6 @@
 import Project from '@/components/Project/Project';
 import { getProjectData, getProjectsPaths } from '@/lib/api/projects';
-import { ProjectDetails } from '@/lib/interfaces/project';
+import { IProjectDetails } from '@/lib/interfaces/project';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PreviewSuspense } from 'next-sanity/preview';
 import { lazy } from 'react';
@@ -10,7 +10,7 @@ const ProjectPreview = lazy(
 
 interface props {
 	preview: boolean;
-	projectData: ProjectDetails;
+	projectData: IProjectDetails;
 	queryParams: {};
 }
 
