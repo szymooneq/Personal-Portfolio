@@ -18,11 +18,11 @@ function PostCard({ post }: props): JSX.Element {
 						src={urlFor(post.mainImage).url()}
 						alt={`Preview image of "${post.title}" post`}
 					/>
+					<p className={styles.type}>{post.technologies[0].title}</p>
 					<div className={styles.info}>
-						<p className={styles.type}>{post.technologies[0].title}</p>
 						<div className={styles.title}>
 							<h2>{post.title}</h2>
-							{rightCircleArrow}
+							{/* {rightCircleArrow} */}
 						</div>
 						<p className={styles.decription}>{post.description}</p>
 					</div>

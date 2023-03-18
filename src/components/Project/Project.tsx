@@ -8,6 +8,7 @@ import List from '../UI/List/List';
 import Slider from '../UI/Slider/Slider';
 import Technologies from '../UI/Technologies/Technologies';
 import styles from './Project.module.css';
+import BackButton from '../UI/BackButton/BackButton';
 
 interface props {
 	projectData: IProjectDetails;
@@ -79,9 +80,7 @@ function Project({ projectData }: props): JSX.Element {
 					))}
 				</List>
 
-				<Link href="/projects" scroll={false} className={styles.backButton}>
-					Go back
-				</Link>
+				<BackButton href="/projects" />
 			</Article>
 		</>
 	);

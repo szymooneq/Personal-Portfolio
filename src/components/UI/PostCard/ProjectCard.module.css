@@ -73,9 +73,17 @@
 }
 
 .type {
+	padding: 0.2rem 0.5rem;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
 	font-size: 14px;
 	font-weight: 600;
 	text-transform: uppercase;
+	color: #fff;
+	background: var(--primary-color);
+	border-radius: 0.2rem;
+	z-index: 10;
 }
 
 .title {

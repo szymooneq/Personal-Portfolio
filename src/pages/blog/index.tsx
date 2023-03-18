@@ -24,9 +24,8 @@ function Blog({ postList }: props): JSX.Element {
 
 			<Article header="Blog">
 				<p className={styles.description}>
-					Here are some of the projects I have been able to realize so far. You
-					can easily filter the projects by technology by clicking on the
-					selected technology.
+					Welcome to my blog! Here, I share my thoughts, ideas, and experiences
+					on various topics.
 				</p>
 
 				<PostCards postList={postList} />

@@ -1,55 +1,70 @@
 .imageWrapper {
+	margin: 2rem auto;
 	position: relative;
 	width: 100%;
 	height: 20rem;
-	margin: 2rem auto;
 }
 
 .imageWrapper img {
 	object-fit: contain;
 }
 
-.normal {
-	font-size: 18px;
+.normal,
+.ul,
+.ol {
+	margin-top: 1rem;
+	font-size: 16px;
+	line-height: 30px;
 	letter-spacing: -0.2px;
-	line-height: 36px;
 	color: #bdbdbd;
 }
 
-.h1 {
-	padding: 2rem 0;
-	font-size: 3rem;
-	font-weight: 700;
-	letter-spacing: -1.2px;
-}
-
-.h2 {
-	padding: 2rem 0;
-	font-size: 2.25rem;
-	font-weight: 700;
-	letter-spacing: -1.2px;
-}
-
-.h3 {
-	padding: 2rem 0;
-	font-size: 1.875rem;
-	font-weight: 700;
-}
-
-.h4 {
-	padding: 2rem 0;
-	font-size: 1.5rem;
-	font-weight: 700;
+.ul,
+.ol {
+	padding: 0 2rem;
 }
 
 .ul {
-	padding: 2rem;
 	list-style-type: disc;
 }
 
 .ol {
-	padding: 2rem;
 	list-style: decimal;
+}
+
+.normal code {
+	padding: 0.1rem 0.5rem;
+	font-family: monospace;
+	color: #ffffff;
+	font-weight: 700;
+	background-color: var(--bg-secondary);
+	border-radius: 0.2rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+	margin-top: 2rem;
+	font-weight: 700;
+}
+
+.h1 {
+	font-size: 3rem;
+	letter-spacing: -1.2px;
+}
+
+.h2 {
+	font-size: 1.9rem;
+	letter-spacing: -1.2px;
+}
+
+.h3 {
+	font-size: 1.6rem;
+}
+
+.h4 {
+	font-size: 1.5rem;
 }
 
 .blockquote {
@@ -65,4 +80,21 @@
 
 .link:hover {
 	text-decoration: black;
+}
+
+@media (min-width: 1024px) {
+	.normal,
+	.ul,
+	.ol {
+		font-size: 18px;
+		line-height: 36px;
+	}
+
+	.h2 {
+		font-size: 2.25rem;
+	}
+
+	.h3 {
+		font-size: 1.875rem;
+	}
 }

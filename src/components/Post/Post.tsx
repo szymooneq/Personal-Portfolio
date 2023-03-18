@@ -3,9 +3,9 @@ import urlFor from '@/lib/sanity/client/urlFor';
 import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './Post.module.css';
 import { RichTextComponents } from './RichTextComponents';
+import BackButton from '../UI/BackButton/BackButton';
 
 interface props {
 	postData: IPostDetails;
@@ -23,8 +23,13 @@ function Post({ postData }: props): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>{`${postData.title} | Projects | Szymon Dudka`}</title>
+				<title>{`${postData.title} | Blog | Szymon Dudka`}</title>
 				<meta name="description" content={postData.description} />
+				<meta
+					name="keywords"
+					content="React, JSX, stany, rerenderowanie, rekoncyliacja"
+				/>
+				<meta name="author" content="Szymon Dudka" />
 			</Head>
 
 			<article className={styles.article}>
@@ -43,12 +48,8 @@ function Post({ postData }: props): JSX.Element {
 					fill
 				/>
 
-				<p className={styles.date}>{postData.description}</p>
-
 				<PortableText value={postData.body} components={RichTextComponents} />
-				<Link href="/blog" scroll={false} className={styles.backButton}>
-					Go back
-				</Link>
+				<BackButton href="/blog" />
 			</article>
 		</>
 	);
