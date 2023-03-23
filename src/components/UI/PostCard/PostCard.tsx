@@ -1,8 +1,8 @@
 import { IPostCard } from '@/lib/interfaces/post';
 import urlFor from '@/lib/sanity/client/urlFor';
 import Link from 'next/link';
-import { rightCircleArrow } from '../Svg/SvgIcons';
-import styles from './ProjectCard.module.css';
+// import { rightCircleArrow } from '../Svg/SvgIcons';
+import styles from './PostCard.module.css';
 
 interface props {
 	post: IPostCard;
@@ -16,7 +16,7 @@ function PostCard({ post }: props): JSX.Element {
 					<img
 						className={styles.img}
 						src={urlFor(post.mainImage).url()}
-						alt={`Preview image of "${post.title}" post`}
+						alt={post.title}
 					/>
 					<p className={styles.type}>{post.technologies[0].title}</p>
 					<div className={styles.info}>

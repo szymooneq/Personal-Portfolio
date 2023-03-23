@@ -1,4 +1,3 @@
-import aboutProjects from '@/assets/aboutProjects.png';
 import Article from '@/components/Layout/Article/Article';
 import {
 	linkedinIcon,
@@ -8,7 +7,6 @@ import {
 } from '@/components/UI/Svg/SvgIcons';
 import styles from '@/styles/About.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 
 function About(): JSX.Element {
@@ -32,16 +30,10 @@ function About(): JSX.Element {
 					<p className={styles.description}>
 						I implement responsive and user-friendly interfaces and API-based
 						applications. I&apos;m constantly gaining new knowledge by creating
-						and improving projects which help me practice my skills. experience.
+						and improving projects which help me practice my skills.
 					</p>
 				</div>
 				<Link href="projects" className={styles.card}>
-					<Image
-						src={aboutProjects}
-						width={590}
-						height={190}
-						alt="Background with project thumbnails"
-					/>
 					<p>Check my projects</p>
 					<div className={styles.flex}>
 						<h3 className={styles.title}>See my work</h3>

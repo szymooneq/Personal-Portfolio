@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: props): JSX.Element {
 					<img
 						className={styles.img}
 						src={urlFor(project.thumbnail).url()}
-						alt={`Preview image of "${project.title}" project`}
+						alt={project.title}
 					/>
 					<div className={styles.info}>
 						<p className={styles.type}>{project.type.title}</p>

@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
+import resumeAvatar from '../assets/resumeAvatar.jpg';
 
 const educationList = [
 	{
@@ -94,7 +95,7 @@ function Resume(): JSX.Element {
 						<div className={styles.avatar}>
 							<div className={styles.image}>
 								<Image
-									src="/avatar.jpg"
+									src={resumeAvatar}
 									alt="Avatar"
 									width={420}
 									height={420}

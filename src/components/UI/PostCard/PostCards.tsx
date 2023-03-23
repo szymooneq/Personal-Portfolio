@@ -1,6 +1,6 @@
 import { IPostCard } from '@/lib/interfaces/post';
 import PostCard from './PostCard';
-import styles from './ProjectCard.module.css';
+import styles from './PostCard.module.css';
 
 interface props {
 	postList: IPostCard[];
