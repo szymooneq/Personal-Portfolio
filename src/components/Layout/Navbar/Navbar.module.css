@@ -243,8 +243,8 @@
 	transform: rotate(45deg) translateY(-0.6rem) translateX(-0.6rem);
 }
 
-/* MEDIUM */
-@media (min-width: 768px) {
+/* LG */
+@media (min-width: 1024px) {
 	.navbar {
 		padding: 0.8rem 2rem;
 		justify-content: space-between;

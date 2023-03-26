@@ -18,11 +18,11 @@ function Navbar(): JSX.Element {
 	const [expandNavbar, setExpandNavbar] = useState<boolean>(false);
 
 	const handleToggle = () => {
-		if (window.innerWidth < 768) setExpandNavbar((prev) => !prev);
+		if (window.innerWidth < 1024) setExpandNavbar((prev) => !prev);
 	};
 
 	const handleResize = throttle(() => {
-		if (window.innerWidth > 768) setExpandNavbar(false);
+		if (window.innerWidth > 1024) setExpandNavbar(false);
 	}, 300);
 
 	useEffect(() => {
