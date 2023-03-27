@@ -10,10 +10,10 @@
 	position: fixed;
 	background-color: rgba(29, 29, 32, 0.8);
 	backdrop-filter: saturate(180%) blur(5px);
-	z-index: 100;
-	transform: translateY(0%);
 	border-bottom: 1px solid var(--bg-secondary);
+	transform: translateY(0%);
 	animation: slideDown 0.4s ease-in-out forwards;
+	z-index: 100;
 }
 
 .absolute {

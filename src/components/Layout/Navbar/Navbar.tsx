@@ -15,14 +15,14 @@ const menuItems = [
 
 function Navbar(): JSX.Element {
 	const { pathname } = useRouter();
-	const [expandNavbar, setExpandNavbar] = useState<boolean>(false);
+	const [isExpand, setIsExpand] = useState<boolean>(false);
 
 	const handleToggle = () => {
-		if (window.innerWidth < 1024) setExpandNavbar((prev) => !prev);
+		if (window.innerWidth < 1024) setIsExpand((prev) => !prev);
 	};
 
 	const handleResize = throttle(() => {
-		if (window.innerWidth > 1024) setExpandNavbar(false);
+		if (window.innerWidth > 1024) setIsExpand(false);
 	}, 300);
 
 	useEffect(() => {
@@ -45,8 +45,8 @@ function Navbar(): JSX.Element {
 			<div
 				className={styles.blackLayer}
 				onClick={handleToggle}
-				data-open={expandNavbar}></div>
-			<div className={styles.menu} data-open={expandNavbar}>
+				data-open={isExpand}></div>
+			<div className={styles.menu} data-open={isExpand}>
 				<Logo />
 				<ul className={styles.menuItemsList}>
 					{menuItems.map((item) => (
@@ -85,7 +85,7 @@ function Navbar(): JSX.Element {
 				id="burger"
 				aria-label="Burger"
 				className={styles.burger}
-				data-open={expandNavbar}
+				data-open={isExpand}
 				onClick={handleToggle}>
 				<span />
 				<span />

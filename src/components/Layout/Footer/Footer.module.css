@@ -30,13 +30,13 @@
 
 .waves::before {
 	border-radius: 48%;
-	background: #1d1d20;
+	background: var(--bg-dark);
 	animation: waves 30s linear infinite;
 }
 
 .waves::after {
 	border-radius: 48%;
-	background: #1d1d2080;
+	background-color: rgba(29, 29, 32, 0.5);
 	animation: waves 60s linear infinite;
 }
 
