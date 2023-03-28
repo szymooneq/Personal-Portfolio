@@ -37,7 +37,8 @@ function Navbar(): JSX.Element {
 		<nav
 			className={`${styles.navbar} ${
 				pathname === '/' ? styles.absolute : styles.fixed
-			}`}>
+			}`}
+			data-top={pathname === '/'}>
 			<Link href="/">
 				<Logo />
 			</Link>
