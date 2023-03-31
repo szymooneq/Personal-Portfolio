@@ -6,7 +6,7 @@
 	width: max-content;
 	font-size: var(--project-desc);
 	letter-spacing: -3px;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
 }
 

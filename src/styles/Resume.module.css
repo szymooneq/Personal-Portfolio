@@ -13,7 +13,7 @@
 
 .card {
 	padding: var(--card-padding);
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
 	width: 100%;
 }
@@ -90,7 +90,7 @@
 
 .contacts {
 	margin-top: 1rem;
-	color: #bdbdbd;
+	color: var(--text-secondary);
 }
 
 .contacts h3 {

@@ -7,8 +7,10 @@
 
 .card {
 	position: relative;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary-color);
 	border-radius: 1rem;
+	/* box-shadow: var(--box-shadow); */
+	border: var(--border);
 }
 
 .card a {
@@ -75,7 +77,7 @@
 }
 
 .info p {
-	color: #bdbdbd;
+	color: var(--text-secondary);
 	letter-spacing: -0.3px;
 }
 

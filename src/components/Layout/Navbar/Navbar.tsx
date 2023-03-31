@@ -25,6 +25,15 @@ function Navbar(): JSX.Element {
 		if (window.innerWidth > 1024) setIsExpand(false);
 	}, 300);
 
+	const handleDarkmode = () => {
+		const documentClasslist = document.documentElement.classList;
+		if (documentClasslist.contains('dark')) {
+			return documentClasslist.remove('dark');
+		}
+
+		return documentClasslist.add('dark');
+	};
+
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
 
@@ -34,14 +43,14 @@ function Navbar(): JSX.Element {
 	}, [handleResize]);
 
 	return (
-		<nav
-			className={`${styles.navbar} ${
-				pathname === '/' ? styles.absolute : styles.fixed
-			}`}
-			data-top={pathname === '/'}>
+		<nav className={styles.navbar} data-top={pathname !== '/'}>
 			<Link href="/">
 				<Logo />
 			</Link>
+
+			<button className={styles.darkMode} onClick={() => handleDarkmode()}>
+				Dark
+			</button>
 
 			<div
 				className={styles.blackLayer}

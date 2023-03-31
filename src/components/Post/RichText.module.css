@@ -16,7 +16,7 @@
 	font-size: 16px;
 	line-height: 30px;
 	letter-spacing: -0.2px;
-	color: #bdbdbd;
+	color: var(--text-secondary);
 }
 
 .ul,
@@ -37,7 +37,7 @@
 	font-family: monospace;
 	color: #ffffff;
 	font-weight: 700;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary-color);
 	border-radius: 0.2rem;
 }
 

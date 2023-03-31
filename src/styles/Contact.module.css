@@ -36,7 +36,7 @@
 	text-transform: uppercase;
 	letter-spacing: -0.3px;
 	font-weight: 600;
-	color: #bdbdbd;
+	color: var(--text-secondary);
 }
 
 .link {
@@ -70,7 +70,7 @@
 	flex-direction: column;
 	gap: 1.5rem;
 	width: 100%;
-	background: var(--bg-secondary);
+	background: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
 }
 
@@ -80,7 +80,7 @@
 	width: 100%;
 	font-size: 1rem;
 	color: #ffffff;
-	background: var(--bg-dark);
+	background: rgb(var(--bg-primary-color));
 	border: none;
 	border-radius: 0.5rem;
 	resize: vertical;
@@ -120,7 +120,7 @@
 
 .card {
 	padding: var(--card-padding);
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
 }
 
@@ -140,7 +140,7 @@
 
 .cardDesc {
 	font-size: var(--card-desc-font-size);
-	color: #bdbdbd;
+	color: var(--text-secondary);
 	letter-spacing: -0.8px;
 }
 

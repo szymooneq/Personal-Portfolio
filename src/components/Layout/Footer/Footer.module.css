@@ -30,13 +30,13 @@
 
 .waves::before {
 	border-radius: 48%;
-	background: var(--bg-dark);
+	background: rgb(var(--bg-primary-color));
 	animation: waves 30s linear infinite;
 }
 
 .waves::after {
 	border-radius: 48%;
-	background-color: rgba(29, 29, 32, 0.5);
+	background-color: rgba(var(--bg-primary-color), 0.5);
 	animation: waves 60s linear infinite;
 }
 
@@ -54,7 +54,7 @@
 	margin: 0 1rem 1rem 1rem;
 	text-align: center;
 	position: relative;
-	color: var(--bg-dark);
+	color: rgb(var(--bg-primary-color));
 }
 
 .content p:first-child {
@@ -75,7 +75,7 @@
 }
 
 .icons svg {
-	color: var(--bg-dark);
+	color: rgb(var(--bg-primary-color));
 	width: 30px;
 	height: 30px;
 	transition: 0.3s;

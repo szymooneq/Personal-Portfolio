@@ -68,7 +68,7 @@
 	justify-content: center;
 	gap: 1rem;
 	width: max-content;
-	background: var(--bg-dark);
+	background: rgb(var(--bg-primary-color));
 	border-radius: 2rem;
 }
 
