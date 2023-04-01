@@ -30,9 +30,9 @@ function RootLayout({ children }: props): JSX.Element {
 					href="/favicon-16x16.png"
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
-				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1d1d20" />
-				<meta name="msapplication-TileColor" content="#1d1d20" />
-				<meta name="theme-color" content="#1d1d20" />
+				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#121317" />
+				<meta name="msapplication-TileColor" content="#121317" />
+				<meta name="theme-color" content="#121317" />
 			</Head>
 
 			<NextNProgress

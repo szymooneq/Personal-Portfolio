@@ -149,6 +149,10 @@
 	filter: drop-shadow(0 0 0.3rem rgba(var(--text-primary), 0.439));
 }
 
+.nav[data-home='true'] .navContent .logo:hover {
+	filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.439));
+}
+
 .burger {
 	display: flex;
 	flex-direction: column;

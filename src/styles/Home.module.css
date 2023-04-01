@@ -20,11 +20,16 @@
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
+/* TODO: selection */
+
 .content > h2 {
 	font-size: var(--contact-title);
-	color: #4b26cb;
+	/* color: #4b26cb; */
 	letter-spacing: -0.1rem;
-	filter: drop-shadow(0 0 0.3rem #4b26cb70);
+	/* filter: drop-shadow(0 0 0.3rem #4b26cb70); */
+	background: var(--main);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .astronaut {
@@ -80,14 +85,13 @@
 .links svg {
 	width: 32px;
 	height: 32px;
-	color: #ffffff;
+	color: var(--white);
 	transition: 0.3s;
 }
 
 .links svg:hover {
-	color: #ec857e;
+	color: var(--secondary-color);
 	transform: scale(1.2);
-	filter: drop-shadow(0 0 0.3rem #ec857e70);
 }
 
 @media (min-width: 768px) {
