@@ -3,19 +3,32 @@
 :root {
 	--container-width: 100%;
 
-	--bg-primary-color: 29, 29, 32;
-	--bg-secondary-color: rgb(46, 46, 51);
+	/* --bg-primary-color: 29, 29, 32; */
+	--bg-primary-color: 18, 19, 23;
+	/* --bg-secondary-color: rgb(46, 46, 51); */
+	--bg-secondary-color: #191a1e;
 	--text-title: rgb(46, 46, 51);
 	--text-primary: 255, 255, 255;
-	--text-secondary: #bdbdbd;
+	/* --text-secondary: #bdbdbd; */
+	--text-secondary: #75777a;
+
 	--box-shadow: none;
 	--border: none;
 	--white: #ffffff;
 	--black: #000000;
 
-	--primary-color: #5d5dff;
-	--secondary-color: #ec857e;
-	--main: linear-gradient(to bottom right, #4b26cb, #ec857e);
+	/* --primary-color: #5d5dff; */
+	--primary-color: #258afe;
+	/* --secondary-color: #ec857e; */
+	--secondary-color: #aa26ff;
+	--main: linear-gradient(
+		to bottom right,
+		#258afe -10.4%,
+		#b69dd7 26.59%,
+		#aa26ff 64.37%,
+		#258afe 109.47%
+	);
+	/* --main: linear-gradient(to bottom right, #4b26cb, #ec857e); */
 	/* --main: linear-gradient(
 		to bottom right,
 		rgba(2, 13, 46, 1),

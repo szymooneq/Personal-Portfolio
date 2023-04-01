@@ -1,7 +1,7 @@
-import { throttle } from '@/lib/helpers/throttle';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { throttle } from '@/lib/helpers/throttle';
 import Logo from '../../UI/Logo/Logo';
 import styles from './Navbar.module.css';
 
@@ -13,9 +13,22 @@ const menuItems = [
 	{ title: 'Blog', path: '/blog' }
 ];
 
+const handleDarkmode = () => {
+	const documentClassList = document.documentElement.classList;
+	if (documentClassList.contains('dark')) {
+		return documentClassList.remove('dark');
+	}
+
+	return documentClassList.add('dark');
+};
+
 function Navbar(): JSX.Element {
-	const { pathname } = useRouter();
+	const { pathname, push } = useRouter();
 	const [isExpand, setIsExpand] = useState<boolean>(false);
+
+	const handleRedirect = () => {
+		if (pathname !== '/') push('/');
+	};
 
 	const handleToggle = () => {
 		if (window.innerWidth < 1024) setIsExpand((prev) => !prev);
@@ -24,15 +37,6 @@ function Navbar(): JSX.Element {
 	const handleResize = throttle(() => {
 		if (window.innerWidth > 1024) setIsExpand(false);
 	}, 300);
-
-	const handleDarkmode = () => {
-		const documentClasslist = document.documentElement.classList;
-		if (documentClasslist.contains('dark')) {
-			return documentClasslist.remove('dark');
-		}
-
-		return documentClasslist.add('dark');
-	};
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
@@ -43,22 +47,13 @@ function Navbar(): JSX.Element {
 	}, [handleResize]);
 
 	return (
-		<nav className={styles.navbar} data-top={pathname !== '/'}>
-			<Link href="/">
-				<Logo />
-			</Link>
+		<nav className={styles.nav} data-home={pathname === '/'}>
+			<div className={styles.navContent}>
+				<div onClick={() => handleRedirect()}>
+					<Logo />
+				</div>
 
-			<button className={styles.darkMode} onClick={() => handleDarkmode()}>
-				Dark
-			</button>
-
-			<div
-				className={styles.blackLayer}
-				onClick={handleToggle}
-				data-open={isExpand}></div>
-			<div className={styles.menu} data-open={isExpand}>
-				<Logo />
-				<ul className={styles.menuItemsList}>
+				<ul className={styles.menuList}>
 					{menuItems.map((item) => (
 						<li
 							key={item.title}
@@ -73,34 +68,76 @@ function Navbar(): JSX.Element {
 						</li>
 					))}
 				</ul>
-				<Link
-					href="/contact"
-					className={styles.contactLink}
-					onClick={handleToggle}
-					data-active={pathname === '/contact'}
-					aria-current={pathname === '/contact' ? 'page' : 'false'}>
-					Get in touch
-				</Link>
+
+				<div className={styles.rightSide}>
+					<button className={styles.darkMode} onClick={() => handleDarkmode()}>
+						Theme
+					</button>
+					<Link
+						href="/contact"
+						className={styles.contactLink}
+						data-active={pathname === '/contact'}
+						aria-current={pathname === '/contact' ? 'page' : 'false'}>
+						Get in touch
+					</Link>
+				</div>
+
+				<button
+					id="burger"
+					aria-label="Burger"
+					className={styles.burger}
+					data-expand={isExpand}
+					onClick={handleToggle}>
+					<span />
+					<span />
+					<span />
+				</button>
 			</div>
 
-			<Link
-				href="/contact"
-				className={styles.contactLink}
-				data-active={pathname === '/contact'}
-				aria-current={pathname === '/contact' ? 'page' : 'false'}>
-				Get in touch
-			</Link>
+			<div className={styles.navMobile}>
+				<div
+					className={styles.opacLayer}
+					onClick={handleToggle}
+					data-expand={isExpand}></div>
+				<div className={styles.mobileMenu} data-expand={isExpand}>
+					<Logo />
+					<ul className={styles.menuList}>
+						{menuItems.map((item) => (
+							<li
+								key={item.title}
+								className={styles.menuItem}
+								data-active={pathname === item.path}>
+								<Link
+									href={item.path}
+									onClick={handleToggle}
+									aria-current={pathname === item.path ? 'page' : 'false'}>
+									{item.title}
+								</Link>
+							</li>
+						))}
+					</ul>
+					<Link
+						href="/contact"
+						className={styles.contactLink}
+						onClick={handleToggle}
+						data-active={pathname === '/contact'}
+						aria-current={pathname === '/contact' ? 'page' : 'false'}>
+						Get in touch
+					</Link>
 
-			<button
-				id="burger"
-				aria-label="Burger"
-				className={styles.burger}
-				data-open={isExpand}
-				onClick={handleToggle}>
-				<span />
-				<span />
-				<span />
-			</button>
+					<div className={styles.options}>
+						<button
+							className={styles.darkMode}
+							onClick={() => handleDarkmode()}>
+							Theme
+						</button>
+						<select name="language" id="language">
+							<option value="pl">PL</option>
+							<option value="en">EN</option>
+						</select>
+					</div>
+				</div>
+			</div>
 		</nav>
 	);
 }
