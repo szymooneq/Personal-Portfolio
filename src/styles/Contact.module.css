@@ -72,6 +72,7 @@
 	width: 100%;
 	background: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	box-shadow: var(--box-shadow);
 }
 
 .form input,
@@ -79,8 +80,9 @@
 	padding: 1rem;
 	width: 100%;
 	font-size: 1rem;
-	color: #ffffff;
+	color: var(--white);
 	background: rgb(var(--bg-primary-color));
+	box-shadow: var(--box-shadow);
 	border: none;
 	border-radius: 0.5rem;
 	resize: vertical;
@@ -122,6 +124,7 @@
 	padding: var(--card-padding);
 	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	box-shadow: var(--box-shadow);
 }
 
 .card svg {

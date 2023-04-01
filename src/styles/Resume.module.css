@@ -13,9 +13,10 @@
 
 .card {
 	padding: var(--card-padding);
+	width: 100%;
 	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
-	width: 100%;
+	box-shadow: var(--box-shadow);
 }
 
 .avatar {

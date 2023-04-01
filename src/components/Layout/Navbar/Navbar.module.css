@@ -134,11 +134,13 @@
 	width: max-content;
 	border-radius: 2rem;
 	background-color: var(--bg-secondary-color);
+	box-shadow: var(--box-shadow);
 	transition: filter 0.3s;
 }
 
 .contactLink[data-active='true'] {
-	font-weight: 600;
+	/* font-weight: 600; */
+	color: #ffffff;
 	background: var(--primary-color);
 	pointer-events: none;
 }
@@ -149,8 +151,14 @@
 	filter: drop-shadow(0 0 0.3rem rgba(var(--text-primary), 0.439));
 }
 
-.nav[data-home='true'] .navContent .logo:hover {
+.nav[data-home='true'] .navContent .logo:hover,
+.nav[data-home='true'] .navContent .contactLink:hover,
+.nav[data-home='true'] .navContent .menuItem:hover {
 	filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.439));
+}
+
+.nav[data-home='true'] .navContent .menuList {
+	color: #ffffff;
 }
 
 .burger {

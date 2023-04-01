@@ -12,6 +12,7 @@
 	min-height: 305px;
 	background: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	box-shadow: var(--box-shadow);
 }
 
 .bigTitle {
