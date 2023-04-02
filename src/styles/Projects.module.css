@@ -2,5 +2,5 @@
 	margin-bottom: 2rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: grey;
+	color: var(--text-gray);
 }

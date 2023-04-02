@@ -8,6 +8,7 @@
 	letter-spacing: -3px;
 	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	box-shadow: var(--box-shadow);
 }
 
 .backButton:hover {
@@ -17,16 +18,13 @@
 .backButton::after {
 	content: '';
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	inset: 0;
 	background-color: var(--primary-color);
 	border-radius: var(--card-border-radius);
 	filter: blur(10px);
 	opacity: 0;
-	transition: 0.5s;
 	z-index: -1;
+	transition: 0.5s;
 }
 
 .backButton:hover::after {

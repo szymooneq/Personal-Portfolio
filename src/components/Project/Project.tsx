@@ -1,20 +1,51 @@
 import { IProjectDetails } from '@/lib/interfaces/project';
-import urlFor from '@/lib/sanity/client/urlFor';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import Article from '../Layout/Article/Article';
-import List from '../UI/List/List';
 import Slider from '../UI/Slider/Slider';
 import Technologies from '../UI/Technologies/Technologies';
 import styles from './Project.module.css';
 import BackButton from '../UI/BackButton/BackButton';
+import { githubIcon, vercelIcon } from '../UI/Svg/SvgIcons';
 
-interface props {
+const projectLinks = [
+	{
+		name: 'Vercel',
+		link: 'View live site',
+		icon: vercelIcon
+	},
+	{
+		name: 'GitHub',
+		link: 'View source code',
+		icon: githubIcon
+	}
+];
+
+interface ListProps {
+	children: React.ReactNode;
+	type?: string;
+	title?: string;
+}
+
+function List({ type, title, children }: ListProps): JSX.Element {
+	return type === 'list' ? (
+		<div className={styles.list}>
+			<h2>{title}</h2>
+			<ul>{children}</ul>
+		</div>
+	) : (
+		<div className={styles.list}>
+			<h2>{title}</h2>
+			{children}
+		</div>
+	);
+}
+
+interface ProjectProps {
 	projectData: IProjectDetails;
 }
 
-function Project({ projectData }: props): JSX.Element {
+function Project({ projectData }: ProjectProps): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -30,25 +61,19 @@ function Project({ projectData }: props): JSX.Element {
 					<p className={styles.description}>{projectData.description}</p>
 				</header>
 
-				<List type="links">
-					{projectData.links.map(({ link, url }) => (
+				<div className={styles.links}>
+					{projectLinks.map((link, id) => (
 						<Link
-							key={url}
-							href={url}
+							key={id}
+							href={projectData.links[id].url}
 							className={styles.link}
 							target="_blank"
-							rel="noreferrer"
-							aria-label={`${link.alt} of project`}>
-							{link.alt}
-							<Image
-								src={urlFor(link.icon).url()}
-								alt={link.alt}
-								width={20}
-								height={20}
-							/>
+							rel="noreferrer">
+							{link.link}
+							{link.icon}
 						</Link>
 					))}
-				</List>
+				</div>
 
 				<Slider images={projectData.images} />
 
@@ -56,7 +81,7 @@ function Project({ projectData }: props): JSX.Element {
 					<Technologies technologies={projectData.technologies} />
 				</List>
 
-				{projectData.stack && (
+				{projectData.stack.length > 0 && (
 					<List type="list" title="Stack">
 						{projectData.stack.map((item) => (
 							<li key={item.title}>

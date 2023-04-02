@@ -34,7 +34,7 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 
 	useEffect(() => {
 		filterProjects();
-	}, [projectList, query.category]);
+	}, [query.category]);
 
 	return (
 		<>

@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import Link from 'next/link';
 import Article from '@/components/Layout/Article/Article';
 import {
 	linkedinIcon,
@@ -6,8 +8,6 @@ import {
 	userFaceID
 } from '@/components/UI/Svg/SvgIcons';
 import styles from '@/styles/About.module.css';
-import Head from 'next/head';
-import Link from 'next/link';
 
 function About(): JSX.Element {
 	return (
@@ -21,10 +21,12 @@ function About(): JSX.Element {
 				/>
 			</Head>
 			<Article header="About" className={styles.about}>
-				<div className={styles.card} />
+				<div className={styles.card}></div>
+
 				<div className={styles.card}>
-					<h2 className={styles.bigTitle}>Hey, I&apos;m Simon 👋</h2>
+					<h2>Hey, I&apos;m Simon 👋</h2>
 				</div>
+
 				<div className={styles.card}>
 					<h3 className={styles.title}>About me</h3>
 					<p className={styles.description}>
@@ -33,33 +35,37 @@ function About(): JSX.Element {
 						and improving projects which help me practice my skills.
 					</p>
 				</div>
+
 				<Link href="projects" className={styles.card}>
-					<p>Check my projects</p>
-					<div className={styles.flex}>
+					<p className={styles.label}>Check my projects</p>
+					<div className={styles.flexEnd}>
 						<h3 className={styles.title}>See my work</h3>
 						{rightCircleArrow}
 					</div>
 				</Link>
+
 				<Link
 					className={styles.card}
 					href="https://www.linkedin.com/in/szymon-dudka"
 					target="_blank"
 					rel="noreferrer"
 					aria-label="Check my profile on LinkedIn">
-					<div className={styles.linkedIn}>{linkedinIcon}</div>
-					{rightUpCircleArrow}
+					{linkedinIcon}
+					<div className={styles.flexEnd}>{rightUpCircleArrow}</div>
 				</Link>
+
 				<Link href="contact" className={styles.card}>
 					<h3 className={styles.title}>Let&apos;s work together ✨</h3>
-					<div className={styles.flex}>
-						<h2 className={styles.getTouch}>Get in touch now</h2>
+					<div className={styles.flexEnd}>
+						<h2>Get in touch now</h2>
 						{rightCircleArrow}
 					</div>
 				</Link>
+
 				<Link href="resume" className={styles.card}>
 					{userFaceID}
-					<p>Learn more about me</p>
-					<div className={styles.flex}>
+					<p className={styles.label}>Learn more about me</p>
+					<div className={styles.flexEnd}>
 						<h3 className={styles.title}>See my resume</h3>
 						{rightCircleArrow}
 					</div>

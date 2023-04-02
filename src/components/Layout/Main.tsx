@@ -18,7 +18,7 @@ function Main({ children }: props): JSX.Element {
 				<main className="app">{children}</main>
 			) : (
 				<>
-					<Breadcrumb asPath={asPath} />
+					<Breadcrumb />
 					<AnimatePresence mode="wait">
 						<m.main
 							key={pathname}

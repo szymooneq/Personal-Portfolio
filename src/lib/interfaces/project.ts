@@ -4,17 +4,10 @@ interface IProjectType extends Base<'types'> {
 	title: string;
 }
 
-interface Link extends Base<'links'> {
-	alt: string;
-	title: string;
-	icon: IImage;
-}
-
 interface IProjectLinks {
 	_key: string;
 	_type: 'link';
 	url: string;
-	link: Link;
 }
 
 interface IProjectStack extends Base<'stacks'> {

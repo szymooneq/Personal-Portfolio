@@ -9,7 +9,7 @@ interface props {
 	project: IProjectCard;
 }
 
-export default function ProjectCard({ project }: props): JSX.Element {
+function ProjectCard({ project }: props): JSX.Element {
 	return (
 		<m.div
 			initial={{ opacity: 0 }}
@@ -24,22 +24,22 @@ export default function ProjectCard({ project }: props): JSX.Element {
 			}
 			layout>
 			<Link href={`/projects/${project.slug.current}`}>
-				<div className={styles.content}>
-					<img
-						className={styles.img}
-						src={urlFor(project.thumbnail).url()}
-						alt={project.title}
-					/>
-					<div className={styles.info}>
-						<p className={styles.type}>{project.type.title}</p>
-						<div className={styles.title}>
-							<h2>{project.title}</h2>
-							{rightCircleArrow}
-						</div>
-						<p className={styles.decription}>{project.description}</p>
+				<img
+					className={styles.img}
+					src={urlFor(project.thumbnail).url()}
+					alt={project.title}
+				/>
+				<div className={styles.details}>
+					<p className={styles.type}>{project.type.title}</p>
+					<div className={styles.title}>
+						<h2>{project.title}</h2>
+						{rightCircleArrow}
 					</div>
+					<p>{project.description}</p>
 				</div>
 			</Link>
 		</m.div>
 	);
 }
+
+export default ProjectCard;

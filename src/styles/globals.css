@@ -6,8 +6,9 @@
 	--bg-primary-color: 18, 19, 23;
 	--bg-secondary-color: #191a1e;
 	--text-title: rgb(46, 46, 51);
+	--text-gray: rgb(130, 130, 130);
+
 	--text-primary: 255, 255, 255;
-	--text-secondary: #75777a;
 
 	--box-shadow: none;
 	--border: none;
@@ -44,9 +45,10 @@
 .dark:root {
 	--bg-primary-color: 252, 250, 244;
 	--bg-secondary-color: rgb(255, 255, 255);
-	--text-title: grey;
+	--text-title: rgb(128, 128, 128);
+	--text-gray: rgb(110, 110, 110);
+
 	--text-primary: 0, 0, 0;
-	--text-secondary: rgb(114, 114, 114);
 	--box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05),
 		0 12px 24px rgba(0, 0, 0, 0.05);
 	--border: 1px solid #eaeaea;

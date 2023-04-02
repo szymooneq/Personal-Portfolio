@@ -1,12 +1,10 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from './Breadcrumb.module.css';
 
-interface props {
-	asPath: string;
-}
-
-function Breadcrumb({ asPath }: props): JSX.Element {
+function Breadcrumb(): JSX.Element {
+	const { asPath } = useRouter();
 	const [breadcrumb, setBreadcrumb] = useState<string[]>([]);
 
 	useEffect(() => {

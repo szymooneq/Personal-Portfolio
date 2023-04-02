@@ -3,6 +3,44 @@
 	gap: 1.5rem;
 }
 
+.title {
+	margin-bottom: 0.5rem;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: -0.8px;
+}
+
+.description {
+	font-size: var(--card-desc-font-size);
+	letter-spacing: -0.8px;
+	color: var(--text-gray);
+}
+
+.label {
+	margin-bottom: 0.5rem;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: -0.3px;
+	color: var(--text-gray);
+}
+
+.flexEnd {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.flexEnd svg {
+	width: 40px !important;
+	height: 40px !important;
+	color: gray !important;
+}
+
+.card:hover .flexEnd svg {
+	color: var(--primary-color) !important;
+}
+
 .card {
 	padding: var(--card-padding);
 	display: flex;
@@ -15,18 +53,6 @@
 	box-shadow: var(--box-shadow);
 }
 
-.bigTitle {
-	font-size: var(--contact-title);
-	margin-bottom: 1rem;
-}
-
-.card:nth-child(1) {
-	background: url('../assets/aboutImage.png');
-	background-size: cover;
-	background-position: top;
-	background-color: var(--bg-secondary-color);
-}
-
 .card ~ a {
 	cursor: pointer;
 }
@@ -34,10 +60,7 @@
 .card ~ a::after {
 	content: '';
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	inset: 0;
 	background-color: var(--primary-color);
 	border-radius: var(--card-border-radius);
 	filter: blur(10px);
@@ -50,17 +73,15 @@
 	opacity: 0.7;
 }
 
-.title {
-	margin-bottom: 0.5rem;
-	font-size: 28px;
-	font-weight: 700;
-	letter-spacing: -0.8px;
+.card:nth-child(1) {
+	background: url('../assets/aboutImage.png');
+	background-size: cover;
+	background-position: top;
+	background-color: var(--bg-secondary-color);
 }
 
-.description {
-	font-size: var(--card-desc-font-size);
-	color: var(--text-secondary);
-	letter-spacing: -0.8px;
+.card:nth-child(2) > h2 {
+	font-size: var(--contact-title);
 }
 
 .card:nth-child(4) {
@@ -69,103 +90,40 @@
 	background-repeat: no-repeat;
 }
 
-.card:nth-child(4) img {
-	margin-top: -2rem;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: top;
-	pointer-events: none;
-}
-
-.card:nth-child(4) p {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: -0.3px;
-	font-weight: 600;
-	color: var(--text-secondary);
-}
-
 .card:nth-child(5) {
-	justify-content: flex-end;
 	align-items: flex-end;
 	position: relative;
 }
 
-.card:nth-child(5) .linkedIn {
-	margin-bottom: 0.5rem;
+.card:nth-child(5) > svg {
+	margin-bottom: 1rem;
 	align-self: center;
-	justify-self: center;
-}
-
-.card:nth-child(5) .linkedIn svg {
 	width: 125px;
 	height: auto;
 	color: var(--primary-color);
 }
 
-.card:nth-child(5) svg {
-	width: 40px;
-	height: 40px;
-	color: gray;
-}
-
-.card:nth-child(5):hover svg {
-	color: var(--primary-color);
-}
-
-.card:nth-child(6) .getTouch {
+.card:nth-child(6) h2 {
 	font-size: var(--about-getTouch);
-	color: var(--primary-color);
 	font-weight: 700;
 	letter-spacing: -4px;
+	color: var(--primary-color);
 }
 
-.card:nth-child(7) svg {
+.card:nth-child(7) > svg {
+	margin-bottom: 0.5rem;
 	width: 70px;
 	height: 70px;
 	color: var(--secondary-color);
-}
-
-.card:nth-child(7) p {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: -0.3px;
-	font-weight: 600;
-	color: var(--text-secondary);
 }
 
 .card:nth-child(7) .title {
 	margin-bottom: 0;
 }
 
-.flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-.flex h2 {
-	margin-bottom: 0;
-}
-
-.flex svg {
-	width: 40px !important;
-	height: 40px !important;
-	color: gray !important;
-}
-
-.card:hover .flex svg {
-	color: var(--primary-color) !important;
-}
-
 @media (min-width: 768px) {
 	.about {
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.card:nth-child(1) {
@@ -185,12 +143,9 @@
 	}
 }
 
-@media (min-width: 1024px) {
-}
-
 @media (min-width: 1280px) {
 	.about {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.card:nth-child(3) {
@@ -204,7 +159,4 @@
 	.card:nth-child(6) {
 		grid-column: 2 / 4;
 	}
-}
-
-@media (min-width: 1536px) {
 }

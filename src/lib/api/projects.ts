@@ -51,7 +51,6 @@ export async function getProjectData(queryParams: { slug: string | string[] }) {
     links[] {
       _key,
         _type,
-        link->,
         url
     },
     images[],

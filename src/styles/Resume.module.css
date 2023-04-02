@@ -19,6 +19,10 @@
 	box-shadow: var(--box-shadow);
 }
 
+.card hr {
+	color: var(--text-gray);
+}
+
 .avatar {
 	margin-bottom: 1rem;
 	display: flex;
@@ -91,7 +95,7 @@
 
 .contacts {
 	margin-top: 1rem;
-	color: var(--text-secondary);
+	color: var(--text-gray);
 }
 
 .contacts h3 {
@@ -126,7 +130,7 @@
 	padding: 1rem 0;
 	font-size: var(--card-desc-font-size);
 	font-weight: 700;
-	color: gray;
+	color: var(--text-gray);
 }
 
 .linkDesc {
@@ -167,7 +171,7 @@
 	margin-top: 1rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: grey;
+	color: var(--text-gray);
 }
 
 .sectionTimeline {

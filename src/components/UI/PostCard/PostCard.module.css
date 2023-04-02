@@ -72,7 +72,7 @@
 }
 
 .info p {
-	color: var(--text-secondary);
+	color: var(--text-gray);
 	letter-spacing: -0.3px;
 }
 

@@ -2,15 +2,22 @@
 	margin-top: 2rem;
 	font-size: var(--card-desc-font-size);
 	font-weight: 400;
-	color: var(--text-secondary);
+	color: var(--text-gray);
 }
 
 .description {
 	margin-top: 1rem;
 	margin-bottom: 2rem;
 	font-size: var(--project-desc);
-	color: white;
+	color: var(--white);
 	letter-spacing: -3px;
+}
+
+.links {
+	margin-bottom: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .link {
@@ -20,19 +27,33 @@
 	font-size: 1rem;
 	font-weight: 600;
 	background: var(--bg-secondary-color);
-	border: none;
 	opacity: 1;
-	transition: opacity 0.3s;
 	cursor: pointer;
-}
-
-.link img {
-	width: 1.25rem;
-	height: 1.25rem;
+	transition: opacity 0.3s;
 }
 
 .link:hover {
 	opacity: 0.7;
+}
+
+.link svg {
+	width: 1.25rem;
+	height: 1.25rem;
+	color: var(--white);
+}
+
+.list > h2 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	font-size: var(--contact-title);
+}
+
+.list ul > li {
+	margin-left: 3rem;
+	margin-bottom: 0.4rem;
+	font-size: var(--card-title-font-size);
+	letter-spacing: -1px;
+	color: var(--text-gray);
 }
 
 .stackUrl {
@@ -41,5 +62,5 @@
 }
 
 .stackUrl:hover {
-	color: #ffffff;
+	color: var(--white);
 }
