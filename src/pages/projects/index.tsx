@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import CardList from '@/components/UI/ProjectCard/CardList';
 import Technologies from '@/components/UI/Technologies/Technologies';
 import { getProjectCards } from '@/lib/api/projects';
@@ -46,7 +46,7 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 				/>
 			</Head>
 
-			<Article header="Projects">
+			<Container header="Projects">
 				<p className={styles.description}>
 					Here are some of the projects I have been able to realize so far. You
 					can easily filter the projects by technology by clicking on the
@@ -56,7 +56,7 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 				<Technologies technologies={technologyList} />
 
 				<CardList projectList={filteredProjects} />
-			</Article>
+			</Container>
 		</>
 	);
 }

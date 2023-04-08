@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import {
 	linkedinIcon,
 	rightCircleArrow,
@@ -20,7 +20,7 @@ function About(): JSX.Element {
 					applications."
 				/>
 			</Head>
-			<Article header="About" className={styles.about}>
+			<Container header="About" className={styles.about}>
 				<div className={styles.card}></div>
 
 				<div className={styles.card}>
@@ -70,7 +70,7 @@ function About(): JSX.Element {
 						{rightCircleArrow}
 					</div>
 				</Link>
-			</Article>
+			</Container>
 		</>
 	);
 }

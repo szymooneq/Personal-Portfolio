@@ -1,6 +1,6 @@
 .article {
-	padding: 0 1.5rem;
 	margin: 0 auto;
+	padding: 0 1.5rem;
 	width: 100%;
 	max-width: 768px;
 }
@@ -24,11 +24,12 @@
 .title {
 	margin: 1rem 0;
 	font-size: var(--blog-title);
-	color: white;
+	color: var(--white);
 	letter-spacing: -2.4px;
 }
 
 .date {
+	margin-bottom: 3rem;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: -0.2px;

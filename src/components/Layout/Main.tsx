@@ -15,7 +15,7 @@ function Main({ children }: props): JSX.Element {
 		<>
 			{!asPath.includes('studio') && <Navbar />}
 			{asPath === '/' || asPath.includes('studio') ? (
-				<main className="app">{children}</main>
+				<main>{children}</main>
 			) : (
 				<>
 					<Breadcrumb />
@@ -25,8 +25,7 @@ function Main({ children }: props): JSX.Element {
 							initial={{ y: 200, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							exit={{ y: 200, opacity: 0 }}
-							transition={{ duration: 1 }}
-							className="app">
+							transition={{ duration: 1 }}>
 							{children}
 						</m.main>
 					</AnimatePresence>

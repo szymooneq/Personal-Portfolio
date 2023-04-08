@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import { rightUpCircleArrow } from '@/components/UI/Svg/SvgIcons';
 import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from '@/styles/Resume.module.css';
@@ -83,117 +83,109 @@ const hobbyList = [
 
 function Resume(): JSX.Element {
 	return (
-		<>
+		<Container header="Resume" className={styles.main}>
 			<Head>
 				<title>Resume | Szymon Dudka</title>
 				<meta name="description" content="" />
 			</Head>
 
-			<Article header="Resume" className={styles.main}>
-				<div className={styles.cards}>
-					<div className={styles.card}>
-						<div className={styles.avatar}>
-							<div className={styles.image}>
-								<Image
-									src={resumeAvatar}
-									alt="Avatar"
-									width={420}
-									height={420}
-								/>
-							</div>
-							<div className={styles.whatsUp}>What&apos;s up!</div>
+			<section className={styles.cards}>
+				<div className={styles.card}>
+					<div className={styles.avatar}>
+						<div className={styles.avatarImg}>
+							<Image src={resumeAvatar} alt="Avatar" width={420} height={420} />
 						</div>
-						<h2 className={styles.name}>Szymon Dudka</h2>
-						<h2 className={styles.work}>Frontend Developer</h2>
-						<div className={styles.contacts}>
-							<h3>szymooneq@zohomail.eu</h3>
-							<h3>www.szymondudka.xyz</h3>
-						</div>
-						<div className={styles.myDetails}>
-							<Link className={styles.contactMe} href="contact">
-								Contact Me
-							</Link>
-							<Link
-								className={styles.contactMe}
-								href="CV_Szymon_Dudka.pdf"
-								target="_blank"
-								rel="noreferrer">
-								Get my CV
-							</Link>
-						</div>
+						<div className={styles.avatarMsg}>What&apos;s up!</div>
 					</div>
-					<div className={styles.card}>
-						{contactLinks.map((link) => (
-							<Fragment key={link.name}>
-								<div className={styles.link}>
-									<Link href={link.url} target="_blank" rel="noreferrer">
-										<div className={styles.linkDesc}>
-											<h2>{link.name}</h2>
-											{rightUpCircleArrow}
-										</div>
-									</Link>
-								</div>
-								{!link.name.includes('Discord') && <hr />}
-							</Fragment>
-						))}
+					<h2 className={styles.sectionTitle}>Szymon Dudka</h2>
+					<h2 className={styles.subTitle}>Frontend Developer</h2>
+					<div className={styles.contact}>
+						<h3>szymooneq@zohomail.eu</h3>
+						<h3>www.szymondudka.xyz</h3>
 					</div>
-				</div>
-				<div className={styles.content}>
-					<div className={styles.contentItem}>
-						<h2 className={styles.name}>About me</h2>
-						<section>
-							<p className={styles.sectionDescription}>
-								I implement responsive and user-friendly interfaces and
-								API-based applications. I&apos;m constantly gaining new
-								knowledge by creating and improving projects which help me
-								practice my skills. My goal is work in a team that specializes
-								in commercial projects. This would give me a chance to further
-								improve my skills and gain valuable experience.
-							</p>
-						</section>
-					</div>
-					<div className={styles.contentItem}>
-						<h2 className={styles.name}>Education & Courses</h2>
-						<section>
-							{educationList.map((item) => (
-								<div key={item.title} className={styles.sectionItem}>
-									<h3>{item.title}</h3>
-									<p className={styles.sectionTimeline}>{item.timeline}</p>
-									<p className={styles.sectionDescription}>
-										{item.description}
-									</p>
-								</div>
-							))}
-						</section>
-					</div>
-					<div className={styles.contentItem}>
-						<h2 className={styles.name}>Projects</h2>
-						<p className={styles.sectionDescription}>
-							All my projects with details can be found on the Projects page.
-						</p>
-						<Link className={styles.contactMe} href="projects">
-							Go to Projects
+					<div className={styles.contactButtons}>
+						<Link className={styles.button} href="contact">
+							Contact Me
+						</Link>
+						<Link
+							className={styles.button}
+							href="CV_Szymon_Dudka.pdf"
+							target="_blank"
+							rel="noreferrer">
+							Get my CV
 						</Link>
 					</div>
-					<div className={styles.contentItem}>
-						<h2 className={styles.name}>Stack</h2>
-						{stackList.map((item) => (
-							<p key={item} className={styles.sectionDescription}>
-								{item}
-							</p>
-						))}
-					</div>
-					<div className={styles.contentItem}>
-						<h2 className={styles.name}>Hobby / Interest</h2>
-						{hobbyList.map((item) => (
-							<p key={item} className={styles.sectionDescription}>
-								{item}
-							</p>
-						))}
+				</div>
+				<div className={styles.card}>
+					{contactLinks.map((link, id) => (
+						<Fragment key={link.name}>
+							<Link
+								href={link.url}
+								className={styles.link}
+								target="_blank"
+								rel="noreferrer">
+								{link.name}
+								{rightUpCircleArrow}
+							</Link>
+							{id !== contactLinks.length - 1 ? <hr /> : null}
+						</Fragment>
+					))}
+				</div>
+			</section>
+			<section>
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>About me</h2>
+					<div>
+						<p className={styles.sectionDescription}>
+							I implement responsive and user-friendly interfaces and API-based
+							applications. I&apos;m constantly gaining new knowledge by
+							creating and improving projects which help me practice my skills.
+							My goal is work in a team that specializes in commercial projects.
+							This would give me a chance to further improve my skills and gain
+							valuable experience.
+						</p>
 					</div>
 				</div>
-			</Article>
-		</>
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>Education & Courses</h2>
+					<ul>
+						{educationList.map((item) => (
+							<li key={item.title} className={styles.sectionItem}>
+								<h3>{item.title}</h3>
+								<p className={styles.sectionTimeline}>{item.timeline}</p>
+								<p className={styles.sectionDescription}>{item.description}</p>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>Projects</h2>
+					<Link className={styles.button} href="projects">
+						Go to Projects
+					</Link>
+				</div>
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>Stack</h2>
+					<ul>
+						{stackList.map((item) => (
+							<li key={item} className={styles.sectionDescription}>
+								{item}
+							</li>
+						))}
+					</ul>
+				</div>
+				<div className={styles.section}>
+					<h2 className={styles.sectionTitle}>Hobby / Interest</h2>
+					<ul>
+						{hobbyList.map((item) => (
+							<li key={item} className={styles.sectionDescription}>
+								{item}
+							</li>
+						))}
+					</ul>
+				</div>
+			</section>
+		</Container>
 	);
 }
 

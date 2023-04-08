@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
 import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from '@/styles/Contact.module.css';
@@ -48,7 +48,7 @@ function Contact(): JSX.Element {
 				/>
 			</Head>
 
-			<Article header="Contact">
+			<Container header="Contact">
 				<div className={styles.content}>
 					<div className={styles.description}>
 						<div>
@@ -144,7 +144,7 @@ function Contact(): JSX.Element {
 						</div>
 					))}
 				</div>
-			</Article>
+			</Container>
 		</>
 	);
 }

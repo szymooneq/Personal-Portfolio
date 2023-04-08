@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import PostCards from '@/components/UI/PostCard/PostCards';
 import { getPostList } from '@/lib/api/getPost';
 import { IPostCard } from '@/lib/interfaces/post';
@@ -22,14 +22,14 @@ function Blog({ postList }: props): JSX.Element {
 				/>
 			</Head>
 
-			<Article header="Blog">
+			<Container header="Blog">
 				<p className={styles.description}>
 					Welcome to my blog! Here, I share my thoughts, ideas, and experiences
 					on various topics.
 				</p>
 
 				<PostCards postList={postList} />
-			</Article>
+			</Container>
 		</>
 	);
 }

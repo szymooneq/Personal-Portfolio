@@ -1,7 +1,7 @@
 import { IProjectDetails } from '@/lib/interfaces/project';
 import Head from 'next/head';
 import Link from 'next/link';
-import Article from '../Layout/Article/Article';
+import Container from '../Layout/Container/Container';
 import Slider from '../UI/Slider/Slider';
 import Technologies from '../UI/Technologies/Technologies';
 import styles from './Project.module.css';
@@ -53,7 +53,7 @@ function Project({ projectData }: ProjectProps): JSX.Element {
 				<meta name="description" content={projectData.description} />
 			</Head>
 
-			<Article>
+			<Container>
 				<header>
 					<h1 className={styles.title}>
 						{projectData.title} - {projectData.type.title}
@@ -106,7 +106,7 @@ function Project({ projectData }: ProjectProps): JSX.Element {
 				</List>
 
 				<BackButton href="/projects" />
-			</Article>
+			</Container>
 		</>
 	);
 }

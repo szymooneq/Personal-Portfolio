@@ -39,16 +39,18 @@ function Post({ postData }: props): JSX.Element {
 					</p>
 					<h1 className={styles.title}>{postData.title}</h1>
 					<p className={styles.date}>{formatDate(postData.publishedAt)}</p>
+					<Image
+						className={styles.image}
+						src={urlFor(postData.mainImage).url()}
+						alt={postData.title}
+						fill
+					/>
 				</header>
 
-				<Image
-					className={styles.image}
-					src={urlFor(postData.mainImage).url()}
-					alt={postData.title}
-					fill
-				/>
+				<section>
+					<PortableText value={postData.body} components={RichTextComponents} />
+				</section>
 
-				<PortableText value={postData.body} components={RichTextComponents} />
 				<BackButton href="/blog" />
 			</article>
 		</>

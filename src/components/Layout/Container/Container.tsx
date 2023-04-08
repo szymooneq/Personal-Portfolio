@@ -1,6 +1,6 @@
-import styles from './Article.module.css';
+import styles from './Container.module.css';
 
-interface ArticleProps {
+interface ContainerProps {
 	children: React.ReactNode;
 	className?: string;
 	header?: string;
@@ -18,13 +18,17 @@ function Header({ title }: HeaderProps): JSX.Element {
 	);
 }
 
-function Article({ children, header, className }: ArticleProps): JSX.Element {
+function Container({
+	children,
+	header,
+	className
+}: ContainerProps): JSX.Element {
 	return (
-		<article className="container">
+		<div className="container">
 			{header && <Header title={header} />}
-			<section className={className}>{children}</section>
-		</article>
+			<article className={className}>{children}</article>
+		</div>
 	);
 }
 
-export default Article;
+export default Container;

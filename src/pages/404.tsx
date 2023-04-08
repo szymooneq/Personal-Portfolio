@@ -1,4 +1,4 @@
-import Article from '@/components/Layout/Article/Article';
+import Container from '@/components/Layout/Container/Container';
 import styles from '@/styles/404.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ function NotFound(): JSX.Element {
 				/>
 			</Head>
 
-			<Article className={styles.content}>
+			<Container className={styles.content}>
 				<h1>404</h1>
 				<p>
 					The page you are looking for may have been removed, its name changed,
@@ -24,7 +24,7 @@ function NotFound(): JSX.Element {
 				<Link href="/" className={styles.backButton}>
 					Back to homepage
 				</Link>
-			</Article>
+			</Container>
 		</>
 	);
 }

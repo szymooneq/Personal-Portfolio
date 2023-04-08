@@ -35,10 +35,11 @@
 .normal code {
 	padding: 0.1rem 0.5rem;
 	font-family: monospace;
-	color: #ffffff;
+	color: var(--white);
 	font-weight: 700;
-	background-color: var(--bg-secondary-color);
 	border-radius: 0.2rem;
+	background-color: var(--bg-secondary-color);
+	box-shadow: var(--box-shadow);
 }
 
 .h1,

@@ -14,8 +14,8 @@
 .card {
 	padding: var(--card-padding);
 	width: 100%;
-	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	background-color: var(--bg-secondary-color);
 	box-shadow: var(--box-shadow);
 }
 
@@ -30,130 +30,125 @@
 	gap: 1rem;
 }
 
-.image {
+.avatarImg {
+	position: relative;
 	width: 90px;
 	height: 90px;
 	border-radius: 50%;
 	cursor: pointer;
-	position: relative;
 }
 
-.image img {
+.avatarImg img {
+	position: relative;
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
-	position: relative;
+	border-radius: inherit;
 	z-index: 20;
 }
 
-.image::after {
+.avatarImg::after {
 	content: '';
 	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: #ffffff70;
-	border-radius: 50%;
+	inset: 0;
+	border-radius: inherit;
+	background-color: var(--white-opac);
 	filter: blur(5px);
-	transition: opacity 0.5s;
 	opacity: 0;
+	transition: opacity 0.5s;
 	z-index: 10;
 }
 
-.image:hover::after {
+.avatarImg:hover::after {
 	opacity: 1;
 }
 
-.whatsUp {
+.avatarMsg {
 	padding: 0.4rem 0.8rem;
 	font-size: 13px;
-	background-color: var(--secondary-color);
+	color: #ffffff;
 	border-radius: 1rem;
-	visibility: hidden;
+	background-color: var(--secondary-color);
 	opacity: 0;
+	visibility: hidden;
 	transition: opacity 0.5s;
 }
 
-.image:hover ~ .whatsUp {
+.avatarImg:hover ~ .avatarMsg {
 	opacity: 1;
 	visibility: visible;
 }
 
-.name {
+.sectionTitle {
 	margin-bottom: 1rem;
 	font-size: 28px;
 	font-weight: 700;
 	letter-spacing: -0.8px;
 }
 
-.work {
+.subTitle {
 	font-size: var(--card-title-font-size);
 	color: var(--secondary-color);
 	letter-spacing: -1px;
 }
 
-.contacts {
+.contact {
 	margin-top: 1rem;
 	color: var(--text-gray);
 }
 
-.contacts h3 {
+.contact > h3 {
 	font-size: var(--card-desc-font-size);
 	letter-spacing: -0.8px;
 	font-weight: 400;
 }
 
-.myDetails {
+.contactButtons {
 	margin-top: 1.5rem;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 }
 
-.contactMe {
+.button {
 	padding: 0.4rem 0.8rem;
 	display: block;
 	width: max-content;
 	font-size: 1rem;
-	border: 1px solid #ffffff;
 	border-radius: 2rem;
+	border: 1px solid var(--white);
 	transition: 0.3s;
 }
 
-.contactMe:hover {
+.button:hover {
 	color: var(--primary-color);
 	border-color: var(--primary-color);
 }
 
 .link {
-	padding: 1rem 0;
+	margin: 1rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	font-size: var(--card-desc-font-size);
 	font-weight: 700;
 	color: var(--text-gray);
 }
 
-.linkDesc {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.linkDesc:hover {
-	color: var(--primary-color);
-}
-
-.linkDesc svg {
+.link svg {
 	width: 40px;
 	height: 40px;
 }
 
-.linkDesc h2 {
-	font-size: var(--card-desc-font-size);
+.link:hover {
+	color: var(--primary-color);
 }
 
-.contentItem {
+.section {
 	margin-bottom: 3rem;
+}
+
+.section ul {
+	list-style-type: none;
 }
 
 .sectionItem {
@@ -167,17 +162,17 @@
 	color: var(--primary-color);
 }
 
+.sectionTimeline {
+	font-size: 1rem;
+	letter-spacing: -0.8px;
+	color: var(--white);
+}
+
 .sectionDescription {
 	margin-top: 1rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
 	color: var(--text-gray);
-}
-
-.sectionTimeline {
-	font-size: 1rem;
-	letter-spacing: -0.8px;
-	color: rgb(190, 190, 190);
 }
 
 @media (min-width: 768px) {
