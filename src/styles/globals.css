@@ -3,18 +3,18 @@
 :root {
 	--container-width: 100%;
 
-	--bg-primary-color: 18, 19, 23;
-	--bg-secondary-color: #191a1e;
-	--text-title: rgb(46, 46, 51);
-	--text-gray: rgb(130, 130, 130);
+	--bg-primary-color: 252, 250, 244;
+	--bg-secondary-color: rgb(255, 255, 255);
+	--text-title: rgb(128, 128, 128);
+	--text-gray: rgb(110, 110, 110);
 
-	--text-primary: 255, 255, 255;
-
-	--box-shadow: none;
-	--border: none;
-	--white: #ffffff;
-	--white-opac: #ffffff80;
-	--black: #000000;
+	--text-primary: 0, 0, 0;
+	--box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05),
+		0 12px 24px rgba(0, 0, 0, 0.05);
+	--border: 1px solid #eaeaea;
+	--white: #000000;
+	--white-opac: #00000080;
+	--black: #ffffff;
 
 	--primary-color: #258afe;
 	--secondary-color: #aa26ff;
@@ -43,19 +43,18 @@
 	background-color: var(--white);
 }
 
-.dark:root {
-	--bg-primary-color: 252, 250, 244;
-	--bg-secondary-color: rgb(255, 255, 255);
-	--text-title: rgb(128, 128, 128);
-	--text-gray: rgb(110, 110, 110);
+[data-theme='dark'] {
+	--bg-primary-color: 18, 19, 23;
+	--bg-secondary-color: #191a1e;
+	--text-title: rgb(46, 46, 51);
+	--text-gray: rgb(130, 130, 130);
 
-	--text-primary: 0, 0, 0;
-	--box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05),
-		0 12px 24px rgba(0, 0, 0, 0.05);
-	--border: 1px solid #eaeaea;
-	--white: #000000;
-	--white-opac: #00000080;
-	--black: #ffffff;
+	--text-primary: 255, 255, 255;
+	--box-shadow: none;
+	--border: none;
+	--white: #ffffff;
+	--white-opac: #ffffff80;
+	--black: #000000;
 }
 
 * {

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import NextNProgress from 'nextjs-progressbar';
 import Main from './Main';
+import { ThemeProvider } from 'next-themes';
 
 interface props {
 	children: React.ReactNode;
@@ -8,7 +9,7 @@ interface props {
 
 function RootLayout({ children }: props): JSX.Element {
 	return (
-		<>
+		<ThemeProvider enableSystem={true}>
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,7 +42,7 @@ function RootLayout({ children }: props): JSX.Element {
 				options={{ showSpinner: false }}
 			/>
 			<Main>{children}</Main>
-		</>
+		</ThemeProvider>
 	);
 }
 

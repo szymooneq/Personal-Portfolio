@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { throttle } from '@/lib/helpers/throttle';
 import Logo from '../../UI/Logo/Logo';
 import styles from './Navbar.module.css';
+import ThemeButton from '@/components/UI/ThemeButton/ThemeButton';
 
 const menuItems = [
 	{ title: 'Home', path: '/' },
@@ -12,15 +13,6 @@ const menuItems = [
 	{ title: 'Resume', path: '/resume' },
 	{ title: 'Blog', path: '/blog' }
 ];
-
-const handleDarkmode = () => {
-	const documentClassList = document.documentElement.classList;
-	if (documentClassList.contains('dark')) {
-		return documentClassList.remove('dark');
-	}
-
-	return documentClassList.add('dark');
-};
 
 function Navbar(): JSX.Element {
 	const { pathname, push } = useRouter();
@@ -70,9 +62,7 @@ function Navbar(): JSX.Element {
 				</ul>
 
 				<div className={styles.rightSide}>
-					<button className={styles.darkMode} onClick={() => handleDarkmode()}>
-						Theme
-					</button>
+					<ThemeButton />
 					<Link
 						href="/contact"
 						className={styles.contactLink}
@@ -126,15 +116,11 @@ function Navbar(): JSX.Element {
 					</Link>
 
 					<div className={styles.options}>
-						<button
-							className={styles.darkMode}
-							onClick={() => handleDarkmode()}>
-							Theme
-						</button>
-						<select name="language" id="language">
+						<ThemeButton />
+						{/* <select name="language" id="language">
 							<option value="pl">PL</option>
 							<option value="en">EN</option>
-						</select>
+						</select> */}
 					</div>
 				</div>
 			</div>
