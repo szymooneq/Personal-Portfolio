@@ -1,8 +1,8 @@
-import { IProjectCard } from '@/lib/interfaces/project';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { motion as m } from 'framer-motion';
 import Link from 'next/link';
-import { rightCircleArrow } from '../Svg/SvgIcons';
+import { motion as m } from 'framer-motion';
+import urlFor from '@/lib/sanity/client/urlFor';
+import { rightCircleArrow } from '@/components/UI/Svg/SvgIcons';
+import { IProjectCard } from '@/lib/interfaces/project';
 import styles from './ProjectCard.module.css';
 
 interface props {

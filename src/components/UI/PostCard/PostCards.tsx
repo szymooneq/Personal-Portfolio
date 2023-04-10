@@ -1,5 +1,5 @@
-import { IPostCard } from '@/lib/interfaces/post';
 import PostCard from './PostCard';
+import { IPostCard } from '@/lib/interfaces/post';
 import styles from './PostCard.module.css';
 
 interface props {

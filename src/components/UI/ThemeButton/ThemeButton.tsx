@@ -1,7 +1,7 @@
-import { useTheme } from 'next-themes';
-import styles from './ThemeButton.module.css';
-import { sunIcon, moonIcon } from '../Svg/SvgIcons';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import { sunIcon, moonIcon } from '@/components/UI/Svg/SvgIcons';
+import styles from './ThemeButton.module.css';
 
 function ThemeButton() {
 	const { systemTheme, theme, setTheme } = useTheme();

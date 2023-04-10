@@ -1,8 +1,8 @@
-import { AnimatePresence, motion as m } from 'framer-motion';
 import { useRouter } from 'next/router';
-import Breadcrumb from '../UI/Breadcrumb/Breadcrumb';
-import Footer from './Footer/Footer';
+import { AnimatePresence, motion as m } from 'framer-motion';
 import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
+import Breadcrumb from '@/components/UI/Breadcrumb/Breadcrumb';
 
 interface props {
 	children: React.ReactNode;

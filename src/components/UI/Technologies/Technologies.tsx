@@ -1,8 +1,8 @@
-import { ITechnology } from '@/lib/interfaces/global';
-import urlFor from '@/lib/sanity/client/urlFor';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
+import urlFor from '@/lib/sanity/client/urlFor';
+import { ITechnology } from '@/lib/interfaces/global';
 import styles from './Technologies.module.css';
 
 interface props {

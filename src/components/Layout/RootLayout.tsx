@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import { ThemeProvider } from 'next-themes';
 import NextNProgress from 'nextjs-progressbar';
 import Main from './Main';
-import { ThemeProvider } from 'next-themes';
 
 interface props {
 	children: React.ReactNode;

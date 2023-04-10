@@ -1,12 +1,12 @@
-import { IProjectDetails } from '@/lib/interfaces/project';
 import Head from 'next/head';
 import Link from 'next/link';
-import Container from '../Layout/Container/Container';
-import Slider from '../UI/Slider/Slider';
-import Technologies from '../UI/Technologies/Technologies';
+import Container from '@/components/Layout/Container/Container';
+import Slider from '@/components/UI/Slider/Slider';
+import Technologies from '@/components/UI/Technologies/Technologies';
+import BackButton from '@/components/UI/BackButton/BackButton';
+import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons';
+import { IProjectDetails } from '@/lib/interfaces/project';
 import styles from './Project.module.css';
-import BackButton from '../UI/BackButton/BackButton';
-import { githubIcon, vercelIcon } from '../UI/Svg/SvgIcons';
 
 const projectLinks = [
 	{

@@ -1,8 +1,8 @@
-import urlFor from '@/lib/sanity/client/urlFor';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import urlFor from '@/lib/sanity/client/urlFor';
 import styles from './RichText.module.css';
 
 export const RichTextComponents = {

@@ -1,6 +1,6 @@
-import { IProjectCard } from '@/lib/interfaces/project';
 import { AnimatePresence, motion as m } from 'framer-motion';
 import ProjectCard from './ProjectCard';
+import { IProjectCard } from '@/lib/interfaces/project';
 import styles from './ProjectCard.module.css';
 
 interface props {

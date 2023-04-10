@@ -1,5 +1,5 @@
-import { usePreview } from '@/lib/sanity/client/sanity.preview';
 import { groq } from 'next-sanity';
+import { usePreview } from '@/lib/sanity/client/sanity.preview';
 import Project from './Project';
 
 interface props {

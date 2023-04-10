@@ -1,11 +1,11 @@
-import { IPostDetails } from '@/lib/interfaces/post';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './Post.module.css';
+import { PortableText } from '@portabletext/react';
+import urlFor from '@/lib/sanity/client/urlFor';
 import { RichTextComponents } from './RichTextComponents';
-import BackButton from '../UI/BackButton/BackButton';
+import BackButton from '@/components/UI/BackButton/BackButton';
+import { IPostDetails } from '@/lib/interfaces/post';
+import styles from './Post.module.css';
 
 interface props {
 	postData: IPostDetails;

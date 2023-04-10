@@ -1,7 +1,6 @@
-import { IPostCard } from '@/lib/interfaces/post';
-import urlFor from '@/lib/sanity/client/urlFor';
 import Link from 'next/link';
-// import { rightCircleArrow } from '../Svg/SvgIcons';
+import urlFor from '@/lib/sanity/client/urlFor';
+import { IPostCard } from '@/lib/interfaces/post';
 import styles from './PostCard.module.css';
 
 interface props {

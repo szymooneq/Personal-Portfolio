@@ -1,7 +1,7 @@
-import { IImage } from '@/lib/interfaces/global';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { motion as m } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { motion as m } from 'framer-motion';
+import urlFor from '@/lib/sanity/client/urlFor';
+import { IImage } from '@/lib/interfaces/global';
 import styles from './Slider.module.css';
 
 interface props {

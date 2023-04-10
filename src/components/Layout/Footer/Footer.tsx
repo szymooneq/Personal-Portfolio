@@ -1,5 +1,5 @@
-import { contactLinks } from '@/lib/helpers/contactLinks';
 import Link from 'next/link';
+import { contactLinks } from '@/lib/helpers/contactLinks';
 import styles from './Footer.module.css';
 
 function Footer(): JSX.Element {

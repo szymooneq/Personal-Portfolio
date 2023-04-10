@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { throttle } from '@/lib/helpers/throttle';
-import Logo from '../../UI/Logo/Logo';
-import styles from './Navbar.module.css';
+import Logo from '@/components/UI/Logo/Logo';
 import ThemeButton from '@/components/UI/ThemeButton/ThemeButton';
+import styles from './Navbar.module.css';
 
 const menuItems = [
 	{ title: 'Home', path: '/' },
