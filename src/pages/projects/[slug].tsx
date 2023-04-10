@@ -1,12 +1,12 @@
-import Project from '@/components/Project/Project';
-import { getProjectData, getProjectsPaths } from '@/lib/api/projects';
-import { IProjectDetails } from '@/lib/interfaces/project';
+import { lazy } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PreviewSuspense } from 'next-sanity/preview';
-import { lazy } from 'react';
+import { getProjectData, getProjectsPaths } from '@/lib/api/projects';
+import Project from '@/components/Project/Project';
 const ProjectPreview = lazy(
 	() => import('@/components/Project/PreviewProject')
 );
+import { IProjectDetails } from '@/lib/interfaces/project';
 
 interface props {
 	preview: boolean;

@@ -1,13 +1,13 @@
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { getProjectCards } from '@/lib/api/projects';
 import Container from '@/components/Layout/Container/Container';
 import CardList from '@/components/UI/ProjectCard/CardList';
 import Technologies from '@/components/UI/Technologies/Technologies';
-import { getProjectCards } from '@/lib/api/projects';
 import { ITechnology } from '@/lib/interfaces/global';
 import { IProjectCard } from '@/lib/interfaces/project';
 import styles from '@/styles/Projects.module.css';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
 interface props {
 	projectList: IProjectCard[];

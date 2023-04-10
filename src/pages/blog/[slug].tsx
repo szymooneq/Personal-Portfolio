@@ -1,12 +1,12 @@
-import Post from '@/components/Post/Post';
-import { getPostData, getPostPaths } from '@/lib/api/getPost';
-import { IPostDetails } from '@/lib/interfaces/post';
+import { lazy } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PreviewSuspense } from 'next-sanity/preview';
-import { lazy } from 'react';
+import { getPostData, getPostPaths } from '@/lib/api/getPost';
+import Post from '@/components/Post/Post';
 const ProjectPreview = lazy(
 	() => import('@/components/Project/PreviewProject')
 );
+import { IPostDetails } from '@/lib/interfaces/post';
 
 interface props {
 	preview: boolean;

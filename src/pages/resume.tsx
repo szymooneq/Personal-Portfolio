@@ -1,12 +1,12 @@
+import { Fragment } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import { contactLinks } from '@/lib/helpers/contactLinks';
 import Container from '@/components/Layout/Container/Container';
 import { rightUpCircleArrow } from '@/components/UI/Svg/SvgIcons';
-import { contactLinks } from '@/lib/helpers/contactLinks';
+import resumeAvatar from '@/assets/resumeAvatar.jpg';
 import styles from '@/styles/Resume.module.css';
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Fragment } from 'react';
-import resumeAvatar from '../assets/resumeAvatar.jpg';
 
 const educationList = [
 	{

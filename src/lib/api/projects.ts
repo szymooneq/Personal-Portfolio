@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
-import { ITechnology } from '../interfaces/global';
-import { IProjectCard, IProjectDetails } from '../interfaces/project';
-import { client } from '../sanity/client/sanity.client';
+import { client } from '@/lib/sanity/client/sanity.client';
+import { ITechnology } from '@/lib/interfaces/global';
+import { IProjectCard, IProjectDetails } from '@/lib/interfaces/project';
 
 export async function getProjectCards() {
 	const query = groq`*[_type == "projects"]{

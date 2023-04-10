@@ -1,7 +1,7 @@
-import RootLayout from '@/components/Layout/RootLayout';
-import useFoucFix from '@/lib/helpers/useFoucFix';
-import '@/styles/globals.css';
 import { AppProps } from 'next/app';
+import useFoucFix from '@/lib/helpers/useFoucFix';
+import RootLayout from '@/components/Layout/RootLayout';
+import '@/styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	useFoucFix();

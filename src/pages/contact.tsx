@@ -1,9 +1,9 @@
-import Container from '@/components/Layout/Container/Container';
-import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import styles from '@/styles/Contact.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
+import { contactLinks } from '@/lib/helpers/contactLinks';
+import Container from '@/components/Layout/Container/Container';
+import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
+import styles from '@/styles/Contact.module.css';
 
 const cards = [
 	{

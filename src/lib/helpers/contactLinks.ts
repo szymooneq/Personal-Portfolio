@@ -2,7 +2,7 @@ import {
 	discordIcon,
 	githubIcon,
 	linkedinIcon
-} from '../../components/UI/Svg/SvgIcons';
+} from '@/components/UI/Svg/SvgIcons';
 
 export const contactLinks = [
 	{

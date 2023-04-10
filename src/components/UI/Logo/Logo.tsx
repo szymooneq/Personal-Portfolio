@@ -1,4 +1,4 @@
-import styles from '../../Layout/Navbar/Navbar.module.css';
+import styles from '@/components/Layout/Navbar/Navbar.module.css';
 
 function Logo(): JSX.Element {
 	return (

@@ -1,10 +1,10 @@
-import astronaut from '@/assets/astronaut.png';
-import Starfield from '@/components/UI/Starfield/Starfield';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import styles from '@/styles/Home.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { contactLinks } from '@/lib/helpers/contactLinks';
+import Starfield from '@/components/UI/Starfield/Starfield';
+import astronaut from '@/assets/astronaut.png';
+import styles from '@/styles/Home.module.css';
 
 function Home(): JSX.Element {
 	return (

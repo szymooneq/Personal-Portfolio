@@ -1,7 +1,7 @@
-import Container from '@/components/Layout/Container/Container';
-import styles from '@/styles/404.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
+import Container from '@/components/Layout/Container/Container';
+import styles from '@/styles/404.module.css';
 
 function NotFound(): JSX.Element {
 	return (

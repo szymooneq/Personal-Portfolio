@@ -1,9 +1,9 @@
+import Head from 'next/head';
+import { getPostList } from '@/lib/api/getPost';
 import Container from '@/components/Layout/Container/Container';
 import PostCards from '@/components/UI/PostCard/PostCards';
-import { getPostList } from '@/lib/api/getPost';
 import { IPostCard } from '@/lib/interfaces/post';
 import styles from '@/styles/Projects.module.css';
-import Head from 'next/head';
 
 interface props {
 	postList: IPostCard[];
