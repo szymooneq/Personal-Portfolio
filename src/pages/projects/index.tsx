@@ -42,15 +42,15 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 				<title>Projects | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="Here you will find some of my projects that I have managed to create so far."
+					content="Here are some of my personal projects I have completed so far. You can easily filter the projects by technology by selecting the desired technology."
 				/>
 			</Head>
 
 			<Container header="Projects">
 				<p className={styles.description}>
-					Here are some of the projects I have been able to realize so far. You
-					can easily filter the projects by technology by clicking on the
-					selected technology.
+					Here are some of my personal projects I have completed so far. You can
+					easily filter the projects by technology by selecting the desired
+					technology.
 				</p>
 
 				<Technologies technologies={technologyList} />

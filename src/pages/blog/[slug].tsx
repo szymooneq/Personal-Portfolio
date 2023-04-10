@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import { PreviewSuspense } from 'next-sanity/preview';
 import { getPostData, getPostPaths } from '@/lib/api/getPost';
 import Post from '@/components/Post/Post';
@@ -14,17 +15,27 @@ interface props {
 	queryParams: {};
 }
 
+// TODO: add page keywords to CMS
 export default function Page({
 	preview,
 	postData,
 	queryParams
 }: props): JSX.Element {
-	return preview ? (
-		<PreviewSuspense fallback="Loading...">
-			<ProjectPreview queryParams={queryParams} />
-		</PreviewSuspense>
-	) : (
-		<Post postData={postData} />
+	return (
+		<>
+			<Head>
+				<title>{`${postData.title} | Blog | Szymon Dudka`}</title>
+				<meta name="description" content={postData.description} />
+			</Head>
+
+			{preview ? (
+				<PreviewSuspense fallback="Loading...">
+					<ProjectPreview queryParams={queryParams} />
+				</PreviewSuspense>
+			) : (
+				<Post postData={postData} />
+			)}
+		</>
 	);
 }
 

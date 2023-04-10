@@ -9,8 +9,6 @@ interface props {
 	postList: IPostCard[];
 }
 
-// TODO: check all page descriptions and update
-
 function Blog({ postList }: props): JSX.Element {
 	return (
 		<>
@@ -18,7 +16,7 @@ function Blog({ postList }: props): JSX.Element {
 				<title>Blog | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="Here you will find some of my projects that I have managed to create so far."
+					content="Welcome to my blog! Here, I share my thoughts, ideas, and experiences on various topics."
 				/>
 			</Head>
 

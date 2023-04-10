@@ -26,6 +26,7 @@ const token = process.env.NEXT_PUBLIC_SANITY_TOKEN!;
 
 function ProjectPreview({ queryParams }: props): JSX.Element {
 	const previewData = usePreview(token, query, queryParams);
+
 	return <Project projectData={previewData} />;
 }
 

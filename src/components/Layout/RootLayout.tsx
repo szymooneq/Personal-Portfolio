@@ -7,12 +7,18 @@ interface props {
 	children: React.ReactNode;
 }
 
+// TODO: check keywords
 function RootLayout({ children }: props): JSX.Element {
 	return (
 		<ThemeProvider enableSystem={true}>
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="author" content="Szymon Dudka" />
+				<meta
+					name="keywords"
+					content="Szymon Dudka, Frontend Developer, Responsive Interfaces, User-friendly interfaces, API-based Applications, Web Development, React, Next, TypeScript, JavaScript, HTML, CSS, Project Development, Portfolio, Hangman, Memory Master, Navigation, Apple, Tastebite Recipes, App, Application, Game, CMS, E-Commerce"
+				/>
 				<link
 					rel="apple-touch-icon"
 					sizes="180x180"

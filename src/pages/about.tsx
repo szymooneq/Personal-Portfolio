@@ -16,8 +16,7 @@ function About(): JSX.Element {
 				<title>About me | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="I implement responsive and user-friendly interfaces and API-based
-					applications."
+					content="I implement responsive and user-friendly interfaces and API-based applications. I'm constantly gaining new knowledge by creating and improving projects which help me practice my skills."
 				/>
 			</Head>
 			<Container header="About" className={styles.about}>

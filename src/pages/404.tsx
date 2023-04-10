@@ -10,7 +10,7 @@ function NotFound(): JSX.Element {
 				<title>404 | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="The page you are looking for might have been removed had its name changed or is temporarily unavaible."
+					content="The page you are looking for may have been removed, its name changed, or it may be temporarily inaccessible."
 				/>
 			</Head>
 

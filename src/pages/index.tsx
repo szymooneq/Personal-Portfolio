@@ -13,7 +13,7 @@ function Home(): JSX.Element {
 				<title>Szymon Dudka | Frontend Developer</title>
 				<meta
 					name="description"
-					content="Szymon Dudka personal portfolio website."
+					content="Szymon Dudka is a frontend developer with experience in creating responsive and user-friendly interfaces and API-based applications. Visit his portfolio to learn more about his work and skills."
 				/>
 			</Head>
 

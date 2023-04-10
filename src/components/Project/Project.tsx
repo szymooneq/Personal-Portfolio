@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import Container from '@/components/Layout/Container/Container';
 import Slider from '@/components/UI/Slider/Slider';
@@ -47,67 +46,60 @@ interface ProjectProps {
 
 function Project({ projectData }: ProjectProps): JSX.Element {
 	return (
-		<>
-			<Head>
-				<title>{`${projectData.title} | Projects | Szymon Dudka`}</title>
-				<meta name="description" content={projectData.description} />
-			</Head>
+		<Container>
+			<header>
+				<h1 className={styles.title}>
+					{projectData.title} - {projectData.type.title}
+				</h1>
+				<p className={styles.description}>{projectData.description}</p>
+			</header>
 
-			<Container>
-				<header>
-					<h1 className={styles.title}>
-						{projectData.title} - {projectData.type.title}
-					</h1>
-					<p className={styles.description}>{projectData.description}</p>
-				</header>
+			<div className={styles.links}>
+				{projectLinks.map((link, id) => (
+					<Link
+						key={id}
+						href={projectData.links[id].url}
+						className={styles.link}
+						target="_blank"
+						rel="noreferrer">
+						{link.link}
+						{link.icon}
+					</Link>
+				))}
+			</div>
 
-				<div className={styles.links}>
-					{projectLinks.map((link, id) => (
-						<Link
-							key={id}
-							href={projectData.links[id].url}
-							className={styles.link}
-							target="_blank"
-							rel="noreferrer">
-							{link.link}
-							{link.icon}
-						</Link>
-					))}
-				</div>
+			<Slider images={projectData.images} />
 
-				<Slider images={projectData.images} />
+			<List title="Main technologies">
+				<Technologies technologies={projectData.technologies} />
+			</List>
 
-				<List title="Main technologies">
-					<Technologies technologies={projectData.technologies} />
-				</List>
-
-				{projectData.stack.length > 0 && (
-					<List type="list" title="Stack">
-						{projectData.stack.map((item) => (
-							<li key={item.title}>
-								<Link
-									href={item.url}
-									className={styles.stackUrl}
-									target="_blank"
-									rel="noreferrer"
-									aria-label={`Link to ${item.title} page`}>
-									{item.title}
-								</Link>{' '}
-								- {item.description}
-							</li>
-						))}
-					</List>
-				)}
-
-				<List type="list" title="Details">
-					{projectData.details.map((detail) => (
-						<li key={detail}>{detail}</li>
+			{projectData.stack.length > 0 && (
+				<List type="list" title="Stack">
+					{projectData.stack.map((item) => (
+						<li key={item.title}>
+							<Link
+								href={item.url}
+								className={styles.stackUrl}
+								target="_blank"
+								rel="noreferrer"
+								aria-label={`Link to ${item.title} page`}>
+								{item.title}
+							</Link>{' '}
+							- {item.description}
+						</li>
 					))}
 				</List>
+			)}
 
-				<BackButton href="/projects" />
-			</Container>
-		</>
+			<List type="list" title="Details">
+				{projectData.details.map((detail) => (
+					<li key={detail}>{detail}</li>
+				))}
+			</List>
+
+			<BackButton href="/projects" />
+		</Container>
 	);
 }
 

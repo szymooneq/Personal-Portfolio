@@ -20,16 +20,16 @@
 	filter: drop-shadow(0 0 0.3rem #ffffff70);
 }
 
-/* TODO: selection */
-
 .content > h2 {
 	font-size: var(--contact-title);
-	/* color: #4b26cb; */
 	letter-spacing: -0.1rem;
-	/* filter: drop-shadow(0 0 0.3rem #4b26cb70); */
 	background: var(--main);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.content > h2::selection {
+	-webkit-text-fill-color: var(--black);
 }
 
 .astronaut {

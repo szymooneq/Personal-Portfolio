@@ -9,6 +9,7 @@ interface props {
 	project: IProjectCard;
 }
 
+// TODO: 3d cards
 function ProjectCard({ project }: props): JSX.Element {
 	return (
 		<m.div

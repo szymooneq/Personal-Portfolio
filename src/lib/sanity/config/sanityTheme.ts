@@ -1,5 +1,6 @@
 import { buildLegacyTheme } from 'sanity';
 
+// TODO: sanity theme fix
 const props = {
 	'--my-white': '#fff',
 	'--my-black': '#1d1d20',

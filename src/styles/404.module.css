@@ -9,11 +9,10 @@
 	background: var(--main);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-clip: text;
 }
 
 .content h1::selection {
-	-webkit-text-fill-color: #000000;
+	-webkit-text-fill-color: var(--black);
 }
 
 .content p {
@@ -21,16 +20,17 @@
 	margin-bottom: 2rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: grey;
+	color: var(--text-gray);
 }
 
+/* TODO: add transition properties */
 .backButton {
 	margin: 1.5rem auto;
 	padding: 0.4rem 0.8rem;
 	display: block;
 	width: max-content;
 	font-size: 1rem;
-	border: 1px solid #ffffff;
+	border: 1px solid var(--white);
 	border-radius: 2rem;
 	transition: 0.3s;
 }
