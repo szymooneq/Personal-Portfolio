@@ -1,10 +1,11 @@
-import Link from 'next/link';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { IPostCard } from '@/lib/interfaces/post';
-import styles from './PostCard.module.css';
+import Link from 'next/link'
+import urlFor from '@/lib/sanity/client/urlFor'
+import { IPostCard } from '@/lib/interfaces/post'
+import styles from './PostCard.module.css'
+import Image from 'next/image'
 
 interface props {
-	post: IPostCard;
+	post: IPostCard
 }
 
 function PostCard({ post }: props): JSX.Element {
@@ -12,10 +13,12 @@ function PostCard({ post }: props): JSX.Element {
 		<div className={styles.card}>
 			<Link href={`/blog/${post.slug.current}`}>
 				<div className={styles.content}>
-					<img
+					<Image
 						className={styles.img}
 						src={urlFor(post.mainImage).url()}
 						alt={post.title}
+						width={500}
+						height={300}
 					/>
 					<p className={styles.type}>{post.technologies[0].title}</p>
 					<div className={styles.info}>
@@ -28,7 +31,7 @@ function PostCard({ post }: props): JSX.Element {
 				</div>
 			</Link>
 		</div>
-	);
+	)
 }
 
-export default PostCard;
+export default PostCard

@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { getProjectCards } from '@/lib/api/projects';
-import Container from '@/components/Layout/Container/Container';
-import CardList from '@/components/UI/ProjectCard/CardList';
-import Technologies from '@/components/UI/Technologies/Technologies';
-import { ITechnology } from '@/lib/interfaces/global';
-import { IProjectCard } from '@/lib/interfaces/project';
-import styles from '@/styles/Projects.module.css';
+import { useCallback, useEffect, useState } from 'react'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { getProjectCards } from '@/lib/api/projects'
+import Container from '@/components/Layout/Container/Container'
+import CardList from '@/components/UI/ProjectCard/CardList'
+import Technologies from '@/components/UI/Technologies/Technologies'
+import { ITechnology } from '@/lib/interfaces/global'
+import { IProjectCard } from '@/lib/interfaces/project'
+import styles from '@/styles/Projects.module.css'
 
 interface props {
-	projectList: IProjectCard[];
-	technologyList: ITechnology[];
+	projectList: IProjectCard[]
+	technologyList: ITechnology[]
 }
 
 function Projects({ projectList, technologyList }: props): JSX.Element {
-	const { query } = useRouter();
-	const [filteredProjects, setFilteredProjects] = useState(projectList);
+	const { query } = useRouter()
+	const [filteredProjects, setFilteredProjects] = useState(projectList)
 
-	const filterProjects = () => {
+	const filterProjects = useCallback(() => {
 		if (query.category) {
 			return setFilteredProjects(
 				projectList.filter((project) =>
@@ -26,15 +26,15 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 						technology.title.includes(query.category as string)
 					)
 				)
-			);
+			)
 		}
 
-		setFilteredProjects(projectList);
-	};
+		setFilteredProjects(projectList)
+	}, [projectList, query.category])
 
 	useEffect(() => {
-		filterProjects();
-	}, [query.category]);
+		filterProjects()
+	}, [query.category, filterProjects])
 
 	return (
 		<>
@@ -58,13 +58,13 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 				<CardList projectList={filteredProjects} />
 			</Container>
 		</>
-	);
+	)
 }
 
-export default Projects;
+export default Projects
 
 export async function getStaticProps() {
-	const { projectList, technologyList } = await getProjectCards();
+	const { projectList, technologyList } = await getProjectCards()
 
 	return {
 		props: {
@@ -72,5 +72,5 @@ export async function getStaticProps() {
 			technologyList
 		},
 		revalidate: 60
-	};
+	}
 }

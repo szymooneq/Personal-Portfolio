@@ -5,10 +5,13 @@ const securityHeaders = [
 		key: 'X-Content-Type-Options',
 		value: 'nosniff'
 	}
-];
+]
 
 const nextConfig = {
 	reactStrictMode: true,
+	compiler: {
+		styledComponents: true
+	},
 	swcMinify: true,
 	images: {
 		domains: ['cdn.sanity.io']
@@ -24,8 +27,8 @@ const nextConfig = {
 				source: '/:path*',
 				headers: securityHeaders
 			}
-		];
+		]
 	}
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

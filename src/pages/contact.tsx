@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import Container from '@/components/Layout/Container/Container';
-import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons';
-import styles from '@/styles/Contact.module.css';
+import Head from 'next/head'
+import Link from 'next/link'
+import { contactLinks } from '@/lib/helpers/contactLinks'
+import Container from '@/components/Layout/Container/Container'
+import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons'
+import styles from '@/styles/Contact.module.css'
 
 const cards = [
 	{
@@ -21,7 +21,7 @@ const cards = [
 		desc: 'I combine my visual and analytical side and love creating brands.',
 		icon: cubeIcon
 	}
-];
+]
 
 const contactTypes = [
 	{
@@ -34,7 +34,7 @@ const contactTypes = [
 		linkHref: 'mailto:szymooneq@zohomail.eu',
 		linkDesc: 'szymooneq@zohomail.eu'
 	}
-];
+]
 
 function Contact(): JSX.Element {
 	return (
@@ -43,7 +43,7 @@ function Contact(): JSX.Element {
 				<title>Contact | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="I’m always open to collaborate on a project or hear about an
+					content="I'm always open to collaborate on a project or hear about an
           opportunity!"
 				/>
 			</Head>
@@ -54,8 +54,8 @@ function Contact(): JSX.Element {
 						<div>
 							<h2 className={styles.title}>Get in Touch ✨</h2>
 							<p className={styles.subText}>
-								I'm always ready to collaborate on a project or hear about an
-								opportunity!
+								I&apos;m always ready to collaborate on a project or hear about
+								an opportunity!
 							</p>
 						</div>
 						<div className={styles.types}>
@@ -146,7 +146,7 @@ function Contact(): JSX.Element {
 				</div>
 			</Container>
 		</>
-	);
+	)
 }
 
-export default Contact;
+export default Contact

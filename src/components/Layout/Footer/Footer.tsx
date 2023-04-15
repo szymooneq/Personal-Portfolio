@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import styles from './Footer.module.css';
+import Link from 'next/link'
+import { contactLinks } from '@/lib/helpers/contactLinks'
+import styles from './Footer.module.css'
 
 function Footer(): JSX.Element {
 	return (
@@ -26,7 +26,7 @@ function Footer(): JSX.Element {
 				<p>&copy; | 2023 Szymon Dudka</p>
 			</div>
 		</footer>
-	);
+	)
 }
 
-export default Footer;
+export default Footer

@@ -1,29 +1,29 @@
 export interface Base<T> {
-	_id: string;
-	_rev: string;
-	_type: T;
-	_createdAt: Date;
-	_updatedAt: Date;
+	_id: string
+	_rev: string
+	_type: T
+	_createdAt: Date
+	_updatedAt: Date
 }
 
 interface Reference {
-	_ref: string;
-	_type: 'reference';
+	_ref: string
+	_type: 'reference'
 }
 
 export interface IImage {
-	_key?: string;
-	alt?: string;
-	_type: 'image';
-	asset: Reference;
+	_key?: string
+	alt: string
+	_type: 'image'
+	asset: Reference
 }
 
 export interface ISlug {
-	type: 'slug';
-	current: string;
+	type: 'slug'
+	current: string
 }
 
 export interface ITechnology extends Base<'technologies'> {
-	title: string;
-	icon: IImage;
+	title: string
+	icon: IImage
 }
