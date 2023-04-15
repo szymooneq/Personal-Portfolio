@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { getPostList } from '@/lib/api/getPost';
-import Container from '@/components/Layout/Container/Container';
-import PostCards from '@/components/UI/PostCard/PostCards';
-import { IPostCard } from '@/lib/interfaces/post';
-import styles from '@/styles/Projects.module.css';
+import Head from 'next/head'
+import { getPostList } from '@/lib/api/getPost'
+import Container from '@/components/Layout/Container/Container'
+import PostCards from '@/components/UI/PostCard/PostCards'
+import { IPostCard } from '@/interfaces/post'
+import styles from '@/styles/Projects.module.css'
 
 interface props {
-	postList: IPostCard[];
+	postList: IPostCard[]
 }
 
 function Blog({ postList }: props): JSX.Element {
@@ -29,18 +29,18 @@ function Blog({ postList }: props): JSX.Element {
 				<PostCards postList={postList} />
 			</Container>
 		</>
-	);
+	)
 }
 
-export default Blog;
+export default Blog
 
 export async function getStaticProps() {
-	const { postList } = await getPostList();
+	const { postList } = await getPostList()
 
 	return {
 		props: {
 			postList
 		},
 		revalidate: 60
-	};
+	}
 }

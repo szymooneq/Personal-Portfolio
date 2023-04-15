@@ -1,10 +1,10 @@
-import { AnimatePresence, motion as m } from 'framer-motion';
-import ProjectCard from './ProjectCard';
-import { IProjectCard } from '@/lib/interfaces/project';
-import styles from './ProjectCard.module.css';
+import { AnimatePresence, motion as m } from 'framer-motion'
+import ProjectCard from './ProjectCard'
+import { IProjectCard } from '@/interfaces/project'
+import styles from './ProjectCard.module.css'
 
 interface props {
-	projectList: IProjectCard[];
+	projectList: IProjectCard[]
 }
 
 function CardList({ projectList }: props): JSX.Element {
@@ -16,7 +16,7 @@ function CardList({ projectList }: props): JSX.Element {
 				))}
 			</AnimatePresence>
 		</m.div>
-	);
+	)
 }
 
-export default CardList;
+export default CardList

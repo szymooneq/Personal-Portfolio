@@ -1,16 +1,16 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Image from 'next/image';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { ITechnology } from '@/lib/interfaces/global';
-import styles from './Technologies.module.css';
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Image from 'next/image'
+import urlFor from '@/lib/sanity/client/urlFor'
+import { ITechnology } from '@/interfaces/global'
+import styles from './Technologies.module.css'
 
 interface props {
-	technologies: ITechnology[];
+	technologies: ITechnology[]
 }
 
 function Technologies({ technologies }: props): JSX.Element {
-	const { query } = useRouter();
+	const { query } = useRouter()
 
 	return (
 		<div className={styles.technologies}>
@@ -39,7 +39,7 @@ function Technologies({ technologies }: props): JSX.Element {
 				x reset filter
 			</Link>
 		</div>
-	);
+	)
 }
 
-export default Technologies;
+export default Technologies

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { IPostCard } from '@/lib/interfaces/post'
+import { IPostCard } from '@/interfaces/post'
 import styles from './PostCard.module.css'
 import Image from 'next/image'
 

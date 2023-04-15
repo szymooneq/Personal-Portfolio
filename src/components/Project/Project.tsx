@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Container from '@/components/Layout/Container/Container';
-import Slider from '@/components/UI/Slider/Slider';
-import Technologies from '@/components/UI/Technologies/Technologies';
-import BackButton from '@/components/UI/BackButton/BackButton';
-import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons';
-import { IProjectDetails } from '@/lib/interfaces/project';
-import styles from './Project.module.css';
+import Link from 'next/link'
+import Container from '@/components/Layout/Container/Container'
+import Slider from '@/components/UI/Slider/Slider'
+import Technologies from '@/components/UI/Technologies/Technologies'
+import BackButton from '@/components/UI/BackButton/BackButton'
+import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons'
+import { IProjectDetails } from '@/interfaces/project'
+import styles from './Project.module.css'
 
 const projectLinks = [
 	{
@@ -18,12 +18,12 @@ const projectLinks = [
 		link: 'View source code',
 		icon: githubIcon
 	}
-];
+]
 
 interface ListProps {
-	children: React.ReactNode;
-	type?: string;
-	title?: string;
+	children: React.ReactNode
+	type?: string
+	title?: string
 }
 
 function List({ type, title, children }: ListProps): JSX.Element {
@@ -37,11 +37,11 @@ function List({ type, title, children }: ListProps): JSX.Element {
 			<h2>{title}</h2>
 			{children}
 		</div>
-	);
+	)
 }
 
 interface ProjectProps {
-	projectData: IProjectDetails;
+	projectData: IProjectDetails
 }
 
 function Project({ projectData }: ProjectProps): JSX.Element {
@@ -100,7 +100,7 @@ function Project({ projectData }: ProjectProps): JSX.Element {
 
 			<BackButton href="/projects" />
 		</Container>
-	);
+	)
 }
 
-export default Project;
+export default Project

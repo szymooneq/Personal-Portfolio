@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { motion as m } from 'framer-motion'
 import urlFor from '@/lib/sanity/client/urlFor'
 import { rightCircleArrow } from '@/components/UI/Svg/SvgIcons'
-import { IProjectCard } from '@/lib/interfaces/project'
+import { IProjectCard } from '@/interfaces/project'
 import styles from './ProjectCard.module.css'
 import Image from 'next/image'
 

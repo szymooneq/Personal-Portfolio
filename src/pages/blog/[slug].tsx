@@ -1,18 +1,16 @@
-import { lazy } from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
-import { PreviewSuspense } from 'next-sanity/preview';
-import { getPostData, getPostPaths } from '@/lib/api/getPost';
-import Post from '@/components/Post/Post';
-const ProjectPreview = lazy(
-	() => import('@/components/Project/PreviewProject')
-);
-import { IPostDetails } from '@/lib/interfaces/post';
+import { lazy } from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
+import { PreviewSuspense } from 'next-sanity/preview'
+import { getPostData, getPostPaths } from '@/lib/api/getPost'
+import Post from '@/components/Post/Post'
+const ProjectPreview = lazy(() => import('@/components/Project/PreviewProject'))
+import { IPostDetails } from '@/interfaces/post'
 
 interface props {
-	preview: boolean;
-	postData: IPostDetails;
-	queryParams: {};
+	preview: boolean
+	postData: IPostDetails
+	queryParams: {}
 }
 
 // TODO: add page keywords to CMS
@@ -36,28 +34,28 @@ export default function Page({
 				<Post postData={postData} />
 			)}
 		</>
-	);
+	)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const paths = await getPostPaths();
+	const paths = await getPostPaths()
 	return {
 		paths,
 		fallback: false
-	};
-};
+	}
+}
 
 export const getStaticProps: GetStaticProps = async ({
 	params,
 	preview = false
 }) => {
-	const queryParams = { slug: params?.slug ?? `` };
+	const queryParams = { slug: params?.slug ?? `` }
 
 	if (preview) {
-		return { props: { preview, queryParams } };
+		return { props: { preview, queryParams } }
 	}
 
-	const postData = await getPostData(queryParams);
+	const postData = await getPostData(queryParams)
 
 	return {
 		props: {
@@ -66,5 +64,5 @@ export const getStaticProps: GetStaticProps = async ({
 			preview
 		},
 		revalidate: 60
-	};
-};
+	}
+}

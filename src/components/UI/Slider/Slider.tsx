@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion as m } from 'framer-motion'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { IImage } from '@/lib/interfaces/global'
+import { IImage } from '@/interfaces/global'
 import styles from './Slider.module.css'
 import Image from 'next/image'
 

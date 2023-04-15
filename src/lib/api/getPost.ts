@@ -1,6 +1,6 @@
-import { groq } from 'next-sanity';
-import { client } from '@/lib/sanity/client/sanity.client';
-import { IPostCard, IPostDetails } from '@/lib/interfaces/post';
+import { groq } from 'next-sanity'
+import { client } from '@/lib/sanity/client/sanity.client'
+import { IPostCard, IPostDetails } from '@/interfaces/post'
 
 export async function getPostList() {
 	const query = groq`*[_type == "post"]{
@@ -9,21 +9,21 @@ export async function getPostList() {
     title,
     description,
     technologies[]->,
-  }`;
+  }`
 
-	const postList = await client.fetch<IPostCard[]>(query);
+	const postList = await client.fetch<IPostCard[]>(query)
 
 	return {
 		postList
-	};
+	}
 }
 
 export async function getPostPaths() {
 	const query = groq`*[_type == "post" && defined(slug.current)][]{
       "params": { "slug": slug.current }
-    }`;
+    }`
 
-	return await client.fetch<string[]>(query);
+	return await client.fetch<string[]>(query)
 }
 
 export async function getPostData(queryParams: { slug: string | string[] }) {
@@ -35,7 +35,7 @@ export async function getPostData(queryParams: { slug: string | string[] }) {
     publishedAt,
     editedAt,
     body
-  }`;
+  }`
 
-	return await client.fetch<IPostDetails>(query, queryParams);
+	return await client.fetch<IPostDetails>(query, queryParams)
 }

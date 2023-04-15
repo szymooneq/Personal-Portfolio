@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
-import urlFor from '@/lib/sanity/client/urlFor';
-import { RichTextComponents } from './RichTextComponents';
-import BackButton from '@/components/UI/BackButton/BackButton';
-import { IPostDetails } from '@/lib/interfaces/post';
-import styles from './Post.module.css';
+import Image from 'next/image'
+import { PortableText } from '@portabletext/react'
+import urlFor from '@/lib/sanity/client/urlFor'
+import { RichTextComponents } from './RichTextComponents'
+import BackButton from '@/components/UI/BackButton/BackButton'
+import { IPostDetails } from '@/interfaces/post'
+import styles from './Post.module.css'
 
 interface props {
-	postData: IPostDetails;
+	postData: IPostDetails
 }
 
 const formatDate = (date: Date) => {
@@ -15,8 +15,8 @@ const formatDate = (date: Date) => {
 		day: 'numeric',
 		month: 'long',
 		year: 'numeric'
-	});
-};
+	})
+}
 
 function Post({ postData }: props): JSX.Element {
 	return (
@@ -39,7 +39,7 @@ function Post({ postData }: props): JSX.Element {
 
 			<BackButton href="/blog" />
 		</article>
-	);
+	)
 }
 
-export default Post;
+export default Post

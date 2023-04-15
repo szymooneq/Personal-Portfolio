@@ -1,9 +1,9 @@
-import PostCard from './PostCard';
-import { IPostCard } from '@/lib/interfaces/post';
-import styles from './PostCard.module.css';
+import PostCard from './PostCard'
+import { IPostCard } from '@/interfaces/post'
+import styles from './PostCard.module.css'
 
 interface props {
-	postList: IPostCard[];
+	postList: IPostCard[]
 }
 
 function PostCards({ postList }: props): JSX.Element {
@@ -13,7 +13,7 @@ function PostCards({ postList }: props): JSX.Element {
 				<PostCard key={post.title} post={post} />
 			))}
 		</div>
-	);
+	)
 }
 
-export default PostCards;
+export default PostCards
