@@ -2,14 +2,14 @@ import Link from 'next/link'
 import { contactLinks } from '@/lib/helpers/contactLinks'
 import styles from './Footer.module.css'
 
-function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.waves}></div>
 			<div className={styles.content}>
 				<p>
-					Feel free to contact me and stay in touch with me through these
-					various channels.
+					Feel free to contact me and stay in touch with me through these various
+					channels.
 				</p>
 				<div className={styles.icons}>
 					{contactLinks.map((link) => (

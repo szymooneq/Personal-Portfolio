@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { throttle } from '@/lib/helpers/throttle';
-import Logo from '@/components/UI/Logo/Logo';
-import ThemeButton from '@/components/UI/ThemeButton/ThemeButton';
-import styles from './Navbar.module.css';
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { throttle } from '@/lib/helpers/throttle'
+import Logo from '@/components/UI/Logo/Logo'
+import ThemeButton from '@/components/UI/ThemeButton/ThemeButton'
+import styles from './Navbar.module.css'
 
 const menuItems = [
 	{ title: 'Home', path: '/' },
@@ -12,35 +12,35 @@ const menuItems = [
 	{ title: 'Projects', path: '/projects' },
 	{ title: 'Resume', path: '/resume' },
 	{ title: 'Blog', path: '/blog' }
-];
+]
 
-function Navbar(): JSX.Element {
-	const { pathname, push } = useRouter();
-	const [isExpand, setIsExpand] = useState<boolean>(false);
+const Navbar = (): JSX.Element => {
+	const { pathname, push } = useRouter()
+	const [isExpand, setIsExpand] = useState<boolean>(false)
 
 	const handleRedirect = () => {
-		if (pathname !== '/') push('/');
-	};
+		if (pathname !== '/') push('/')
+	}
 
 	const handleToggle = () => {
-		if (window.innerWidth < 1024) setIsExpand((prev) => !prev);
-	};
+		if (window.innerWidth < 1024) setIsExpand((prev) => !prev)
+	}
 
 	const handleResize = throttle(() => {
-		if (window.innerWidth > 1024) setIsExpand(false);
-	}, 300);
+		if (window.innerWidth > 1024) setIsExpand(false)
+	}, 300)
 
 	useEffect(() => {
-		window.addEventListener('resize', handleResize);
+		window.addEventListener('resize', handleResize)
 
 		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, [handleResize]);
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [handleResize])
 
 	return (
 		<nav className={styles.nav} data-home={pathname === '/'}>
-			<div className={styles.navContent}>
+			<div className={styles.desktop}>
 				<div onClick={() => handleRedirect()}>
 					<Logo />
 				</div>
@@ -84,7 +84,7 @@ function Navbar(): JSX.Element {
 				</button>
 			</div>
 
-			<div className={styles.navMobile}>
+			<div className={styles.mobile}>
 				<div
 					className={styles.opacLayer}
 					onClick={handleToggle}
@@ -125,7 +125,7 @@ function Navbar(): JSX.Element {
 				</div>
 			</div>
 		</nav>
-	);
+	)
 }
 
-export default Navbar;
+export default Navbar

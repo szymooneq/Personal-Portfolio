@@ -3,9 +3,9 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	background: var(--main);
 	position: relative;
 	height: 18rem;
+	background: var(--main);
 	overflow: hidden;
 }
 
@@ -15,32 +15,33 @@
 	left: 0;
 	right: 0;
 	height: 13rem;
-	transition: 0.5s;
 }
 
 .waves::before,
 .waves::after {
 	content: '';
 	position: absolute;
-	width: 400vw;
-	height: 400vw;
 	top: -100vw;
 	left: 50%;
+	width: 400vw;
+	height: 400vw;
+	border-radius: 48%;
+	animation-name: boxRotation;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
 
 .waves::before {
-	border-radius: 48%;
 	background: rgb(var(--bg-primary-color));
-	animation: waves 30s linear infinite;
+	animation-duration: 30s;
 }
 
 .waves::after {
-	border-radius: 48%;
 	background-color: rgba(var(--bg-primary-color), 0.5);
-	animation: waves 60s linear infinite;
+	animation-duration: 60s;
 }
 
-@keyframes waves {
+@keyframes boxRotation {
 	0% {
 		transform: translate(-50%, -75%) rotate(0deg);
 	}
@@ -52,8 +53,8 @@
 
 .content {
 	margin: 0 1rem 1rem 1rem;
-	text-align: center;
 	position: relative;
+	text-align: center;
 	color: rgb(var(--bg-primary-color));
 }
 
@@ -65,8 +66,8 @@
 
 .content p:last-child {
 	margin-top: 1.5rem;
-	letter-spacing: -0.8px;
 	font-size: 0.9rem;
+	letter-spacing: -0.8px;
 }
 
 .icons {
@@ -75,10 +76,11 @@
 }
 
 .icons svg {
-	color: rgb(var(--bg-primary-color));
 	width: 30px;
 	height: 30px;
-	transition: 0.3s;
+	color: rgb(var(--bg-primary-color));
+	transform: scale(1);
+	transition: transform 0.3s;
 }
 
 .icons svg:hover {

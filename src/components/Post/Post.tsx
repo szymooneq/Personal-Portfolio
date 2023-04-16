@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { RichTextComponents } from './RichTextComponents'
+import { RichTextComponents } from '../UI/RichText/RichTextComponents'
 import BackButton from '@/components/UI/BackButton/BackButton'
 import { IPostDetails } from '@/interfaces/post'
 import styles from './Post.module.css'
-
-interface props {
-	postData: IPostDetails
-}
+import { PostProps } from './Post.types'
 
 const formatDate = (date: Date) => {
 	return new Date(date).toLocaleDateString('en-US', {
@@ -18,7 +15,7 @@ const formatDate = (date: Date) => {
 	})
 }
 
-function Post({ postData }: props): JSX.Element {
+const Post = ({ postData }: PostProps): JSX.Element => {
 	return (
 		<article className={styles.article}>
 			<header className={styles.header}>

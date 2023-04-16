@@ -1,15 +1,12 @@
-import { useRouter } from 'next/router';
-import { AnimatePresence, motion as m } from 'framer-motion';
-import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
-import Breadcrumb from '@/components/UI/Breadcrumb/Breadcrumb';
+import { useRouter } from 'next/router'
+import { AnimatePresence, motion as m } from 'framer-motion'
+import { MainProps } from './Main.types'
+import Navbar from '@/components/Layout/Navbar'
+import Footer from '@/components/Layout/Footer'
+import Breadcrumb from '@/components/UI/Breadcrumb/Breadcrumb'
 
-interface props {
-	children: React.ReactNode;
-}
-
-function Main({ children }: props): JSX.Element {
-	const { asPath, pathname } = useRouter();
+const Main = ({ children }: MainProps): JSX.Element => {
+	const { asPath, pathname } = useRouter()
 
 	return (
 		<>
@@ -33,7 +30,7 @@ function Main({ children }: props): JSX.Element {
 			)}
 			{asPath !== '/' && !asPath.includes('studio') && <Footer />}
 		</>
-	);
+	)
 }
 
-export default Main;
+export default Main
