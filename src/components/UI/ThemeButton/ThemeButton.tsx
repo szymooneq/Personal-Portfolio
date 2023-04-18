@@ -1,32 +1,33 @@
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
-import { sunIcon, moonIcon } from '@/components/UI/Svg/SvgIcons';
-import styles from './ThemeButton.module.css';
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+import styles from './ThemeButton.module.css'
 
-function ThemeButton() {
-	const { systemTheme, theme, setTheme } = useTheme();
-	const [isMounted, setIsMounted] = useState(false);
+import { sunIcon, moonIcon } from '@/components/UI/Svg/SvgIcons'
+
+const ThemeButton = () => {
+	const { systemTheme, theme, setTheme } = useTheme()
+	const [isMounted, setIsMounted] = useState(false)
 
 	useEffect(() => {
-		setIsMounted(true);
-	}, []);
+		setIsMounted(true)
+	}, [])
 
-	if (!isMounted) return null;
+	if (!isMounted) return null
 
-	const currentTheme = theme === 'system' ? systemTheme : theme;
+	const currentTheme = theme === 'system' ? systemTheme : theme
 
 	const handleToggleTheme = () => {
-		if (
+		/* if (
 			theme === 'system' &&
 			document.documentElement.getAttribute('data-theme')?.includes('dark')
 		) {
-			return setTheme('light');
-		}
+			return setTheme('light')
+		} */
 
-		if (theme === 'light') return setTheme('dark');
+		if (theme === 'light') return setTheme('dark')
 
-		setTheme('light');
-	};
+		setTheme('light')
+	}
 
 	return (
 		<>
@@ -44,7 +45,7 @@ function ThemeButton() {
 				</div>
 			</label>
 		</>
-	);
+	)
 }
 
-export default ThemeButton;
+export default ThemeButton

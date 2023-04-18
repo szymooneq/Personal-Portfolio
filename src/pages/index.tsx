@@ -1,12 +1,13 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import Starfield from '@/components/UI/Starfield/Starfield';
-import astronaut from '@/assets/astronaut.png';
-import styles from '@/styles/Home.module.css';
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import { contactLinks } from '@/lib/helpers/contactLinks'
+import styles from '@/styles/Home.module.css'
 
-function Home(): JSX.Element {
+import Starfield from '@/components/UI/Starfield'
+import astronaut from '@/assets/astronaut.png'
+
+export default function Home(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -40,17 +41,10 @@ function Home(): JSX.Element {
 					</div>
 
 					<div className={styles.astronaut}>
-						<Image
-							src={astronaut}
-							alt="Flying astronaut"
-							width={250}
-							height={250}
-						/>
+						<Image src={astronaut} alt="Flying astronaut" width={250} height={250} />
 					</div>
 				</header>
 			</div>
 		</>
-	);
+	)
 }
-
-export default Home;

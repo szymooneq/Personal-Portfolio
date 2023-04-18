@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
 	name: 'post',
@@ -63,8 +63,8 @@ export default defineType({
 			media: 'mainImage'
 		},
 		prepare(selection) {
-			const { publishedAt } = selection;
-			return { ...selection, subtitle: publishedAt && `${publishedAt}` };
+			const { publishedAt } = selection
+			return { ...selection, subtitle: publishedAt && `${publishedAt}` }
 		}
 	}
-});
+})

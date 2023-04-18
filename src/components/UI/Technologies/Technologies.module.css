@@ -13,8 +13,8 @@
 	gap: 0.4rem;
 	font-size: 1rem;
 	font-weight: 600;
-	background: var(--bg-secondary-color);
 	border: none;
+	background: var(--bg-secondary-color);
 	opacity: 1;
 	transition: opacity 0.3s;
 	cursor: pointer;

@@ -2,14 +2,10 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { ITechnology } from '@/interfaces/global'
+import { TechnologiesProps } from './Technologies.types'
 import styles from './Technologies.module.css'
 
-interface props {
-	technologies: ITechnology[]
-}
-
-function Technologies({ technologies }: props): JSX.Element {
+const Technologies = ({ technologies }: TechnologiesProps): JSX.Element => {
 	const { query } = useRouter()
 
 	return (

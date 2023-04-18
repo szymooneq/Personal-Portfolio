@@ -1,14 +1,15 @@
-import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
-import { codeInput } from '@sanity/code-input';
-import { visionTool } from '@sanity/vision';
-import { defaultDocumentNode } from './defaultDocumentNode';
-import { schemaTypes } from '@/lib/sanity/schemas';
-import { myTheme } from './sanityTheme';
-import SanityLogo from '@/components/UI/Logo/SanityLogo';
+import { defineConfig } from 'sanity'
+import { deskTool } from 'sanity/desk'
+import { myTheme } from './sanity.theme'
+import { codeInput } from '@sanity/code-input'
+import { visionTool } from '@sanity/vision'
+import { defaultDocumentNode } from './defaultDocumentNode'
+import { schemaTypes } from '@/lib/sanity/schemas'
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+import SanityLogo from '@/components/UI/Logo/Sanity'
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 
 export default defineConfig({
 	basePath: '/studio',
@@ -32,4 +33,4 @@ export default defineConfig({
 		}
 	},
 	theme: myTheme
-});
+})

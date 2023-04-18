@@ -1,15 +1,15 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Container from '@/components/Layout/Container/Container';
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '@/styles/About.module.css'
 import {
 	linkedinIcon,
 	rightCircleArrow,
 	rightUpCircleArrow,
 	userFaceID
-} from '@/components/UI/Svg/SvgIcons';
-import styles from '@/styles/About.module.css';
+} from '@/components/UI/Svg/SvgIcons'
+import Container from '@/components/Layout/Container'
 
-function About(): JSX.Element {
+export default function About(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -19,6 +19,7 @@ function About(): JSX.Element {
 					content="I implement responsive and user-friendly interfaces and API-based applications. I'm constantly gaining new knowledge by creating and improving projects which help me practice my skills."
 				/>
 			</Head>
+
 			<Container header="About" className={styles.about}>
 				<div className={styles.card}></div>
 
@@ -30,8 +31,8 @@ function About(): JSX.Element {
 					<h3 className={styles.title}>About me</h3>
 					<p className={styles.description}>
 						I implement responsive and user-friendly interfaces and API-based
-						applications. I&apos;m constantly gaining new knowledge by creating
-						and improving projects which help me practice my skills.
+						applications. I&apos;m constantly gaining new knowledge by creating and
+						improving projects which help me practice my skills.
 					</p>
 				</div>
 
@@ -71,7 +72,5 @@ function About(): JSX.Element {
 				</Link>
 			</Container>
 		</>
-	);
+	)
 }
-
-export default About;

@@ -1,7 +1,7 @@
 .toggle {
+	position: absolute;
 	top: -200px;
 	left: -200px;
-	position: absolute;
 	display: block;
 	opacity: 0;
 }

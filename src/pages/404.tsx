@@ -1,9 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Container from '@/components/Layout/Container/Container';
-import styles from '@/styles/404.module.css';
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '@/styles/404.module.css'
 
-function NotFound(): JSX.Element {
+import Container from '@/components/Layout/Container'
+
+export default function NotFound(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -17,8 +18,8 @@ function NotFound(): JSX.Element {
 			<Container className={styles.content}>
 				<h1>404</h1>
 				<p>
-					The page you are looking for may have been removed, its name changed,
-					or it may be temporarily inaccessible.
+					The page you are looking for may have been removed, its name changed, or it may
+					be temporarily inaccessible.
 				</p>
 
 				<Link href="/" className={styles.backButton}>
@@ -26,7 +27,5 @@ function NotFound(): JSX.Element {
 				</Link>
 			</Container>
 		</>
-	);
+	)
 }
-
-export default NotFound;

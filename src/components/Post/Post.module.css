@@ -24,8 +24,8 @@
 .title {
 	margin: 1rem 0;
 	font-size: var(--blog-title);
-	color: var(--white);
 	letter-spacing: -2.4px;
+	color: var(--white);
 }
 
 .date {
@@ -37,8 +37,8 @@
 }
 
 .image {
-	object-fit: contain;
 	position: relative !important;
+	object-fit: contain;
 	border-radius: 1rem;
 }
 

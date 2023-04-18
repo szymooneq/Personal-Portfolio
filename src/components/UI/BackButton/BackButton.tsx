@@ -1,16 +1,11 @@
-import Link from 'next/link';
-import styles from './BackButton.module.css';
+import Link from 'next/link'
+import { BackButtonProps } from './BackButton.types'
+import styles from './BackButton.module.css'
 
-interface props {
-	href: string;
-}
+const BackButton = ({ href }: BackButtonProps): JSX.Element => (
+	<Link href={href} scroll={false} className={styles.backButton}>
+		Go back
+	</Link>
+)
 
-function BackButton({ href }: props): JSX.Element {
-	return (
-		<Link href={href} scroll={false} className={styles.backButton}>
-			Go back
-		</Link>
-	);
-}
-
-export default BackButton;
+export default BackButton

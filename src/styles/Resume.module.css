@@ -54,8 +54,8 @@
 	background-color: var(--white-opac);
 	filter: blur(5px);
 	opacity: 0;
-	transition: opacity 0.5s;
 	z-index: 10;
+	transition: opacity 0.5s;
 }
 
 .avatarImg:hover::after {
@@ -116,7 +116,7 @@
 	font-size: 1rem;
 	border-radius: 2rem;
 	border: 1px solid var(--white);
-	transition: 0.3s;
+	transition: color 0.3s, border-color 0.3s;
 }
 
 .button:hover {
@@ -187,11 +187,11 @@
 	}
 
 	.cards {
+		flex-direction: column;
+		position: sticky;
+		position: -webkit-sticky;
 		top: 100px;
 		left: 0;
-		flex-direction: column;
-		position: -webkit-sticky;
-		position: sticky;
 		height: max-content;
 	}
 }

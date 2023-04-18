@@ -1,20 +1,24 @@
 import { useCallback, useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { getProjectCards } from '@/lib/api/projects'
-import Container from '@/components/Layout/Container/Container'
-import CardList from '@/components/UI/ProjectCard/CardList'
-import Technologies from '@/components/UI/Technologies/Technologies'
-import { ITechnology } from '@/interfaces/global'
-import { IProjectCard } from '@/interfaces/project'
+import { getProjectCards } from '@/lib/api/getProject'
 import styles from '@/styles/Projects.module.css'
 
-interface props {
+import Container from '@/components/Layout/Container'
+import Technologies from '@/components/UI/Technologies'
+import Cards from '@/components/UI/Cards'
+import { ITechnology } from '@/interfaces/global'
+import { IProjectCard } from '@/interfaces/project'
+
+interface ProjectProps {
 	projectList: IProjectCard[]
 	technologyList: ITechnology[]
 }
 
-function Projects({ projectList, technologyList }: props): JSX.Element {
+export default function Projects({
+	projectList,
+	technologyList
+}: ProjectProps): JSX.Element {
 	const { query } = useRouter()
 	const [filteredProjects, setFilteredProjects] = useState(projectList)
 
@@ -48,20 +52,17 @@ function Projects({ projectList, technologyList }: props): JSX.Element {
 
 			<Container header="Projects">
 				<p className={styles.description}>
-					Here are some of my personal projects I have completed so far. You can
-					easily filter the projects by technology by selecting the desired
-					technology.
+					Here are some of my personal projects I have completed so far. You can easily
+					filter the projects by technology by selecting the desired technology.
 				</p>
 
 				<Technologies technologies={technologyList} />
 
-				<CardList projectList={filteredProjects} />
+				<Cards type="project" data={filteredProjects} />
 			</Container>
 		</>
 	)
 }
-
-export default Projects
 
 export async function getStaticProps() {
 	const { projectList, technologyList } = await getProjectCards()

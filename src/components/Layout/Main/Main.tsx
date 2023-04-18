@@ -10,7 +10,7 @@ const Main = ({ children }: MainProps): JSX.Element => {
 
 	return (
 		<>
-			{!asPath.includes('studio') && <Navbar />}
+			{!asPath.includes('studio') ? <Navbar /> : null}
 			{asPath === '/' || asPath.includes('studio') ? (
 				<main>{children}</main>
 			) : (
@@ -28,7 +28,7 @@ const Main = ({ children }: MainProps): JSX.Element => {
 					</AnimatePresence>
 				</>
 			)}
-			{asPath !== '/' && !asPath.includes('studio') && <Footer />}
+			{asPath !== '/' && !asPath.includes('studio') ? <Footer /> : null}
 		</>
 	)
 }

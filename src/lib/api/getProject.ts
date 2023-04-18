@@ -3,7 +3,7 @@ import { client } from '@/lib/sanity/client/sanity.client'
 import { ITechnology } from '@/interfaces/global'
 import { IProjectCard, IProjectDetails } from '@/interfaces/project'
 
-export async function getProjectCards() {
+async function getProjectCards() {
 	const query = groq`*[_type == "projects"]{
     slug,
     theme,
@@ -35,7 +35,7 @@ export async function getProjectCards() {
 	}
 }
 
-export async function getProjectsPaths() {
+async function getProjectsPaths() {
 	const query = groq`*[_type == "projects" && defined(slug.current)][]{
       "params": { "slug": slug.current }
     }`
@@ -43,7 +43,7 @@ export async function getProjectsPaths() {
 	return await client.fetch<string[]>(query)
 }
 
-export async function getProjectData(queryParams: { slug: string | string[] }) {
+async function getProjectData(queryParams: { slug: string | string[] }) {
 	const query = groq`*[_type == "projects" && slug.current == $slug][0]{
     title,
     type->,
@@ -61,3 +61,5 @@ export async function getProjectData(queryParams: { slug: string | string[] }) {
 
 	return await client.fetch<IProjectDetails>(query, queryParams)
 }
+
+export { getProjectCards, getProjectsPaths, getProjectData }

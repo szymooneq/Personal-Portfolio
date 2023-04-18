@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Layout from '@/components/Layout/Layout'
 import useFoucFix from '@/lib/helpers/useFoucFix'
-// import '@/styles/globals.css'
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
 	useFoucFix()

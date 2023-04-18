@@ -3,22 +3,19 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { PreviewSuspense } from 'next-sanity/preview'
 import { getPostData, getPostPaths } from '@/lib/api/getPost'
-import Post from '@/components/Post/Post'
-const ProjectPreview = lazy(() => import('@/components/Project/PreviewProject'))
+
+import Post from '@/components/Post'
+const Preview = lazy(() => import('@/components/Project/Preview'))
 import { IPostDetails } from '@/interfaces/post'
 
-interface props {
+interface PageProps {
 	preview: boolean
 	postData: IPostDetails
 	queryParams: {}
 }
 
 // TODO: add page keywords to CMS
-export default function Page({
-	preview,
-	postData,
-	queryParams
-}: props): JSX.Element {
+export default function Page({ preview, postData, queryParams }: PageProps): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -28,7 +25,7 @@ export default function Page({
 
 			{preview ? (
 				<PreviewSuspense fallback="Loading...">
-					<ProjectPreview queryParams={queryParams} />
+					<Preview queryParams={queryParams} />
 				</PreviewSuspense>
 			) : (
 				<Post postData={postData} />
@@ -39,16 +36,14 @@ export default function Page({
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await getPostPaths()
+
 	return {
 		paths,
 		fallback: false
 	}
 }
 
-export const getStaticProps: GetStaticProps = async ({
-	params,
-	preview = false
-}) => {
+export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
 	const queryParams = { slug: params?.slug ?? `` }
 
 	if (preview) {

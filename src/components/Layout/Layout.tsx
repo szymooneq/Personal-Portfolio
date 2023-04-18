@@ -1,16 +1,11 @@
 import Head from 'next/head'
-// import { DefaultTheme, ThemeProvider as StyledProvider } from 'styled-components'
 import { ThemeProvider } from 'next-themes'
 import NextNProgress from 'nextjs-progressbar'
-import Main from './Main/Main'
-// import GlobalStyle from '../globalstyles'
 import { LayoutProps } from './Layout.types'
-// import { base, lightTheme, darkTheme } from '@/lib/themes'
+import Main from '@/components/Layout/Main'
 
 // TODO: check keywords
 const Layout = ({ children }: LayoutProps): JSX.Element => {
-	// const theme: DefaultTheme = { ...base, ...lightTheme }
-
 	return (
 		<ThemeProvider enableSystem={true}>
 			<Head>
@@ -29,8 +24,6 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 				<meta name="msapplication-TileColor" content="#121317" />
 				<meta name="theme-color" content="#121317" />
 			</Head>
-
-			{/* <GlobalStyle /> */}
 
 			<NextNProgress
 				color="linear-gradient(to bottom right, rgb(93, 93, 255), darkorchid)"

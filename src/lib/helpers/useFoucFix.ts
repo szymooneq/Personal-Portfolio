@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 // Temporary fix to avoid flash of unstyled content (FOUC) during route transitions.
 // Keep an eye on this issue and remove this code when resolved: https://github.com/vercel/next.js/issues/17464
@@ -10,14 +10,14 @@ const useFoucFix = () =>
 		).map((element) => ({
 			element,
 			href: element.getAttribute('href')
-		}));
+		}))
 
 		// Remove the `data-n-p` attribute to prevent Next.js from removing it early.
 		ssrPageStyleSheetsEntries.forEach(({ element }) =>
 			element.removeAttribute('data-n-p')
-		);
+		)
 
-		const fixedStyleHrefs: string[] = [];
+		const fixedStyleHrefs: string[] = []
 
 		const mutationHandler = (mutations: { target: any }[]) => {
 			// Gather all <style data-n-href="/..."> elements.
@@ -29,50 +29,47 @@ const useFoucFix = () =>
 				.map(({ target }) => ({
 					element: target,
 					href: target.getAttribute('data-n-href')
-				}));
+				}))
 
 			// Cycle through them and either:
 			// - Remove the `data-n-href` attribute to prevent Next.js from removing it early.
 			// - Remove the element if it's already present.
 			newStyleEntries.forEach(({ element, href }) => {
-				const styleExists = fixedStyleHrefs.includes(href);
+				const styleExists = fixedStyleHrefs.includes(href)
 
 				if (styleExists) {
-					element.remove();
+					element.remove()
 				} else {
-					element.setAttribute('data-fouc-fix-n-href', href);
-					element.removeAttribute('data-n-href');
-					fixedStyleHrefs.push(href);
+					element.setAttribute('data-fouc-fix-n-href', href)
+					element.removeAttribute('data-n-href')
+					fixedStyleHrefs.push(href)
 				}
-			});
+			})
 
 			// Cycle through the server-side rendered stylesheets and remove the ones that
 			// are already present as inline <style> tags added by Next.js, so that we don't have duplicate styles.
-			ssrPageStyleSheetsEntries = ssrPageStyleSheetsEntries.reduce(
-				(entries, entry) => {
-					const { element, href } = entry;
-					const styleExists = fixedStyleHrefs.includes(href as string);
+			ssrPageStyleSheetsEntries = ssrPageStyleSheetsEntries.reduce((entries, entry) => {
+				const { element, href } = entry
+				const styleExists = fixedStyleHrefs.includes(href as string)
 
-					if (styleExists) {
-						element.remove();
-					} else {
-						entries.push(entry as never);
-					}
+				if (styleExists) {
+					element.remove()
+				} else {
+					entries.push(entry as never)
+				}
 
-					return entries;
-				},
-				[]
-			);
-		};
+				return entries
+			}, [])
+		}
 
-		const observer = new MutationObserver(mutationHandler);
+		const observer = new MutationObserver(mutationHandler)
 
 		observer.observe(document.head, {
 			subtree: true,
 			attributeFilter: ['media']
-		});
+		})
 
-		return () => observer.disconnect();
-	}, []);
+		return () => observer.disconnect()
+	}, [])
 
-export default useFoucFix;
+export default useFoucFix

@@ -1,11 +1,9 @@
-import styles from '@/components/Layout/Navbar/Navbar.module.css';
+import styles from './Logo.module.css'
 
-function Logo(): JSX.Element {
-	return (
-		<div className={styles.logo}>
-			<div className={styles.logoContent}>SD</div>
-		</div>
-	);
-}
+const Logo = (): JSX.Element => (
+	<div className={styles.logo}>
+		<div className={styles.logoContent}>SD</div>
+	</div>
+)
 
-export default Logo;
+export default Logo

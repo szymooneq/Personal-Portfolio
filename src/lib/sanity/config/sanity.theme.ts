@@ -1,4 +1,4 @@
-import { buildLegacyTheme } from 'sanity';
+import { buildLegacyTheme } from 'sanity'
 
 // TODO: sanity theme fix
 const props = {
@@ -8,7 +8,7 @@ const props = {
 	'--my-red': '#db4437',
 	'--my-yellow': '#f4b400',
 	'--my-green': '#0f9d58'
-};
+}
 
 export const myTheme = buildLegacyTheme({
 	/* Base theme colors */
@@ -42,4 +42,4 @@ export const myTheme = buildLegacyTheme({
 	'--main-navigation-color--inverted': props['--my-white'],
 
 	'--focus-color': props['--my-blue']
-});
+})

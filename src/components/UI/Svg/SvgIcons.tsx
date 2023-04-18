@@ -11,7 +11,7 @@ const linkedinIcon: JSX.Element = (
 			fill="currentColor"
 		/>
 	</svg>
-);
+)
 
 const githubIcon: JSX.Element = (
 	<svg
@@ -27,7 +27,7 @@ const githubIcon: JSX.Element = (
 			fill="currentColor"
 		/>
 	</svg>
-);
+)
 
 const discordIcon: JSX.Element = (
 	<svg
@@ -41,17 +41,13 @@ const discordIcon: JSX.Element = (
 			d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418Z"
 		/>
 	</svg>
-);
+)
 
 const vercelIcon: JSX.Element = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="256"
-		height="222"
-		viewBox="0 0 256 222">
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="222" viewBox="0 0 256 222">
 		<path fill="currentColor" d="m128 0l128 221.705H0z" />
 	</svg>
-);
+)
 
 const downloadIcon: JSX.Element = (
 	<svg
@@ -81,7 +77,7 @@ const downloadIcon: JSX.Element = (
 			fill="currentColor"
 		/>
 	</svg>
-);
+)
 
 const contactIcon: JSX.Element = (
 	<svg
@@ -103,7 +99,7 @@ const contactIcon: JSX.Element = (
 			fill="currentColor"
 		/>
 	</svg>
-);
+)
 
 const rightCircleArrow: JSX.Element = (
 	<svg
@@ -122,7 +118,7 @@ const rightCircleArrow: JSX.Element = (
 			d="M139.7 88.4a8 8 0 0 0-11.3 11.3l20.3 20.3H88a8 8 0 0 0 0 16h60.7l-20.3 20.3a8 8 0 0 0 0 11.3a7.8 7.8 0 0 0 5.7 2.3a7.6 7.6 0 0 0 5.6-2.3l34-33.9a8.1 8.1 0 0 0 0-11.4Z"
 		/>
 	</svg>
-);
+)
 
 const rightUpCircleArrow: JSX.Element = (
 	<svg
@@ -141,7 +137,7 @@ const rightUpCircleArrow: JSX.Element = (
 			d="M156 92h-48a8 8 0 0 0 0 16h28.7l-42.4 42.3a8.1 8.1 0 0 0 0 11.4a8.2 8.2 0 0 0 11.4 0l42.3-42.4V148a8 8 0 0 0 16 0v-48a8 8 0 0 0-8-8Z"
 		/>
 	</svg>
-);
+)
 
 const layoutIcon: JSX.Element = (
 	<svg
@@ -150,17 +146,13 @@ const layoutIcon: JSX.Element = (
 		height="1em"
 		preserveAspectRatio="xMidYMid meet"
 		viewBox="0 0 256 256">
-		<path
-			fill="currentColor"
-			d="M104 104v104H40a8 8 0 0 1-8-8v-96Z"
-			opacity=".2"
-		/>
+		<path fill="currentColor" d="M104 104v104H40a8 8 0 0 1-8-8v-96Z" opacity=".2" />
 		<path
 			fill="currentColor"
 			d="M216 40H40a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16ZM40 56h176v40H40Zm0 56h56v88H40Zm176 88H112v-88h104v88Z"
 		/>
 	</svg>
-);
+)
 
 const penIcon: JSX.Element = (
 	<svg
@@ -179,7 +171,7 @@ const penIcon: JSX.Element = (
 			d="M232 92.7L163.3 24a16.1 16.1 0 0 0-22.6 0l-25.1 25.1l-58.1 21.8a15.9 15.9 0 0 0-10.1 12.3L24.1 222.7A7.9 7.9 0 0 0 32 232h1.3l139.5-23.2a16.2 16.2 0 0 0 12.3-10.2l21.8-58.1l25.1-25.2a16.1 16.1 0 0 0 0-22.6Zm-61.9 100.2L55.3 212l47.4-47.4A27.1 27.1 0 0 0 116 168a28 28 0 1 0-28-28a27.1 27.1 0 0 0 3.4 13.3L44 200.7L63.1 85.9L118 65.3l72.7 72.7ZM104 140a12 12 0 1 1 12 12a12 12 0 0 1-12-12Zm96-15.3L131.3 56L152 35.3l68.7 68.7Z"
 		/>
 	</svg>
-);
+)
 
 const cubeIcon: JSX.Element = (
 	<svg
@@ -198,7 +190,7 @@ const cubeIcon: JSX.Element = (
 			d="M229.9 70.8a.1.1 0 0 1-.1-.1a16.2 16.2 0 0 0-6-5.9l-88-49.5a16 16 0 0 0-15.6 0l-88 49.5a16.2 16.2 0 0 0-6 5.9a.1.1 0 0 1-.1.1v.2a15 15 0 0 0-2.1 7.7v98.6a16.1 16.1 0 0 0 8.2 14l88 49.5a16.5 16.5 0 0 0 7.2 2h1.4a16.1 16.1 0 0 0 7-2l88-49.5a16.1 16.1 0 0 0 8.2-14V78.7a15.6 15.6 0 0 0-2.1-7.9ZM128 29.2L207.7 74l-78.8 44.8L48.4 74ZM40 87.6l80.9 45.1l-.8 89.7L40 177.3Zm96.1 134.7l.8-89.6l79.1-45v89.6Z"
 		/>
 	</svg>
-);
+)
 
 const userFaceID: JSX.Element = (
 	<svg
@@ -212,53 +204,37 @@ const userFaceID: JSX.Element = (
 			d="M88 112a40 40 0 0 1 80 0a39.5 39.5 0 0 1-13.1 29.5a69.1 69.1 0 0 1 33.3 30.8a7.8 7.8 0 0 1-.3 7.8a7.9 7.9 0 0 1-6.8 3.9H74.9a7.9 7.9 0 0 1-6.8-3.9a7.8 7.8 0 0 1-.3-7.8a69.1 69.1 0 0 1 33.3-30.8A39.5 39.5 0 0 1 88 112ZM40 84a8 8 0 0 0 8-8V48h28a8 8 0 0 0 0-16H48a16 16 0 0 0-16 16v28a8 8 0 0 0 8 8Zm176 88a8 8 0 0 0-8 8v28h-28a8 8 0 0 0 0 16h28a16 16 0 0 0 16-16v-28a8 8 0 0 0-8-8Zm-8-140h-28a8 8 0 0 0 0 16h28v28a8 8 0 0 0 16 0V48a16 16 0 0 0-16-16ZM76 208H48v-28a8 8 0 0 0-16 0v28a16 16 0 0 0 16 16h28a8 8 0 0 0 0-16Z"
 		/>
 	</svg>
-);
+)
 
 const copyIcon: JSX.Element = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="256"
-		height="256"
-		viewBox="0 0 256 256">
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<path
 			fill="currentColor"
 			d="M224 40v144a8 8 0 0 1-16 0V48H72a8 8 0 0 1 0-16h144a8 8 0 0 1 8 8Zm-32 32v144a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8Zm-16 8H48v128h128Z"
 		/>
 	</svg>
-);
+)
 
 const clipboardIcon: JSX.Element = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="256"
-		height="256"
-		viewBox="0 0 256 256">
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<path
 			fill="currentColor"
 			d="M168 152a8 8 0 0 1-8 8H96a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-8-40H96a8 8 0 0 0 0 16h64a8 8 0 0 0 0-16Zm56-64v168a16 16 0 0 1-16 16H56a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h36.3a47.8 47.8 0 0 1 71.4 0H200a16 16 0 0 1 16 16ZM96 64h64a32 32 0 0 0-64 0Zm104-16h-26.8a47.2 47.2 0 0 1 2.8 16v8a8 8 0 0 1-8 8H88a8 8 0 0 1-8-8v-8a47.2 47.2 0 0 1 2.8-16H56v168h144Z"
 		/>
 	</svg>
-);
+)
 
 const sunIcon: JSX.Element = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="256"
-		height="256"
-		viewBox="0 0 256 256">
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<g fill="currentColor">
 			<path d="M184 128a56 56 0 1 1-56-56a56 56 0 0 1 56 56Z" opacity=".2" />
 			<path d="M120 40V16a8 8 0 0 1 16 0v24a8 8 0 0 1-16 0Zm72 88a64 64 0 1 1-64-64a64.07 64.07 0 0 1 64 64Zm-16 0a48 48 0 1 0-48 48a48.05 48.05 0 0 0 48-48ZM58.34 69.66a8 8 0 0 0 11.32-11.32l-16-16a8 8 0 0 0-11.32 11.32Zm0 116.68l-16 16a8 8 0 0 0 11.32 11.32l16-16a8 8 0 0 0-11.32-11.32ZM192 72a8 8 0 0 0 5.66-2.34l16-16a8 8 0 0 0-11.32-11.32l-16 16A8 8 0 0 0 192 72Zm5.66 114.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32-11.32ZM48 128a8 8 0 0 0-8-8H16a8 8 0 0 0 0 16h24a8 8 0 0 0 8-8Zm80 80a8 8 0 0 0-8 8v24a8 8 0 0 0 16 0v-24a8 8 0 0 0-8-8Zm112-88h-24a8 8 0 0 0 0 16h24a8 8 0 0 0 0-16Z" />
 		</g>
 	</svg>
-);
+)
 
 const moonIcon: JSX.Element = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="256"
-		height="256"
-		viewBox="0 0 256 256">
+	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<g fill="currentColor">
 			<path
 				d="M227.89 147.89A96 96 0 1 1 108.11 28.11a96.09 96.09 0 0 0 119.78 119.78Z"
@@ -267,7 +243,7 @@ const moonIcon: JSX.Element = (
 			<path d="M233.54 142.23a8 8 0 0 0-8-2a88.08 88.08 0 0 1-109.8-109.8a8 8 0 0 0-10-10a104.84 104.84 0 0 0-52.91 37A104 104 0 0 0 136 224a103.09 103.09 0 0 0 62.52-20.88a104.84 104.84 0 0 0 37-52.91a8 8 0 0 0-1.98-7.98Zm-44.64 48.11A88 88 0 0 1 65.66 67.11a89 89 0 0 1 31.4-26A106 106 0 0 0 96 56a104.11 104.11 0 0 0 104 104a106 106 0 0 0 14.92-1.06a89 89 0 0 1-26.02 31.4Z" />
 		</g>
 	</svg>
-);
+)
 
 export {
 	linkedinIcon,
@@ -286,4 +262,4 @@ export {
 	clipboardIcon,
 	sunIcon,
 	moonIcon
-};
+}

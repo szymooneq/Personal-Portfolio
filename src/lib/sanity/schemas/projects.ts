@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
 	name: 'projects',
@@ -122,8 +122,8 @@ export default defineType({
 			media: 'thumbnail'
 		},
 		prepare(selection) {
-			const { type } = selection;
-			return { ...selection, subtitle: type && `${type}` };
+			const { type } = selection
+			return { ...selection, subtitle: type && `${type}` }
 		}
 	}
-});
+})

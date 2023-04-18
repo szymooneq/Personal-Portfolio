@@ -1,11 +1,13 @@
 import Link from 'next/link'
+import { ProjectProps } from './Project.types'
+import styles from './Project.module.css'
+
+import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons'
 import Container from '@/components/Layout/Container/Container'
 import Slider from '@/components/UI/Slider/Slider'
 import Technologies from '@/components/UI/Technologies/Technologies'
 import BackButton from '@/components/UI/BackButton/BackButton'
-import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons'
-import { IProjectDetails } from '@/interfaces/project'
-import styles from './Project.module.css'
+import List from './List'
 
 const projectLinks = [
 	{
@@ -20,87 +22,61 @@ const projectLinks = [
 	}
 ]
 
-interface ListProps {
-	children: React.ReactNode
-	type?: string
-	title?: string
-}
+const Project = ({ projectData }: ProjectProps): JSX.Element => (
+	<Container>
+		<header>
+			<h1 className={styles.title}>
+				{projectData.title} - {projectData.type.title}
+			</h1>
+			<p className={styles.description}>{projectData.description}</p>
+		</header>
 
-function List({ type, title, children }: ListProps): JSX.Element {
-	return type === 'list' ? (
-		<div className={styles.list}>
-			<h2>{title}</h2>
-			<ul>{children}</ul>
+		<div className={styles.links}>
+			{projectLinks.map((link, id) => (
+				<Link
+					key={id}
+					href={projectData.links[id].url}
+					className={styles.link}
+					target="_blank"
+					rel="noreferrer">
+					{link.link}
+					{link.icon}
+				</Link>
+			))}
 		</div>
-	) : (
-		<div className={styles.list}>
-			<h2>{title}</h2>
-			{children}
-		</div>
-	)
-}
 
-interface ProjectProps {
-	projectData: IProjectDetails
-}
+		<Slider images={projectData.images} />
 
-function Project({ projectData }: ProjectProps): JSX.Element {
-	return (
-		<Container>
-			<header>
-				<h1 className={styles.title}>
-					{projectData.title} - {projectData.type.title}
-				</h1>
-				<p className={styles.description}>{projectData.description}</p>
-			</header>
+		<List title="Main technologies">
+			<Technologies technologies={projectData.technologies} />
+		</List>
 
-			<div className={styles.links}>
-				{projectLinks.map((link, id) => (
-					<Link
-						key={id}
-						href={projectData.links[id].url}
-						className={styles.link}
-						target="_blank"
-						rel="noreferrer">
-						{link.link}
-						{link.icon}
-					</Link>
-				))}
-			</div>
-
-			<Slider images={projectData.images} />
-
-			<List title="Main technologies">
-				<Technologies technologies={projectData.technologies} />
-			</List>
-
-			{projectData.stack.length > 0 && (
-				<List type="list" title="Stack">
-					{projectData.stack.map((item) => (
-						<li key={item.title}>
-							<Link
-								href={item.url}
-								className={styles.stackUrl}
-								target="_blank"
-								rel="noreferrer"
-								aria-label={`Link to ${item.title} page`}>
-								{item.title}
-							</Link>{' '}
-							- {item.description}
-						</li>
-					))}
-				</List>
-			)}
-
-			<List type="list" title="Details">
-				{projectData.details.map((detail) => (
-					<li key={detail}>{detail}</li>
+		{projectData.stack.length > 0 ? (
+			<List type="list" title="Stack">
+				{projectData.stack.map((item) => (
+					<li key={item.title}>
+						<Link
+							href={item.url}
+							className={styles.stackUrl}
+							target="_blank"
+							rel="noreferrer"
+							aria-label={`Link to ${item.title} page`}>
+							{item.title}
+						</Link>{' '}
+						- {item.description}
+					</li>
 				))}
 			</List>
+		) : null}
 
-			<BackButton href="/projects" />
-		</Container>
-	)
-}
+		<List type="list" title="Details">
+			{projectData.details.map((detail) => (
+				<li key={detail}>{detail}</li>
+			))}
+		</List>
+
+		<BackButton href="/projects" />
+	</Container>
+)
 
 export default Project

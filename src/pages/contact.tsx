@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { contactLinks } from '@/lib/helpers/contactLinks'
-import Container from '@/components/Layout/Container/Container'
-import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons'
 import styles from '@/styles/Contact.module.css'
+
+import Container from '@/components/Layout/Container'
+import { cubeIcon, layoutIcon, penIcon } from '@/components/UI/Svg/SvgIcons'
 
 const cards = [
 	{
@@ -36,7 +37,7 @@ const contactTypes = [
 	}
 ]
 
-function Contact(): JSX.Element {
+export default function Contact(): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -54,8 +55,8 @@ function Contact(): JSX.Element {
 						<div>
 							<h2 className={styles.title}>Get in Touch ✨</h2>
 							<p className={styles.subText}>
-								I&apos;m always ready to collaborate on a project or hear about
-								an opportunity!
+								I&apos;m always ready to collaborate on a project or hear about an
+								opportunity!
 							</p>
 						</div>
 						<div className={styles.types}>
@@ -94,26 +95,14 @@ function Contact(): JSX.Element {
 							<label htmlFor="name" hidden>
 								Enter your name
 							</label>
-							<input
-								type="text"
-								name="name"
-								id="name"
-								placeholder="Name"
-								required
-							/>
+							<input type="text" name="name" id="name" placeholder="Name" required />
 						</div>
 
 						<div className={styles.field}>
 							<label htmlFor="email" hidden>
 								Enter your e-mail
 							</label>
-							<input
-								type="email"
-								name="email"
-								id="email"
-								placeholder="E-mail"
-								required
-							/>
+							<input type="email" name="email" id="email" placeholder="E-mail" required />
 						</div>
 
 						<div className={styles.field}>
@@ -148,5 +137,3 @@ function Contact(): JSX.Element {
 		</>
 	)
 }
-
-export default Contact

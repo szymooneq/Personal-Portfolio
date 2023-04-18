@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import urlFor from '@/lib/sanity/client/urlFor';
-import styles from './RichText.module.css';
+import Link from 'next/link'
+import Image from 'next/image'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import urlFor from '@/lib/sanity/client/urlFor'
+import styles from './RichText.module.css'
 
-export const RichTextComponents = {
+const RichText = {
 	block: {
 		normal: ({ children }: any) => <p className={styles.normal}>{children}</p>,
 		h1: ({ children }: any) => <h1 className={styles.h1}>{children}</h1>,
@@ -22,7 +22,7 @@ export const RichTextComponents = {
 				<Link href="/" className={styles.link}>
 					{props.children}
 				</Link>
-			);
+			)
 		}
 	},
 	list: {
@@ -44,4 +44,6 @@ export const RichTextComponents = {
 			</div>
 		)
 	}
-};
+}
+
+export default RichText

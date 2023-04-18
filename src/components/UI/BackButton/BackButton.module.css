@@ -6,8 +6,8 @@
 	width: max-content;
 	font-size: var(--project-desc);
 	letter-spacing: -3px;
-	background-color: var(--bg-secondary-color);
 	border-radius: var(--card-border-radius);
+	background-color: var(--bg-secondary-color);
 	box-shadow: var(--box-shadow);
 }
 
@@ -19,12 +19,12 @@
 	content: '';
 	position: absolute;
 	inset: 0;
-	background-color: var(--primary-color);
 	border-radius: var(--card-border-radius);
+	background-color: var(--primary-color);
 	filter: blur(10px);
 	opacity: 0;
 	z-index: -1;
-	transition: 0.5s;
+	transition: opacity 0.5s;
 }
 
 .backButton:hover::after {

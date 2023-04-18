@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity/client/sanity.client'
 import { IPostCard, IPostDetails } from '@/interfaces/post'
 
-export async function getPostList() {
+async function getPostList() {
 	const query = groq`*[_type == "post"]{
     slug,
     mainImage,
@@ -18,7 +18,7 @@ export async function getPostList() {
 	}
 }
 
-export async function getPostPaths() {
+async function getPostPaths() {
 	const query = groq`*[_type == "post" && defined(slug.current)][]{
       "params": { "slug": slug.current }
     }`
@@ -26,7 +26,7 @@ export async function getPostPaths() {
 	return await client.fetch<string[]>(query)
 }
 
-export async function getPostData(queryParams: { slug: string | string[] }) {
+async function getPostData(queryParams: { slug: string | string[] }) {
 	const query = groq`*[_type == "post" && slug.current == $slug][0]{
     mainImage,
     title,
@@ -39,3 +39,5 @@ export async function getPostData(queryParams: { slug: string | string[] }) {
 
 	return await client.fetch<IPostDetails>(query, queryParams)
 }
+
+export { getPostList, getPostPaths, getPostData }

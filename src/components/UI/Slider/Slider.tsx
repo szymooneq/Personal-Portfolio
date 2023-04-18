@@ -1,15 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { motion as m } from 'framer-motion'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { IImage } from '@/interfaces/global'
+import { SliderProps } from './Slider.types'
 import styles from './Slider.module.css'
-import Image from 'next/image'
 
-interface props {
-	images: IImage[]
-}
-
-function Slider({ images }: props): JSX.Element {
+const Slider = ({ images }: SliderProps): JSX.Element => {
 	const [width, setWidth] = useState<number>(0)
 	const slider = useRef() as React.MutableRefObject<HTMLDivElement>
 
@@ -33,12 +29,7 @@ function Slider({ images }: props): JSX.Element {
 				}}>
 				{images.map((image, id) => (
 					<div key={id} className={styles.image}>
-						<Image
-							src={urlFor(image).url()}
-							alt={image.alt}
-							width={1920}
-							height={919}
-						/>
+						<Image src={urlFor(image).url()} alt={image.alt} width={1920} height={919} />
 					</div>
 				))}
 			</m.div>

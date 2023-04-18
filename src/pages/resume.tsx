@@ -1,12 +1,13 @@
-import { Fragment } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
-import { contactLinks } from '@/lib/helpers/contactLinks';
-import Container from '@/components/Layout/Container/Container';
-import { rightUpCircleArrow } from '@/components/UI/Svg/SvgIcons';
-import resumeAvatar from '@/assets/resumeAvatar.jpg';
-import styles from '@/styles/Resume.module.css';
+import { Fragment } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import { contactLinks } from '@/lib/helpers/contactLinks'
+import styles from '@/styles/Resume.module.css'
+
+import Container from '@/components/Layout/Container'
+import { rightUpCircleArrow } from '@/components/UI/Svg/SvgIcons'
+import resumeAvatar from '@/assets/resumeAvatar.jpg'
 
 const educationList = [
 	{
@@ -62,7 +63,7 @@ const educationList = [
 		timeline: 'Jan 2023',
 		description: ''
 	}
-];
+]
 
 const stackList = [
 	'JavaScript | TypeScript | React.js | Next.js | Vite',
@@ -74,14 +75,14 @@ const stackList = [
 	'MySQL | Firebase | Sanity CMS | Strapi CMS',
 	'Git | GitHub',
 	'VSCode | Figma | Adobe Photoshop'
-];
+]
 
 const hobbyList = [
 	'Travel | Gaming | Web Design | Technology',
 	'Aircraft | Photography | Football'
-];
+]
 
-function Resume(): JSX.Element {
+export default function Resume(): JSX.Element {
 	return (
 		<Container header="Resume" className={styles.main}>
 			<Head>
@@ -100,12 +101,15 @@ function Resume(): JSX.Element {
 						</div>
 						<div className={styles.avatarMsg}>What&apos;s up!</div>
 					</div>
+
 					<h2 className={styles.sectionTitle}>Szymon Dudka</h2>
 					<h2 className={styles.subTitle}>Frontend Developer</h2>
+
 					<div className={styles.contact}>
 						<h3>szymooneq@zohomail.eu</h3>
 						<h3>www.szymondudka.xyz</h3>
 					</div>
+
 					<div className={styles.contactButtons}>
 						<Link className={styles.button} href="contact">
 							Contact Me
@@ -119,6 +123,7 @@ function Resume(): JSX.Element {
 						</Link>
 					</div>
 				</div>
+
 				<div className={styles.card}>
 					{contactLinks.map((link, id) => (
 						<Fragment key={link.name}>
@@ -135,20 +140,21 @@ function Resume(): JSX.Element {
 					))}
 				</div>
 			</section>
+
 			<section>
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>About me</h2>
 					<div>
 						<p className={styles.sectionDescription}>
 							I implement responsive and user-friendly interfaces and API-based
-							applications. I&apos;m constantly gaining new knowledge by
-							creating and improving projects which help me practice my skills.
-							My goal is work in a team that specializes in commercial projects.
-							This would give me a chance to further improve my skills and gain
-							valuable experience.
+							applications. I&apos;m constantly gaining new knowledge by creating and
+							improving projects which help me practice my skills. My goal is work in a
+							team that specializes in commercial projects. This would give me a chance to
+							further improve my skills and gain valuable experience.
 						</p>
 					</div>
 				</div>
+
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Education & Courses</h2>
 					<ul>
@@ -161,12 +167,14 @@ function Resume(): JSX.Element {
 						))}
 					</ul>
 				</div>
+
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Projects</h2>
 					<Link className={styles.button} href="projects">
 						Go to Projects
 					</Link>
 				</div>
+
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Stack</h2>
 					<ul>
@@ -177,6 +185,7 @@ function Resume(): JSX.Element {
 						))}
 					</ul>
 				</div>
+
 				<div className={styles.section}>
 					<h2 className={styles.sectionTitle}>Hobby / Interest</h2>
 					<ul>
@@ -189,7 +198,5 @@ function Resume(): JSX.Element {
 				</div>
 			</section>
 		</Container>
-	);
+	)
 }
-
-export default Resume;

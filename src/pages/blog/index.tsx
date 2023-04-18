@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import { getPostList } from '@/lib/api/getPost'
-import Container from '@/components/Layout/Container/Container'
-import PostCards from '@/components/UI/PostCard/PostCards'
-import { IPostCard } from '@/interfaces/post'
 import styles from '@/styles/Projects.module.css'
 
-interface props {
+import { IPostCard } from '@/interfaces/post'
+import Container from '@/components/Layout/Container'
+import Cards from '@/components/UI/Cards'
+
+interface BlogProps {
 	postList: IPostCard[]
 }
 
-function Blog({ postList }: props): JSX.Element {
+export default function Blog({ postList }: BlogProps): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -22,17 +23,15 @@ function Blog({ postList }: props): JSX.Element {
 
 			<Container header="Blog">
 				<p className={styles.description}>
-					Welcome to my blog! Here, I share my thoughts, ideas, and experiences
-					on various topics.
+					Welcome to my blog! Here, I share my thoughts, ideas, and experiences on various
+					topics.
 				</p>
 
-				<PostCards postList={postList} />
+				<Cards type="post" data={postList} />
 			</Container>
 		</>
 	)
 }
-
-export default Blog
 
 export async function getStaticProps() {
 	const { postList } = await getPostList()

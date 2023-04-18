@@ -32,7 +32,7 @@
 	font-size: 1rem;
 	border: 1px solid var(--white);
 	border-radius: 2rem;
-	transition: 0.3s;
+	transition: color 0.3s, border-color 0.3s;
 }
 
 .backButton:hover {
