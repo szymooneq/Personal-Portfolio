@@ -245,6 +245,7 @@ const moonIcon: JSX.Element = (
 	</svg>
 )
 
+// TODO: icon nameing
 export {
 	linkedinIcon,
 	githubIcon,

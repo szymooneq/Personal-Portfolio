@@ -5,7 +5,7 @@ import { contactLinks } from '@/lib/helpers/contactLinks'
 import styles from '@/styles/Home.module.css'
 
 import Starfield from '@/components/UI/Starfield'
-import astronaut from '@/assets/astronaut.png'
+import { homeAstrounaut } from '@/assets/images'
 
 export default function Home(): JSX.Element {
 	return (
@@ -41,7 +41,7 @@ export default function Home(): JSX.Element {
 					</div>
 
 					<div className={styles.astronaut}>
-						<Image src={astronaut} alt="Flying astronaut" width={250} height={250} />
+						<Image src={homeAstrounaut} alt="Flying astronaut" width={250} height={250} />
 					</div>
 				</header>
 			</div>

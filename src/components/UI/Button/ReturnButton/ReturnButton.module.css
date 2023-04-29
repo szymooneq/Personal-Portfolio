@@ -1,4 +1,4 @@
-.backButton {
+.returnButton {
 	margin: 4rem auto;
 	padding: 2rem 5rem;
 	display: block;
@@ -11,11 +11,11 @@
 	box-shadow: var(--box-shadow);
 }
 
-.backButton:hover {
+.returnButton:hover {
 	color: var(--primary-color);
 }
 
-.backButton::after {
+.returnButton::after {
 	content: '';
 	position: absolute;
 	inset: 0;
@@ -27,6 +27,6 @@
 	transition: opacity 0.5s;
 }
 
-.backButton:hover::after {
+.returnButton:hover::after {
 	opacity: 0.7;
 }

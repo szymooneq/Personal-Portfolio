@@ -1,7 +1,7 @@
 import { IPostCard } from '@/interfaces/post'
 import { IProjectCard } from '@/interfaces/project'
 
-export interface CardsProps {
+export interface CardGridProps {
 	type: 'project' | 'post'
-	data: IPostCard[] | IProjectCard[]
+	content: IPostCard[] | IProjectCard[]
 }

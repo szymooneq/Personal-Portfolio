@@ -45,6 +45,67 @@
 	display: none;
 }
 
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 12px;
+	box-shadow: 0px 2px 8px -1px #0000001a;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 20;
+	transform: translateZ(0);
+	transition: filter 0.3s;
+}
+
+.logo::before {
+	content: '';
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	background: conic-gradient(
+		rgba(var(--text-primary), 0.502),
+		rgba(var(--text-primary), 0.251),
+		rgba(var(--text-primary), 0.188),
+		rgba(var(--text-primary), 0.125),
+		rgba(var(--text-primary), 0.063),
+		rgba(var(--text-primary), 0.063),
+		rgba(var(--text-primary), 0.502)
+	);
+	z-index: -1;
+	animation: 6s borderRotation linear infinite;
+}
+
+.logo::after {
+	content: '';
+	padding: 1px;
+	position: absolute;
+	inset: 0;
+	border-radius: 12px;
+	background: var(--main);
+	background-clip: content-box;
+	z-index: -1;
+}
+
+.logoContent {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #ffffff;
+	filter: drop-shadow(0 0 0.3rem #00000070);
+}
+
+@keyframes borderRotation {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
 .nav[data-home='true'] > .desktop .logo::before {
 	background: conic-gradient(
 		rgba(255, 255, 255, 0.502),

@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { throttle } from '@/lib/helpers/throttle'
 import Logo from '@/components/UI/Logo/Logo'
-import ThemeButton from '@/components/UI/ThemeButton/ThemeButton'
 import styles from './Navbar.module.css'
+import ThemeButton from '@/components/UI/Button/ThemeButton'
 
 const menuItems = [
 	{ title: 'Home', path: '/' },

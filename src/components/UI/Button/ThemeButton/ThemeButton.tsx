@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import styles from './ThemeButton.module.css'
 
-import { sunIcon, moonIcon } from '@/components/UI/Svg/SvgIcons'
+import * as icon from '@/assets/svg'
 
 const ThemeButton = () => {
 	const { systemTheme, theme, setTheme } = useTheme()
@@ -17,13 +17,6 @@ const ThemeButton = () => {
 	const currentTheme = theme === 'system' ? systemTheme : theme
 
 	const handleToggleTheme = () => {
-		/* if (
-			theme === 'system' &&
-			document.documentElement.getAttribute('data-theme')?.includes('dark')
-		) {
-			return setTheme('light')
-		} */
-
 		if (theme === 'light') return setTheme('dark')
 
 		setTheme('light')
@@ -41,7 +34,7 @@ const ThemeButton = () => {
 			/>
 			<label htmlFor="theme" aria-label="Toggle theme">
 				<div className={styles.themeIcon}>
-					{currentTheme === 'dark' ? moonIcon : sunIcon}
+					{currentTheme === 'dark' ? icon.moonIcon : icon.sunIcon}
 				</div>
 			</label>
 		</>

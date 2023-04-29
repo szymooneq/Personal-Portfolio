@@ -1,41 +1,41 @@
 import Link from 'next/link'
-import { ProjectProps } from './Project.types'
-import styles from './Project.module.css'
+import { ViewProps } from './View.types'
+import styles from './View.module.css'
 
-import { githubIcon, vercelIcon } from '@/components/UI/Svg/SvgIcons'
-import Container from '@/components/Layout/Container/Container'
-import Slider from '@/components/UI/Slider/Slider'
-import Technologies from '@/components/UI/Technologies/Technologies'
-import BackButton from '@/components/UI/BackButton/BackButton'
+import * as icon from '@/assets/svg'
+import Container from '@/components/Layout/Container'
+import Slider from '@/components/Project/Slider'
+import Technologies from '@/components/UI/Technologies'
+import * as Button from '@/components/UI/Button'
 import List from './List'
 
 const projectLinks = [
 	{
 		name: 'Vercel',
 		link: 'View live site',
-		icon: vercelIcon
+		icon: icon.vercelIcon
 	},
 	{
 		name: 'GitHub',
 		link: 'View source code',
-		icon: githubIcon
+		icon: icon.githubIcon
 	}
 ]
 
-const Project = ({ projectData }: ProjectProps): JSX.Element => (
+const View = ({ content }: ViewProps): JSX.Element => (
 	<Container>
 		<header>
 			<h1 className={styles.title}>
-				{projectData.title} - {projectData.type.title}
+				{content.title} - {content.type.title}
 			</h1>
-			<p className={styles.description}>{projectData.description}</p>
+			<p className={styles.description}>{content.description}</p>
 		</header>
 
 		<div className={styles.links}>
 			{projectLinks.map((link, id) => (
 				<Link
 					key={id}
-					href={projectData.links[id].url}
+					href={content.links[id].url}
 					className={styles.link}
 					target="_blank"
 					rel="noreferrer">
@@ -45,15 +45,15 @@ const Project = ({ projectData }: ProjectProps): JSX.Element => (
 			))}
 		</div>
 
-		<Slider images={projectData.images} />
+		<Slider images={content.images} />
 
 		<List title="Main technologies">
-			<Technologies technologies={projectData.technologies} />
+			<Technologies technologies={content.technologies} />
 		</List>
 
-		{projectData.stack.length > 0 ? (
+		{content.stack.length > 0 ? (
 			<List type="list" title="Stack">
-				{projectData.stack.map((item) => (
+				{content.stack.map((item) => (
 					<li key={item.title}>
 						<Link
 							href={item.url}
@@ -70,13 +70,13 @@ const Project = ({ projectData }: ProjectProps): JSX.Element => (
 		) : null}
 
 		<List type="list" title="Details">
-			{projectData.details.map((detail) => (
+			{content.details.map((detail) => (
 				<li key={detail}>{detail}</li>
 			))}
 		</List>
 
-		<BackButton href="/projects" />
+		<Button.ReturnButton href="/projects" />
 	</Container>
 )
 
-export default Project
+export default View

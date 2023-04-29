@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import { getProjectCards } from '@/lib/api/getProject'
 import styles from '@/styles/Projects.module.css'
 
-import Container from '@/components/Layout/Container'
 import Technologies from '@/components/UI/Technologies'
-import Cards from '@/components/UI/Cards'
+import CardGrid from '@/components/UI/CardGrid'
 import { ITechnology } from '@/interfaces/global'
 import { IProjectCard } from '@/interfaces/project'
+import Page from '@/components/Layout/Page'
 
 interface ProjectProps {
 	projectList: IProjectCard[]
@@ -41,7 +41,7 @@ export default function Projects({
 	}, [query.category, filterProjects])
 
 	return (
-		<>
+		<Page header="Projects">
 			<Head>
 				<title>Projects | Szymon Dudka</title>
 				<meta
@@ -50,17 +50,15 @@ export default function Projects({
 				/>
 			</Head>
 
-			<Container header="Projects">
-				<p className={styles.description}>
-					Here are some of my personal projects I have completed so far. You can easily
-					filter the projects by technology by selecting the desired technology.
-				</p>
+			<p className={styles.description}>
+				Here are some of my personal projects I have completed so far. You can easily
+				filter the projects by technology by selecting the desired technology.
+			</p>
 
-				<Technologies technologies={technologyList} />
+			<Technologies technologies={technologyList} />
 
-				<Cards type="project" data={filteredProjects} />
-			</Container>
-		</>
+			<CardGrid type="project" content={filteredProjects} />
+		</Page>
 	)
 }
 
