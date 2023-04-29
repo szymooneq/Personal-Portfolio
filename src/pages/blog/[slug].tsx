@@ -2,8 +2,8 @@ import { lazy } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { PreviewSuspense } from 'next-sanity/preview'
-import { getPostData, getPostPaths } from '@/lib/api/getPost'
 
+import { getPostData, getPostPaths } from '@/lib/api/getPost'
 import View from '@/components/Blog/View'
 const Preview = lazy(() => import('@/components/Project/Preview'))
 import { IPostDetails } from '@/interfaces/post'

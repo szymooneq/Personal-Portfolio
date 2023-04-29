@@ -26,14 +26,14 @@ const cards = [
 
 const contactTypes = [
 	{
-		smallTitle: 'want to call me?',
-		linkHref: 'https://discord.com/users/554988199529676800',
-		linkDesc: 'Schedule a call with me'
+		question: 'want to call me?',
+		href: 'https://discord.com/users/554988199529676800',
+		title: 'Schedule a call with me'
 	},
 	{
-		smallTitle: 'just want to email me?',
-		linkHref: 'mailto:szymooneq@zohomail.eu',
-		linkDesc: 'szymooneq@zohomail.eu'
+		question: 'just want to email me?',
+		href: 'mailto:szymooneq@zohomail.eu',
+		title: 'szymooneq@zohomail.eu'
 	}
 ]
 
@@ -60,14 +60,14 @@ export default function Contact(): JSX.Element {
 					</div>
 					<div className={styles.types}>
 						{contactTypes.map((link) => (
-							<div key={link.smallTitle}>
-								<p className={styles.smallTitle}>{link.smallTitle}</p>
+							<div key={link.question}>
+								<p className={styles.question}>{link.question}</p>
 								<Link
-									href={link.linkHref}
+									href={link.href}
 									target="_blank"
 									rel="noreferrer"
 									className={styles.link}>
-									{link.linkDesc}
+									{link.title}
 								</Link>
 							</div>
 						))}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '@/styles/About.module.css'
 import * as icon from '@/assets/svg'
+
 import Page from '@/components/Layout/Page'
 
 export default function About(): JSX.Element {

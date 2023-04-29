@@ -9,9 +9,6 @@ const securityHeaders = [
 
 const nextConfig = {
 	reactStrictMode: true,
-	compiler: {
-		styledComponents: true
-	},
 	swcMinify: true,
 	images: {
 		domains: ['cdn.sanity.io']

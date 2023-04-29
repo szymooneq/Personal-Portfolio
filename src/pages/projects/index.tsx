@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import { getProjectCards } from '@/lib/api/getProject'
 import styles from '@/styles/Projects.module.css'
 
+import Page from '@/components/Layout/Page'
 import Technologies from '@/components/UI/Technologies'
 import CardGrid from '@/components/UI/CardGrid'
 import { ITechnology } from '@/interfaces/global'
 import { IProjectCard } from '@/interfaces/project'
-import Page from '@/components/Layout/Page'
 
 interface ProjectProps {
 	projectList: IProjectCard[]
