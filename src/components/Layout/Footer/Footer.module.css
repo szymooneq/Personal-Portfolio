@@ -42,17 +42,17 @@
 }
 
 @keyframes boxRotation {
-	0% {
+	from {
 		transform: translate(-50%, -75%) rotate(0deg);
 	}
 
-	100% {
+	to {
 		transform: translate(-50%, -75%) rotate(360deg);
 	}
 }
 
 .content {
-	margin: 0 1rem 1rem 1rem;
+	margin: 0 1rem 1rem;
 	position: relative;
 	text-align: center;
 	color: rgb(var(--bg-primary-color));

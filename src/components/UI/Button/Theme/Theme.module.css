@@ -1,7 +1,11 @@
+.wrapper {
+	position: relative;
+}
+
 .toggle {
 	position: absolute;
-	top: -200px;
-	left: -200px;
+	top: 8px;
+	left: 20px;
 	display: block;
 	opacity: 0;
 }

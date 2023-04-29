@@ -1,4 +1,4 @@
-import ReturnButton from './ReturnButton'
-import ThemeButton from './ThemeButton'
+import Retrun from './Return'
+import Theme from './Theme'
 
-export { ReturnButton, ThemeButton }
+export { Retrun, Theme }

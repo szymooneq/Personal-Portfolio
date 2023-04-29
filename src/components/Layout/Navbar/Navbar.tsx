@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { throttle } from '@/lib/helpers/throttle'
-import Logo from '@/components/UI/Logo/Logo'
 import styles from './Navbar.module.css'
-import ThemeButton from '@/components/UI/Button/ThemeButton'
+
+import { throttle } from '@/lib/helpers/throttle'
+import Logo from '@/components/UI/Logo'
+import Burger from '@/components/UI/Burger'
+import * as Button from '@/components/UI/Button'
 
 const menuItems = [
 	{ title: 'Home', path: '/' },
@@ -14,13 +16,14 @@ const menuItems = [
 	{ title: 'Blog', path: '/blog' }
 ]
 
+// TODO: Contact Button and Burger
 const Navbar = (): JSX.Element => {
 	const { pathname, push } = useRouter()
 	const [isExpand, setIsExpand] = useState<boolean>(false)
 
-	const handleRedirect = () => {
+	const handleRedirect = useCallback(() => {
 		if (pathname !== '/') push('/')
-	}
+	}, [pathname, push])
 
 	const handleToggle = () => {
 		if (window.innerWidth < 1024) setIsExpand((prev) => !prev)
@@ -62,7 +65,7 @@ const Navbar = (): JSX.Element => {
 				</ul>
 
 				<div className={styles.rightSide}>
-					<ThemeButton />
+					<Button.Theme />
 					<Link
 						href="/contact"
 						className={styles.contactLink}
@@ -72,16 +75,7 @@ const Navbar = (): JSX.Element => {
 					</Link>
 				</div>
 
-				<button
-					id="burger"
-					aria-label="Burger"
-					className={styles.burger}
-					data-expand={isExpand}
-					onClick={handleToggle}>
-					<span />
-					<span />
-					<span />
-				</button>
+				<Burger isExpanded={isExpand} onClick={handleToggle} />
 			</div>
 
 			<div className={styles.mobile}>
@@ -116,7 +110,7 @@ const Navbar = (): JSX.Element => {
 					</Link>
 
 					<div className={styles.options}>
-						<ThemeButton />
+						<Button.Theme />
 						{/* <select name="language" id="language">
 							<option value="pl">PL</option>
 							<option value="en">EN</option>

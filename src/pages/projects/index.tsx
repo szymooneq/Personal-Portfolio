@@ -55,7 +55,7 @@ export default function Projects({
 				filter the projects by technology by selecting the desired technology.
 			</p>
 
-			<Technologies technologies={technologyList} />
+			<Technologies content={technologyList} />
 
 			<CardGrid type="project" content={filteredProjects} />
 		</Page>

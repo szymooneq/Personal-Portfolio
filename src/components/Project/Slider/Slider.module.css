@@ -12,12 +12,12 @@
 	gap: 2rem;
 }
 
-.image {
+.wrapper {
 	min-width: calc(100vw - 10px);
 	height: calc(56.25vw - 10px);
 }
 
-.image > img {
+.wrapper > img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 1024px) {
-	.image {
+	.wrapper {
 		min-width: calc(80vw - 10px);
 		height: calc(36.25vw - 10px);
 	}

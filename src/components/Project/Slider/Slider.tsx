@@ -22,13 +22,13 @@ const Slider = ({ images }: SliderProps): JSX.Element => {
 				whileTap={{ cursor: 'grabbing' }}
 				animate={{ x: [0, -width] }}
 				transition={{
-					duration: 40,
+					duration: 60,
 					repeat: Infinity,
 					repeatType: 'reverse',
 					repeatDelay: 1
 				}}>
-				{images.map((image, id) => (
-					<div key={id} className={styles.image}>
+				{images.map((image, index) => (
+					<div key={index} className={styles.wrapper}>
 						<Image src={urlFor(image).url()} alt={image.alt} width={1920} height={919} />
 					</div>
 				))}

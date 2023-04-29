@@ -22,61 +22,65 @@ const projectLinks = [
 	}
 ]
 
-const View = ({ content }: ViewProps): JSX.Element => (
-	<Container>
-		<header>
-			<h1 className={styles.title}>
-				{content.title} - {content.type.title}
-			</h1>
-			<p className={styles.description}>{content.description}</p>
-		</header>
+// TODO: Links Button component
+const View = ({ content }: ViewProps): JSX.Element => {
+	const { title, type, description, links, images, technologies, stack, details } =
+		content
 
-		<div className={styles.links}>
-			{projectLinks.map((link, id) => (
-				<Link
-					key={id}
-					href={content.links[id].url}
-					className={styles.link}
-					target="_blank"
-					rel="noreferrer">
-					{link.link}
-					{link.icon}
-				</Link>
-			))}
-		</div>
+	return (
+		<Container>
+			<header>
+				<h1 className={styles.title}>{`${title} - ${type.title}`}</h1>
+				<p className={styles.description}>{description}</p>
+			</header>
 
-		<Slider images={content.images} />
+			<div className={styles.links}>
+				{projectLinks.map((link, index) => (
+					<Link
+						key={index}
+						href={links[index].url}
+						className={styles.link}
+						target="_blank"
+						rel="noreferrer">
+						{link.link}
+						{link.icon}
+					</Link>
+				))}
+			</div>
 
-		<List title="Main technologies">
-			<Technologies technologies={content.technologies} />
-		</List>
+			<Slider images={images} />
 
-		{content.stack.length > 0 ? (
-			<List type="list" title="Stack">
-				{content.stack.map((item) => (
-					<li key={item.title}>
-						<Link
-							href={item.url}
-							className={styles.stackUrl}
-							target="_blank"
-							rel="noreferrer"
-							aria-label={`Link to ${item.title} page`}>
-							{item.title}
-						</Link>{' '}
-						- {item.description}
-					</li>
+			<List title="Main technologies">
+				<Technologies technologies={technologies} />
+			</List>
+
+			{stack.length > 0 ? (
+				<List type="list" title="Stack">
+					{stack.map((item) => (
+						<li key={item.title}>
+							<Link
+								href={item.url}
+								className={styles.stackUrl}
+								target="_blank"
+								rel="noreferrer"
+								aria-label={`Link to ${item.title} page`}>
+								{item.title}
+							</Link>
+							{` - ${item.description}`}
+						</li>
+					))}
+				</List>
+			) : null}
+
+			<List type="list" title="Details">
+				{details.map((detail) => (
+					<li key={detail}>{detail}</li>
 				))}
 			</List>
-		) : null}
 
-		<List type="list" title="Details">
-			{content.details.map((detail) => (
-				<li key={detail}>{detail}</li>
-			))}
-		</List>
-
-		<Button.ReturnButton href="/projects" />
-	</Container>
-)
+			<Button.Retrun href="/projects" />
+		</Container>
+	)
+}
 
 export default View

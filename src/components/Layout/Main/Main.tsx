@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion as m } from 'framer-motion'
 import { MainProps } from './Main.types'
+
 import Navbar from '@/components/Layout/Navbar'
 import Footer from '@/components/Layout/Footer'
-import Breadcrumb from '@/components/UI/Breadcrumb/Breadcrumb'
+import Breadcrumb from '@/components/UI/Breadcrumb'
 
 const Main = ({ children }: MainProps): JSX.Element => {
 	const { asPath, pathname } = useRouter()

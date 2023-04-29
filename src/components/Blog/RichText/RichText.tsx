@@ -5,6 +5,7 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import urlFor from '@/lib/sanity/client/urlFor'
 import styles from './RichText.module.css'
 
+// TODO: clean this file
 const RichText = {
 	block: {
 		normal: ({ children }: any) => <p className={styles.normal}>{children}</p>,
@@ -15,32 +16,28 @@ const RichText = {
 		blockquote: ({ children }: any) => (
 			<blockquote className={styles.blockquote}>{children}</blockquote>
 		),
-		link: (props: any) => {
-			// const rel = !href.startsWith('/') ? 'noreferrer noopener' : undefined;
-
-			return (
-				<Link href="/" className={styles.link}>
-					{props.children}
-				</Link>
-			)
-		}
+		link: ({ children }: any) => (
+			<Link href="/" className={styles.link}>
+				{children}
+			</Link>
+		)
 	},
 	list: {
 		bullet: ({ children }: any) => <ul className={styles.ul}>{children}</ul>,
 		number: ({ children }: any) => <ol className={styles.ol}>{children}</ol>
 	},
 	types: {
-		code: (props: any) => (
+		code: ({ value }: any) => (
 			<SyntaxHighlighter
-				language={props.value.language}
+				language={value.language}
 				style={a11yDark}
 				customStyle={{ backgroundColor: '#2e2e33' }}>
-				{props.value.code}
+				{value.code}
 			</SyntaxHighlighter>
 		),
-		image: (props: any) => (
+		image: ({ value }: any) => (
 			<div className={styles.imageWrapper}>
-				<Image src={urlFor(props.value).url()} alt="Blog Post Image" fill />
+				<Image src={urlFor(value).url()} alt="Blog Post Image" fill />
 			</div>
 		)
 	}

@@ -4,8 +4,8 @@ import { PreviewProps } from './Preview.types'
 
 import View from '@/components/Project/View'
 
-const token = process.env.NEXT_PUBLIC_SANITY_TOKEN!
-const query = groq`*[_type == "projects" && slug.current == $slug][0]{
+const TOKEN = process.env.NEXT_PUBLIC_SANITY_TOKEN!
+const QUERY = groq`*[_type == "projects" && slug.current == $slug][0]{
   title,
   type->,
   description,
@@ -22,9 +22,9 @@ const query = groq`*[_type == "projects" && slug.current == $slug][0]{
 }`
 
 const Preview = ({ queryParams }: PreviewProps): JSX.Element => {
-	const previewData = usePreview(token, query, queryParams)
+	const projectData = usePreview(TOKEN, QUERY, queryParams)
 
-	return <View projectData={previewData} />
+	return <View content={projectData} />
 }
 
 export default Preview
