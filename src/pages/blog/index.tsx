@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { getPostList } from '@/lib/api/getPost'
+import { getPosts } from '@/lib/api/getPost'
 import styles from '@/styles/Projects.module.css'
 
-import { IPostCard } from '@/interfaces/post'
+import { IPostCard } from '@/interfaces/Post.types'
 import CardGrid from '@/components/UI/CardGrid'
 import Page from '@/components/Layout/Page'
 
@@ -32,7 +32,7 @@ export default function Blog({ postList }: BlogProps): JSX.Element {
 }
 
 export async function getStaticProps() {
-	const { postList } = await getPostList()
+	const postList = await getPosts()
 
 	return {
 		props: {

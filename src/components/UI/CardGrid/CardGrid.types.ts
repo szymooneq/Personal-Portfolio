@@ -1,5 +1,5 @@
-import { IPostCard } from '@/interfaces/post'
-import { IProjectCard } from '@/interfaces/project'
+import { IPostCard } from '@/interfaces/Post.types'
+import { IProjectCard } from '@/interfaces/Project.types'
 
 export interface CardGridProps {
 	type: 'project' | 'post'

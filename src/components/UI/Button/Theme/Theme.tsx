@@ -34,7 +34,7 @@ const Theme = () => {
 			/>
 			<label htmlFor="theme" aria-label="Toggle theme">
 				<div className={styles.themeIcon}>
-					{currentTheme === 'dark' ? icon.moonIcon : icon.sunIcon}
+					{currentTheme === 'dark' ? icon.moon : icon.sun}
 				</div>
 			</label>
 		</div>

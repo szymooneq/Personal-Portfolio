@@ -5,7 +5,7 @@ import { PreviewSuspense } from 'next-sanity/preview'
 import { getProjectData, getProjectsPaths } from '@/lib/api/getProject'
 
 const ProjectPreview = lazy(() => import('@/components/Project/Preview'))
-import { IProjectDetails } from '@/interfaces/project'
+import { IProjectDetails } from '@/interfaces/Project.types'
 import View from '@/components/Project/View'
 
 interface PageProps {

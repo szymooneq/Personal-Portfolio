@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { contactLinks } from '@/lib/helpers/contactLinks'
+import { contactLinks } from '@/lib/helpers'
 import styles from '@/styles/Resume.module.css'
 
 import * as icon from '@/assets/svg'

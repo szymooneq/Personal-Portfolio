@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { contactLinks } from '@/lib/helpers/contactLinks'
+import { contactLinks } from '@/lib/helpers'
 import styles from '@/styles/Contact.module.css'
 
 import * as icon from '@/assets/svg'
@@ -10,17 +10,17 @@ const cards = [
 	{
 		title: 'Website design & development',
 		desc: 'Experienced designer & visual developer. I create websites/web applications.',
-		icon: icon.layoutIcon
+		icon: icon.layout
 	},
 	{
 		title: 'Visual & graphic design',
 		desc: 'I have an eye for the visual side of things. I enjoy working with attention to detail!',
-		icon: icon.penIcon
+		icon: icon.pen
 	},
 	{
 		title: 'Branding',
 		desc: 'I combine my visual and analytical side and love creating brands.',
-		icon: icon.cubeIcon
+		icon: icon.cube
 	}
 ]
 

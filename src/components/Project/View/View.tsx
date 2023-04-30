@@ -13,12 +13,12 @@ const projectLinks = [
 	{
 		name: 'Vercel',
 		link: 'View live site',
-		icon: icon.vercelIcon
+		icon: icon.vercel
 	},
 	{
 		name: 'GitHub',
 		link: 'View source code',
-		icon: icon.githubIcon
+		icon: icon.github
 	}
 ]
 
@@ -51,7 +51,7 @@ const View = ({ content }: ViewProps): JSX.Element => {
 			<Slider images={images} />
 
 			<List title="Main technologies">
-				<Technologies technologies={technologies} />
+				<Technologies content={technologies} />
 			</List>
 
 			{stack.length > 0 ? (

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { contactLinks } from '@/lib/helpers/contactLinks'
+import { contactLinks } from '@/lib/helpers'
 import styles from './Footer.module.css'
 
 const Footer = (): JSX.Element => (

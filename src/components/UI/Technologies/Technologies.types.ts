@@ -1,4 +1,4 @@
-import { ITechnology } from '@/interfaces/global'
+import { ITechnology } from '@/interfaces/Global.types'
 
 export interface TechnologiesProps {
 	content: ITechnology[]

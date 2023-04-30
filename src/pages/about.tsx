@@ -45,7 +45,7 @@ export default function About(): JSX.Element {
 				target="_blank"
 				rel="noreferrer"
 				aria-label="Check my profile on LinkedIn">
-				{icon.linkedinIcon}
+				{icon.linkedin}
 				<div className={styles.flexEnd}>{icon.rightUpCircleArrow}</div>
 			</Link>
 

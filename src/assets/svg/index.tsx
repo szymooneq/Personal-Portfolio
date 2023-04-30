@@ -1,4 +1,4 @@
-const linkedinIcon: JSX.Element = (
+const linkedin: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="34.68"
@@ -13,7 +13,7 @@ const linkedinIcon: JSX.Element = (
 	</svg>
 )
 
-const githubIcon: JSX.Element = (
+const github: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="37.747"
@@ -29,7 +29,7 @@ const githubIcon: JSX.Element = (
 	</svg>
 )
 
-const discordIcon: JSX.Element = (
+const discord: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -43,61 +43,9 @@ const discordIcon: JSX.Element = (
 	</svg>
 )
 
-const vercelIcon: JSX.Element = (
+const vercel: JSX.Element = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="222" viewBox="0 0 256 222">
 		<path fill="currentColor" d="m128 0l128 221.705H0z" />
-	</svg>
-)
-
-const downloadIcon: JSX.Element = (
-	<svg
-		width="20"
-		height="20"
-		viewBox="0 0 20 20"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M15.8333 15H4.16666C3.70642 15 3.33333 15.3731 3.33333 15.8333C3.33333 16.2936 3.70642 16.6667 4.16666 16.6667H15.8333C16.2936 16.6667 16.6667 16.2936 16.6667 15.8333C16.6667 15.3731 16.2936 15 15.8333 15Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M3.33333 14.1667V15.8333C3.33333 16.2936 3.70642 16.6667 4.16666 16.6667C4.6269 16.6667 4.99999 16.2936 4.99999 15.8333V14.1667C4.99999 13.7064 4.6269 13.3333 4.16666 13.3333C3.70642 13.3333 3.33333 13.7064 3.33333 14.1667Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M15 14.1667V15.8333C15 16.2936 15.3731 16.6667 15.8333 16.6667C16.2936 16.6667 16.6667 16.2936 16.6667 15.8333V14.1667C16.6667 13.7064 16.2936 13.3333 15.8333 13.3333C15.3731 13.3333 15 13.7064 15 14.1667Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M10 12.5C9.82723 12.5013 9.65833 12.4489 9.51667 12.35L6.18333 10C6.00368 9.87255 5.88179 9.67916 5.84431 9.4621C5.80683 9.24505 5.85681 9.02198 5.98333 8.84167C6.04649 8.75154 6.12687 8.67481 6.21984 8.61592C6.31281 8.55703 6.41652 8.51713 6.52499 8.49854C6.63346 8.47994 6.74454 8.48302 6.85181 8.50758C6.95909 8.53215 7.06043 8.57772 7.15 8.64167L10 10.6333L12.8333 8.5C13.0101 8.36739 13.2324 8.31045 13.4512 8.34171C13.67 8.37297 13.8674 8.48986 14 8.66667C14.1326 8.84348 14.1895 9.06573 14.1583 9.28452C14.127 9.50331 14.0101 9.70073 13.8333 9.83333L10.5 12.3333C10.3558 12.4415 10.1803 12.5 10 12.5Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M10 10.8333C9.77899 10.8333 9.56703 10.7455 9.41075 10.5893C9.25447 10.433 9.16667 10.221 9.16667 10V3.33333C9.16667 3.11232 9.25447 2.90036 9.41075 2.74408C9.56703 2.5878 9.77899 2.5 10 2.5C10.221 2.5 10.433 2.5878 10.5893 2.74408C10.7455 2.90036 10.8333 3.11232 10.8333 3.33333V10C10.8333 10.221 10.7455 10.433 10.5893 10.5893C10.433 10.7455 10.221 10.8333 10 10.8333Z"
-			fill="currentColor"
-		/>
-	</svg>
-)
-
-const contactIcon: JSX.Element = (
-	<svg
-		width="20"
-		height="20"
-		viewBox="0 0 20 20"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M7.91667 9.16667C8.60703 9.16667 9.16667 8.60702 9.16667 7.91667C9.16667 7.22631 8.60703 6.66667 7.91667 6.66667C7.22632 6.66667 6.66667 7.22631 6.66667 7.91667C6.66667 8.60702 7.22632 9.16667 7.91667 9.16667Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M12.0833 9.16667C12.7737 9.16667 13.3333 8.60702 13.3333 7.91667C13.3333 7.22631 12.7737 6.66667 12.0833 6.66667C11.393 6.66667 10.8333 7.22631 10.8333 7.91667C10.8333 8.60702 11.393 9.16667 12.0833 9.16667Z"
-			fill="currentColor"
-		/>
-		<path
-			d="M10 1.66667C5.405 1.66667 1.66667 4.6575 1.66667 8.33333C1.66667 10.7567 3.24751 12.9292 5.83334 14.1117V18.3333L10.2833 14.9967C14.7475 14.8767 18.3333 11.9333 18.3333 8.33333C18.3333 4.6575 14.595 1.66667 10 1.66667ZM10 13.3333H9.7225L7.5 15V12.9858L6.96584 12.78C4.72584 11.9175 3.33334 10.2133 3.33334 8.33333C3.33334 5.57583 6.32417 3.33333 10 3.33333C13.6758 3.33333 16.6667 5.57583 16.6667 8.33333C16.6667 11.0908 13.6758 13.3333 10 13.3333Z"
-			fill="currentColor"
-		/>
 	</svg>
 )
 
@@ -139,7 +87,7 @@ const rightUpCircleArrow: JSX.Element = (
 	</svg>
 )
 
-const layoutIcon: JSX.Element = (
+const layout: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -154,7 +102,7 @@ const layoutIcon: JSX.Element = (
 	</svg>
 )
 
-const penIcon: JSX.Element = (
+const pen: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -173,7 +121,7 @@ const penIcon: JSX.Element = (
 	</svg>
 )
 
-const cubeIcon: JSX.Element = (
+const cube: JSX.Element = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="1em"
@@ -206,25 +154,7 @@ const userFaceID: JSX.Element = (
 	</svg>
 )
 
-const copyIcon: JSX.Element = (
-	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-		<path
-			fill="currentColor"
-			d="M224 40v144a8 8 0 0 1-16 0V48H72a8 8 0 0 1 0-16h144a8 8 0 0 1 8 8Zm-32 32v144a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8Zm-16 8H48v128h128Z"
-		/>
-	</svg>
-)
-
-const clipboardIcon: JSX.Element = (
-	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-		<path
-			fill="currentColor"
-			d="M168 152a8 8 0 0 1-8 8H96a8 8 0 0 1 0-16h64a8 8 0 0 1 8 8Zm-8-40H96a8 8 0 0 0 0 16h64a8 8 0 0 0 0-16Zm56-64v168a16 16 0 0 1-16 16H56a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h36.3a47.8 47.8 0 0 1 71.4 0H200a16 16 0 0 1 16 16ZM96 64h64a32 32 0 0 0-64 0Zm104-16h-26.8a47.2 47.2 0 0 1 2.8 16v8a8 8 0 0 1-8 8H88a8 8 0 0 1-8-8v-8a47.2 47.2 0 0 1 2.8-16H56v168h144Z"
-		/>
-	</svg>
-)
-
-const sunIcon: JSX.Element = (
+const sun: JSX.Element = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<g fill="currentColor">
 			<path d="M184 128a56 56 0 1 1-56-56a56 56 0 0 1 56 56Z" opacity=".2" />
@@ -233,7 +163,7 @@ const sunIcon: JSX.Element = (
 	</svg>
 )
 
-const moonIcon: JSX.Element = (
+const moon: JSX.Element = (
 	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 		<g fill="currentColor">
 			<path
@@ -245,22 +175,17 @@ const moonIcon: JSX.Element = (
 	</svg>
 )
 
-// TODO: icon nameing
 export {
-	linkedinIcon,
-	githubIcon,
-	discordIcon,
-	vercelIcon,
-	downloadIcon,
-	contactIcon,
+	linkedin,
+	github,
+	discord,
+	vercel,
 	rightCircleArrow,
 	rightUpCircleArrow,
-	layoutIcon,
-	penIcon,
-	cubeIcon,
+	layout,
+	pen,
+	cube,
 	userFaceID,
-	copyIcon,
-	clipboardIcon,
-	sunIcon,
-	moonIcon
+	sun,
+	moon
 }

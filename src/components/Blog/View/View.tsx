@@ -4,7 +4,7 @@ import urlFor from '@/lib/sanity/client/urlFor'
 import { ViewProps } from './View.types'
 import styles from './View.module.css'
 
-import { renderDate } from '@/lib/helpers/renderDate'
+import { renderDate } from '@/lib/helpers'
 import RichText from '@/components/Blog/RichText'
 import * as Button from '@/components/UI/Button'
 

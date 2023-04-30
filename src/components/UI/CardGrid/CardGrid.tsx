@@ -2,8 +2,8 @@ import { AnimatePresence, motion as m } from 'framer-motion'
 import { CardGridProps } from './CardGrid.types'
 import styles from './CardGrid.module.css'
 
-import { IProjectCard } from '@/interfaces/project'
-import { IPostCard } from '@/interfaces/post'
+import { IProjectCard } from '@/interfaces/Project.types'
+import { IPostCard } from '@/interfaces/Post.types'
 import ProjectCard from '@/components/Project/Card'
 import PostCard from '@/components/Blog/Card'
 

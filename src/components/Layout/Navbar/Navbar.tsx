@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
 
-import { throttle } from '@/lib/helpers/throttle'
+import { throttle } from '@/lib/helpers'
 import Logo from '@/components/UI/Logo'
 import Burger from '@/components/UI/Burger'
 import * as Button from '@/components/UI/Button'
@@ -16,7 +16,7 @@ const menuItems = [
 	{ title: 'Blog', path: '/blog' }
 ]
 
-// TODO: Contact Button and Burger
+// TODO: Contact Button
 const Navbar = (): JSX.Element => {
 	const { pathname, push } = useRouter()
 	const [isExpand, setIsExpand] = useState<boolean>(false)

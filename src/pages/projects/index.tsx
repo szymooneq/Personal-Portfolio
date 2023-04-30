@@ -1,14 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { getProjectCards } from '@/lib/api/getProject'
+import { getProjects } from '@/lib/api/getProject'
 import styles from '@/styles/Projects.module.css'
 
 import Page from '@/components/Layout/Page'
 import Technologies from '@/components/UI/Technologies'
 import CardGrid from '@/components/UI/CardGrid'
-import { ITechnology } from '@/interfaces/global'
-import { IProjectCard } from '@/interfaces/project'
+import { ITechnology } from '@/interfaces/Global.types'
+import { IProjectCard } from '@/interfaces/Project.types'
+import { findProjects } from '@/lib/helpers/array'
 
 interface ProjectProps {
 	projectList: IProjectCard[]
@@ -22,23 +23,13 @@ export default function Projects({
 	const { query } = useRouter()
 	const [filteredProjects, setFilteredProjects] = useState(projectList)
 
-	const filterProjects = useCallback(() => {
-		if (query.category) {
-			return setFilteredProjects(
-				projectList.filter((project) =>
-					project.technologies.find((technology) =>
-						technology.title.includes(query.category as string)
-					)
-				)
-			)
+	useEffect(() => {
+		if (!query.category) {
+			return setFilteredProjects(projectList)
 		}
 
-		setFilteredProjects(projectList)
+		setFilteredProjects(() => findProjects(projectList, query.category as string))
 	}, [projectList, query.category])
-
-	useEffect(() => {
-		filterProjects()
-	}, [query.category, filterProjects])
 
 	return (
 		<Page header="Projects">
@@ -63,7 +54,7 @@ export default function Projects({
 }
 
 export async function getStaticProps() {
-	const { projectList, technologyList } = await getProjectCards()
+	const { projectList, technologyList } = await getProjects()
 
 	return {
 		props: {
