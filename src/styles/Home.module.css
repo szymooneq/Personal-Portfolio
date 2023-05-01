@@ -23,7 +23,7 @@
 .content > h2 {
 	font-size: var(--contact-title);
 	letter-spacing: -0.1rem;
-	background: var(--main);
+	background: var(--gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -74,7 +74,7 @@
 	gap: 1rem;
 	width: max-content;
 	border-radius: 2rem;
-	background: rgb(var(--bg-primary-color));
+	background: rgb(var(--bg-primary-RGB));
 }
 
 .links a {
@@ -85,9 +85,9 @@
 .links svg {
 	width: 32px;
 	height: 32px;
-	color: var(--white);
+	color: var(--black);
 	transform: scale(1);
-	transition: color 0.3s, transform 0.3s;
+	transition: transform 0.3s;
 }
 
 .links svg:hover {

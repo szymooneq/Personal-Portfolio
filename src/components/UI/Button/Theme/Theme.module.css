@@ -17,8 +17,8 @@
 	width: 60px;
 	height: 29px;
 	border-radius: 2rem;
-	background: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	background: var(--bg-secondary);
+	box-shadow: var(--shadow);
 	cursor: pointer;
 }
 

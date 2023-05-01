@@ -16,7 +16,7 @@
 	font-size: 16px;
 	line-height: 30px;
 	letter-spacing: -0.2px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .ul,
@@ -37,9 +37,9 @@
 	font-family: monospace;
 	font-weight: 700;
 	border-radius: 0.2rem;
-	color: var(--white);
-	background-color: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	color: var(--black);
+	background-color: var(--bg-secondary);
+	box-shadow: var(--shadow);
 }
 
 .h1,

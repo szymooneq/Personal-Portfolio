@@ -6,9 +6,9 @@
 	width: max-content;
 	font-size: var(--project-desc);
 	letter-spacing: -3px;
-	border-radius: var(--card-border-radius);
-	background-color: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	border-radius: var(--radius);
+	background-color: var(--bg-secondary);
+	box-shadow: var(--shadow);
 }
 
 .returnButton:hover {
@@ -19,7 +19,7 @@
 	content: '';
 	position: absolute;
 	inset: 0;
-	border-radius: var(--card-border-radius);
+	border-radius: var(--radius);
 	background-color: var(--primary-color);
 	filter: blur(10px);
 	opacity: 0;

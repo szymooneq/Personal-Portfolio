@@ -5,7 +5,7 @@
 	justify-content: center;
 	position: relative;
 	height: 18rem;
-	background: var(--main);
+	background: var(--gradient);
 	overflow: hidden;
 }
 
@@ -32,12 +32,12 @@
 }
 
 .waves::before {
-	background: rgb(var(--bg-primary-color));
+	background: rgb(var(--bg-primary-RGB));
 	animation-duration: 30s;
 }
 
 .waves::after {
-	background-color: rgba(var(--bg-primary-color), 0.5);
+	background-color: rgba(var(--bg-primary-RGB), 0.5);
 	animation-duration: 60s;
 }
 
@@ -55,7 +55,7 @@
 	margin: 0 1rem 1rem;
 	position: relative;
 	text-align: center;
-	color: rgb(var(--bg-primary-color));
+	color: rgb(var(--bg-primary-RGB));
 }
 
 .content p:first-child {
@@ -78,7 +78,7 @@
 .icons svg {
 	width: 30px;
 	height: 30px;
-	color: rgb(var(--bg-primary-color));
+	color: rgb(var(--bg-primary-RGB));
 	transform: scale(1);
 	transition: transform 0.3s;
 }

@@ -4,9 +4,9 @@
 }
 
 .content h1 {
-	font-size: 150px;
+	font-size: 10rem;
 	font-weight: 900;
-	background: var(--main);
+	background: var(--gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -20,7 +20,7 @@
 	margin-bottom: 2rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .backButton {

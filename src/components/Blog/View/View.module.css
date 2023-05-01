@@ -25,7 +25,7 @@
 	margin: 1rem 0;
 	font-size: var(--blog-title);
 	letter-spacing: -2.4px;
-	color: var(--white);
+	color: var(--black);
 }
 
 .date {
@@ -33,7 +33,7 @@
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: -0.2px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .article img {

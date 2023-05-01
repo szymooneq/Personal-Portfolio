@@ -13,7 +13,7 @@
 .description {
 	font-size: var(--card-desc-font-size);
 	letter-spacing: -0.8px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .label {
@@ -22,7 +22,7 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: -0.3px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .flexEnd {
@@ -42,15 +42,15 @@
 }
 
 .card {
-	padding: var(--card-padding);
+	padding: var(--padding);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	position: relative;
 	min-height: 305px;
-	background: var(--bg-secondary-color);
-	border-radius: var(--card-border-radius);
-	box-shadow: var(--box-shadow);
+	background: var(--bg-secondary);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
 }
 
 .card ~ a {
@@ -62,7 +62,7 @@
 	position: absolute;
 	inset: 0;
 	background-color: var(--primary-color);
-	border-radius: var(--card-border-radius);
+	border-radius: var(--radius);
 	filter: blur(10px);
 	opacity: 0;
 	transition: 0.5s;
@@ -77,7 +77,7 @@
 	background: url('../assets/images/about-header.png');
 	background-size: cover;
 	background-position: top;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--bg-secondary);
 }
 
 .card:nth-child(2) > h2 {

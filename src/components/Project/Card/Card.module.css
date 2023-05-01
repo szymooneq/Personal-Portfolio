@@ -1,15 +1,15 @@
 .card {
 	position: relative;
-	border-radius: var(--card-border-radius);
-	background-color: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	border-radius: var(--radius);
+	background-color: var(--bg-secondary);
+	box-shadow: var(--shadow);
 }
 
 .card::after {
 	content: '';
 	position: absolute;
 	inset: 0;
-	border-radius: var(--card-border-radius);
+	border-radius: var(--radius);
 	background: linear-gradient(
 		to bottom right,
 		var(--theme-primary),
@@ -37,8 +37,8 @@
 	width: 100%;
 	height: 220px;
 	object-fit: cover;
-	border-top-left-radius: var(--card-border-radius);
-	border-top-right-radius: var(--card-border-radius);
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
 	filter: brightness(60%);
 	transition: filter 0.5s;
 }
@@ -51,7 +51,7 @@
 .card svg {
 	width: 40px;
 	height: 40px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .card:hover svg {
@@ -63,7 +63,7 @@
 }
 
 .details p {
-	color: var(--text-gray);
+	color: var(--gray);
 	letter-spacing: -0.3px;
 }
 

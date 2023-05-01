@@ -17,8 +17,8 @@
 
 .nav[data-home='false'] .desktop {
 	top: 0;
-	border-bottom: 1px solid var(--bg-secondary-color);
-	background-color: rgba(var(--bg-primary-color), 0.8);
+	border-bottom: 1px solid var(--bg-secondary);
+	background-color: rgba(var(--bg-primary-RGB), 0.8);
 	backdrop-filter: saturate(180%) blur(5px);
 	animation: slideDown 0.4s ease-in-out forwards;
 }
@@ -67,13 +67,13 @@
 	width: 200%;
 	height: 200%;
 	background: conic-gradient(
-		rgba(var(--text-primary), 0.502),
-		rgba(var(--text-primary), 0.251),
-		rgba(var(--text-primary), 0.188),
-		rgba(var(--text-primary), 0.125),
-		rgba(var(--text-primary), 0.063),
-		rgba(var(--text-primary), 0.063),
-		rgba(var(--text-primary), 0.502)
+		rgba(var(--text-RGB), 0.502),
+		rgba(var(--text-RGB), 0.251),
+		rgba(var(--text-RGB), 0.188),
+		rgba(var(--text-RGB), 0.125),
+		rgba(var(--text-RGB), 0.063),
+		rgba(var(--text-RGB), 0.063),
+		rgba(var(--text-RGB), 0.502)
 	);
 	z-index: -1;
 	animation: 6s borderRotation linear infinite;
@@ -85,7 +85,7 @@
 	position: absolute;
 	inset: 0;
 	border-radius: 12px;
-	background: var(--main);
+	background: var(--gradient);
 	background-clip: content-box;
 	z-index: -1;
 }
@@ -133,8 +133,8 @@
 	display: block;
 	width: max-content;
 	border-radius: 2rem;
-	background-color: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	background-color: var(--bg-secondary);
+	box-shadow: var(--shadow);
 	transition: filter 0.3s;
 }
 
@@ -148,7 +148,7 @@
 .logo:hover,
 .contactLink:hover,
 .menuItem:hover {
-	filter: drop-shadow(0 0 0.3rem rgba(var(--text-primary), 0.439));
+	filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.439));
 }
 
 .nav[data-home='true'] > .desktop .logo:hover,
@@ -178,12 +178,12 @@
 	width: 100%;
 	height: 0.2rem;
 	border-radius: 1rem;
-	background: var(--main);
+	background: var(--gradient);
 	transition: background 0.5s, transform 0.5s;
 }
 
 .burger[data-expand='true'] > span {
-	background: var(--white);
+	background: var(--black);
 }
 
 .nav[data-home='true'] .burger[data-expand='true'] > span {
@@ -229,7 +229,7 @@
 	top: 0;
 	height: 100vh;
 	width: calc(100vw - 30%);
-	background: rgba(var(--bg-primary-color), 0.5);
+	background: rgba(var(--bg-primary-RGB), 0.5);
 	backdrop-filter: blur(15px);
 	transform: translateX(-100%);
 	z-index: 100;
