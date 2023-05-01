@@ -6,8 +6,7 @@
 }
 
 .description {
-	margin-top: 1rem;
-	margin-bottom: 2rem;
+	margin: 1rem 0 2rem;
 	font-size: var(--project-desc);
 	color: var(--black);
 	letter-spacing: -3px;

@@ -68,7 +68,7 @@
 }
 
 .type {
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	text-transform: uppercase;
 }
@@ -81,7 +81,7 @@
 }
 
 .title h2 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 700;
 	letter-spacing: -1px;
 }

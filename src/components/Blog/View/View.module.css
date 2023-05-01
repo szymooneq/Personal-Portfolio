@@ -1,6 +1,6 @@
 .article {
-	margin: 0 auto;
-	padding: 0 1.5rem;
+	margin-inline: auto;
+	padding-inline: 1.5rem;
 	width: 100%;
 	max-width: 768px;
 }
@@ -15,7 +15,7 @@
 
 .technologies {
 	width: max-content;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--primary-color);
@@ -30,7 +30,7 @@
 
 .date {
 	margin-bottom: 3rem;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: -0.2px;
 	color: var(--gray);
@@ -44,6 +44,6 @@
 
 @media (min-width: 768px) {
 	.date {
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 }

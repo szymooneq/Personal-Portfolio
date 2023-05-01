@@ -32,7 +32,7 @@
 
 .smallTitle {
 	margin-bottom: 0.2rem;
-	font-size: 14px;
+	font-size: 0.875rem;
 	text-transform: uppercase;
 	letter-spacing: -0.3px;
 	font-weight: 600;
@@ -136,8 +136,8 @@
 
 .cardTitle {
 	margin-bottom: 1rem;
-	font-weight: 700;
 	font-size: var(--card-title-font-size);
+	font-weight: 700;
 	letter-spacing: -1px;
 }
 

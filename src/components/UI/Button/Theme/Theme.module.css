@@ -4,10 +4,10 @@
 }
 
 .toggle {
+	display: block;
 	position: absolute;
 	top: 8px;
 	left: 20px;
-	display: block;
 	opacity: 0;
 }
 

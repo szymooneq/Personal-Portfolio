@@ -76,19 +76,18 @@ img {
 	pointer-events: none;
 }
 
-.container {
-	padding: 0 1.5rem;
-	margin: 0 auto;
-	width: 100%;
-}
-
 #nprogress {
 	z-index: 999;
 }
 
-/* SM */
-@media (min-width: 640px) {
-}
+/* 
+BREAKPOINTS:
+SM: (min-width: 640px)
+MD: (min-width: 768px)
+LG: (min-width: 1024px)
+XL: (min-width: 1280px)
+XXL: (min-width: 1536px)
+*/
 
 /* MD */
 @media (min-width: 768px) {
@@ -102,10 +101,6 @@ img {
 	}
 }
 
-/* LG */
-@media (min-width: 1024px) {
-}
-
 /* XL */
 @media (min-width: 1280px) {
 	:root {
@@ -116,7 +111,7 @@ img {
 	}
 }
 
-/* 2XL */
+/* XXL */
 @media (min-width: 1536px) {
 	:root {
 		--project-desc: 88px;

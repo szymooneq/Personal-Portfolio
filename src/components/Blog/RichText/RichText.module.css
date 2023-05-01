@@ -13,15 +13,15 @@
 .ul,
 .ol {
 	margin-top: 1rem;
-	font-size: 16px;
-	line-height: 30px;
+	font-size: 1rem;
+	line-height: 1.875rem;
 	letter-spacing: -0.2px;
 	color: var(--gray);
 }
 
 .ul,
 .ol {
-	padding: 0 2rem;
+	padding-inline: 2rem;
 }
 
 .ul {
@@ -87,8 +87,8 @@
 	.normal,
 	.ul,
 	.ol {
-		font-size: 18px;
-		line-height: 36px;
+		font-size: 1.125rem;
+		line-height: 2.25rem;
 	}
 
 	.h2 {

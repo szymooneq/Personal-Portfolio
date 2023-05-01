@@ -31,7 +31,7 @@
 }
 
 .button[data-active='true'] {
-	background: var(--gradient) !important;
+	background: var(--gradient);
 	pointer-events: none;
 }
 
