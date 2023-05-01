@@ -1,0 +1,33 @@
+.slider {
+	margin-bottom: 2rem;
+	position: relative;
+	left: calc(-50vw + 50%);
+	width: 100vw;
+	overflow: hidden;
+	cursor: grab;
+}
+
+.inner {
+	display: flex;
+	gap: 2rem;
+}
+
+.wrapper {
+	min-width: calc(100vw - 10px);
+	height: calc(56.25vw - 10px);
+}
+
+.wrapper > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+	.wrapper {
+		min-width: calc(80vw - 10px);
+		height: calc(36.25vw - 10px);
+	}
+}

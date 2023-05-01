@@ -1,24 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root {
-	--container-width: 100%;
-
-	--bg-primary-color: 252, 250, 244;
-	--bg-secondary-color: rgb(255, 255, 255);
-	--text-title: rgb(128, 128, 128);
-	--text-gray: rgb(110, 110, 110);
-
-	--text-primary: 0, 0, 0;
-	--box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05),
-		0 12px 24px rgba(0, 0, 0, 0.05);
-	--border: 1px solid #eaeaea;
-	--white: #000000;
-	--white-opac: #00000080;
-	--black: #ffffff;
-
 	--primary-color: #258afe;
 	--secondary-color: #aa26ff;
-	--main: linear-gradient(
+	--gradient: linear-gradient(
 		to bottom right,
 		#258afe -10.4%,
 		#b69dd7 26.59%,
@@ -26,48 +11,58 @@
 		#258afe 109.47%
 	);
 
-	--card-padding: 2rem;
-	--card-border-radius: 1rem;
+	--white: #ffffff;
+	--black: #000000;
+	--gray: #6e6e6e;
+	--text-header: #808080;
+	--text-RGB: 0, 0, 0;
+	--bg-primary-RGB: 252, 250, 244;
+	--bg-secondary: #ffffff;
+
+	--shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05),
+		0 12px 24px rgba(0, 0, 0, 0.05);
+	--border: 1px solid #eaeaea;
+
+	--padding: 2rem;
+	--radius: 1rem;
+
 	--card-title-font-size: 22px;
 	--card-desc-font-size: 20px;
-
 	--contact-title: 32px;
 	--about-getTouch: 40px;
 	--project-desc: 40px;
-
 	--blog-title: 36px;
 }
 
 ::selection {
-	color: var(--black);
-	background-color: var(--white);
+	color: var(--white);
+	background-color: var(--black);
 }
 
 [data-theme='dark'] {
-	--bg-primary-color: 18, 19, 23;
-	--bg-secondary-color: #191a1e;
-	--text-title: rgb(46, 46, 51);
-	--text-gray: rgb(130, 130, 130);
+	--white: #000000;
+	--black: #ffffff;
+	--gray: #828282;
+	--text-header: #2e2e33;
+	--text-RGB: 255, 255, 255;
+	--bg-primary-RGB: 18, 19, 23;
+	--bg-secondary: #191a1e;
 
-	--text-primary: 255, 255, 255;
-	--box-shadow: none;
+	--shadow: none;
 	--border: none;
-	--white: #ffffff;
-	--white-opac: #ffffff80;
-	--black: #000000;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {
-	color: rgb(var(--text-primary));
-	background: rgb(var(--bg-primary-color));
+	color: rgb(var(--text-RGB));
+	background: rgb(var(--bg-primary-RGB));
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 }
@@ -81,23 +76,18 @@ img {
 	pointer-events: none;
 }
 
-.container {
-	padding: 0 1.5rem;
-	margin: 0 auto;
-	width: 100%;
-	max-width: var(--container-width);
-}
-
 #nprogress {
 	z-index: 999;
 }
 
-/* SM */
-@media (min-width: 640px) {
-	:root {
-		--container-width: 640px;
-	}
-}
+/* 
+BREAKPOINTS:
+SM: (min-width: 640px)
+MD: (min-width: 768px)
+LG: (min-width: 1024px)
+XL: (min-width: 1280px)
+XXL: (min-width: 1536px)
+*/
 
 /* MD */
 @media (min-width: 768px) {
@@ -105,21 +95,9 @@ img {
 		--contact-title: 34px;
 		--card-title-font-size: 24px;
 		--card-desc-font-size: 22px;
-
 		--about-getTouch: 48px;
-
 		--project-desc: 64px;
-
-		--container-width: 768px;
-
 		--blog-title: 60px;
-	}
-}
-
-/* LG */
-@media (min-width: 1024px) {
-	:root {
-		--container-width: 1024px;
 	}
 }
 
@@ -128,19 +106,14 @@ img {
 	:root {
 		--contact-title: 40px;
 		--card-title-font-size: 26px;
-
 		--about-getTouch: 56px;
-
 		--project-desc: 80px;
-
-		--container-width: 1280px;
 	}
 }
 
-/* 2XL */
+/* XXL */
 @media (min-width: 1536px) {
 	:root {
 		--project-desc: 88px;
-		--container-width: 1350px;
 	}
 }

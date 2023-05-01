@@ -4,9 +4,9 @@
 }
 
 .content h1 {
-	font-size: 150px;
+	font-size: 10rem;
 	font-weight: 900;
-	background: var(--main);
+	background: var(--gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -16,14 +16,12 @@
 }
 
 .content p {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin: 2rem 0;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
-/* TODO: add transition properties */
 .backButton {
 	margin: 1.5rem auto;
 	padding: 0.4rem 0.8rem;

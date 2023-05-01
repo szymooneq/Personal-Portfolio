@@ -2,11 +2,11 @@ import { lazy } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { PreviewSuspense } from 'next-sanity/preview'
-import { getPostData, getPostPaths } from '@/lib/api/getPost'
 
-import Post from '@/components/Post'
+import { getPostData, getPostsPaths } from '@/lib/api/getPost'
+import View from '@/components/Blog/View'
 const Preview = lazy(() => import('@/components/Project/Preview'))
-import { IPostDetails } from '@/interfaces/post'
+import { IPostDetails } from '@/types/Post.types'
 
 interface PageProps {
 	preview: boolean
@@ -28,14 +28,14 @@ export default function Page({ preview, postData, queryParams }: PageProps): JSX
 					<Preview queryParams={queryParams} />
 				</PreviewSuspense>
 			) : (
-				<Post postData={postData} />
+				<View content={postData} />
 			)}
 		</>
 	)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const paths = await getPostPaths()
+	const paths = await getPostsPaths()
 
 	return {
 		paths,

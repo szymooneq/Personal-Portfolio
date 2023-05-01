@@ -1,9 +1,9 @@
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity/client/sanity.client'
-import { ITechnology } from '@/interfaces/global'
-import { IProjectCard, IProjectDetails } from '@/interfaces/project'
+import { IProjectCard, IProjectDetails } from '@/types/Project.types'
+import { removeDuplicateTechnologies } from '@/lib/helpers/array'
 
-async function getProjectCards() {
+async function getProjects() {
 	const query = groq`*[_type == "projects"]{
     slug,
     theme,
@@ -15,19 +15,7 @@ async function getProjectCards() {
   }`
 
 	const projectList = await client.fetch<IProjectCard[]>(query)
-	let technologyList: ITechnology[] = []
-
-	projectList.map((project) => {
-		project.technologies.map((technology) => {
-			const isFound: boolean = technologyList.some((element) => {
-				if (element.title === technology.title) {
-					return true
-				}
-				return false
-			})
-			if (!isFound) technologyList.push(technology)
-		})
-	})
+	const technologyList = removeDuplicateTechnologies(projectList)
 
 	return {
 		projectList,
@@ -40,7 +28,9 @@ async function getProjectsPaths() {
       "params": { "slug": slug.current }
     }`
 
-	return await client.fetch<string[]>(query)
+	const projectPaths = await client.fetch<string[]>(query)
+
+	return projectPaths
 }
 
 async function getProjectData(queryParams: { slug: string | string[] }) {
@@ -59,7 +49,9 @@ async function getProjectData(queryParams: { slug: string | string[] }) {
     details
   }`
 
-	return await client.fetch<IProjectDetails>(query, queryParams)
+	const projectData = await client.fetch<IProjectDetails>(query, queryParams)
+
+	return projectData
 }
 
-export { getProjectCards, getProjectsPaths, getProjectData }
+export { getProjects, getProjectsPaths, getProjectData }

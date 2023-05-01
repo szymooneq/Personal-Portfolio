@@ -5,26 +5,26 @@ import urlFor from '@/lib/sanity/client/urlFor'
 import { TechnologiesProps } from './Technologies.types'
 import styles from './Technologies.module.css'
 
-const Technologies = ({ technologies }: TechnologiesProps): JSX.Element => {
+const Technologies = ({ content }: TechnologiesProps): JSX.Element => {
 	const { query } = useRouter()
 
 	return (
 		<div className={styles.technologies}>
-			{technologies.map((el) => (
+			{content.map((technology) => (
 				<Link
-					key={el.title}
-					href={`/projects?category=${el.title}`}
+					key={technology.title}
+					href={`/projects?category=${technology.title}`}
 					scroll={false}
 					className={styles.button}
-					data-active={query.category === el.title}
-					aria-label={`Check my ${el.title} projects`}>
+					data-active={query.category === technology.title}
+					aria-label={`Check my ${technology.title} projects`}>
 					<Image
-						src={urlFor(el.icon).url()}
-						alt={`${el.title} icon`}
+						src={urlFor(technology.icon).url()}
+						alt={`${technology.title} icon`}
 						width={20}
 						height={20}
 					/>
-					<p>{el.title}</p>
+					<p>{technology.title}</p>
 				</Link>
 			))}
 			<Link

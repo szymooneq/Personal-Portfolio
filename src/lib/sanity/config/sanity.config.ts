@@ -1,10 +1,10 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
-import { myTheme } from './sanity.theme'
-import { codeInput } from '@sanity/code-input'
 import { visionTool } from '@sanity/vision'
+import { codeInput } from '@sanity/code-input'
+import { myTheme } from './sanity.theme'
+import { mySchemas } from './sanity.schemas'
 import { defaultDocumentNode } from './defaultDocumentNode'
-import { schemaTypes } from '@/lib/sanity/schemas'
 
 import SanityLogo from '@/components/UI/Logo/Sanity'
 
@@ -25,7 +25,7 @@ export default defineConfig({
 		codeInput()
 	],
 	schema: {
-		types: schemaTypes
+		types: mySchemas
 	},
 	studio: {
 		components: {

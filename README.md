@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![tutorial thumbnail](./src/assets/_thumbnail.jpg)
+![tutorial thumbnail](./src/assets/images/_thumbnail.jpg)
 
 My portfolio website. A responsive website built with Next.js and the Sanity v3 CMS embedded Studio.
 

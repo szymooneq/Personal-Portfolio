@@ -4,7 +4,7 @@
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: -0.8px;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--bg-secondary);
 }
 
 .link {
@@ -21,7 +21,7 @@
 
 .active {
 	font-weight: 400;
-	color: var(--white);
+	color: var(--black);
 }
 
 @media (min-width: 768px) {

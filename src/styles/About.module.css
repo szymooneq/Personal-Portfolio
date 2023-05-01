@@ -5,7 +5,7 @@
 
 .title {
 	margin-bottom: 0.5rem;
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 700;
 	letter-spacing: -0.8px;
 }
@@ -13,16 +13,16 @@
 .description {
 	font-size: var(--card-desc-font-size);
 	letter-spacing: -0.8px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .label {
 	margin-bottom: 0.5rem;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: -0.3px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .flexEnd {
@@ -32,25 +32,25 @@
 }
 
 .flexEnd svg {
-	width: 40px !important;
-	height: 40px !important;
-	color: gray !important;
+	width: 40px;
+	height: 40px;
+	color: var(--gray);
 }
 
 .card:hover .flexEnd svg {
-	color: var(--primary-color) !important;
+	color: var(--primary-color);
 }
 
 .card {
-	padding: var(--card-padding);
+	padding: var(--padding);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	position: relative;
 	min-height: 305px;
-	background: var(--bg-secondary-color);
-	border-radius: var(--card-border-radius);
-	box-shadow: var(--box-shadow);
+	background: var(--bg-secondary);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
 }
 
 .card ~ a {
@@ -62,10 +62,10 @@
 	position: absolute;
 	inset: 0;
 	background-color: var(--primary-color);
-	border-radius: var(--card-border-radius);
+	border-radius: var(--radius);
 	filter: blur(10px);
 	opacity: 0;
-	transition: 0.5s;
+	transition: opacity 0.5s;
 	z-index: -1;
 }
 
@@ -74,10 +74,10 @@
 }
 
 .card:nth-child(1) {
-	background: url('../assets/aboutImage.png');
+	background: url('../assets/images/about-header.png');
 	background-size: cover;
 	background-position: top;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--bg-secondary);
 }
 
 .card:nth-child(2) > h2 {
@@ -85,7 +85,7 @@
 }
 
 .card:nth-child(4) {
-	background-image: url('../assets/aboutProjects.png');
+	background-image: url('../assets/images/about-projects.png');
 	background-size: 639px auto;
 	background-repeat: no-repeat;
 }

@@ -1,0 +1,12 @@
+.list > h2 {
+	margin: 2rem 0;
+	font-size: var(--contact-title);
+}
+
+.list ul > li {
+	margin-left: 3rem;
+	margin-bottom: 0.4rem;
+	font-size: var(--card-title-font-size);
+	letter-spacing: -1px;
+	color: var(--gray);
+}

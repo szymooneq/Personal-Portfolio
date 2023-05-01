@@ -16,12 +16,12 @@ const Breadcrumb = (): JSX.Element => {
 	return (
 		<nav className={styles.breadcrumb}>
 			<Container>
-				{breadcrumb.map((path, id) => (
-					<span key={id}>
-						{id !== breadcrumb.length - 1 ? (
+				{breadcrumb.map((path, index) => (
+					<span key={index}>
+						{index !== breadcrumb.length - 1 ? (
 							<>
 								<Link href={`/${path}`} className={styles.link}>
-									{id === 0 ? 'home' : path}
+									{index === 0 ? 'home' : path}
 								</Link>
 								<span className={styles.active}> / </span>
 							</>

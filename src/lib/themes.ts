@@ -11,8 +11,8 @@ const base = {
 	radius: '1rem',
 	fontSize: {
 		primary: '[20px, 22px, 24px, 26px]',
-		secondary: '[32px, 34px, 36px, 40px, 60px]',
-		tertiary: '[40px, 64px, 80px, 88px]'
+		secondary: '[32px, 34px, 36px, 40px]',
+		tertiary: '[60px, 64px, 80px, 88px]'
 	}
 }
 

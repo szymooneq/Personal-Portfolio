@@ -1,14 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { getProjectCards } from '@/lib/api/getProject'
+import { getProjects } from '@/lib/api/getProject'
 import styles from '@/styles/Projects.module.css'
 
-import Container from '@/components/Layout/Container'
+import Page from '@/components/Layout/Page'
 import Technologies from '@/components/UI/Technologies'
-import Cards from '@/components/UI/Cards'
-import { ITechnology } from '@/interfaces/global'
-import { IProjectCard } from '@/interfaces/project'
+import CardGrid from '@/components/UI/CardGrid'
+import { ITechnology } from '@/types/Global.types'
+import { IProjectCard } from '@/types/Project.types'
+import { findProjects } from '@/lib/helpers/array'
 
 interface ProjectProps {
 	projectList: IProjectCard[]
@@ -22,26 +23,16 @@ export default function Projects({
 	const { query } = useRouter()
 	const [filteredProjects, setFilteredProjects] = useState(projectList)
 
-	const filterProjects = useCallback(() => {
-		if (query.category) {
-			return setFilteredProjects(
-				projectList.filter((project) =>
-					project.technologies.find((technology) =>
-						technology.title.includes(query.category as string)
-					)
-				)
-			)
+	useEffect(() => {
+		if (!query.category) {
+			return setFilteredProjects(projectList)
 		}
 
-		setFilteredProjects(projectList)
+		setFilteredProjects(() => findProjects(projectList, query.category as string))
 	}, [projectList, query.category])
 
-	useEffect(() => {
-		filterProjects()
-	}, [query.category, filterProjects])
-
 	return (
-		<>
+		<Page header="Projects">
 			<Head>
 				<title>Projects | Szymon Dudka</title>
 				<meta
@@ -50,22 +41,20 @@ export default function Projects({
 				/>
 			</Head>
 
-			<Container header="Projects">
-				<p className={styles.description}>
-					Here are some of my personal projects I have completed so far. You can easily
-					filter the projects by technology by selecting the desired technology.
-				</p>
+			<p className={styles.description}>
+				Here are some of my personal projects I have completed so far. You can easily
+				filter the projects by technology by selecting the desired technology.
+			</p>
 
-				<Technologies technologies={technologyList} />
+			<Technologies content={technologyList} />
 
-				<Cards type="project" data={filteredProjects} />
-			</Container>
-		</>
+			<CardGrid type="project" content={filteredProjects} />
+		</Page>
 	)
 }
 
 export async function getStaticProps() {
-	const { projectList, technologyList } = await getProjectCards()
+	const { projectList, technologyList } = await getProjects()
 
 	return {
 		props: {

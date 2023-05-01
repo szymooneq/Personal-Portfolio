@@ -12,15 +12,15 @@
 }
 
 .card {
-	padding: var(--card-padding);
+	padding: var(--padding);
 	width: 100%;
-	border-radius: var(--card-border-radius);
-	background-color: var(--bg-secondary-color);
-	box-shadow: var(--box-shadow);
+	border-radius: var(--radius);
+	background-color: var(--bg-secondary);
+	box-shadow: var(--shadow);
 }
 
 .card hr {
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .avatar {
@@ -51,7 +51,7 @@
 	position: absolute;
 	inset: 0;
 	border-radius: inherit;
-	background-color: var(--white-opac);
+	background-color: rgba(var(--text-RGB), 70%);
 	filter: blur(5px);
 	opacity: 0;
 	z-index: 10;
@@ -64,7 +64,7 @@
 
 .avatarMsg {
 	padding: 0.4rem 0.8rem;
-	font-size: 13px;
+	font-size: 0.8rem;
 	color: #ffffff;
 	border-radius: 1rem;
 	background-color: var(--secondary-color);
@@ -80,7 +80,7 @@
 
 .sectionTitle {
 	margin-bottom: 1rem;
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 700;
 	letter-spacing: -0.8px;
 }
@@ -93,7 +93,7 @@
 
 .contact {
 	margin-top: 1rem;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .contact > h3 {
@@ -115,7 +115,7 @@
 	width: max-content;
 	font-size: 1rem;
 	border-radius: 2rem;
-	border: 1px solid var(--white);
+	border: 1px solid var(--black);
 	transition: color 0.3s, border-color 0.3s;
 }
 
@@ -131,7 +131,7 @@
 	align-items: center;
 	font-size: var(--card-desc-font-size);
 	font-weight: 700;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 .link svg {
@@ -165,14 +165,14 @@
 .sectionTimeline {
 	font-size: 1rem;
 	letter-spacing: -0.8px;
-	color: var(--white);
+	color: var(--black);
 }
 
 .sectionDescription {
 	margin-top: 1rem;
 	font-size: var(--card-title-font-size);
 	letter-spacing: -1px;
-	color: var(--text-gray);
+	color: var(--gray);
 }
 
 @media (min-width: 768px) {

@@ -1,26 +1,22 @@
-import {
-	discordIcon,
-	githubIcon,
-	linkedinIcon
-} from '@/components/UI/Svg/SvgIcons';
+import * as icon from '@/assets/svg'
 
 export const contactLinks = [
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/szymon-dudka',
-		icon: linkedinIcon,
+		icon: icon.linkedin,
 		ariaLabel: 'Check my profile on LinkedIn'
 	},
 	{
 		name: 'GitHub',
 		url: 'https://github.com/szymooneq',
-		icon: githubIcon,
+		icon: icon.github,
 		ariaLabel: 'Check my profile on GitHub'
 	},
 	{
 		name: 'Discord',
 		url: 'https://discord.com/users/554988199529676800',
-		icon: discordIcon,
+		icon: icon.discord,
 		ariaLabel: 'Contact me on Discord'
 	}
-];
+]

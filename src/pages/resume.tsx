@@ -2,12 +2,12 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { contactLinks } from '@/lib/helpers/contactLinks'
+import { contactLinks } from '@/lib/helpers'
 import styles from '@/styles/Resume.module.css'
 
-import Container from '@/components/Layout/Container'
-import { rightUpCircleArrow } from '@/components/UI/Svg/SvgIcons'
-import resumeAvatar from '@/assets/resumeAvatar.jpg'
+import * as icon from '@/assets/svg'
+import resumeAvatar from '@/assets/images/resume-avatar.jpg'
+import Page from '@/components/Layout/Page'
 
 const educationList = [
 	{
@@ -84,7 +84,7 @@ const hobbyList = [
 
 export default function Resume(): JSX.Element {
 	return (
-		<Container header="Resume" className={styles.main}>
+		<Page header="Resume" className={styles.main}>
 			<Head>
 				<title>Resume | Szymon Dudka</title>
 				<meta
@@ -133,7 +133,7 @@ export default function Resume(): JSX.Element {
 								target="_blank"
 								rel="noreferrer">
 								{link.name}
-								{rightUpCircleArrow}
+								{icon.rightUpCircleArrow}
 							</Link>
 							{id !== contactLinks.length - 1 ? <hr /> : null}
 						</Fragment>
@@ -197,6 +197,6 @@ export default function Resume(): JSX.Element {
 					</ul>
 				</div>
 			</section>
-		</Container>
+		</Page>
 	)
 }

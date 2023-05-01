@@ -4,9 +4,9 @@ import Head from 'next/head'
 import { PreviewSuspense } from 'next-sanity/preview'
 import { getProjectData, getProjectsPaths } from '@/lib/api/getProject'
 
-import Project from '@/components/Project'
-const Preview = lazy(() => import('@/components/Project/Preview'))
-import { IProjectDetails } from '@/interfaces/project'
+const ProjectPreview = lazy(() => import('@/components/Project/Preview'))
+import { IProjectDetails } from '@/types/Project.types'
+import View from '@/components/Project/View'
 
 interface PageProps {
 	preview: boolean
@@ -29,10 +29,10 @@ export default function Page({
 
 			{preview ? (
 				<PreviewSuspense fallback="Loading...">
-					<Preview queryParams={queryParams} />
+					<ProjectPreview queryParams={queryParams} />
 				</PreviewSuspense>
 			) : (
-				<Project projectData={projectData} />
+				<View content={projectData} />
 			)}
 		</>
 	)
