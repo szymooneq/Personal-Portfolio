@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity/client/sanity.client'
-import { IProjectCard, IProjectDetails } from '@/interfaces/Project.types'
+import { IProjectCard, IProjectDetails } from '@/types/Project.types'
 import { removeDuplicateTechnologies } from '@/lib/helpers/array'
 
 async function getProjects() {

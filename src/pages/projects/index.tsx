@@ -7,8 +7,8 @@ import styles from '@/styles/Projects.module.css'
 import Page from '@/components/Layout/Page'
 import Technologies from '@/components/UI/Technologies'
 import CardGrid from '@/components/UI/CardGrid'
-import { ITechnology } from '@/interfaces/Global.types'
-import { IProjectCard } from '@/interfaces/Project.types'
+import { ITechnology } from '@/types/Global.types'
+import { IProjectCard } from '@/types/Project.types'
 import { findProjects } from '@/lib/helpers/array'
 
 interface ProjectProps {

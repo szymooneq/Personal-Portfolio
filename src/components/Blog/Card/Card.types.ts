@@ -1,4 +1,4 @@
-import { IPostCard } from '@/interfaces/Post.types'
+import { IPostCard } from '@/types/Post.types'
 
 export interface CardProps {
 	content: IPostCard

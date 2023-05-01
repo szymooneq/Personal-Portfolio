@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { getPosts } from '@/lib/api/getPost'
 import styles from '@/styles/Projects.module.css'
 
-import { IPostCard } from '@/interfaces/Post.types'
+import { IPostCard } from '@/types/Post.types'
 import CardGrid from '@/components/UI/CardGrid'
 import Page from '@/components/Layout/Page'
 

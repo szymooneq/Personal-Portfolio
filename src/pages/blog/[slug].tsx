@@ -6,7 +6,7 @@ import { PreviewSuspense } from 'next-sanity/preview'
 import { getPostData, getPostsPaths } from '@/lib/api/getPost'
 import View from '@/components/Blog/View'
 const Preview = lazy(() => import('@/components/Project/Preview'))
-import { IPostDetails } from '@/interfaces/Post.types'
+import { IPostDetails } from '@/types/Post.types'
 
 interface PageProps {
 	preview: boolean

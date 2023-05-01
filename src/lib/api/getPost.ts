@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity/client/sanity.client'
-import { IPostCard, IPostDetails } from '@/interfaces/Post.types'
+import { IPostCard, IPostDetails } from '@/types/Post.types'
 
 async function getPosts() {
 	const query = groq`*[_type == "post"]{

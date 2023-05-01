@@ -1,5 +1,5 @@
-import { ITechnology } from '@/interfaces/Global.types'
-import { IProjectCard } from '@/interfaces/Project.types'
+import { ITechnology } from '@/types/Global.types'
+import { IProjectCard } from '@/types/Project.types'
 
 const removeDuplicateTechnologies = (array: IProjectCard[]) => {
 	const filteredArray: ITechnology[] = []

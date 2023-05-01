@@ -1,4 +1,4 @@
-import { IProjectCard } from '@/interfaces/Project.types'
+import { IProjectCard } from '@/types/Project.types'
 
 export interface CardProps {
 	content: IProjectCard
