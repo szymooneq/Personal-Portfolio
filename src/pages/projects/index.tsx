@@ -1,35 +1,20 @@
-import { useEffect, useState } from 'react'
+import { InferGetStaticPropsType, GetStaticProps } from 'next'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { getProjects } from '@/lib/api/getProject'
-import styles from '@/styles/Projects.module.css'
-
+import { groq } from 'next-sanity'
+import { client } from '@/lib/sanity/client/sanity.client'
+import { removeRepeatedTechnologies } from '@/lib/helpers/removeRepeatedTechnologies'
+import { useProjects } from '@/hooks/useProjects'
 import Page from '@/components/Layout/Page'
 import Technologies from '@/components/UI/Technologies'
 import CardGrid from '@/components/UI/CardGrid'
-import { ITechnology } from '@/types/Global.types'
-import { IProjectCard } from '@/types/Project.types'
-import { findProjects } from '@/lib/helpers/array'
+import type { IProjectCard } from '@/types/Project.types'
+import styles from '@/styles/Projects.module.css'
 
-interface ProjectProps {
-	projectList: IProjectCard[]
-	technologyList: ITechnology[]
-}
-
-export default function Projects({
-	projectList,
-	technologyList
-}: ProjectProps): JSX.Element {
-	const { query } = useRouter()
-	const [filteredProjects, setFilteredProjects] = useState(projectList)
-
-	useEffect(() => {
-		if (!query.category) {
-			return setFilteredProjects(projectList)
-		}
-
-		setFilteredProjects(() => findProjects(projectList, query.category as string))
-	}, [projectList, query.category])
+export default function ProjectsPage({
+	projects,
+	technologies
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+	const currentProjects = useProjects(projects)
 
 	return (
 		<Page header="Projects">
@@ -42,25 +27,34 @@ export default function Projects({
 			</Head>
 
 			<p className={styles.description}>
-				Here are some of my personal projects I have completed so far. You can easily
-				filter the projects by technology by selecting the desired technology.
+				Here are some of my personal projects I have completed so far. You can easily filter the
+				projects by technology by selecting the desired technology.
 			</p>
 
-			<Technologies content={technologyList} />
+			<Technologies content={technologies} />
 
-			<CardGrid type="project" content={filteredProjects} />
+			<CardGrid type="project" content={currentProjects} />
 		</Page>
 	)
 }
 
-export async function getStaticProps() {
-	const { projectList, technologyList } = await getProjects()
+export const getStaticProps: GetStaticProps = async () => {
+	const QUERY = groq`*[_type == "projects"]{
+		slug,
+		theme,
+		thumbnail,
+		title,
+		description,
+		type->,
+		technologies[]->,
+	}`
+
+	const projects = await client.fetch<IProjectCard[]>(QUERY)
 
 	return {
 		props: {
-			projectList,
-			technologyList
-		},
-		revalidate: 60
+			projects,
+			technologies: removeRepeatedTechnologies(projects)
+		}
 	}
 }

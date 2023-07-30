@@ -41,7 +41,14 @@ export default function Home(): JSX.Element {
 					</div>
 
 					<div className={styles.astronaut}>
-						<Image src={homeAstrounaut} alt="Flying astronaut" width={250} height={250} />
+						<Image
+							src={homeAstrounaut}
+							alt="Flying astronaut"
+							quality={100}
+							placeholder="blur"
+							width={250}
+							height={250}
+						/>
 					</div>
 				</header>
 			</div>

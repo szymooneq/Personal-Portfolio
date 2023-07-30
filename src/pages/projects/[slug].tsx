@@ -1,30 +1,24 @@
 import { lazy } from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
+import { groq } from 'next-sanity'
 import { PreviewSuspense } from 'next-sanity/preview'
-import { getProjectData, getProjectsPaths } from '@/lib/api/getProject'
-
-const ProjectPreview = lazy(() => import('@/components/Project/Preview'))
-import { IProjectDetails } from '@/types/Project.types'
+import { client } from '@/lib/sanity/client/sanity.client'
 import View from '@/components/Project/View'
-
-interface PageProps {
-	preview: boolean
-	projectData: IProjectDetails
-	queryParams: {}
-}
+const ProjectPreview = lazy(() => import('@/components/Project/Preview'))
+import type { IProjectDetails } from '@/types/Project.types'
 
 // TODO: add page keywords to CMS
 export default function Page({
 	preview,
-	projectData,
+	data,
 	queryParams
-}: PageProps): JSX.Element {
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>{`${projectData.title} | Projects | Szymon Dudka`}</title>
-				<meta name="description" content={projectData.description} />
+				<title>{`${data.title} | Projects | Szymon Dudka`}</title>
+				<meta name="description" content={data.description} />
 			</Head>
 
 			{preview ? (
@@ -32,14 +26,18 @@ export default function Page({
 					<ProjectPreview queryParams={queryParams} />
 				</PreviewSuspense>
 			) : (
-				<View content={projectData} />
+				<View content={data} />
 			)}
 		</>
 	)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const paths = await getProjectsPaths()
+	const QUERY = groq`*[_type == "projects" && defined(slug.current)][]{
+		"params": { "slug": slug.current }
+	}`
+
+	const paths = await client.fetch<Array<string>>(QUERY)
 
 	return {
 		paths,
@@ -48,20 +46,39 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params, preview = false }) => {
-	const queryParams = { slug: params?.slug ?? `` }
+	const queryParams = { slug: params?.slug ?? '' }
 
 	if (preview) {
-		return { props: { preview, queryParams } }
+		return {
+			props: {
+				preview,
+				queryParams
+			}
+		}
 	}
 
-	const projectData = await getProjectData(queryParams)
+	const QUERY = groq`*[_type == "projects" && slug.current == $slug][0]{
+    title,
+    type->,
+    description,
+    links[] {
+      _key,
+        _type,
+        url
+    },
+    images[],
+    technologies[]->,
+    stack[]->,
+    details
+  }`
+
+	const data = await client.fetch<IProjectDetails>(QUERY, queryParams)
 
 	return {
 		props: {
-			projectData,
+			data,
 			queryParams: {},
 			preview
-		},
-		revalidate: 60
+		}
 	}
 }

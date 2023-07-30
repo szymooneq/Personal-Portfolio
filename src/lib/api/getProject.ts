@@ -1,27 +1,6 @@
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity/client/sanity.client'
-import { IProjectCard, IProjectDetails } from '@/types/Project.types'
-import { removeDuplicateTechnologies } from '@/lib/helpers/array'
-
-async function getProjects() {
-	const query = groq`*[_type == "projects"]{
-    slug,
-    theme,
-    thumbnail,
-    title,
-    description,
-    type->,
-    technologies[]->,
-  }`
-
-	const projectList = await client.fetch<IProjectCard[]>(query)
-	const technologyList = removeDuplicateTechnologies(projectList)
-
-	return {
-		projectList,
-		technologyList
-	}
-}
+import { IProjectDetails } from '@/types/Project.types'
 
 async function getProjectsPaths() {
 	const query = groq`*[_type == "projects" && defined(slug.current)][]{
@@ -54,4 +33,4 @@ async function getProjectData(queryParams: { slug: string | string[] }) {
 	return projectData
 }
 
-export { getProjects, getProjectsPaths, getProjectData }
+export { getProjectsPaths, getProjectData }
