@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
@@ -18,12 +18,8 @@ const menuItems = [
 
 // TODO: Contact Button
 const Navbar = (): JSX.Element => {
-	const { pathname, push } = useRouter()
+	const { pathname } = useRouter()
 	const [isExpand, setIsExpand] = useState<boolean>(false)
-
-	const handleRedirect = useCallback(() => {
-		if (pathname !== '/') push('/')
-	}, [pathname, push])
 
 	const handleToggle = () => {
 		if (window.innerWidth < 1024) setIsExpand((prev) => !prev)
@@ -44,9 +40,9 @@ const Navbar = (): JSX.Element => {
 	return (
 		<nav className={styles.nav} data-home={pathname === '/'}>
 			<div className={styles.desktop}>
-				<div onClick={() => handleRedirect()}>
+				<Link href="/">
 					<Logo />
-				</div>
+				</Link>
 
 				<ul className={styles.menuList}>
 					{menuItems.map((item) => (

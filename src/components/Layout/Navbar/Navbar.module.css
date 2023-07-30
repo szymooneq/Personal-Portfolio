@@ -25,11 +25,22 @@
 
 .nav[data-home='true'] .desktop {
 	bottom: 0;
+	animation: slideUp 0.4s ease-in-out forwards;
 }
 
 @keyframes slideDown {
 	from {
 		transform: translateY(-100%);
+	}
+
+	to {
+		transform: translateY(0%);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(100%);
 	}
 
 	to {
