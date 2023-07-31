@@ -1,59 +1,20 @@
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
+import { screen } from '@/lib/themes'
+import { Logo } from '@/components/UI/Logo/Logo.styled'
 
-const Logo = styled.div`
+const Menu = styled.ul`
   display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	position: relative;
-	width: 3.5rem;
-	height: 3.5rem;
-	border-radius: 0.75rem;
-	box-shadow: 0px 2px 8px -1px #0000001a;
-	overflow: hidden;
-	cursor: pointer;
-	z-index: 2;
-	transform: translateZ(0);
-	transition: filter 0.3s;
+	gap: 3rem;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	list-style-type: none;
 
-  &:hover {
-	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.439));
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-      rgba(var(--text-RGB), 0.502),
-      rgba(var(--text-RGB), 0.251),
-      rgba(var(--text-RGB), 0.188),
-      rgba(var(--text-RGB), 0.125),
-      rgba(var(--text-RGB), 0.063),
-      rgba(var(--text-RGB), 0.063),
-      rgba(var(--text-RGB), 0.502)
-    );
-    z-index: -1;
-    animation: 6s borderRotation linear infinite;
-  }
-
-  &::after {
-    content: '';
-    padding: 1px;
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    background: var(--gradient);
-    background-clip: content-box;
-    z-index: -1;
-  }
-
-  & > span {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ffffff;
-    filter: drop-shadow(0 0 0.3rem #00000070);
+  @media only screen and (${screen.lg}) {
+    display: flex;
+		flex-direction: row;
   }
 `
 
@@ -89,6 +50,10 @@ const Desktop = styled.div`
     bottom: 0;
     animation: slideUp 0.4s ease-in-out forwards;
 
+    @media only screen and (${screen.md}) {
+		  padding: 0.8rem 2rem;
+    }
+
     ${Logo}::before {
       background: conic-gradient(
         rgba(255, 255, 255, 0.502),
@@ -101,10 +66,7 @@ const Desktop = styled.div`
       );
     }
 
-    ${Menu} {
-	    color: #ffffff;
-    }
-
+    ${Menu},
     ${MenuItem} {
 	    color: #ffffff;
     }
@@ -112,33 +74,20 @@ const Desktop = styled.div`
     ${Logo}:hover,
     ${ContactLink}:hover,
     ${MenuItem}:hover {
-      filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.439));
+      filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.44));
     }
   `}
 `
 
-const Menu = styled.ul`
-  display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 3rem;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-	list-style-type: none;
-`
-
 const MenuItem = styled.li`
+  font-weight: ${({ isActive }) => isActive ? 700 : 400};
+  color: ${({ isActive }) => isActive ? `var(--primary-color)` : `#ffffff`};
+  pointer-events: ${({ isActive }) => isActive ? 'none' : 'default'};
 	transition: filter 0.1s;
 
   &:hover {
-	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.439));
+	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.44));
   }
-
-  ${props => props.isActive && css`
-    font-weight: 700;
-    color: var(--primary-color);
-    pointer-events: none;
-  `}
 `
 
 const ContactLink = styled(Link)`
@@ -146,23 +95,30 @@ const ContactLink = styled(Link)`
 	display: block;
 	width: max-content;
 	border-radius: 2rem;
-	background-color: var(--bg-secondary);
+  color: ${({ isActive }) => isActive ? '#ffffff' : '#ffffff'};
+	background-color: ${({ isActive }) => isActive ? 'var(--primary-color)' : 'var(--bg-secondary)'};
 	box-shadow: var(--shadow);
 	transition: filter 0.3s;
+  pointer-events: ${({ isActive }) => isActive ? 'none' : 'default'};
 
-  &:hover {
-	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.439));
+  @media only screen and (${screen.lg}) {
+    display: block;
   }
 
-  ${props => props.isActive && css`
-    color: #ffffff;
-    background: var(--primary-color);
-    pointer-events: none;
-  `}
+  &:hover {
+	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.44));
+  }
 `
 
 const ButtonWrapper = styled.div`
   display: none;
+
+  @media only screen and (${screen.lg}) {
+    display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+  }
 `
 
 const Burger = styled.button`
@@ -176,6 +132,10 @@ const Burger = styled.button`
 	background: transparent;
 	cursor: pointer;
 	z-index: 60;
+
+  @media only screen and (${screen.lg}) {
+    display: none;
+  }
 
   & > span {
     width: 100%;
@@ -210,14 +170,9 @@ const BlackLayer = styled.div`
 	width: 100vw;
 	height: 100vh;
 	background: transparent;
-	visibility: hidden;
-	pointer-events: none;
+	visibility: ${({ isActive }) => isActive ? 'visible' : 'hidden'};
+	pointer-events: ${({ isActive }) => isActive ? 'all' : 'none'};
 	z-index: 60;
-
-  ${props => props.isActive && css`
-    visibility: visible;
-	  pointer-events: all;
-  `}
 `
 
 const MobileMenu = styled.div`
@@ -232,13 +187,9 @@ const MobileMenu = styled.div`
 	width: calc(100vw - 30%);
 	background-color: rgba(var(--bg-primary-RGB), 0.5);
 	backdrop-filter: blur(15px);
-	transform: translateX(-100%);
+	transform: ${({ isExpanded }) => isExpanded ? 'translateX(0)' : 'translateX(-100%)'};
 	z-index: 100;
 	transition: transform 0.3s;
-
-  ${props => props.isExpanded && css`
-	  transform: translateX(0);
-  `}
 
   ${Logo} {
     position: absolute;
@@ -251,6 +202,10 @@ const MobileMenu = styled.div`
 const Settings = styled.div``
 
 const Mobile = styled.div`
+  @media only screen and (${screen.lg}) {
+    display: none;
+  }
+
   ${ContactLink} {
     margin-top: 3rem;
   }
@@ -262,3 +217,5 @@ const Mobile = styled.div`
     bottom: 100px;
   }
 `
+
+export { Navbar, Desktop, Menu, MenuItem, ContactLink, Mobile, MobileMenu, Settings, Burger, ButtonWrapper, BlackLayer }

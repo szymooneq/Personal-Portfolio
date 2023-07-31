@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from './Navbar.module.css'
 
+import * as Styled from './Navbar.styled'
+
 import { throttle } from '@/lib/helpers'
 import Logo from '@/components/UI/Logo'
 import Burger from '@/components/UI/Burger'
@@ -38,83 +40,80 @@ const Navbar = (): JSX.Element => {
 	}, [handleResize])
 
 	return (
-		<nav className={styles.nav} data-home={pathname === '/'}>
-			<div className={styles.desktop}>
+		<Styled.Navbar isHomePage={pathname === '/'} isOtherPage={pathname !== '/'}>
+			<Styled.Desktop>
 				<Link href="/">
 					<Logo />
 				</Link>
 
-				<ul className={styles.menuList}>
+				<Styled.Menu>
 					{menuItems.map((item) => (
-						<li
+						<Styled.MenuItem
 							key={item.title}
-							className={styles.menuItem}
-							data-active={pathname === item.path}>
+							isActive={pathname === item.path}>
 							<Link
 								href={item.path}
 								onClick={handleToggle}
 								aria-current={pathname === item.path ? 'page' : 'false'}>
 								{item.title}
 							</Link>
-						</li>
+						</Styled.MenuItem>
 					))}
-				</ul>
+				</Styled.Menu>
 
-				<div className={styles.rightSide}>
+				<Styled.ButtonWrapper>
 					<Button.Theme />
-					<Link
+					<Styled.ContactLink
 						href="/contact"
-						className={styles.contactLink}
-						data-active={pathname === '/contact'}
+						isActive={pathname === '/contact'}
 						aria-current={pathname === '/contact' ? 'page' : 'false'}>
 						Get in touch
-					</Link>
-				</div>
+					</Styled.ContactLink>
+				</Styled.ButtonWrapper>
 
-				<Burger isExpanded={isExpand} onClick={handleToggle} />
-			</div>
+				<Styled.Burger isExpanded={isExpand} onClick={handleToggle}>
+					<span></span><span></span><span></span>
+				</Styled.Burger>
+			</Styled.Desktop>
 
-			<div className={styles.mobile}>
-				<div
-					className={styles.opacLayer}
+			<Styled.Mobile>
+				<Styled.BlackLayer
 					onClick={handleToggle}
-					data-expand={isExpand}></div>
-				<div className={styles.mobileMenu} data-expand={isExpand}>
+					isActive={isExpand}></Styled.BlackLayer>
+				<Styled.MobileMenu isExpanded={isExpand}>
 					<Logo />
-					<ul className={styles.menuList}>
+					<Styled.Menu>
 						{menuItems.map((item) => (
-							<li
+							<Styled.MenuItem
 								key={item.title}
-								className={styles.menuItem}
-								data-active={pathname === item.path}>
+								isActive={pathname === item.path}>
 								<Link
 									href={item.path}
 									onClick={handleToggle}
 									aria-current={pathname === item.path ? 'page' : 'false'}>
 									{item.title}
 								</Link>
-							</li>
+							</Styled.MenuItem>
 						))}
-					</ul>
-					<Link
+					</Styled.Menu>
+					<Styled.ContactLink
 						href="/contact"
-						className={styles.contactLink}
 						onClick={handleToggle}
-						data-active={pathname === '/contact'}
+						isActive={pathname === '/contact'}
 						aria-current={pathname === '/contact' ? 'page' : 'false'}>
 						Get in touch
-					</Link>
+					</Styled.ContactLink>
 
-					<div className={styles.options}>
+					<Styled.Settings>
 						<Button.Theme />
 						{/* <select name="language" id="language">
 							<option value="pl">PL</option>
 							<option value="en">EN</option>
 						</select> */}
-					</div>
-				</div>
-			</div>
-		</nav>
+					</Styled.Settings>
+				</Styled.MobileMenu>
+			</Styled.Mobile>
+		</Styled.Navbar>
 	)
 }
 
