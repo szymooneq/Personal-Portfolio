@@ -12,14 +12,14 @@ const breakpoints = {
 }
 
 export const screen = {
-  smDown: `max-width ${breakpoints.smDown}px`,
-  sm: `min-width ${breakpoints.sm}px`,
-  mdDown: `max-width ${breakpoints.mdDown}px`,
-  md: `min-width ${breakpoints.md}px`,
-  lgDown: `max-width ${breakpoints.lgDown}px`,
-  lg: `min-width ${breakpoints.lg}px`,
-  xlDown: `max-width ${breakpoints.xlDown}px`,
-  xl: `min-width ${breakpoints.xl}px`,
-  xxlDown: `max-width ${breakpoints.xxlDown}px`,
-  xxl: `min-width ${breakpoints.xxl}px`
+  smDown: `max-width: ${breakpoints.smDown}px`,
+  sm: `min-width: ${breakpoints.sm}px`,
+  mdDown: `max-width: ${breakpoints.mdDown}px`,
+  md: `min-width: ${breakpoints.md}px`,
+  lgDown: `max-width: ${breakpoints.lgDown}px`,
+  lg: `min-width: ${breakpoints.lg}px`,
+  xlDown: `max-width: ${breakpoints.xlDown}px`,
+  xl: `min-width: ${breakpoints.xl}px`,
+  xxlDown: `max-width: ${breakpoints.xxlDown}px`,
+  xxl: `min-width: ${breakpoints.xxl}px`
 }

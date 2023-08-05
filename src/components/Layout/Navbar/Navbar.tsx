@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import styles from './Navbar.module.css'
 
 import * as Styled from './Navbar.styled'
 
@@ -41,78 +40,43 @@ const Navbar = (): JSX.Element => {
 
 	return (
 		<Styled.Navbar isHomePage={pathname === '/'} isOtherPage={pathname !== '/'}>
-			<Styled.Desktop>
 				<Link href="/">
 					<Logo />
 				</Link>
 
-				<Styled.Menu>
-					{menuItems.map((item) => (
-						<Styled.MenuItem
-							key={item.title}
-							isActive={pathname === item.path}>
-							<Link
-								href={item.path}
-								onClick={handleToggle}
-								aria-current={pathname === item.path ? 'page' : 'false'}>
-								{item.title}
-							</Link>
-						</Styled.MenuItem>
-					))}
-				</Styled.Menu>
+				<Styled.Dropdown>
+					<Styled.Menu>
+						<Styled.Links>
+								{menuItems.map((item) => (
+									<Styled.MenuItem
+										key={item.title}
+										isActive={pathname === item.path}>
+										<Styled.Link
+											href={item.path}
+											onClick={handleToggle}
+											aria-current={pathname === item.path ? 'page' : 'false'}>
+											{item.title}
+										</Styled.Link>
+									</Styled.MenuItem>
+								))}
+							</Styled.Links>
 
-				<Styled.ButtonWrapper>
-					<Button.Theme />
-					<Styled.ContactLink
-						href="/contact"
-						isActive={pathname === '/contact'}
-						aria-current={pathname === '/contact' ? 'page' : 'false'}>
-						Get in touch
-					</Styled.ContactLink>
-				</Styled.ButtonWrapper>
-
+							<Styled.Settings>
+								<Styled.FeaturedLink
+									href="/contact"
+									onClick={handleToggle}
+									isActive={pathname === '/contact'}
+									aria-current={pathname === '/contact' ? 'page' : 'false'}>
+									Get in touch
+								</Styled.FeaturedLink>
+								<Button.Theme />
+							</Styled.Settings>
+					</Styled.Menu>
+				</Styled.Dropdown>
+					
 				<Styled.Burger isExpanded={isExpand} onClick={handleToggle}>
 					<span></span><span></span><span></span>
 				</Styled.Burger>
-			</Styled.Desktop>
-
-			<Styled.Mobile>
-				<Styled.BlackLayer
-					onClick={handleToggle}
-					isActive={isExpand}></Styled.BlackLayer>
-				<Styled.MobileMenu isExpanded={isExpand}>
-					<Logo />
-					<Styled.Menu>
-						{menuItems.map((item) => (
-							<Styled.MenuItem
-								key={item.title}
-								isActive={pathname === item.path}>
-								<Link
-									href={item.path}
-									onClick={handleToggle}
-									aria-current={pathname === item.path ? 'page' : 'false'}>
-									{item.title}
-								</Link>
-							</Styled.MenuItem>
-						))}
-					</Styled.Menu>
-					<Styled.ContactLink
-						href="/contact"
-						onClick={handleToggle}
-						isActive={pathname === '/contact'}
-						aria-current={pathname === '/contact' ? 'page' : 'false'}>
-						Get in touch
-					</Styled.ContactLink>
-
-					<Styled.Settings>
-						<Button.Theme />
-						{/* <select name="language" id="language">
-							<option value="pl">PL</option>
-							<option value="en">EN</option>
-						</select> */}
-					</Styled.Settings>
-				</Styled.MobileMenu>
-			</Styled.Mobile>
 		</Styled.Navbar>
 	)
 }

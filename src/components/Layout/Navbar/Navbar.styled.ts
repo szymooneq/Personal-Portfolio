@@ -1,25 +1,100 @@
-import Link from 'next/link'
+import NextLink from 'next/link'
 import styled, { css } from 'styled-components'
-import { screen } from '@/lib/themes'
 import { Logo } from '@/components/UI/Logo/Logo.styled'
+import { screen } from '@/lib/theme/breakpoints'
+import type { StyledMenuProps } from './Navbar.types'
 
-const Menu = styled.ul`
+const Navbar = styled.nav`
+  padding-inline: 1.5rem;
   display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 3rem;
-	font-size: 1.25rem;
-	line-height: 1.5rem;
-	list-style-type: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  border-bottom: 1px solid var(--bg-secondary);
+  background-color: rgba(var(--bg-secondary), 0.7);
+  backdrop-filter: blur(16px) saturate(1.5);
+  z-index: 1;
+`
+
+const Wrapper = styled.div`
+
+`
+
+const Dropdown = styled.div`
+  display: grid;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.3s;
+  z-index: 1;
+  overflow: hidden;
+`
+
+const Menu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3rem;
+  position: relative;
+  background-color: rgba(var(--bg-secondary), 0.7);
+  backdrop-filter: blur(24px);
+  overflow: hidden;
+  z-index: 5;
+`
+
+const Links = styled.ul<StyledMenuProps>`
+  margin-top: 4rem;
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+
+  @media only screen and (${screen.lgDown}) {
+    flex-direction: column;
+  }
 
   @media only screen and (${screen.lg}) {
-    display: flex;
 		flex-direction: row;
   }
 `
 
-const Navbar = styled.nav`
-  position: relative;
+const Link = styled(NextLink)`
+  font-size: 1.25rem;
+`
+
+
+const FeaturedLink = styled(Link)`
+  padding: 0.5rem 1rem;
+	/* display: block; */
+	width: max-content;
+	border-radius: 2rem;
+	background-color: ${({ isActive }) => isActive ? 'var(--primary-color)' : 'var(--bg-secondary)'};
+	box-shadow: var(--shadow);
+	transition: filter 0.3s;
+  pointer-events: ${({ isActive }) => isActive ? 'none' : 'default'};
+
+  [data-theme="dark"] & {
+    color: #ffffff;
+  }
+
+  [data-theme="light"] & {
+    color: ${({ isActive }) => isActive ? '#ffffff' : '#000000'};
+  }
+
+  @media only screen and (${screen.lg}) {
+    display: block;
+  }
+
+  &:hover {
+	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.44));
+  }
 `
 
 const Desktop = styled.div`
@@ -34,7 +109,18 @@ const Desktop = styled.div`
 	transform: translateY(0%);
 	z-index: 1;
 
-  ${Menu} {
+  @media only screen and (${screen.lg}) {
+    ${Links} {
+      display: flex;
+      flex-direction: row;
+    }
+
+    ${FeaturedLink} {
+      display: block;
+    }
+  }
+
+  ${Links} {
     display: none;
   }
 
@@ -66,13 +152,13 @@ const Desktop = styled.div`
       );
     }
 
-    ${Menu},
+    ${Links},
     ${MenuItem} {
 	    color: #ffffff;
     }
 
     ${Logo}:hover,
-    ${ContactLink}:hover,
+    ${FeaturedLink}:hover,
     ${MenuItem}:hover {
       filter: drop-shadow(0 0 0.3rem rgba(255, 255, 255, 0.44));
     }
@@ -84,26 +170,6 @@ const MenuItem = styled.li`
   color: ${({ isActive }) => isActive ? `var(--primary-color)` : `#ffffff`};
   pointer-events: ${({ isActive }) => isActive ? 'none' : 'default'};
 	transition: filter 0.1s;
-
-  &:hover {
-	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.44));
-  }
-`
-
-const ContactLink = styled(Link)`
-  padding: 0.5rem 1rem;
-	display: block;
-	width: max-content;
-	border-radius: 2rem;
-  color: ${({ isActive }) => isActive ? '#ffffff' : '#ffffff'};
-	background-color: ${({ isActive }) => isActive ? 'var(--primary-color)' : 'var(--bg-secondary)'};
-	box-shadow: var(--shadow);
-	transition: filter 0.3s;
-  pointer-events: ${({ isActive }) => isActive ? 'none' : 'default'};
-
-  @media only screen and (${screen.lg}) {
-    display: block;
-  }
 
   &:hover {
 	  filter: drop-shadow(0 0 0.3rem rgba(var(--text-RGB), 0.44));
@@ -164,17 +230,6 @@ const Burger = styled.button`
   `}
 `
 
-const BlackLayer = styled.div`
-  position: fixed;
-	inset: 0;
-	width: 100vw;
-	height: 100vh;
-	background: transparent;
-	visibility: ${({ isActive }) => isActive ? 'visible' : 'hidden'};
-	pointer-events: ${({ isActive }) => isActive ? 'all' : 'none'};
-	z-index: 60;
-`
-
 const MobileMenu = styled.div`
   display: flex;
 	flex-direction: column;
@@ -199,23 +254,23 @@ const MobileMenu = styled.div`
   }
 `
 
-const Settings = styled.div``
+const Settings = styled.div`
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+`
 
 const Mobile = styled.div`
   @media only screen and (${screen.lg}) {
     display: none;
   }
 
-  ${ContactLink} {
+  ${FeaturedLink} {
     margin-top: 3rem;
-  }
-
-  ${Settings} {
-    display: inline-flex;
-    gap: 0.5rem;
-    position: absolute;
-    bottom: 100px;
   }
 `
 
-export { Navbar, Desktop, Menu, MenuItem, ContactLink, Mobile, MobileMenu, Settings, Burger, ButtonWrapper, BlackLayer }
+export { Navbar, Desktop, Dropdown, Menu, Links, Link, MenuItem, FeaturedLink, Mobile, MobileMenu, Settings, Burger, ButtonWrapper }
