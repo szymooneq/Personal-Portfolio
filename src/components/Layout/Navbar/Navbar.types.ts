@@ -1,3 +1,7 @@
 export interface StyledMenuProps {
-  isExpand: boolean
+  isExpanded: boolean
+}
+
+export interface StyledLinkProps {
+  isCurrent: boolean
 }
