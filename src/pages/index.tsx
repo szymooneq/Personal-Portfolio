@@ -1,12 +1,28 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import { contactLinks } from '@/lib/helpers'
-import styles from '@/styles/Home.module.css'
-
 import Starfield from '@/components/UI/Starfield'
-import { homeAstrounaut } from '@/assets/images'
+import * as Styled from '@/styles/Home.styled'
+import { SrOnly } from '@/components/shared.styled'
+import { discordIcon, gitHubIcon, linkedInIcon } from '@/assets/icons'
 
+const SOCIAL_LINKS = [
+	{
+		name: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/szymon-dudka',
+		icon: linkedInIcon
+	},
+	{
+		name: 'GitHub',
+		url: 'https://github.com/szymooneq',
+		icon: gitHubIcon
+	},
+	{
+		name: 'Discord',
+		url: 'https://discord.com/users/554988199529676800',
+		icon: discordIcon
+	}
+]
+
+// TODO: SEO + robots.txt
 export default function Home(): JSX.Element {
 	return (
 		<>
@@ -18,40 +34,21 @@ export default function Home(): JSX.Element {
 				/>
 			</Head>
 
-			<div className={styles.hero}>
-				<Starfield />
+			<Starfield />
 
-				<header className={styles.header}>
-					<div className={styles.content}>
-						<h1>Szymon Dudka</h1>
-						<h2>Frontend Developer</h2>
+			<Styled.Section>
+				<Styled.Heading>Szymon Dudka</Styled.Heading>
+				<Styled.SubHeading>Frontend Developer</Styled.SubHeading>
 
-						<div className={styles.links}>
-							{contactLinks.map((link) => (
-								<Link
-									key={link.name}
-									href={link.url}
-									target="_blank"
-									rel="noreferrer"
-									aria-label={link.ariaLabel}>
-									{link.icon}
-								</Link>
-							))}
-						</div>
-					</div>
-
-					<div className={styles.astronaut}>
-						<Image
-							src={homeAstrounaut}
-							alt="Flying astronaut"
-							quality={100}
-							placeholder="blur"
-							width={250}
-							height={250}
-						/>
-					</div>
-				</header>
-			</div>
+				<Styled.Links>
+					{SOCIAL_LINKS.map(link => (
+						<Styled.Link key={link.name} href={link.url} target="_blank" rel="noreferrer">
+							<SrOnly>{link.name}</SrOnly>
+							{link.icon}
+						</Styled.Link>
+					))}
+				</Styled.Links>
+			</Styled.Section>
 		</>
 	)
 }

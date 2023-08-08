@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   border-bottom: 1px solid var(--bg-secondary);
   background-color: rgba(var(--bg-secondary), 0.7);
   backdrop-filter: blur(16px) saturate(1.5);
-  z-index: 1;
+  z-index: 5;
 
   @media only screen and (${screen.mdDown}) {
     & > ${Links},
@@ -72,7 +72,7 @@ const Dropdown = styled.div<StyledMenuProps>`
     backdrop-filter: blur(24px);
     visibility: ${({ isExpanded }) => isExpanded ? 'visible' : 'hidden'};
     transition: grid-template-rows 0.5s, visibility 0.5s;
-    z-index: 1;
+    z-index: 4;
   }
 
   @media only screen and (${screen.md}) {

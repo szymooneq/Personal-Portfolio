@@ -1,0 +1,3 @@
+export const cubeIcon: JSX.Element = (
+	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="currentColor" d="M33.1 74.6a8.1 8.1 0 0 0-1.1 4.1v98.6a8.1 8.1 0 0 0 4.1 7l88 49.5a7.6 7.6 0 0 0 3.9 1l.9-106.8l-95.8-53.4Z" opacity=".2" /><path fill="currentColor" d="M229.9 70.8a.1.1 0 0 1-.1-.1a16.2 16.2 0 0 0-6-5.9l-88-49.5a16 16 0 0 0-15.6 0l-88 49.5a16.2 16.2 0 0 0-6 5.9a.1.1 0 0 1-.1.1v.2a15 15 0 0 0-2.1 7.7v98.6a16.1 16.1 0 0 0 8.2 14l88 49.5a16.5 16.5 0 0 0 7.2 2h1.4a16.1 16.1 0 0 0 7-2l88-49.5a16.1 16.1 0 0 0 8.2-14V78.7a15.6 15.6 0 0 0-2.1-7.9ZM128 29.2L207.7 74l-78.8 44.8L48.4 74ZM40 87.6l80.9 45.1l-.8 89.7L40 177.3Zm96.1 134.7l.8-89.6l79.1-45v89.6Z" /></svg>
+)

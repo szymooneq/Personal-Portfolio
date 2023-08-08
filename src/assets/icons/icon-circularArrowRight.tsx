@@ -1,0 +1,3 @@
+export const circularArrowRightIcon: JSX.Element = (
+	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" fill="currentColor" opacity=".2" /><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.2 104.2 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Z" /><path fill="currentColor" d="M139.7 88.4a8 8 0 0 0-11.3 11.3l20.3 20.3H88a8 8 0 0 0 0 16h60.7l-20.3 20.3a8 8 0 0 0 0 11.3a7.8 7.8 0 0 0 5.7 2.3a7.6 7.6 0 0 0 5.6-2.3l34-33.9a8.1 8.1 0 0 0 0-11.4Z" /></svg>
+)

@@ -1,0 +1,3 @@
+export const webGridIcon: JSX.Element = (
+	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path fill="currentColor" d="M104 104v104H40a8 8 0 0 1-8-8v-96Z" opacity=".2" /><path fill="currentColor" d="M216 40H40a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16ZM40 56h176v40H40Zm0 56h56v88H40Zm176 88H112v-88h104v88Z" /></svg>
+)

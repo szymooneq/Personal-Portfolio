@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import styles from './Starfield.module.css'
+import * as Styled from './Starfield.styled'
+import { homeAstrounaut } from '@/assets/images'
 
 class Star {
 	x: number
@@ -108,9 +109,10 @@ const Starfield = (): JSX.Element => {
 	}, [])
 
 	return (
-		<div ref={container} className={styles.background}>
+		<Styled.Wrapper ref={container}>
+			<Styled.Image src={homeAstrounaut} alt="Astronaut" quality={100} placeholder="blur" width={400} height={400} />
 			<canvas ref={starfieldCanvas} />
-		</div>
+		</Styled.Wrapper>
 	)
 }
 

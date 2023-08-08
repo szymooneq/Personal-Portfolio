@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import * as Styled from './ThemeSwitcher.styled'
-import * as icon from '@/assets/svg'
+import { moonIcon, sunIcon } from '@/assets/icons'
 
 // TODO: remove next-themes library
 const ThemeSwitcher = () => {
@@ -30,7 +30,7 @@ const ThemeSwitcher = () => {
 				readOnly />
 
 				<Styled.Label htmlFor="theme" aria-label="Toggle theme">
-					<span>{theme === 'dark' ? icon.moon : icon.sun}</span>
+					<span>{theme === 'dark' ? moonIcon : sunIcon}</span>
 				</Styled.Label>
 		</Styled.Wrapper>
 	)

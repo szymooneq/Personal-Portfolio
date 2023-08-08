@@ -3,24 +3,24 @@ import Link from 'next/link'
 import { contactLinks } from '@/lib/helpers'
 import styles from '@/styles/Contact.module.css'
 
-import * as icon from '@/assets/svg'
 import Page from '@/components/Layout/Page'
+import { cubeIcon, penIcon, webGridIcon } from '@/assets/icons'
 
 const cards = [
 	{
 		title: 'Website design & development',
 		desc: 'Experienced designer & visual developer. I create websites/web applications.',
-		icon: icon.layout
+		icon: webGridIcon
 	},
 	{
 		title: 'Visual & graphic design',
 		desc: 'I have an eye for the visual side of things. I enjoy working with attention to detail!',
-		icon: icon.pen
+		icon: penIcon
 	},
 	{
 		title: 'Branding',
 		desc: 'I combine my visual and analytical side and love creating brands.',
-		icon: icon.cube
+		icon: cubeIcon
 	}
 ]
 
