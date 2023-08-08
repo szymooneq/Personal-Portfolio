@@ -28,6 +28,11 @@ const Label = styled.label`
     background: transparent;
     transform: translateX(0);
     transition: transform 0.2s;
+
+    & > svg {
+      width: inherit;
+      height: inherit;
+    }
   }
 `
 

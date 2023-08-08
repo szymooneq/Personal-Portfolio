@@ -2,7 +2,9 @@ import styled, { css } from 'styled-components'
 import type { StyledButtonProps } from './Button.types'
 import { screen } from '@/lib/theme/breakpoints'
 
+// TODO: theme colors
 const Button = styled.button<StyledButtonProps>`
+  position: relative;
   cursor: pointer;
 
  ${props => props.variant === 'burger' && css`
@@ -10,7 +12,6 @@ const Button = styled.button<StyledButtonProps>`
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      position: relative;
       aspect-ratio: 1 / 1;
       width: 2.5rem;
       border: none;
@@ -26,17 +27,17 @@ const Button = styled.button<StyledButtonProps>`
 
       ${props.isExpanded && css`
         & > span {
-          background: var(--black);
+          background: #ffffff;
 
-          &:nth-child(1) {
+          &:nth-child(2) {
             transform: rotate(-45deg) translateY(0.5rem) translateX(-0.5rem);
           }
 
-          &:nth-child(2) {
+          &:nth-child(3) {
             transform: scaleX(0);
           }
 
-          &:nth-child(3) {
+          &:nth-child(4) {
             transform: rotate(45deg) translateY(-0.6rem) translateX(-0.6rem);
           }
         }

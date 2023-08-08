@@ -11,6 +11,7 @@
 		#aa26ff 64.37%,
 		#258afe 109.47%
 	);
+	--menu-BG: 255, 255, 255;
 
 	--white: #ffffff;
 	--black: #000000;
@@ -41,6 +42,8 @@
 }
 
 [data-theme='dark'] {
+	--menu-BG: 0, 0, 0;
+
 	--white: #000000;
 	--black: #ffffff;
 	--gray: #828282;
@@ -57,15 +60,18 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	
 }
 
 body {
+	position: relative;
+	width: 100%;
+	min-width: 300px;
 	color: rgb(var(--text-RGB));
 	background: rgb(var(--bg-primary-RGB));
 	text-rendering: optimizeLegibility;
-	overflow-x: hidden;
+	font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {

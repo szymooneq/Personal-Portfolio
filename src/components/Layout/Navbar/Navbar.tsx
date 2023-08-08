@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Logo from '@/components/UI/Logo'
 import Button from '@/components/UI/Button'
-import * as Styled from './Navbar.styled'
 import ThemeSwitcher from '@/components/UI/ThemeSwitcher'
+import { SrOnly } from '@/components/shared.styled'
+import * as Styled from './Navbar.styled'
 
 const MENU_ITEMS = [
 	{ title: 'Home', path: '/' },
@@ -18,9 +19,9 @@ const Navbar = (): JSX.Element => {
 	const { pathname } = useRouter()
 	const [isExpanded, setIsExpanded] = useState(false)
 
-	const handleToggle = () => {
+	const handleToggle = useCallback(() => {
 		if (window.innerWidth < 1024) setIsExpanded(current => !current)
-	}
+	}, [])
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -34,6 +35,7 @@ const Navbar = (): JSX.Element => {
 		}
 	}, [])
 
+
 	return (
 		<Styled.Navbar>
 			<Styled.Wrapper>
@@ -41,34 +43,33 @@ const Navbar = (): JSX.Element => {
 					<Logo />
 				</Link>
 
-				<Styled.Menu>
-					<Styled.Links>
-						{MENU_ITEMS.map((item) => (
-							<li key={item.title}>
-								<Styled.Link
-									href={item.path}
-									onClick={handleToggle}
-									isCurrent={pathname === item.path}
-									aria-current={pathname === item.path ? 'page' : 'false'}>
-									{item.title}
-								</Styled.Link>
-							</li>
-						))}
-					</Styled.Links>
+				<Styled.Links>
+					{MENU_ITEMS.map((item) => (
+						<li key={item.title}>
+							<Styled.Link
+								href={item.path}
+								onClick={handleToggle}
+								isCurrent={pathname === item.path}
+								aria-current={pathname === item.path ? 'page' : 'false'}>
+								{item.title}
+							</Styled.Link>
+						</li>
+					))}
+				</Styled.Links>
 
-					<Styled.Settings>
-						<Styled.FeaturedLink
-							href="/contact"
-							onClick={handleToggle}
-							isCurrent={pathname === '/contact'}
-							aria-current={pathname === '/contact' ? 'page' : 'false'}>
-							Get in touch
-						</Styled.FeaturedLink>
-						<ThemeSwitcher />
-					</Styled.Settings>
-				</Styled.Menu>
+				<Styled.Settings>
+					<ThemeSwitcher />
+					<Styled.FeaturedLink
+						href="/contact"
+						onClick={handleToggle}
+						isCurrent={pathname === '/contact'}
+						aria-current={pathname === '/contact' ? 'page' : 'false'}>
+						Get in touch
+					</Styled.FeaturedLink>
+				</Styled.Settings>
 
 				<Button variant='burger' isExpanded={isExpanded} onClick={handleToggle}>
+					<SrOnly>{isExpanded ? 'Hide menu' : 'Open menu'}</SrOnly>
 					<span />
 					<span />
 					<span />
