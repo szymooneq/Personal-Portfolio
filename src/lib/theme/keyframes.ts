@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components'
 
+// TODO: naming and organization
 const slideDown = keyframes`
   from {
 		transform: translateY(-100%);
@@ -56,4 +57,18 @@ const flyingAstronaut = keyframes`
 	}
 `
 
-export { slideUp, slideDown, rotate, flyingAstronaut }
+const slideUpHeading = keyframes`
+	from {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+`
+
+export { slideUp, slideDown, rotate, flyingAstronaut, slideUpHeading }

@@ -1,9 +1,9 @@
-import { HeaderProps } from './Header.types'
-import styles from './Header.module.css'
+import type { HeaderProps } from './Header.types'
+import * as Styled from './Header.styled'
 
 const Header = ({ content }: HeaderProps): JSX.Element => (
-	<header className={styles.header}>
-		<h1>{content}</h1>
+	<header>
+		<Styled.Heading>{content}</Styled.Heading>
 	</header>
 )
 
