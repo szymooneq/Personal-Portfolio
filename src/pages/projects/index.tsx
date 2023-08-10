@@ -1,40 +1,50 @@
-import { InferGetStaticPropsType, GetStaticProps } from 'next'
+import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { groq } from 'next-sanity'
+import { AnimatePresence } from 'framer-motion'
 import { client } from '@/lib/sanity/client/sanity.client'
 import { removeRepeatedTechnologies } from '@/lib/helpers/removeRepeatedTechnologies'
-import { useProjects } from '@/hooks/useProjects'
-import Page from '@/components/Layout/Page'
-import Technologies from '@/components/UI/Technologies'
-import CardGrid from '@/components/UI/CardGrid'
-import type { IProjectCard } from '@/types/Project.types'
-import styles from '@/styles/Projects.module.css'
 
-export default function ProjectsPage({
-	projects,
-	technologies
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+import { useProjects } from '@/hooks/useProjects'
+import Header from '@/components/Layout/Header'
+import Technologies from '@/components/UI/Technologies'
+import Card from '@/components/Project/Card'
+
+import type { IProjectCard } from '@/types/Project.types'
+import * as Styled from '@/styles/Projects.styled'
+import { Container } from '@/components/shared.styled'
+
+export default function ProjectsPage({ projects, technologies }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
 	const currentProjects = useProjects(projects)
 
 	return (
-		<Page header="Projects">
-			<Head>
+		<>
+			<Head>	
 				<title>Projects | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="Here are some of my personal projects I have completed so far. You can easily filter the projects by technology by selecting the desired technology."
-				/>
+					content="Here are some of my personal projects I have completed so far. You can easily filter the projects by technology by selecting the desired technology." />
 			</Head>
 
-			<p className={styles.description}>
-				Here are some of my personal projects I have completed so far. You can easily filter the
-				projects by technology by selecting the desired technology.
-			</p>
+			<Container>
+				<Header content="Projects" />
 
-			<Technologies content={technologies} />
+				<article>
+					<Styled.Description>
+						Here are some of my personal projects I have completed so far. You can easily filter the
+						projects by technology by selecting the desired technology.
+					</Styled.Description>
 
-			<CardGrid type="project" content={currentProjects} />
-		</Page>
+					<Technologies content={technologies} />
+
+					<Styled.CardWrapper layout>
+						<AnimatePresence>
+							{currentProjects.map(project => <Card key={project.title} content={project} />)}
+						</AnimatePresence>
+					</Styled.CardWrapper>
+				</article>
+			</Container>
+		</>
 	)
 }
 
@@ -49,7 +59,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		technologies[]->,
 	}`
 
-	const projects = await client.fetch<IProjectCard[]>(QUERY)
+	const projects = await client.fetch<Array<IProjectCard>>(QUERY)
 
 	return {
 		props: {
