@@ -1,5 +1,5 @@
-import { ITechnology } from '@/types/Global.types'
+import type { ITechnology } from '@/types/Global.types'
 
 export interface TechnologiesProps {
-	content: ITechnology[]
+	content: Array<ITechnology>
 }

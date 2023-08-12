@@ -1,39 +1,40 @@
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import { motion as m } from 'framer-motion'
 import urlFor from '@/lib/sanity/client/urlFor'
-import { SliderProps } from './Slider.types'
-import styles from './Slider.module.css'
+import type { SliderProps } from './Slider.types'
+import * as Styled from './Slider.styled'
 
-const Slider = ({ images }: SliderProps): JSX.Element => {
-	const [width, setWidth] = useState<number>(0)
-	const slider = useRef() as React.MutableRefObject<HTMLDivElement>
+const Slider = ({ content }: SliderProps): JSX.Element => {
+	const [sectionWidth, setSectionWidth] = useState(0)
+	const sectionRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
-		setWidth(slider.current.scrollWidth - slider.current.offsetWidth)
+		if (sectionRef.current) {
+			setSectionWidth(sectionRef.current.scrollWidth - sectionRef.current.offsetWidth)
+		}
 	}, [])
 
 	return (
-		<div ref={slider} className={styles.slider}>
-			<m.div
-				className={styles.inner}
+		<Styled.Section ref={sectionRef}>
+			<Styled.Wrapper
 				drag="x"
-				dragConstraints={{ right: 0, left: -width }}
+				dragConstraints={{ right: 0, left: -sectionWidth }}
 				whileTap={{ cursor: 'grabbing' }}
-				animate={{ x: [0, -width] }}
+				animate={{ x: [0, -sectionWidth] }}
 				transition={{
 					duration: 60,
 					repeat: Infinity,
 					repeatType: 'reverse',
 					repeatDelay: 1
 				}}>
-				{images.map((image, index) => (
-					<div key={index} className={styles.wrapper}>
-						<Image src={urlFor(image).url()} alt={image.alt} width={1920} height={919} />
-					</div>
+
+				{content.map((image, index) => (
+					<Styled.ImageWrapper key={index}>
+						<Styled.Image src={urlFor(image).url()} alt={image.alt} width={1920} height={919} quality={100} loading="lazy" />
+					</Styled.ImageWrapper>
 				))}
-			</m.div>
-		</div>
+				
+			</Styled.Wrapper>
+		</Styled.Section>
 	)
 }
 

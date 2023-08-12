@@ -1,5 +1,5 @@
-import { IImage } from '@/types/Global.types'
+import type { IImage } from '@/types/Global.types'
 
 export interface SliderProps {
-	images: IImage[]
+	content: Array<IImage>
 }

@@ -9,7 +9,8 @@ const Description = styled.p`
 	color: var(--gray);
 `
 
-const CardWrapper = styled(motion.div)`
+const CardWrapper = styled(motion.section)`
+  margin-top: 2rem;
   display: grid;
 	grid-auto-rows: 1fr;
 	gap: 1.5rem;

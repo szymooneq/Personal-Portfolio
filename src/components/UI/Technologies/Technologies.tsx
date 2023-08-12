@@ -1,40 +1,26 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Image from 'next/image'
 import urlFor from '@/lib/sanity/client/urlFor'
 import { TechnologiesProps } from './Technologies.types'
-import styles from './Technologies.module.css'
+import * as Styled from './Technologies.styled'
+import { Link } from '@/components/shared.styled'
 
 const Technologies = ({ content }: TechnologiesProps): JSX.Element => {
 	const { query } = useRouter()
 
 	return (
-		<div className={styles.technologies}>
-			{content.map((technology) => (
-				<Link
-					key={technology.title}
-					href={`/projects?category=${technology.title}`}
-					scroll={false}
-					className={styles.button}
-					data-active={query.category === technology.title}
-					aria-label={`Check my ${technology.title} projects`}>
-					<Image
-						src={urlFor(technology.icon).url()}
-						alt={`${technology.title} icon`}
-						width={20}
-						height={20}
-					/>
-					<p>{technology.title}</p>
+		<Styled.Section>
+			{content.map((technology, index) => (
+				<Link key={index} variant="technology" href={`/projects?category=${technology.title}`} scroll={false} isActive={query.category === technology.title}>
+						<Image src={urlFor(technology.icon).url()} alt="" width={20} height={20} quality={100} loading="lazy" />
+						<span>{technology.title}</span>
 				</Link>
 			))}
-			<Link
-				href="/projects"
-				scroll={false}
-				className={styles.button}
-				data-visible={query.category ? true : false}>
-				x reset filter
-			</Link>
-		</div>
+
+			{query.category ? (
+				<Link variant="technology" href="/projects" scroll={false} isReset>x reset filter</Link>
+			) : null}
+		</Styled.Section>
 	)
 }
 

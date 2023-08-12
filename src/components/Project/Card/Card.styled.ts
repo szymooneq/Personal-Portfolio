@@ -73,7 +73,7 @@ const Details = styled.div`
 	padding: 1.5rem;
 `
 
-const Type = styled.span`
+const Type = styled.p`
   font-size: 0.875rem;
 	font-weight: 600;
 	text-transform: uppercase;

@@ -29,20 +29,18 @@ export default function ProjectsPage({ projects, technologies }: InferGetStaticP
 			<Container>
 				<Header content="Projects" />
 
-				<article>
-					<Styled.Description>
-						Here are some of my personal projects I have completed so far. You can easily filter the
-						projects by technology by selecting the desired technology.
-					</Styled.Description>
+				<Styled.Description>
+					Here are some of my personal projects I have completed so far. You can easily filter the
+					projects by technology by selecting the desired technology.
+				</Styled.Description>
 
-					<Technologies content={technologies} />
+				<Technologies content={technologies} />
 
-					<Styled.CardWrapper layout>
-						<AnimatePresence>
-							{currentProjects.map(project => <Card key={project.title} content={project} />)}
-						</AnimatePresence>
-					</Styled.CardWrapper>
-				</article>
+				<Styled.CardWrapper layout>
+					<AnimatePresence>
+						{currentProjects.map(project => <Card key={project.title} content={project} />)}
+					</AnimatePresence>
+				</Styled.CardWrapper>
 			</Container>
 		</>
 	)

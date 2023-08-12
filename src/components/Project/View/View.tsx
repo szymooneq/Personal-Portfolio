@@ -1,84 +1,73 @@
-import Link from 'next/link'
-import { ViewProps } from './View.types'
-import styles from './View.module.css'
-
-import * as icon from '@/assets/svg'
-import Container from '@/components/Layout/Container'
 import Slider from '@/components/Project/Slider'
 import Technologies from '@/components/UI/Technologies'
-import * as Button from '@/components/UI/Button'
-import List from './List'
 
-const projectLinks = [
+import type { ViewProps } from './View.types'
+import * as Styled from './View.styled'
+import { Container, Link } from '@/components/shared.styled'
+import { gitHubIcon, vercelIcon } from '@/assets/icons'
+
+const SOCIAL_LINKS = [
 	{
-		name: 'Vercel',
-		link: 'View live site',
-		icon: icon.vercel
+		text: 'View live site',
+		icon: vercelIcon
 	},
 	{
-		name: 'GitHub',
-		link: 'View source code',
-		icon: icon.github
+		text: 'View source code',
+		icon: gitHubIcon
 	}
 ]
 
-// TODO: Links Button component
 const View = ({ content }: ViewProps): JSX.Element => {
-	const { title, type, description, links, images, technologies, stack, details } =
-		content
+	const { title, type, description, links, images, technologies, stack, details } = content
 
 	return (
-		<Container>
+		<Container as="article">
 			<header>
-				<h1 className={styles.title}>{`${title} - ${type.title}`}</h1>
-				<p className={styles.description}>{description}</p>
+				<Styled.Title>{`${title} - ${type.title}`}</Styled.Title>
+				<Styled.Description>{description}</Styled.Description>
 			</header>
 
-			<div className={styles.links}>
-				{projectLinks.map((link, index) => (
-					<Link
-						key={index}
-						href={links[index].url}
-						className={styles.link}
-						target="_blank"
-						rel="noreferrer">
-						{link.link}
-						{link.icon}
+			<Styled.SocialSection>
+				{SOCIAL_LINKS.map((link, index) => (
+					<Link key={index} variant="projectLink" href={links[index].url} target="_blank" rel="noreferrer">
+						{link.text}{link.icon}
 					</Link>
 				))}
-			</div>
+			</Styled.SocialSection>
 
-			<Slider images={images} />
+			<Slider content={images} />
 
-			<List title="Main technologies">
+			<section>
+				<Styled.Heading>Main technologies</Styled.Heading>
 				<Technologies content={technologies} />
-			</List>
+			</section>
 
-			{stack.length > 0 ? (
-				<List type="list" title="Stack">
-					{stack.map((item) => (
-						<li key={item.title}>
-							<Link
-								href={item.url}
-								className={styles.stackUrl}
-								target="_blank"
-								rel="noreferrer"
-								aria-label={`Link to ${item.title} page`}>
-								{item.title}
-							</Link>
-							{` - ${item.description}`}
-						</li>
+			<section>
+				<Styled.Heading>Stack</Styled.Heading>
+				<ul>
+					{stack.map(item => (
+						<Styled.Item key={item.title}>
+							<p>
+								<Link href={item.url} target="_blank" rel="noreferrer">{item.title}</Link>
+								{` - ${item.description}`}
+							</p>
+						</Styled.Item>
 					))}
-				</List>
-			) : null}
+				</ul>
+			</section>
 
-			<List type="list" title="Details">
-				{details.map((detail) => (
-					<li key={detail}>{detail}</li>
-				))}
-			</List>
+			<section>
+				<Styled.Heading>Details</Styled.Heading>
+				<ul>
+					{details.map(item => (
+						<Styled.Item key={item}>
+							<p>{item}</p>
+						</Styled.Item>
+					))}
+				</ul>
+			</section>
 
-			<Button.Retrun href="/projects" />
+			<Link href="/projects" variant="back" scroll={false}>Go back</Link>
 		</Container>
 	)
 }

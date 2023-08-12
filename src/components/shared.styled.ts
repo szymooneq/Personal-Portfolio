@@ -1,5 +1,7 @@
+import NextLink from 'next/link'
 import styled from 'styled-components'
 import { screen } from '@/lib/theme/breakpoints'
+import { Button } from '@/components/UI/Button/Button.styled'
 
 const Container = styled.div`
   margin-inline: auto;
@@ -35,4 +37,6 @@ const SrOnly = styled.span`
   overflow: hidden;
 `
 
-export { Container, SrOnly }
+const Link = Button.withComponent(NextLink)
+
+export { Container, SrOnly, Link }
