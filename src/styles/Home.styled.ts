@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import styled from 'styled-components'
 
-const Section = styled.section`
+const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,16 +30,18 @@ const SubHeading = styled.h2`
   }
 `
 
-const Links = styled.div`
+const SocialLinks = styled.ul`
 	padding: 0.5rem 1rem;
   display: inline-flex;
   justify-content: center;
   gap: 1rem;
+  list-style-type: none;
   border-radius: 2rem;
 	background: rgb(var(--bg-primary-RGB));
 `
 
 const Link = styled(NextLink)`
+  display: block;
   line-height: 0;
 
   & > svg {
@@ -51,9 +53,9 @@ const Link = styled(NextLink)`
 
     &:hover {
       color: var(--secondary-color);
-	    transform: scale(1.2);
+      transform: scale(1.2);
     }
   }
 `
 
-export { Section, Heading, SubHeading, Links, Link }
+export { Section, Heading, SubHeading, SocialLinks, Link }

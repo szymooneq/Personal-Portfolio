@@ -2,10 +2,11 @@ import NextImage from 'next/image'
 import styled from 'styled-components'
 import { screen } from '@/lib/theme/breakpoints'
 
-const Section = styled.section`
+const Wrapper = styled.ul`
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 1rem;
+  list-style-type: none;
 `
 
 const Image = styled(NextImage)`
@@ -21,4 +22,4 @@ const Image = styled(NextImage)`
   }
 `
 
-export { Section, Image }
+export { Wrapper, Image }

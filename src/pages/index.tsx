@@ -30,8 +30,7 @@ export default function Home(): JSX.Element {
 				<title>Szymon Dudka | Frontend Developer</title>
 				<meta
 					name="description"
-					content="Szymon Dudka is a frontend developer with experience in creating responsive and user-friendly interfaces and API-based applications. Visit his portfolio to learn more about his work and skills."
-				/>
+					content="Szymon Dudka is a frontend developer with experience in creating responsive and user-friendly interfaces and API-based applications. Visit his portfolio to learn more about his work and skills." />
 			</Head>
 
 			<Starfield />
@@ -40,14 +39,16 @@ export default function Home(): JSX.Element {
 				<Styled.Heading>Szymon Dudka</Styled.Heading>
 				<Styled.SubHeading>Frontend Developer</Styled.SubHeading>
 
-				<Styled.Links>
+				<Styled.SocialLinks>
 					{SOCIAL_LINKS.map(link => (
-						<Styled.Link key={link.name} href={link.url} target="_blank" rel="noreferrer">
-							<SrOnly>{link.name}</SrOnly>
-							{link.icon}
-						</Styled.Link>
+						<li key={link.name}>
+							<Styled.Link href={link.url} target="_blank" rel="noreferrer">
+								<SrOnly>{link.name}</SrOnly>
+								{link.icon}
+							</Styled.Link>
+						</li>
 					))}
-				</Styled.Links>
+				</Styled.SocialLinks>
 			</Styled.Section>
 		</>
 	)

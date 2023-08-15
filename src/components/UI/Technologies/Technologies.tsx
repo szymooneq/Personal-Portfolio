@@ -9,18 +9,20 @@ const Technologies = ({ content }: TechnologiesProps): JSX.Element => {
 	const { query } = useRouter()
 
 	return (
-		<Styled.Section>
+		<Styled.Wrapper>
 			{content.map((technology, index) => (
-				<Link key={index} variant="technology" href={`/projects?category=${technology.title}`} scroll={false} isActive={query.category === technology.title}>
+				<li key={index}>
+					<Link variant="technology" href={`/projects?category=${technology.title}`} scroll={false} isActive={query.category === technology.title}>
 						<Image src={urlFor(technology.icon).url()} alt="" width={20} height={20} quality={100} loading="lazy" />
 						<span>{technology.title}</span>
-				</Link>
+					</Link>
+				</li>
 			))}
 
 			{query.category ? (
 				<Link variant="technology" href="/projects" scroll={false} isReset>x reset filter</Link>
 			) : null}
-		</Styled.Section>
+		</Styled.Wrapper>
 	)
 }
 

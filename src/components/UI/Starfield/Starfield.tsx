@@ -110,7 +110,7 @@ const Starfield = (): JSX.Element => {
 
 	return (
 		<Styled.Wrapper ref={container}>
-			<Styled.Image src={homeAstrounaut} alt="Astronaut" quality={100} placeholder="blur" width={400} height={400} />
+			<Styled.Image src={homeAstrounaut} alt="Astronaut" quality={100} placeholder="blur" loading="lazy" width={400} height={400} />
 			<canvas ref={starfieldCanvas} />
 		</Styled.Wrapper>
 	)

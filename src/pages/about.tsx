@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import Header from '@/components/Layout/Header'
 import * as Styled from '@/styles/About.styled'
-import { Container, SrOnly } from '@/components/shared.styled'
+import { Container, Heading, SrOnly } from '@/components/shared.styled'
 import { circularArrowRightIcon, circularArrowTopRightIcon, faceIdIcon, linkedInIcon } from '@/assets/icons'
 
 export default function About(): JSX.Element {
@@ -15,7 +14,7 @@ export default function About(): JSX.Element {
 			</Head>
 
 			<Container>
-				<Header content='About' />
+				<Heading>About</Heading>
 
 				<Styled.Wrapper>
 					<Styled.Card />

@@ -4,7 +4,7 @@ import aboutHeader from '@/assets/images/about-header.png'
 import { aboutProjects } from '@/assets/images'
 import { screen } from '@/lib/theme/breakpoints'
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   display: grid;
   gap: 1.5rem;
 

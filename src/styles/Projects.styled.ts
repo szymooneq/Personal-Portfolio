@@ -9,11 +9,12 @@ const Description = styled.p`
 	color: var(--gray);
 `
 
-const CardWrapper = styled(motion.section)`
+const CardWrapper = styled(motion.ul)`
   margin-top: 2rem;
   display: grid;
 	grid-auto-rows: 1fr;
 	gap: 1.5rem;
+  list-style-type: none;
 
   @media only screen and (${screen.mdDown}) {
     grid-template-columns: 1fr;

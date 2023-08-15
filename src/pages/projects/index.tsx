@@ -6,13 +6,12 @@ import { client } from '@/lib/sanity/client/sanity.client'
 import { removeRepeatedTechnologies } from '@/lib/helpers/removeRepeatedTechnologies'
 
 import { useProjects } from '@/hooks/useProjects'
-import Header from '@/components/Layout/Header'
 import Technologies from '@/components/UI/Technologies'
 import Card from '@/components/Project/Card'
 
 import type { IProjectCard } from '@/types/Project.types'
 import * as Styled from '@/styles/Projects.styled'
-import { Container } from '@/components/shared.styled'
+import { Container, Heading } from '@/components/shared.styled'
 
 export default function ProjectsPage({ projects, technologies }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
 	const currentProjects = useProjects(projects)
@@ -27,7 +26,7 @@ export default function ProjectsPage({ projects, technologies }: InferGetStaticP
 			</Head>
 
 			<Container>
-				<Header content="Projects" />
+				<Heading>Projects</Heading>
 
 				<Styled.Description>
 					Here are some of my personal projects I have completed so far. You can easily filter the

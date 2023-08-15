@@ -154,6 +154,49 @@ const Button = styled.button<StyledButtonProps>`
         `
       }
 
+      case 'resumePrimary': {
+        return css`
+          padding: 0.4rem 0.8rem;
+          width: fit-content;
+          font-size: 1rem;
+          border-radius: 2rem;
+          border: 1px solid var(--black);
+          transition: color 0.3s, border-color 0.3s;
+
+          &:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+          }
+        `
+      }
+
+      case 'resumeSecondary': {
+        return css`
+          padding: 1rem 0;
+          display: inline-flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          font-size: var(--card-desc-font-size);
+          font-weight: 700;
+          color: var(--gray);
+          border-bottom: 2px solid var(--gray);
+
+          &:hover {
+	          color: var(--primary-color);
+          }
+
+          &:last-child {
+            border: none;
+          }
+
+          & > svg {
+            width: 40px;
+            height: 40px;
+          }
+        `
+      }
+
       default: {
         return css`
           font-weight: 700;

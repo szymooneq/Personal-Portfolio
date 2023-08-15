@@ -4,19 +4,16 @@ export const contactLinks = [
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/szymon-dudka',
-		icon: linkedInIcon,
-		ariaLabel: 'Check my profile on LinkedIn'
+		icon: linkedInIcon
 	},
 	{
 		name: 'GitHub',
 		url: 'https://github.com/szymooneq',
-		icon: gitHubIcon,
-		ariaLabel: 'Check my profile on GitHub'
+		icon: gitHubIcon
 	},
 	{
 		name: 'Discord',
 		url: 'https://discord.com/users/554988199529676800',
-		icon: discordIcon,
-		ariaLabel: 'Contact me on Discord'
+		icon: discordIcon
 	}
 ]

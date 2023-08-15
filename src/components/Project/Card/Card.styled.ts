@@ -48,7 +48,7 @@ const Image = styled(NextImage)`
 	transition: filter 0.5s;
 `
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.li)`
   position: relative;
 	border-radius: var(--radius);
 	background-color: var(--bg-secondary);

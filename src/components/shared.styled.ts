@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import styled from 'styled-components'
 import { screen } from '@/lib/theme/breakpoints'
+import { slideUpHeading } from '@/lib/theme/keyframes'
 import { Button } from '@/components/UI/Button/Button.styled'
 
 const Container = styled.div`
@@ -37,6 +38,19 @@ const SrOnly = styled.span`
   overflow: hidden;
 `
 
+const Heading = styled.h1`
+	margin: 2rem 0;
+	font-size: clamp(0px, 20vw, 320px);
+	font-weight: 700;
+  text-align: center;
+	white-space: nowrap;
+	color: var(--text-header);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(100px);
+	animation: ${slideUpHeading} 1s 0.3s forwards;
+`
+
 const Link = Button.withComponent(NextLink)
 
-export { Container, SrOnly, Link }
+export { Container, SrOnly, Link, Heading }

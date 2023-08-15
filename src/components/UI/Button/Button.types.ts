@@ -1,4 +1,4 @@
-type ButtonVariants = 'burger' | 'back' | 'projectLink' | 'technology'
+type ButtonVariants = 'burger' | 'back' | 'projectLink' | 'technology' | 'resumePrimary' | 'resumeSecondary'
 
 export interface StyledButtonProps {
   variant?: ButtonVariants

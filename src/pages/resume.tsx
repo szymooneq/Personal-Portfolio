@@ -1,15 +1,11 @@
-import { Fragment } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
 import { contactLinks } from '@/lib/helpers'
-import styles from '@/styles/Resume.module.css'
-
-import * as icon from '@/assets/svg'
+import { Container, Heading, Link } from '@/components/shared.styled'
+import * as Styled from '@/styles/Resume.styled'
 import resumeAvatar from '@/assets/images/resume-avatar.jpg'
-import Page from '@/components/Layout/Page'
+import { circularArrowTopRightIcon } from '@/assets/icons'
 
-const educationList = [
+const EDUCATION = [
 	{
 		title: 'PWSZ (Akademia Nauk Stosowanych), Nowy Sącz',
 		timeline: 'Sep 2018 - Jun 2022',
@@ -65,7 +61,7 @@ const educationList = [
 	}
 ]
 
-const stackList = [
+const STACK = [
 	'JavaScript | TypeScript | React.js | Next.js | Vite',
 	'Redux | Reducer | Context | Hooks | NPM | Yarn',
 	'React Router | React Query | Pixel Perfect',
@@ -77,126 +73,115 @@ const stackList = [
 	'VSCode | Figma | Adobe Photoshop'
 ]
 
-const hobbyList = [
+const HOBBY = [
 	'Travel | Gaming | Web Design | Technology',
 	'Aircraft | Photography | Football'
 ]
 
 export default function Resume(): JSX.Element {
 	return (
-		<Page header="Resume" className={styles.main}>
+		<>
 			<Head>
 				<title>Resume | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="I implement responsive and user-friendly interfaces and API-based applications. I'm constantly gaining new knowledge by creating and improving projects which help me practice my skills."
-				/>
+					content="I implement responsive and user-friendly interfaces and API-based applications. I'm constantly gaining new knowledge by creating and improving projects which help me practice my skills." />
 			</Head>
 
-			<section className={styles.cards}>
-				<div className={styles.card}>
-					<div className={styles.avatar}>
-						<div className={styles.avatarImg}>
-							<Image src={resumeAvatar} alt="Avatar" width={420} height={420} />
-						</div>
-						<div className={styles.avatarMsg}>What&apos;s up!</div>
-					</div>
+			<Container>
+				<Heading>Resume</Heading>
 
-					<h2 className={styles.sectionTitle}>Szymon Dudka</h2>
-					<h2 className={styles.subTitle}>Frontend Developer</h2>
+				<Styled.Wrapper>
+					<Styled.CardSection>
 
-					<div className={styles.contact}>
-						<h3>szymooneq@zohomail.eu</h3>
-						<h3>www.szymondudka.xyz</h3>
-					</div>
+						<Styled.Card>
+							<Styled.Avatar>
+								<Styled.ImageWrapper tabIndex={0}>
+									<Styled.Image src={resumeAvatar} alt="Avatar" width={420} height={420} quality={100} loading="lazy" placeholder="blur" />
+								</Styled.ImageWrapper>
+								<p>What&apos;s up!</p>
+							</Styled.Avatar>
 
-					<div className={styles.contactButtons}>
-						<Link className={styles.button} href="contact">
-							Contact Me
-						</Link>
-						<Link
-							className={styles.button}
-							href="CV_Szymon_Dudka.pdf"
-							target="_blank"
-							rel="noreferrer">
-							Get my CV
-						</Link>
-					</div>
-				</div>
+							<Styled.Title>Szymon Dudka</Styled.Title>
+							<Styled.Subtitle>Frontend Developer</Styled.Subtitle>
 
-				<div className={styles.card}>
-					{contactLinks.map((link, id) => (
-						<Fragment key={link.name}>
-							<Link
-								href={link.url}
-								className={styles.link}
-								target="_blank"
-								rel="noreferrer">
-								{link.name}
-								{icon.rightUpCircleArrow}
-							</Link>
-							{id !== contactLinks.length - 1 ? <hr /> : null}
-						</Fragment>
-					))}
-				</div>
-			</section>
+							<Styled.Refrences>
+								<p>szymooneq@zohomail.eu</p>
+								<p>www.szymondudka.xyz</p>
+							</Styled.Refrences>
 
-			<section>
-				<div className={styles.section}>
-					<h2 className={styles.sectionTitle}>About me</h2>
+							<Styled.ContactSection>
+								<Link variant="resumePrimary" href="contact">
+									Contact Me
+								</Link>
+								<Link variant="resumePrimary" href="CV_Szymon_Dudka.pdf" target="_blank" rel="noreferrer">
+									Get my CV
+								</Link>
+							</Styled.ContactSection>
+						</Styled.Card>
+
+						<Styled.Card>
+							{contactLinks.map((link, index) => (
+								<Link key={index} href={link.url} variant="resumeSecondary" target="_blank" rel="noreferrer">
+									{link.name}
+									{circularArrowTopRightIcon}
+								</Link>
+							))}
+						</Styled.Card>
+					</Styled.CardSection>
+
 					<div>
-						<p className={styles.sectionDescription}>
-							I implement responsive and user-friendly interfaces and API-based
-							applications. I&apos;m constantly gaining new knowledge by creating and
-							improving projects which help me practice my skills. My goal is work in a
-							team that specializes in commercial projects. This would give me a chance to
-							further improve my skills and gain valuable experience.
-						</p>
+						<Styled.Section>
+							<Styled.Title>About me</Styled.Title>
+							<Styled.Description>
+								I implement responsive and user-friendly interfaces and API-based
+								applications. I&apos;m constantly gaining new knowledge by creating and
+								improving projects which help me practice my skills. My goal is work in a
+								team that specializes in commercial projects. This would give me a chance to
+								further improve my skills and gain valuable experience.
+							</Styled.Description>
+						</Styled.Section>
+
+						<Styled.Section>
+							<Styled.Title>Education & Courses</Styled.Title>
+							{EDUCATION.map(item => (
+								<div key={item.title}>
+									<Styled.Heading>{item.title}</Styled.Heading>
+									<Styled.Timeline>{item.timeline}</Styled.Timeline>
+									<Styled.Description>{item.description}</Styled.Description>
+								</div>
+							))}
+						</Styled.Section>
+
+						<Styled.Section>
+							<Styled.Title>Projects</Styled.Title>
+							<Link href="projects">Go to Projects</Link>
+						</Styled.Section>
+
+						<Styled.Section>
+							<Styled.Title>Stack</Styled.Title>
+							<ul>
+								{STACK.map(item => (
+									<li key={item}>
+										<Styled.Description>{item}</Styled.Description>
+									</li>
+								))}
+							</ul>
+						</Styled.Section>
+
+						<Styled.Section>
+							<Styled.Title>Hobby / Interest</Styled.Title>
+							<ul>
+								{HOBBY.map(item => (
+									<li key={item}>
+										<Styled.Description>{item}</Styled.Description>
+									</li>
+								))}
+							</ul>
+						</Styled.Section>
 					</div>
-				</div>
-
-				<div className={styles.section}>
-					<h2 className={styles.sectionTitle}>Education & Courses</h2>
-					<ul>
-						{educationList.map((item) => (
-							<li key={item.title} className={styles.sectionItem}>
-								<h3>{item.title}</h3>
-								<p className={styles.sectionTimeline}>{item.timeline}</p>
-								<p className={styles.sectionDescription}>{item.description}</p>
-							</li>
-						))}
-					</ul>
-				</div>
-
-				<div className={styles.section}>
-					<h2 className={styles.sectionTitle}>Projects</h2>
-					<Link className={styles.button} href="projects">
-						Go to Projects
-					</Link>
-				</div>
-
-				<div className={styles.section}>
-					<h2 className={styles.sectionTitle}>Stack</h2>
-					<ul>
-						{stackList.map((item) => (
-							<li key={item} className={styles.sectionDescription}>
-								{item}
-							</li>
-						))}
-					</ul>
-				</div>
-
-				<div className={styles.section}>
-					<h2 className={styles.sectionTitle}>Hobby / Interest</h2>
-					<ul>
-						{hobbyList.map((item) => (
-							<li key={item} className={styles.sectionDescription}>
-								{item}
-							</li>
-						))}
-					</ul>
-				</div>
-			</section>
-		</Page>
+				</Styled.Wrapper>
+			</Container>
+		</>
 	)
 }
