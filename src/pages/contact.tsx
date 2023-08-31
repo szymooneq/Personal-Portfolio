@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { contactLinks } from '@/lib/helpers'
-import styles from '@/styles/Contact.module.css'
-
-import Page from '@/components/Layout/Page'
+import Button from '@/components/UI/Button'
+import * as Styled from '@/styles/Contact.styled'
 import { cubeIcon, penIcon, webGridIcon } from '@/assets/icons'
+import { Container, Heading, Link, SrOnly } from '@/components/shared.styled'
 
-const cards = [
+const CARDS = [
 	{
 		title: 'Website design & development',
 		desc: 'Experienced designer & visual developer. I create websites/web applications.',
@@ -24,7 +23,7 @@ const cards = [
 	}
 ]
 
-const contactTypes = [
+const CONTACT_QUESTIONS = [
 	{
 		question: 'want to call me?',
 		href: 'https://discord.com/users/554988199529676800',
@@ -39,99 +38,85 @@ const contactTypes = [
 
 export default function Contact(): JSX.Element {
 	return (
-		<Page header="Contact">
+		<>
 			<Head>
 				<title>Contact | Szymon Dudka</title>
 				<meta
 					name="description"
-					content="I'm always open to collaborate on a project or hear about an
-          opportunity!"
-				/>
+					content="I'm always open to collaborate on a project or hear about an opportunity!" />
 			</Head>
 
-			<div className={styles.content}>
-				<div className={styles.description}>
-					<div>
-						<h2 className={styles.title}>Get in Touch ✨</h2>
-						<p className={styles.subText}>
-							I&apos;m always ready to collaborate on a project or hear about an
-							opportunity!
-						</p>
-					</div>
-					<div className={styles.types}>
-						{contactTypes.map((link) => (
-							<div key={link.question}>
-								<p className={styles.question}>{link.question}</p>
-								<Link
-									href={link.href}
-									target="_blank"
-									rel="noreferrer"
-									className={styles.link}>
-									{link.title}
-								</Link>
-							</div>
-						))}
-					</div>
-					<div className={styles.icons}>
-						{contactLinks.map((link) => (
-							<Link
-								key={link.name}
-								href={link.url}
-								target="_blank"
-								rel="noreferrer"
-								aria-label={link.ariaLabel}>
-								{link.icon}
-							</Link>
-						))}
-					</div>
-				</div>
+			<Container>
+				<Heading>Contact</Heading>
 
-				<form
-					className={styles.form}
-					action="https://usebasin.com/f/d46c0979603a"
-					method="post">
-					<div className={styles.field}>
-						<label htmlFor="name" hidden>
-							Enter your name
-						</label>
-						<input type="text" name="name" id="name" placeholder="Name" required />
-					</div>
+				<Styled.FormSection>
+					<Styled.Contact>
+						<div>
+							<Styled.Title>Get in Touch ✨</Styled.Title>
+							<Styled.Description>
+								I&apos;m always ready to collaborate on a project or hear about an opportunity!
+							</Styled.Description>
+						</div>
+						<Styled.Questions>
+							{CONTACT_QUESTIONS.map((link) => (
+								<li key={link.question}>
+									<Styled.Question>{link.question}</Styled.Question>
+									<Link href={link.href} target="_blank" rel="noreferrer" variant="contactQuestion">
+										{link.title}
+									</Link>
+								</li>
+							))}
+						</Styled.Questions>
 
-					<div className={styles.field}>
-						<label htmlFor="email" hidden>
-							Enter your e-mail
-						</label>
-						<input type="email" name="email" id="email" placeholder="E-mail" required />
-					</div>
+						<Styled.SocialList>
+							{contactLinks.map((link) => (
+								<li key={link.name}>
+									<Link href={link.url} target="_blank" rel="noreferrer" variant="contactIcon">
+										<SrOnly>{link.name}</SrOnly>{link.icon}
+									</Link>
+								</li>
+							))}
+						</Styled.SocialList>
+					</Styled.Contact>
 
-					<div className={styles.field}>
-						<label htmlFor="message" hidden>
-							Enter your message
-						</label>
-						<textarea
-							id="message"
-							name="message"
-							rows={8}
-							placeholder="Type your message"
-							required
-						/>
-					</div>
+					<Styled.Form action="https://usebasin.com/f/d46c0979603a" method="post">
+						<div>
+							<label htmlFor="name" hidden>
+								Enter your name
+							</label>
+							<Styled.Input type="text" name="name" id="name" placeholder="Name" required />
+						</div>
 
-					<button type="submit" className={styles.submit}>
-						Send Message
-					</button>
-				</form>
-			</div>
+						<div>
+							<label htmlFor="email" hidden>
+								Enter your e-mail
+							</label>
+							<Styled.Input type="email" name="email" id="email" placeholder="E-mail" required />
+						</div>
 
-			<div className={styles.cards}>
-				{cards.map((item) => (
-					<div key={item.title} className={styles.card}>
-						{item.icon}
-						<h3 className={styles.cardTitle}>{item.title}</h3>
-						<p className={styles.cardDesc}>{item.desc}</p>
-					</div>
-				))}
-			</div>
-		</Page>
+						<div>
+							<label htmlFor="message" hidden>
+								Enter your message
+							</label>
+							<Styled.Textarea as="textarea" id="message" name="message" rows={8} placeholder="Type your message" required />
+						</div>
+
+						<Button type="submit" variant="contactSubmit">
+							Send Message
+						</Button>
+					</Styled.Form>
+				</Styled.FormSection>
+
+				<Styled.Cards>
+					{CARDS.map((item) => (
+						<Styled.Card key={item.title}>
+							{item.icon}
+							<Styled.CardTitle>{item.title}</Styled.CardTitle>
+							<Styled.CardDesc>{item.desc}</Styled.CardDesc>
+						</Styled.Card>
+					))}
+				</Styled.Cards>
+			</Container>
+		</>
 	)
 }

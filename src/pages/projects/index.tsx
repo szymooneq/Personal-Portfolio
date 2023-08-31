@@ -12,6 +12,7 @@ import Card from '@/components/Project/Card'
 import type { IProjectCard } from '@/types/Project.types'
 import * as Styled from '@/styles/Projects.styled'
 import { Container, Heading } from '@/components/shared.styled'
+import { ITechnology } from '@/types/Global.types'
 
 export default function ProjectsPage({ projects, technologies }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
 	const currentProjects = useProjects(projects)
@@ -35,17 +36,22 @@ export default function ProjectsPage({ projects, technologies }: InferGetStaticP
 
 				<Technologies content={technologies} />
 
-				<Styled.CardWrapper layout>
+				<Styled.MotionCardWrapper layout>
 					<AnimatePresence>
 						{currentProjects.map(project => <Card key={project.title} content={project} />)}
 					</AnimatePresence>
-				</Styled.CardWrapper>
+				</Styled.MotionCardWrapper>
 			</Container>
 		</>
 	)
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+interface StaticProps {
+	projects: Array<IProjectCard>
+	technologies: Array<ITechnology>
+}
+
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
 	const QUERY = groq`*[_type == "projects"]{
 		slug,
 		theme,

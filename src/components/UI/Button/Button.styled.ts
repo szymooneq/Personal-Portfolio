@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import type { StyledButtonProps } from './Button.types'
 import { screen } from '@/lib/theme/breakpoints'
 
-// TODO: theme colors & switch
+// TODO: theme colors
 const Button = styled.button<StyledButtonProps>`
   position: relative;
   cursor: pointer;
@@ -193,6 +193,58 @@ const Button = styled.button<StyledButtonProps>`
           & > svg {
             width: 40px;
             height: 40px;
+          }
+        `
+      }
+
+      case 'contactQuestion': {
+        return css`
+          font-size: var(--card-desc-font-size);
+
+          &:hover,
+          &:focus-visible {
+            color: var(--primary-color);
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        `
+      }
+
+      case 'contactSubmit': {
+        return css`
+          padding: 1rem;
+          display: block;
+          font-size: 1rem;
+          font-weight: bold;
+          border: none;
+          border-radius: 0.5rem;
+          color: #ffffff;
+          background: var(--gradient);
+          cursor: pointer;
+          opacity: 1;
+          transition: opacity 0.3s;
+
+          &:hover {
+	          opacity: 0.8;
+          }
+        `
+      }
+
+      case 'contactIcon': {
+        return css`
+          display: block;
+
+          & > svg {
+            width: 32px;
+            height: 32px;
+            color: grey;
+          }
+
+          &:hover,
+          &:focus-visible {
+            & > svg {
+              color: var(--primary-color);
+            }
           }
         `
       }

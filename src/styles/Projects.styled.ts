@@ -9,7 +9,7 @@ const Description = styled.p`
 	color: var(--gray);
 `
 
-const CardWrapper = styled(motion.ul)`
+const CardWrapper = styled.ul`
   margin-top: 2rem;
   display: grid;
 	grid-auto-rows: 1fr;
@@ -29,4 +29,6 @@ const CardWrapper = styled(motion.ul)`
   }
 `
 
-export { Description, CardWrapper }
+const MotionCardWrapper = CardWrapper.withComponent(motion.ul)
+
+export { Description, MotionCardWrapper, CardWrapper }
